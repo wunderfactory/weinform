@@ -1,8 +1,10 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\FacebookUser;
-use App\User;
+use App\Services\Loginar;
 use App\Http\Controllers\Controller;
+use App\User;
+use App\VerifiedEmail;
 use App\Wunderfactory\Facades\Facebook;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
@@ -27,6 +29,7 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+    protected $loginar;
 	/*
 	 * Create a new authentication controller instance.
 	 *
@@ -34,10 +37,11 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
+	public function __construct(Guard $auth, Registrar $registrar, Loginar $loginar)
 	{
 		$this->auth = $auth;
 		$this->registrar = $registrar;
+        $this->loginar = $loginar;
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
@@ -79,13 +83,31 @@ class AuthController extends Controller {
 		}
 		$user = $this->registrar->create($request->all());
 		if (Session::has('faceboobUser_id')) {
-
+            dd($user);
 			$fb = FacebookUser::find(Session::get('faceboobUser_id'));
-			$fb->user()->associate($user);
+			$fb->user_id = $user->id;
 			$fb->save();
 			Session::forget('faceboobUser_id');
 		}
 		$this->auth->login($user);
 		return redirect($this->redirectPath());
 	}
+
+    public function postLogin(Request $request) {
+        $validator = $this->loginar->validate($request->all());
+        if($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        if ($this->loginar->login($request->all())) {
+            return redirect()->intended($this->redirectPath());
+        } else {
+            return redirect($this->loginPath())
+                ->withInput($request->only('email', 'remember'))
+                ->withErrors([
+                    'email' => $this->getFailedLoginMessage(),
+                ]);
+        }
+    }
 }

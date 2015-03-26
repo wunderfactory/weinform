@@ -1,5 +1,8 @@
 <?php namespace App\Providers;
 
+use App\User;
+use App\VerifiedEmail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -11,7 +14,17 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		Validator::extend('user', function($attribute, $value, $parameters)
+        {
+            if(VerifiedEmail::where('email', $value)->where('verified', true)->count() > 0 || User::where('username', $value)->whereHas('emails', function($q)
+                {
+                    $q->where('verified', true);
+
+                })->count() > 0) {
+                return true;
+            }
+            return false;
+        });
 	}
 
 	/**

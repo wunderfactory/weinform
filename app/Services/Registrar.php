@@ -1,9 +1,8 @@
 <?php namespace App\Services;
 
-use App\FacebookUser;
 use App\User;
-use App\Wunderfactory\Facades\Facebook;
-use Illuminate\Support\Facades\Session;
+use App\VerifiedEmail;
+use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
@@ -18,8 +17,11 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'name' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:users',
+			'name' => 'required|max:255|unique:users,username',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+			'email' => 'required|email|max:255|unique:verified_emails',
+            'birth_date' => 'required|date_format:d.m.Y',
 			'password' => 'required|confirmed|min:6',
 		]);
 	}
@@ -32,11 +34,21 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		return User::create([
+        $bDaySplit = explode ('.' , $data['birth_date']);
+		$user = User::create([
 			'username' => $data['name'],
-			'email' => $data['email'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
 			'password' => bcrypt($data['password']),
+            'birth_date' => Carbon::createFromDate($bDaySplit[2],$bDaySplit[1], $bDaySplit[0]),
 		]);
+
+        VerifiedEmail::create([
+            'email' => $data['email'],
+            'user_id' => $user->id
+        ]);
+
+        return $user;
 	}
 
 }
