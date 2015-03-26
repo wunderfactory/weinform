@@ -35,4 +35,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasOne('App\FacebookUser');
 	}
 
+    public function logs() {
+        return $this->hasMany('App\Logs');
+    }
+
+    public function emails() {
+        return $this->hasMany('App\VerifiedEmail');
+    }
 }
