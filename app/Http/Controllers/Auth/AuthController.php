@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\VerifiedEmail;
 use App\Wunderfactory\Facades\Facebook;
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -82,12 +83,11 @@ class AuthController extends Controller {
 			);
 		}
 		$user = $this->registrar->create($request->all());
-		if (Session::has('faceboobUser_id')) {
-            dd($user);
-			$fb = FacebookUser::find(Session::get('faceboobUser_id'));
+		if (Session::has('facebookUser_id')) {
+			$fb = FacebookUser::find(Session::get('facebookUser_id'));
 			$fb->user_id = $user->id;
 			$fb->save();
-			Session::forget('faceboobUser_id');
+			Session::forget('facebookUser_id');
 		}
 		$this->auth->login($user);
 		return redirect($this->redirectPath());
@@ -109,5 +109,20 @@ class AuthController extends Controller {
                     'email' => $this->getFailedLoginMessage(),
                 ]);
         }
+    }
+
+    public function getEmail($token = null) {
+        if ($token) {
+            $email = VerifiedEmail::where('verify_token', $token)->first();
+            if ($email && Carbon::now() <= $email->expires_at) {
+                $email->verified_at = Carbon::now();
+                $email->verified = true;
+                $email->save();
+                return redirect()->to('auth/login')->withInput(['username' => $email->email]);
+            }
+        }
+        return redirect()->to('auth/login')->withErrors([
+            'email' => 'The verify-token is expired, please request a new one.'
+        ]);
     }
 }

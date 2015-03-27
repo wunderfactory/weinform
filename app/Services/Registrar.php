@@ -1,8 +1,10 @@
 <?php namespace App\Services;
 
+use App\Commands\EmailCreated;
 use App\User;
 use App\VerifiedEmail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Bus;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
@@ -42,11 +44,11 @@ class Registrar implements RegistrarContract {
 			'password' => bcrypt($data['password']),
             'birth_date' => Carbon::createFromDate($bDaySplit[2],$bDaySplit[1], $bDaySplit[0]),
 		]);
-
-        VerifiedEmail::create([
+        $email = VerifiedEmail::create([
             'email' => $data['email'],
             'user_id' => $user->id
         ]);
+       Bus::dispatch(new EmailCreated($email));
 
         return $user;
 	}

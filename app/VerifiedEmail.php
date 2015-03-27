@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class VerifiedEmail extends Model {
@@ -10,9 +11,10 @@ class VerifiedEmail extends Model {
     public static function boot()
     {
         parent::boot();
-        VerifiedEmail::creating(function($verifiedemail)
+        VerifiedEmail::creating(function($email)
         {
-            $verifiedemail->verify_token = str_random(64);
+            $email->verify_token = str_random(64);
+            $email->expires_at = Carbon::now()->addHour();
         });
     }
 

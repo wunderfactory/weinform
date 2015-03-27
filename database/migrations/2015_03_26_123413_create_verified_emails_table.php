@@ -14,11 +14,13 @@ class CreateVerifiedEmailsTable extends Migration {
 	{
 		Schema::create('verified_emails', function(Blueprint $table)
 		{
-            $table->string('email')->index();
+            $table->increments('id');
+            $table->string('email');
             $table->unsignedBigInteger('user_id');
             $table->boolean('verified')->default(false);
             $table->string('verify_token', 64);
-            $table->timestamp('verify_at');
+            $table->timestamp('expires_at');
+            $table->timestamp('verified_at');
 			$table->timestamps();
 		});
 	}
