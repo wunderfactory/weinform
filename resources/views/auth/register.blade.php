@@ -5,7 +5,6 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -18,67 +17,74 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Username</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
+<style type="text/css">
+label{
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">First name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="first_name" value="{{ old('first_name')}}">
-                            </div>
-                        </div>
+	margin-top: 5px;
+}
+</style>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Last name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="last_name" value="{{ old('last_name')}}">
-                            </div>
-                        </div>
+					<div class="row" id="profile-cards">
+	                     <div class="col-md-5 col-md-offset-4">
+	                        <div class="card card-user">
+	                            <div class="image">
+	                                 <img src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
+	                            </div>
+	                            <div class="content">
+	                                <div class="author">
+	                                     <a href="#">
+	                                    <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
+	                                   
+	                                      <h4 class="title"> <br>
+	                                         <small>Designer</small>
+	                                      </h4> 
+	                                    </a>
+	                                </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Birth date (dd.mm.yyyy)</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="birth_date" value="{{ old('birth_date')}}">
-                            </div>
-                        </div>
+	                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+	                                <label class="control-label">Username</label>
+	                               	<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+			                        <label class="control-label">First name</label>
+			                        <input type="text" class="form-control" name="first_name" value="{{ old('first_name')}}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
+			                        <label class="control-label">Last name</label>
+			                        <input type="text" class="form-control" name="last_name" value="{{ old('last_name')}}">
+
+			                        <label class="control-label">Birth date (dd.mm.yyyy)</label>
+			                    	<input type="text" class="form-control" name="birth_date" value="{{ old('birth_date')}}">
+
+									<label class="control-label">E-Mail Address</label>
+									<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+
+									<label class="control-label">Password</label>
+									<input type="password" class="form-control" name="password">
+
+									<label class="control-label">Confirm Password</label>
+									<input type="password" class="form-control" name="password_confirmation">
+
+									<br>
+
+									<div class="form-group">
+										<div class="col-md-6 col-md-offset-4">
+											<button type="submit" class="btn btn-primary">
+												Register
+											</button>
+										</div>
+									</div>
+									</form>
+
+	                            </div>
+	                            <hr>
+	                        </div> <!-- end card -->
+	                     </div>
+	                </div>
 
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
-							</div>
-						</div>
-					</form>
+						
 				</div>
 			</div>
 		</div>

@@ -23,7 +23,7 @@
             
             @else
             <li class="dropdown">
-                <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
+                <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi {{ Auth::user()->username }}!<span class="caret"></span></a>
                   </a>
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
@@ -63,7 +63,7 @@
         <div class="modal-content">
            <div class="modal-header" style="text-align:center;">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Login</h4>
+              <h4 class="modal-title">{{ Lang::get('navbar/navbar.login') }}</h4>
           </div>
           <div class="modal-body">  
               <div class="box">
@@ -75,7 +75,7 @@
                       </div>
                       <div class="division">
                           <div class="line l"></div>
-                            <span>or</span>
+                            <span>{{ Lang::get('navbar/navbar.or') }}</span>
                           <div class="line r"></div>
                       </div>
                       <div class="error"></div>
@@ -90,19 +90,19 @@
               </div>
               <div class="box">
                   <div class="content registerBox" style="display:none; text-align:center;">
-                   <a href="{{ url('auth/register') }}"><p>Account mit deiner E-Mail erstellen</p></a>
+                   <a href="{{ url('auth/register') }}"><p>{{ Lang::get('navbar/navbar.move_to_register') }}</p></a>
                   </div>
               </div>
           </div>
           <div class="modal-footer">
               <div class="forgot login-footer">
-                  <span>Looking to 
-                       <a href="javascript: showRegisterForm();">create an account</a>
-                  ?</span>
+                  <span>{{ Lang::get('navbar/navbar.looking_to') }} 
+                       <a href="javascript: showRegisterForm();">{{ Lang::get('navbar/navbar.create_account') }}</a>
+                  </span>
               </div>
               <div class="forgot register-footer" style="display:none">
-                   <span>Already have an account?</span>
-                   <a href="javascript: showLoginForm();">Login</a>
+                   <span>{{ Lang::get('navbar/navbar.have_account') }}</span>
+                   <a href="javascript: showLoginForm();">{{ Lang::get('navbar/navbar.login') }}</a>
               </div>
           </div>        
         </div>
