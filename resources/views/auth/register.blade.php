@@ -22,13 +22,16 @@
 label{
 	margin-top: 5px;
 }
+.card{
+	margin-top: 70px;
+}
 </style>
 
-					<div class="row" id="profile-cards">
+					<div class="row" id="profile-cards card">
 	                     <div class="col-md-5 col-md-offset-4">
 	                        <div class="card card-user">
 	                            <div class="image">
-	                                 <img src="{{asset('gsd/img/faces/face-1.jpg') }}" alt="">
+	                                 <img src="{{ asset('images/backgrounds/sf.png') }}" alt="">
 	                            </div>
 	                            <div class="content">
 	                                <div class="author">

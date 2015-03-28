@@ -98,9 +98,10 @@
                       <div class="error"></div>
                       <div class="form loginBox">
                           <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <input id="email" class="form-control" type="text" placeholder="Email" name="username">
                           <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                          <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                          <input class="btn btn-default btn-login" type="submit" value="Login">
                           </form>
                       </div>
                    </div>

@@ -85,12 +85,12 @@
                                <hr class="hr-small">
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                               <a href="#" >
                                <i class="fa fa-twitter"></i>
                                Und noch mehr am machen
                             </a>
-                        </li>
+                        </li> --}}
                       
                     </ul>
                 </nav>
