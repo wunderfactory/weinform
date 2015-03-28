@@ -3,7 +3,6 @@
 use App\FacebookUser;
 use App\Services\Loginar;
 use App\Http\Controllers\Controller;
-use App\User;
 use App\VerifiedEmail;
 use App\Wunderfactory\Facades\Facebook;
 use Carbon\Carbon;
@@ -83,9 +82,8 @@ class AuthController extends Controller {
 			);
 		}
 		$user = $this->registrar->create($request->all());
-		if (Session::has('facebookUser_id')) {
-
-			$fb = FacebookUser::find(Session::get('facebookUser_id'));
+		if (Session::get('facebookUser_id')) {
+			$fb = FacebookUser::where('id',Session::get('facebookUser_id'))->first();
 			$fb->user_id = $user->id;
 			$fb->save();
 
@@ -126,5 +124,20 @@ class AuthController extends Controller {
         return redirect()->to('auth/login')->withErrors([
             'email' => 'The verify-token is expired, please request a new one.'
         ]);
+    }
+
+    /**
+     * Get the post register / login redirect path.
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        if (property_exists($this, 'redirectPath'))
+        {
+            return $this->redirectPath;
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/overview';
     }
 }

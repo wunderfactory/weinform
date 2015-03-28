@@ -72,7 +72,7 @@ label{
 
                                         <label class="control-label">Phone</label>
                                         {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), null, array('class' =>'form-control')) !!}
-                                        <input type="text" class="form-control" name="phonefield" value="{{ old('phonefield') }}">
+                                        <input type="text" class="form-control" name="phonefield" style="margin-top: 5px;" value="{{ old('phonefield') }}">
 
 
                                         <label class="control-label">Password</label>
