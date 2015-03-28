@@ -60,7 +60,7 @@ class AuthController extends Controller {
 					return redirect()->to('/home');
 				} else {
 					Session::put('faceboobUser_id', Facebook::getFacebookUser()->id);
-					return redirect('auth/register')->withInput(Facebook::createInput());
+					return redirect('auth/register')->withInput(Facebook::createInput())->with(array('fbid' => Facebook::getFacebookUser()->id));
 				}
 			} else {
 				dd("wtf");
@@ -84,9 +84,11 @@ class AuthController extends Controller {
 		}
 		$user = $this->registrar->create($request->all());
 		if (Session::has('facebookUser_id')) {
+
 			$fb = FacebookUser::find(Session::get('facebookUser_id'));
 			$fb->user_id = $user->id;
 			$fb->save();
+
 			Session::forget('facebookUser_id');
 		}
 		$this->auth->login($user);

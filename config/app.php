@@ -135,12 +135,15 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
 
 		/*
 		 * Third Party Providers...
 		 */
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Torann\GeoIP\GeoIPServiceProvider',
+        'Propaganistas\LaravelPhone\LaravelPhoneServiceProvider',
+        'Webpatser\Countries\CountriesServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -201,6 +204,9 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Facebook'  => 'App\Wunderfactory\Facades\Facebook',
         'GeoIP'     => 'Torann\GeoIP\GeoIPFacade',
+        'Countries' => 'Webpatser\Countries\CountriesFacade',
+        'Form'=> 'Illuminate\Html\FormFacade',
+        'HTML'=> 'Illuminate\Html\HtmlFacade',
 
 	],
 

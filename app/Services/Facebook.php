@@ -90,6 +90,9 @@ class Facebook {
             $split = explode('/', $input['birthday']);
             $input['birth_date'] = $split[1].'.'.$split[0].'.'.$split[2];
         }
+        if (array_has($input, 'name')) {
+            $input['name'] = strtolower(str_replace(' ','', $input['name']));
+        }
         return $input;
     }
 
