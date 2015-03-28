@@ -20,7 +20,6 @@
 
 <style type="text/css">
 label{
-
 	margin-top: 5px;
 }
 </style>
@@ -47,6 +46,14 @@ label{
 
 	                                <label class="control-label">Username</label>
 	                               	<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+
+	                               	<label class="control-label">Gender</label>
+	                               	<select class="form-control" name="gender">
+                                    <option>---</option>
+                                    <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>female</option>
+                                    <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>male</option>
+                                    <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>other</option>
+                                	</select>
 
 			                        <label class="control-label">First name</label>
 			                        <input type="text" class="form-control" name="first_name" value="{{ old('first_name')}}">
@@ -81,10 +88,7 @@ label{
 	                            <hr>
 	                        </div> <!-- end card -->
 	                     </div>
-	                </div>
-
-
-						
+	                </div>	
 				</div>
 			</div>
 		</div>

@@ -140,6 +140,7 @@ return [
 		 * Third Party Providers...
 		 */
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Torann\GeoIP\GeoIPServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -199,6 +200,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Facebook'  => 'App\Wunderfactory\Facades\Facebook',
+        'GeoIP'     => 'Torann\GeoIP\GeoIPFacade',
 
 	],
 
