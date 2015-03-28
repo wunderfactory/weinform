@@ -29,6 +29,18 @@
 						</div>
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Gender</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="gender" value="{{ old('gender')}}">
+                                    <option>---</option>
+                                    <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>female</option>
+                                    <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>male</option>
+                                    <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-md-4 control-label">First name</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="first_name" value="{{ old('first_name')}}">
