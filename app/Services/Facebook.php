@@ -12,9 +12,13 @@ use App\FacebookUser;
 class Facebook {
     private $loginHelper;
     protected $session;
+    protected $appSession;
     private $facebookUser;
+    protected $params = array(
+        'scope' => 'read_stream, email, user_hometown, user_birthday, user_friends'
+    );
 
-    function __construct($redirectURL, $app = null, $appSecret = null)
+    function __construct($loginURL, $app = null, $appSecret = null)
     {
         session_start();
         if (!$app || !$appSecret ) {
@@ -23,14 +27,16 @@ class Facebook {
         } else {
             FacebookSession::setDefaultApplication($app, $appSecret);
         }
-        $this->loginHelper = new FacebookRedirectLoginHelper($redirectURL);
+        $this->loginHelper = new FacebookRedirectLoginHelper($loginURL);
     }
 
-    public function getLoginURL () {
-        return $this->loginHelper->getLoginUrl();
+    public function getLoginURL ()
+    {
+        return $this->loginHelper->getLoginUrl($this->params);
     }
 
-    public function getSessionFromRedirect() {
+    public function getSessionFromRedirect()
+    {
         $this->session = $this->loginHelper->getSessionFromRedirect();
         if ($this->session && $this->session->validate()){
             return $this->session;
@@ -38,7 +44,16 @@ class Facebook {
         return false;
     }
 
-    public function getUserProfile() {
+    public function getAppSession()
+    {
+        if ($this->appSession) {
+            return $this->appSession;
+        }
+        return $this->appSession =  FacebookSession::newAppSession();;
+    }
+
+    public function getUserProfile()
+    {
         try {
             $user_profile = (new FacebookRequest(
                 $this->session, 'GET', '/me'
@@ -49,7 +64,8 @@ class Facebook {
         }
     }
 
-    public function foundFacebookUser() {
+    public function foundFacebookUser()
+    {
             $user_profile = $this->getUserProfile();
             if($this->facebookUser = FacebookUser::find($user_profile->getId())) {
                return $this->facebookUser;
@@ -58,17 +74,40 @@ class Facebook {
             }
     }
 
-    public function createFacebookUser($profile) {
+    public function createFacebookUser($profile)
+    {
         $fbuser = new FacebookUser();
         $fbuser->id = $profile->getId();
         $fbuser->save();
         return $fbuser;
     }
 
-    public function createInput(){
-        return $this->getUserProfile()->asArray();
+    public function createInput()
+    {
+        $input = $this->getUserProfile()->asArray();
+        if(array_has($input, "birthday"))
+        {
+            $split = explode('/', $input['birthday']);
+            $input['birth_date'] = $split[1].'.'.$split[0].'.'.$split[2];
+        }
+        return $input;
     }
-    public function getFacebookUser(){
+
+    public function getFacebookUser()
+    {
         return $this->facebookUser;
+    }
+
+    public  function facebookUserData()
+    {
+        $request = new FacebookRequest(
+            $this->getAppSession(),
+            'GET',
+            '/802180336532686/permissions'
+        );
+        $response = $request->execute();
+        dd($response);
+        $graphObject = $response->getGraphObject();
+        return $graphObject;
     }
 }

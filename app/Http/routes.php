@@ -19,7 +19,7 @@ Route::controllers([
 ]);
 
 Route::get('test', function() {
+    dd(App\Wunderfactory\Facades\Facebook::facebookUserData());
 	return view('chat.index');
 });
-
 Route::controller('/', 'StaticController');
