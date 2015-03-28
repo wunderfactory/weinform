@@ -15,10 +15,10 @@
       <ul  class="nav navbar-nav navbar-right">
             @if (Auth::guest())
             <li>
-                <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Login</a>
+                <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">{{ Lang::get('navbar/navbar.login') }} </a>
             </li>
             <li>
-                <a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a>
+                <a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">{{ Lang::get('navbar/navbar.register') }}</a>
             </li>
             
             @else
