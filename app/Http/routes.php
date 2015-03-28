@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -23,3 +21,5 @@ Route::controllers([
 Route::get('test', function() {
 	return view('chat.index');
 });
+
+Route::controller('/', 'StaticController');

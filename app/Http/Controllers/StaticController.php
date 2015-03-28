@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-class WelcomeController extends Controller {
+use Illuminate\Support\Facades\Session;
+
+class StaticController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,9 +30,16 @@ class WelcomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
-		return view('welcome');
+		return view('static.home');
+	}
+
+	public function getLang($language)
+	{
+		Session::put('language', $language);
+
+		return redirect()->back();
 	}
 
 }
