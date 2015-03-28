@@ -21,41 +21,46 @@
 								</div>
 							@endif
 
-							<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-								<div class="form-group">
-									<label class="col-md-4 control-label">E-Mail Address or username</label>
-									<div class="col-md-6">
-										<input type="test" class="form-control" name="username" value="{{ old('email') }}">
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-md-4 control-label">Password</label>
-									<div class="col-md-6">
-										<input type="password" class="form-control" name="password">
-									</div>
-								</div>
-
+							<div class="login">
+							    <div class="modal-dialog login">
+							        <div class="modal-content">
+							           <div class="modal-header" style="text-align:center;">
+							              <h4 class="modal-title">{{ Lang::get('navbar/navbar.login') }}</h4>
+							          </div>
+							          <div class="modal-body">  
+							              <div class="box">
+							                   <div class="content">
+							                      <div class="social">
+							                          <a id="facebook_login" class="circle facebook" href="{{ url('/auth/facebook') }}">
+							                              <i class="fa fa-facebook fa-fw"></i>
+							                          </a>
+							                      </div>
+							                      <div class="division">
+							                          <div class="line l"></div>
+							                            <span>{{ Lang::get('navbar/navbar.or') }}</span>
+							                          <div class="line r"></div>
+							                      </div>
+							                      <div class="error"></div>
+							                      <div class="form loginBox">
+							                          <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+							                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+							                          <input id="email" class="form-control" type="text" placeholder="Email" name="username">
+							                          <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+							                          <input class="btn btn-default btn-login" type="submit" value="Login">
+							                          </form>
+							                      </div>
+							                   </div>
+							              </div>
+							          </div>       
+							        </div>
+							    </div>
+							</div>
 								<div class="form-group">
 									<div class="col-md-6 col-md-offset-4">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" name="remember"> Remember Me
-											</label>
-										</div>
+										<a class="btn btn-link" href="{{ url('/password/email') }}">{{ Lang::get('auth/login.forgot_password') }}</a>
 									</div>
 								</div>
-
-								<div class="form-group">
-									<div class="col-md-6 col-md-offset-4">
-										<button type="submit" class="btn btn-primary">Login</button>
-
-										<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-									</div>
-								</div>
-							</form>
 						</div>
 					</div>
 				</div>

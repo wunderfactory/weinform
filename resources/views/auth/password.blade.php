@@ -1,11 +1,19 @@
 @extends('app')
 
 @section('content')
+<style type="text/css">
+.reset_password{
+	margin-top: 90px;
+}
+.label_email{
+	margin-bottom: 20px !important;
+}
+</style>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
+			<div class="panel panel-default reset_password">
 				<div class="panel-body">
 					@if (session('status'))
 						<div class="alert alert-success">
@@ -28,16 +36,19 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<p>{{ Lang::get('auth/password.text') }}</p>
+							<br>
 							<div class="col-md-6">
+								<label class="control-label label_email">E-Mail Address</label>
+								<br>
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
+							<div class="col-md-6">
 								<button type="submit" class="btn btn-primary">
-									Send Password Reset Link
+									{{ Lang::get('auth/password.reset_button') }}
 								</button>
 							</div>
 						</div>
