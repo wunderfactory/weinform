@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -57,6 +57,23 @@
   </div>
 </nav>
 
+<style type="text/css">
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #434343 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #434343 !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #434343 !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #434343 !important;
+}
+</style>
+
 
 <div class="modal fade login" id="loginModal">
     <div class="modal-dialog login animated">
@@ -80,8 +97,8 @@
                       </div>
                       <div class="error"></div>
                       <div class="form loginBox">
-                          <form method="post" action="/login" accept-charset="UTF-8">
-                          <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                          <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+                          <input id="email" class="form-control" type="text" placeholder="Email" name="username">
                           <input id="password" class="form-control" type="password" placeholder="Password" name="password">
                           <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
                           </form>

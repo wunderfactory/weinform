@@ -57,7 +57,7 @@ class AuthController extends Controller {
 			if(Facebook::foundFacebookUser()) {
 				if(Facebook::getFacebookUser()->user) {
 					Auth::login(Facebook::getFacebookUser()->user);
-					return redirect()->to('/home');
+					return redirect()->to('/overview');
 				} else {
 					Session::put('faceboobUser_id', Facebook::getFacebookUser()->id);
 					return redirect('auth/register')->withInput(Facebook::createInput())->with(array('fbid' => Facebook::getFacebookUser()->id));

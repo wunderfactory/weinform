@@ -42,4 +42,14 @@ class StaticController extends Controller {
 		return redirect()->back();
 	}
 
+	public function getComplete()
+	{
+		return view('profile.show');
+	}
+
+	public function getOverview()
+	{
+		return view('product.overview');
+	}
+
 }
