@@ -12,7 +12,6 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller {
 
@@ -58,7 +57,7 @@ class AuthController extends Controller {
 					Auth::login(Facebook::getFacebookUser()->user);
 					return redirect()->to('/overview');
 				} else {
-					Session::put('faceboobUser_id', Facebook::getFacebookUser()->id);
+					session(['facebookUser_id' => Facebook::getFacebookUser()->id]);
 					return redirect('auth/register')->withInput(Facebook::createInput())->with(array('fbid' => Facebook::getFacebookUser()->id));
 				}
 			} else {
@@ -82,12 +81,11 @@ class AuthController extends Controller {
 			);
 		}
 		$user = $this->registrar->create($request->all());
-		if (Session::get('facebookUser_id')) {
-			$fb = FacebookUser::where('id',Session::get('facebookUser_id'))->first();
+		if (session('facebookUser_id') != null) {
+			$fb = FacebookUser::where('id',session('facebookUser_id'))->first();
 			$fb->user_id = $user->id;
 			$fb->save();
-
-			Session::forget('facebookUser_id');
+			session(['facebookUser_id' => null]);
 		}
 		$this->auth->login($user);
 		return redirect($this->redirectPath());
