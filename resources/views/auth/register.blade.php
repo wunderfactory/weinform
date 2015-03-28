@@ -39,7 +39,7 @@ label{
 	                                    <img class="avatar" src="{{old('id') ? 'https://graph.facebook.com/'.old('id').'/picture?type=large' : asset('gsd/img/faces/face-1.jpg') }}" alt="...">
 	                                   
 	                                      <h4 class="title"> <br>
-	                                         <small>Designer</small>
+	                                         <small></small>
 	                                      </h4> 
 	                                    </a>
 	                                </div>
