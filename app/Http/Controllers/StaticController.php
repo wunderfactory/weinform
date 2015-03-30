@@ -18,11 +18,10 @@ class StaticController extends Controller {
 	/**
 	 * Create a new controller instance.
 	 *
-	 * @return void
+	 *
 	 */
 	public function __construct()
 	{
-		$this->middleware('guest');
 	}
 
 	/**
@@ -38,7 +37,6 @@ class StaticController extends Controller {
 	public function getLang($language)
 	{
 		Session::put('language', $language);
-
 		return redirect()->back();
 	}
 

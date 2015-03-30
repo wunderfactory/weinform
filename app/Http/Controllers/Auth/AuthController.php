@@ -1,17 +1,18 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\FacebookUser;
+use App\Services\Email;
 use App\Services\Loginar;
 use App\Http\Controllers\Controller;
-use App\VerifiedEmail;
 use App\Wunderfactory\Facades\Facebook;
-use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Session\Store;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller {
 
@@ -29,6 +30,8 @@ class AuthController extends Controller {
 	use AuthenticatesAndRegistersUsers;
 
     protected $loginar;
+    protected $email;
+    protected $session;
 	/*
 	 * Create a new authentication controller instance.
 	 *
@@ -36,11 +39,14 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar, Loginar $loginar)
+	public function __construct(Guard $auth, Registrar $registrar, Loginar $loginar, Email $email, Store $session)
 	{
 		$this->auth = $auth;
 		$this->registrar = $registrar;
         $this->loginar = $loginar;
+        $this->email= $email;
+        $this->session = $session;
+
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
@@ -57,7 +63,7 @@ class AuthController extends Controller {
 					Auth::login(Facebook::getFacebookUser()->user);
 					return redirect()->to('/overview');
 				} else {
-					session(['facebookUser_id' => Facebook::getFacebookUser()->id]);
+					$this->session->put(['facebookUser_id' => Facebook::getFacebookUser()->id]);
 					return redirect('auth/register')->withInput(Facebook::createInput())->with(array('fbid' => Facebook::getFacebookUser()->id));
 				}
 			} else {
@@ -81,11 +87,14 @@ class AuthController extends Controller {
 			);
 		}
 		$user = $this->registrar->create($request->all());
-		if (session('facebookUser_id') != null) {
-			$fb = FacebookUser::where('id',session('facebookUser_id'))->first();
+        Log::error($this->session->all());
+        Log::error(array_get($this->session->all(),'facebookUser_id'));
+		if ( array_has($this->session->all(), 'facebookUser_id')) {
+            Log::error(array_get($this->session->all(),'facebookUser_id'));
+			$fb = FacebookUser::find(array_get($this->session->all(),'facebookUser_id'));
 			$fb->user_id = $user->id;
 			$fb->save();
-			session(['facebookUser_id' => null]);
+			$this->session->forget('facebookUser_id');
 		}
 		$this->auth->login($user);
 		return redirect($this->redirectPath());
@@ -110,18 +119,13 @@ class AuthController extends Controller {
     }
 
     public function getEmail($token = null) {
-        if ($token) {
-            $email = VerifiedEmail::where('verify_token', $token)->first();
-            if ($email && Carbon::now() <= $email->expires_at) {
-                $email->verified_at = Carbon::now();
-                $email->verified = true;
-                $email->save();
-                return redirect()->to('auth/login')->withInput(['username' => $email->email]);
-            }
+        if ($verifiedEmail = $this->email->verifyEmail($token)) {
+                Auth::login($verifiedEmail->user);
+                flash()->success('auth/email.verified');
+                return redirect()->to('overview');
         }
-        return redirect()->to('auth/login')->withErrors([
-            'email' => 'The verify-token is expired, please request a new one.'
-        ]);
+        flash()->error('auth/email.token-expired');
+        return redirect()->to('auth/login');
     }
 
     /**
