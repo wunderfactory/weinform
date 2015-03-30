@@ -18,7 +18,8 @@ class FacebookUser extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['id', 'username', 'email', 'password'];
+	protected $fillable = ['id', 'user_id'];
+    protected $guarded = [];
 
 	public function user() {
 		return $this->belongsTo('App\User');

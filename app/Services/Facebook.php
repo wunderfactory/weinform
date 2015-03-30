@@ -70,13 +70,15 @@ class Facebook {
             if($this->facebookUser = FacebookUser::find($user_profile->getId())) {
                return $this->facebookUser;
             } else {
-                return $this->facebookUser = $this->createFacebookUser($user_profile);
+                $this->facebookUser = $this->createFacebookUser($user_profile);
+                return $this->facebookUser;
             }
     }
 
     public function createFacebookUser($profile)
     {
         $fbuser = new FacebookUser();
+        $fbuser->save();
         $fbuser->id = $profile->getId();
         $fbuser->save();
         return $fbuser;
