@@ -12,10 +12,10 @@ class UsersController extends Controller {
 	{
         if(Auth::user() == $user) {
             return 'Autherizated user profile';
-        } else if (Auth::user()) {
+        } else if (Auth::user()){
             return 'Autherizated user other profile';
         } else {
-            return 'gueser user';
+            return 'guest user';
         }
 	    return $user;
 	}
