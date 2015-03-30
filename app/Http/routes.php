@@ -19,7 +19,9 @@ Route::controllers([
 ]);
 
 Route::get('test', function() {
-    dd(App\Wunderfactory\Facades\Facebook::facebookUserData());
+    dd(Session::all());
 	return view('chat.index');
 });
+Route::get('user/{user}', 'UsersController@profile');
+Route::controller('user', 'UsersController');
 Route::controller('/', 'StaticController');
