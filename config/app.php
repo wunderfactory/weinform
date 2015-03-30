@@ -144,6 +144,7 @@ return [
         'Torann\GeoIP\GeoIPServiceProvider',
         'Propaganistas\LaravelPhone\LaravelPhoneServiceProvider',
         'Webpatser\Countries\CountriesServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -207,6 +208,7 @@ return [
         'Countries' => 'Webpatser\Countries\CountriesFacade',
         'Form'=> 'Illuminate\Html\FormFacade',
         'HTML'=> 'Illuminate\Html\HtmlFacade',
+        'Flash' => 'Laracasts\Flash\Flash',
 
 	],
 

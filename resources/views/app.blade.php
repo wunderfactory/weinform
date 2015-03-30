@@ -37,9 +37,10 @@
 <body>
 
 	@include('structure.navbar')
-
-	@yield('content')
-
+    <div style="margin-top: 72px;">
+        @include('flash::message')
+	    @yield('content')
+    </div>
 	@include('structure.footer')
 
 	<!-- Scripts -->
