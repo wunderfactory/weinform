@@ -142,9 +142,10 @@ return [
 		 */
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Torann\GeoIP\GeoIPServiceProvider',
-        'Propaganistas\LaravelPhone\LaravelPhoneServiceProvider',
         'Webpatser\Countries\CountriesServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
+        'Twilio\Laravel5TwilioServiceProvider',
+        'Laravel\Socialite\SocialiteServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -155,6 +156,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		'App\Providers\FacebookServiceProvider',
+        'App\Providers\GeoIPServiceProvider',
+        'App\Providers\PhoneValidatorServiceProvider',
 
 	],
 
@@ -209,7 +212,9 @@ return [
         'Form'=> 'Illuminate\Html\FormFacade',
         'HTML'=> 'Illuminate\Html\HtmlFacade',
         'Flash' => 'Laracasts\Flash\Flash',
+        'Twilio'    => 'Twilio\Facades\Twilio',
+        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
-	],
+    ],
 
 ];

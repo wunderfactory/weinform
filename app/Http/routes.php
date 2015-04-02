@@ -18,10 +18,17 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('test', function() {
-    dd(Session::all());
-	return view('chat.index');
-});
-Route::get('user/{user}', 'UsersController@profile');
-Route::controller('user', 'UsersController');
+
+Route::resource('user', 'UsersController');
+Route::resource('user.profile', 'ProfileController');
+
+
 Route::controller('/', 'StaticController');
+
+Route::get('test', function() {
+    $num = libphonenumber\PhoneNumberUtil::getInstance();
+    $number = $num->parse('01718392168', 'US');
+    dd($num->getNumberType($number));
+
+    return view('chat.index');
+});

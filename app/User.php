@@ -32,15 +32,28 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	protected $hidden = ['password', 'remember_token'];
     protected $guarded = [];
 
-	public function facebookUser() {
+	public function facebookUser()
+    {
 		return $this->hasOne('App\FacebookUser');
 	}
 
-    public function logs() {
+    public function logs()
+    {
         return $this->hasMany('App\Logs');
     }
 
-    public function emails() {
+    public function emails()
+    {
         return $this->hasMany('App\VerifiedEmail');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\UserProfile');
+    }
+
+    public function phoneNumbers()
+    {
+        return $this->hasMany('App\VerifiedPhoneNumber');
     }
 }

@@ -9,7 +9,7 @@ use App\VerifiedEmail;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 
-class Loginar implements LoginarContract{
+class Loginar implements LoginarContract {
 
     /**
      * Get a validator for an incoming registration request.

@@ -42,7 +42,7 @@ class StaticController extends Controller {
 
 	public function getComplete()
 	{
-		return view('profile.show');
+		return view('profile.complete');
 	}
 
 	public function getOverview()

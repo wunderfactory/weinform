@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider {
         $router->bind('user', function($value){
             return User::where('username', $value)->first();
         });
+
 	}
 
 	/**

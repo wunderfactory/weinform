@@ -4,6 +4,7 @@ use App\FacebookUser;
 use App\Services\Email;
 use App\Services\Loginar;
 use App\Http\Controllers\Controller;
+use App\User;
 use App\Wunderfactory\Facades\Facebook;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
@@ -12,7 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Session\Store;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Log;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller {
 
@@ -60,8 +63,16 @@ class AuthController extends Controller {
 		if (Facebook::getSessionFromRedirect()) {
 			if(Facebook::foundFacebookUser()) {
 				if(Facebook::getFacebookUser()->user) {
-					Auth::login(Facebook::getFacebookUser()->user);
-					return redirect()->to('/overview');
+                    if(User::where('id', Facebook::getFacebookUser()->user->id)->whereHas('emails', function($q)
+                        {
+                            $q->where('verified', true);
+
+                        })->count() > 0) {
+                        Auth::login(Facebook::getFacebookUser()->user);
+                        return redirect()->to('/overview');
+                    }
+                    return redirect()->to('auth/login')->withErrors(['user' => Lang::get('validation.user')]);
+
 				} else {
 					$this->session->put(['facebookUser_id' => Facebook::getFacebookUser()->id]);
 					return redirect('auth/register')->withInput(Facebook::createInput())->with(array('fbid' => Facebook::getFacebookUser()->id));

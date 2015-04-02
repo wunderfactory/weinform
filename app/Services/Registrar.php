@@ -1,5 +1,6 @@
 <?php namespace App\Services;
 
+use App\Commands\CreateVerifiedPhoneNumber;
 use App\Commands\EmailCreated;
 use App\User;
 use App\VerifiedEmail;
@@ -23,7 +24,7 @@ class Registrar implements RegistrarContract {
             'first_name'            => 'required|max:255',
             'last_name'             => 'required|max:255',
             'gender'                => 'required|in:male,female,other',
-            'phonefield'            => 'phone',
+            'phonefield'            => 'mobile_phone',
             'phonefield_country'    => 'required_with:phonefield',
 			'email'                 => 'required|email|max:255|unique:verified_emails',
             'birth_date'            => 'required|date_format:d.m.Y',
@@ -52,7 +53,8 @@ class Registrar implements RegistrarContract {
             'email' => $data['email'],
             'user_id' => $user->id
         ]);
-       Bus::dispatch(new EmailCreated($email));
+        Bus::dispatch(new EmailCreated($email));
+        Bus::dispatch(new CreateVerifiedPhoneNumber($user, $data['phonefield'], $data['phonefield_country']));
 
         return $user;
 	}

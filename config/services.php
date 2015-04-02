@@ -1,5 +1,4 @@
 <?php
-
 return [
 
 	/*
@@ -33,5 +32,10 @@ return [
 		'model'  => 'User',
 		'secret' => '',
 	],
+    'facebook' => [
+        'client_id' => env('FB_APPID', '421219101393487'),
+        'client_secret' => env('FB_SECRET', 'af7c60b1ac8df3ab135cb3786a3390e9'),
+        'redirect' => 'test'/*url('auth/facebook-return')*/,
+    ],
 
 ];
