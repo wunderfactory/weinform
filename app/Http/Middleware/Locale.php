@@ -1,15 +1,22 @@
 <?php namespace App\Http\Middleware;
 
+use App\Services\GeoIP\GeoIPInterface as GeoIP;
 use Closure;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\App;
-use Torann\GeoIP\GeoIPFacade as GeoIP;
 
 
 class Locale {
 
-	/**
+    protected $geoIP;
+
+    public function __construct(GeoIP $geoIp)
+    {
+        $this->geoIP = $geoIp;
+    }
+
+    /**
 	 * Handle an incoming request.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
@@ -19,8 +26,7 @@ class Locale {
 	public function handle($request, Closure $next)
     {
         if(!Session::has('language')) {
-            $location = GeoIP::getLocation();
-            $language = strtolower($location['isoCode']);
+            $language = $this->geoIP->getISOCode();
             Session::set('language', $language);
             App::setLocale($language);
             return $next($request);
