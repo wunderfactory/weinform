@@ -32,7 +32,7 @@ class EmailCreated extends Command implements SelfHandling, ShouldBeQueued {
 	{
         $address = $this->email->email;
         $name = $this->email->user->first_name.' '.$this->email->user->last_name;
-        Mail::send('emails.verify', ['token' => $this->email->verify_token], function($message) use($address, $name){
+        Mail::queue('emails.verify', ['token' => $this->email->verify_token], function($message) use($address, $name){
             $message->to($address, $name)->subject('Welcome!');
         });
 	}

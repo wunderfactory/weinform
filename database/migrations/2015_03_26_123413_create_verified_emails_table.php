@@ -21,6 +21,7 @@ class CreateVerifiedEmailsTable extends Migration {
             $table->string('verify_token', 64);
             $table->timestamp('expires_at');
             $table->timestamp('verified_at');
+            $table->softDeletes();
 			$table->timestamps();
 		});
 	}

@@ -27,6 +27,11 @@
                   </a>
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
+                        <a href="{{ url('/user/'.Auth::user()->username.'/profile') }}">
+                            <i class="pe-7s-id"></i> Profile
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('/auth/logout') }}">
                              <i class="pe-7s-ticket"></i> Logout
                         </a>

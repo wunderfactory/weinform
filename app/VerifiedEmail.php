@@ -2,11 +2,17 @@
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class VerifiedEmail extends Model {
 
+    use SoftDeletes;
+
     protected  $fillable = ['email', 'user_id'];
+
     protected  $protected = ['verify_token'];
+
+    protected $dates = ['deleted_at'];
 
     public static function boot()
     {
@@ -18,7 +24,8 @@ class VerifiedEmail extends Model {
         });
     }
 
-    public function user () {
+    public function user ()
+    {
         return $this->belongsTo('App\User');
     }
 

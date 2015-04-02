@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
+        if ($this->app->runningInConsole()) return;
 		Validator::extend('user', function($attribute, $value, $parameters)
         {
             if(VerifiedEmail::where('email', $value)->where('verified', true)->count() > 0 || User::where('username', $value)->whereHas('emails', function($q)
@@ -42,9 +43,26 @@ class AppServiceProvider extends ServiceProvider {
 			'Illuminate\Contracts\Auth\Registrar',
 			'App\Services\Registrar'
 		);
-		$this->app->bind('App\Services\Chat\ChatInterface', 'App\Services\Chat\Chat');
-		$this->app->bind('App\Services\Chat\UserInterface', 'App\Services\Chat\User');
-		$this->app->bind('Evenement\EventEmitterInterface', 'Evenement\EventEmitter');
+		$this->app->bind(
+            'App\Services\Chat\ChatInterface',
+            'App\Services\Chat\Chat'
+        );
+		$this->app->bind(
+            'App\Services\Chat\UserInterface',
+            'App\Services\Chat\User'
+        );
+		$this->app->bind(
+            'Evenement\EventEmitterInterface',
+            'Evenement\EventEmitter'
+        );
+        $this->app->bind(
+            'Evenement\EventEmitterInterface',
+            'Evenement\EventEmitter'
+        );
+        $this->app->bind(
+            'App\Services\ProfilerContract',
+            'App\Services\Profiler'
+        );
 	}
 
 }

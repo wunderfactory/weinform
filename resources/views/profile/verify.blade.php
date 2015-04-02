@@ -36,8 +36,8 @@
                         </a>
                     </div>
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/register') }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
                         <label class="control-label">Hometown</label>
@@ -52,14 +52,19 @@
                         <label class="control-label">Short Description about yourself</label>
                         <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                    <br>
+                        <br>
 
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-block btn-lg btn-info">
-                                Register
-                            </button>
-                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-block btn-lg btn-info">
+                                    Save
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit"  class="btn btn-block btn-lg btn-default">
+                                    Skip
+                                </button>
+                            </div>
                     </div>
                     </form>
 
