@@ -72,7 +72,6 @@ class ProfileController extends Controller {
         $this->dispatch(
             new CreateUserProfile($user, $request->only('hometown', 'languages', 'job', 'bio'))
         );
-        dd($this->username);
         return redirect()->action('ProfileController@index',[$this->username]);
 	}
 
