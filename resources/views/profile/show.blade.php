@@ -35,11 +35,14 @@
                 <div class="content">
                     <div class="author">
                          <a href="#">
+                        @if($user->facebookUser)
+                        <img class="avatar" src="https://graph.facebook.com/{{ $user->facebookUser->id }}/picture?type=large" alt="...">
+                        @else
                         <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
-                       
+                        @endif
                           <h4 class="title"> <br>
-                            <p>patrickhaede</p>
-                             <small>Patrick Häde</small>
+                            <p>{{ $user->username }}</p>
+                             <small>{{ $user->first_name }} {{ $user->last_name }}</small>
                           </h4> 
                         </a>
                     </div>
@@ -69,8 +72,10 @@
                                       <i class="pe-7s-home"></i>
                                   </div>
                                   <div class="description">
-                                      <h3></h3>
-                                      <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
+                                      <h3>Info</h3>
+                                      <p>Wohnort: {{ $user->profile->hometown }}</p>
+                                      <p>{{ $user->profile->bio }}</p>
+                                      <p>{{ $user->profile->job }}</p>
                                   </div>
                              </div>
                           </div>
