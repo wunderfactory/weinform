@@ -18,7 +18,8 @@ class Kernel extends HttpKernel {
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
 		'App\Http\Middleware\VerifyCsrfToken',
         'App\Http\Middleware\Logging',
-        'App\Http\Middleware\Locale'
+        'App\Http\Middleware\Locale',
+        'App\Http\Middleware\NoProfile',
 	];
 
 	/**
@@ -31,6 +32,7 @@ class Kernel extends HttpKernel {
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
         'driver' => 'App\Http\Middleware\Driver',
+        'notDriver' => 'App\Http\Middleware\NotDriver',
 	];
 
 }

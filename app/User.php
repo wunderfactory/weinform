@@ -56,4 +56,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('App\VerifiedPhoneNumber');
     }
+
+    public function driver()
+    {
+        return $this->hasOne('App\Driver');
+    }
 }

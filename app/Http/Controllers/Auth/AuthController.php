@@ -69,7 +69,7 @@ class AuthController extends Controller {
 
                         })->count() > 0) {
                         Auth::login(Facebook::getFacebookUser()->user);
-                        return redirect()->to('/overview');
+                        return redirect()->action('UsersController@show', Auth::user()->username);
                     }
                     return redirect()->to('auth/login')->withErrors(['user' => Lang::get('validation.user')]);
 
@@ -107,8 +107,9 @@ class AuthController extends Controller {
 			$fb->save();
 			$this->session->forget('facebookUser_id');
 		}
-		$this->auth->login($user);
-		return redirect($this->redirectPath());
+		//$this->auth->login($user);
+        flash()->warning('Please verify your E-Mail to login.');
+		return redirect('auth/login');
 	}
 
     public function postLogin(Request $request) {
@@ -119,7 +120,7 @@ class AuthController extends Controller {
             );
         }
         if ($this->loginar->login($request->all())) {
-            return redirect()->intended($this->redirectPath());
+            return redirect()->action('UsersController@show', Auth::user()->username);
         } else {
             return redirect($this->loginPath())
                 ->withInput($request->only('email', 'remember'))
@@ -133,7 +134,7 @@ class AuthController extends Controller {
         if ($verifiedEmail = $this->email->verifyEmail($token)) {
                 Auth::login($verifiedEmail->user);
                 flash()->success('auth/email.verified');
-                return redirect()->to('overview');
+                return redirect()->action('UsersController@show', $verifiedEmail->user->username);
         }
         flash()->error('auth/email.token-expired');
         return redirect()->to('auth/login');

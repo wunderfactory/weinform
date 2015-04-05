@@ -39,7 +39,7 @@ class ProfileController extends Controller {
      */
 	public function create($user)
 	{
-        if($user != Auth::user()) {
+        if($user->id != Auth::user()->id) {
             return response('Unauthorized.', 401);
         }
         if($user->profile) {
@@ -58,7 +58,7 @@ class ProfileController extends Controller {
      */
 	public function store(Request $request, User $user)
 	{
-        if($user != Auth::user()) {
+        if($user->id != Auth::user()->id) {
             return response('Unauthorized.', 401);
         }
         if($user->profile) {
@@ -72,7 +72,8 @@ class ProfileController extends Controller {
         $this->dispatch(
             new CreateUserProfile($user, $request->only('hometown', 'languages', 'job', 'bio'))
         );
-        return view('profile.verify');
+        dd($this->username);
+        return redirect()->action('ProfileController@index',[$this->username]);
 	}
 
     /**
@@ -95,7 +96,7 @@ class ProfileController extends Controller {
      */
 	public function edit($user)
     {
-        if($user != Auth::user()) {
+        if($user->id != Auth::user()->id) {
             returnresponse('Unauthorized.', 401);
         }
         Session::flash("_old_input",$user->profile );
@@ -111,7 +112,7 @@ class ProfileController extends Controller {
      */
 	public function update(Request $request, $user)
 	{
-        if($user != Auth::user()) {
+        if($user->id != Auth::user()->id) {
             return response('Unauthorized.', 401);
         }
         $vali = $this->profiler->validate($request->all());

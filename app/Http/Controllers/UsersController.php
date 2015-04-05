@@ -57,6 +57,6 @@ class UsersController extends Controller {
     }
 
     public function show($user){
-        return $user;
+        return view('product.overview');
     }
 }

@@ -21,6 +21,7 @@ Route::controllers([
 
 Route::resource('user', 'UsersController');
 Route::resource('user.profile', 'ProfileController');
+Route::resource('user.driver', 'DriverController');
 
 
 Route::controller('/', 'StaticController');
