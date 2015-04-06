@@ -15,7 +15,8 @@ class CreateFacebookUsersTable extends Migration {
 		Schema::create('facebook_users', function(Blueprint $table)
 		{
 			$table->unsignedBigInteger('id')->index();
-			$table->unsignedBigInteger('user_id')->references('id')->on('users');;
+			$table->unsignedBigInteger('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('friends');
 			$table->timestamps();
 		});
 	}

@@ -5,6 +5,7 @@ use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 use Facebook\FacebookSession;
+use Facebook\GraphObject;
 use Facebook\GraphUser;
 use Illuminate\Support\Facades\Config;
 use App\FacebookUser;
@@ -60,6 +61,20 @@ class Facebook {
                 $this->session, 'GET', '/me'
             ))->execute()->getGraphObject(GraphUser::className());
             return $user_profile;
+        } catch(FacebookRequestException $e) {
+            return false;
+        }
+    }
+
+    public function getFriends(){
+        try {
+            $friends = (new FacebookRequest(
+                $this->session, 'GET', '/me/friends'
+            ))->execute();
+            $count = $friends->getResponse()->summary->total_count;
+            $this->getFacebookUser()->friends = $count;
+            $this->getFacebookUser()->save();
+            return $count;
         } catch(FacebookRequestException $e) {
             return false;
         }

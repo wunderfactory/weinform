@@ -68,6 +68,7 @@ class AuthController extends Controller {
                             $q->where('verified', true);
 
                         })->count() > 0) {
+                        Facebook::getFriends();
                         Auth::login(Facebook::getFacebookUser()->user);
                         return redirect()->action('UsersController@show', Auth::user()->username);
                     }
