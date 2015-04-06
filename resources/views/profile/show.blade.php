@@ -64,6 +64,10 @@
                                       <p><i class="fa fa-check green"></i> {{ $user->facebookUser->friends }} Freunde bei Facebook</p>
                                       @else
                                       @endif
+                                      @if($user->phoneNumbers->first()->verified)
+                                      <p><i class="fa fa-check green"></i> Handynummer bestätigt</p>
+                                      @else
+                                      @endif
                                       </div>
                                   </div>
                              </div>
