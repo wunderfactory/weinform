@@ -10,7 +10,8 @@
   position: absolute;
 }
 #card{
-    margin-top: 90px;
+    margin-top: 40px;
+    margin-bottom: 80px;
 }
 .green{
   color: #37c300;
@@ -34,7 +35,7 @@
                 </div>
                 <div class="content">
                     <div class="author">
-                         <a href="#">
+                      
                         @if($user->facebookUser)
                         <img class="avatar" src="https://graph.facebook.com/{{ $user->facebookUser->id }}/picture?type=large" alt="...">
                         @else
@@ -43,8 +44,7 @@
                           <h4 class="title"> <br>
                             <p>{{ $user->username }}</p>
                              <small>{{ $user->first_name }} {{ $user->last_name }}</small>
-                          </h4> 
-                        </a>
+                          </h4>
                     </div>
 
                     <hr>
@@ -52,41 +52,50 @@
                     <div class="row">
                           <div class="col-md-4">
                              <div class="info">
-                                  <div class="icon icon-azure">
+                                  {{-- <div class="icon icon-azure">
                                       <i class="pe-7s-note2"></i>
-                                  </div>
+                                  </div> --}}
                                   <div class="description">
                                       <h3>Verifizierte Identifikation</h3>
                                       <hr>
                                       <div class="align">
-                                      <p><i class="fa fa-check green"></i> 300 Facebook Freunde</p>
                                       <p><i class="fa fa-check green"></i> E-Mail-Adresse bestätigt</p>
-                                      <p><i class="fa fa-check green"></i> E-Mail-Adresse Telefonnummer bestätigt</p>
                                       </div>
                                   </div>
                              </div>
                           </div>
                           <div class="col-md-4">
                              <div class="info">
-                                  <div class="icon icon-purple">
+                                  {{-- <div class="icon icon-purple">
                                       <i class="pe-7s-home"></i>
-                                  </div>
+                                  </div> --}}
                                   <div class="description">
                                       <h3>Info</h3>
-                                      <p>Wohnort: {{ $user->profile->hometown }}</p>
-                                      <p>{{ $user->profile->bio }}</p>
-                                      <p>{{ $user->profile->job }}</p>
+                                      <hr>
+                                      @if($user->profile->hometown)
+                                        <p><i class="fa fa-map-marker"></i> Wohnort: {{ $user->profile->hometown }}</p>
+                                      @else
+                                      @endif
+                                      @if($user->profile->job)
+                                        <p><i class="fa fa-map-marker"></i> Job: {{ $user->profile->job }}</p>
+                                      @else
+                                      @endif
+                                      @if($user->profile->bio)
+                                        <p><i class="fa fa-user"></i> Über {{ $user->first_name }}: {{ $user->profile->bio }}</p>
+                                      @else
+                                      @endif
                                   </div>
                              </div>
                           </div>
                           <div class="col-md-4">
                              <div class="info">
-                                  <div class="icon icon-pink">
+                                  {{-- <div class="icon icon-pink">
                                       <i class="pe-7s-star"></i>
-                                  </div>
+                                  </div> --}}
                                   <div class="description">
                                       <h3>Bewertungen</h3>
-                                      <p>Patrick has 5 Stars!</p>
+                                      <hr>
+                                      <p>{{ $user->first_name }} hat noch keine Bewertungen erhalten.</p>
                                   </div>
                              </div>
                           </div>
