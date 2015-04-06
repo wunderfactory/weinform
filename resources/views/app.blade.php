@@ -23,7 +23,7 @@
     <!-- LOGIN REGISTER CREATIVE TIM -->
 
     <link href="{{ asset('creative_tim/login_register/login-register.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="{{ asset('creative_tim/login_register/login-register.js') }}" type="text/javascript"></script>
 
 	<!-- Fonts -->

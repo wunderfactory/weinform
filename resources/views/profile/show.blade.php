@@ -60,6 +60,10 @@
                                       <hr>
                                       <div class="align">
                                       <p><i class="fa fa-check green"></i> E-Mail-Adresse bestätigt</p>
+                                      @if($user->facebookUser)
+                                      <p><i class="fa fa-check green"></i> {{ $user->facebookUser->friends }} Freunde bei Facebook</p>
+                                      @else
+                                      @endif
                                       </div>
                                   </div>
                              </div>
@@ -72,18 +76,26 @@
                                   <div class="description">
                                       <h3>Info</h3>
                                       <hr>
-                                      @if($user->profile->hometown)
+
+
+                                      @if($user->profile->hometown && $user->settings->hidden_hometown)
                                         <p><i class="fa fa-map-marker"></i> Wohnort: {{ $user->profile->hometown }}</p>
                                       @else
                                       @endif
-                                      @if($user->profile->job)
-                                        <p><i class="fa fa-map-marker"></i> Job: {{ $user->profile->job }}</p>
+                                      @if($user->profile->job && $user->settings->hidden_job)
+                                        <p><i class="fa fa-university"></i> Job: {{ $user->profile->job }}</p>
                                       @else
                                       @endif
-                                      @if($user->profile->bio)
+                                      @if($user->profile->languages && $user->settings->hidden_languages)
+                                        <p><i class="fa fa-language"></i> Sprachen, die {{ $user->first_name }} spricht: {{ $user->profile->languages }}</p>
+                                      @else
+                                      @endif
+                                      @if($user->profile->bio && $user->settings->hidden_bio)
                                         <p><i class="fa fa-user"></i> Über {{ $user->first_name }}: {{ $user->profile->bio }}</p>
                                       @else
                                       @endif
+
+
                                   </div>
                              </div>
                           </div>

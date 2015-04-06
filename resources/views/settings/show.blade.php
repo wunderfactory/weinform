@@ -4,6 +4,7 @@
 <section>
     <h1>Settings</h1>
     <h3>Privacy:</h3>
+    <p>Die ausgewählten Felder sind auf Deinem Profil sichtbar.</p>
     <form action="{{ action('SettingsController@postUpdateSettings',[$user->username]) }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label for="hometown">Hometown</label>
