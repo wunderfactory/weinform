@@ -21,6 +21,7 @@ class CreateVerifiedPhoneNumbersTable extends Migration {
             $table->string('phone_number');
             $table->boolean('verified');
             $table->string('verify_token',64);
+            $table->timestamp('verified_at');
             $table->timestamp('expires_at');
             $table->softDeletes();
 			$table->timestamps();

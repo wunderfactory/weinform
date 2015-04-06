@@ -9,7 +9,7 @@ class VerifiedPhoneNumber extends Model {
 
     protected  $fillable = ['phone_number', 'user_id', 'country', 'country_prefix'];
 
-    protected  $protected = ['verify_token'];
+    protected  $hidden = ['verify_token'];
 
     protected $dates = ['deleted_at'];
 
@@ -23,4 +23,8 @@ class VerifiedPhoneNumber extends Model {
         return $this->belongsTo('App\User');
     }
 
+    public function getNumberAttribute()
+    {
+        return "+".$this->country_prefix.$this->phone_number;
+    }
 }

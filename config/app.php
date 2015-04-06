@@ -158,6 +158,7 @@ return [
 		'App\Providers\FacebookServiceProvider',
         'App\Providers\GeoIPServiceProvider',
         'App\Providers\PhoneValidatorServiceProvider',
+        'App\Providers\SMSServiceProvider',
 
 	],
 

@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>wundership</title>
 
+    <link href="{{ asset('gsd/bootstrap3/css/bootstrap.min.css') }}" rel="stylesheet" />
+
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 	<link href="{{ asset('gsd/css/gsdk.css') }}" rel="stylesheet"/>
@@ -14,7 +16,9 @@
 
     <link href="{{ asset('gsd/css/examples.css') }}" rel="stylesheet" /> 
 
-    <link href="{{ asset('gsd/css/pe-icon-7-stroke.css') }}" rel="stylesheet" /> 
+    <link href="{{ asset('gsd/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
+
+    <link href="{{ asset('gsd/css/chartist.min.css') }}" rel="stylesheet" />
 
     <!-- LOGIN REGISTER CREATIVE TIM -->
 
@@ -42,30 +46,28 @@
 	    @yield('content')
     </div>
 	@include('structure.footer')
-
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-	<script src="{{ asset('gsd/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('gsd/js/jquery-ui-1.10.4.custom.min.js') }}" type="text/javascript"></script>
 
-	<script src="{{ asset('gsd/bootstrap3/js/bootstrap.js') }}" type="text/javascript"></script>
+	<script src="{{ URL::asset('gsd/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
+	<script src="{{ URL::asset('gsd/js/jquery-ui-1.10.4.custom.min.js') }}" type="text/javascript"></script>
 
-	<script src="{{ asset('gsd/bootstrap3/js/bootstrap.js') }}" type="text/javascript"></script>
+	<script src="{{URL::asset('gsd/bootstrap3/js/bootstrap.js')}}" type="text/javascript"></script>
 
 	
 	<!--  Plugins -->
-	<script src="{{ asset('gsd/js/gsdk-checkbox.js') }}"></script>
-	<script src="{{ asset('gsd/js/gsdk-morphing.js') }}"></script>
-	<script src="{{ asset('gsd/js/gsdk-radio.js') }}"></script>
-	<script src="{{ asset('gsd/js/gsdk-bootstrapswitch.js') }}"></script>
-	<script src="{{ asset('gsd/js/bootstrap-select.js') }}"></script>
-	<script src="{{ asset('gsd/js/bootstrap-datepicker.js') }}"></script>
-	<script src="{{ asset('gsd/js/chartist.min.js') }}"></script>
-    <script src="{{ asset('gsd/js/jquery.tagsinput.js') }}"></script>
+	<script src="{{ URL::asset('gsd/js/gsdk-checkbox.js')}}"></script>
+	<script src="{{URL::asset('gsd/js/gsdk-morphing.js')}}"></script>
+	<script src="{{URL::asset('gsd/js/gsdk-radio.js')}}"></script>
+	<script src="{{URL::asset('gsd/js/gsdk-bootstrapswitch.js')}}"></script>
+	<script src="{{URL::asset('gsd/js/bootstrap-select.js')}}"></script>
+	<script src="{{URL::asset('gsd/js/bootstrap-datepicker.js')}}"></script>
+	<script src="{{URL::asset('gsd/js/chartist.min.js')}}"></script>
+    <script src="{{URL::asset('gsd/js/jquery.tagsinput.js')}}"></script>
 	
 	<!-- GSDK Pro functions -->
-	<script src="{{ asset('gsd/js/get-shit-done.js') }}"></script>
+	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
+    <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
+
 </body>
 </html>

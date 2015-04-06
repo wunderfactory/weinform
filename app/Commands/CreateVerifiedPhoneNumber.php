@@ -37,7 +37,7 @@ class CreateVerifiedPhoneNumber extends Command implements SelfHandling {
 	{
 		$util = PhoneNumberUtil::getInstance();
         $num = $util->parse($this->number, $this->country);
-        VerifiedPhoneNumber::create([
+        return VerifiedPhoneNumber::create([
             'user_id' => $this->user->id,
             'country' => $this->country,
             'country_prefix' => $num->getCountryCode(),

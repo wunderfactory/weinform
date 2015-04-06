@@ -19,17 +19,14 @@ Route::controllers([
 ]);
 
 
-Route::resource('user', 'UsersController');
-Route::resource('user.profile', 'ProfileController');
-Route::resource('user.driver', 'DriverController');
-
-
-Route::controller('/', 'StaticController');
-
+Route::resource('user',                 'UsersController');
+Route::resource('user.profile',         'ProfileController');
+Route::resource('user.driver',          'DriverController');
+Route::group(['prefix' => 'user/{user}'], function()
+{
+    Route::controller('settings',        'SettingsController');
+});
 Route::get('test', function() {
-    $num = libphonenumber\PhoneNumberUtil::getInstance();
-    $number = $num->parse('01718392168', 'US');
-    dd($num->getNumberType($number));
-
     return view('chat.index');
 });
+Route::controller('/', 'StaticController');

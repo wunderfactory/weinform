@@ -33,6 +33,7 @@ class CreateUserProfile extends Command implements SelfHandling {
 	{
         $profile = UserProfile::create(['user_id'=> $this->user->id]);
         Bus::dispatch(new UpdateUserProfile($profile, $this->data));
+        return $profile;
 	}
 
 }

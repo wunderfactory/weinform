@@ -1,5 +1,6 @@
 <?php namespace App\Services;
 
+use App\Commands\CreateSettings;
 use App\Commands\CreateVerifiedPhoneNumber;
 use App\Commands\EmailCreated;
 use App\User;
@@ -20,7 +21,7 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'name'                  => 'required|between:2,20|alpha_num|unique:users,username',
+			'name'                  => 'required|alpha_num|unique:users,username',
             'first_name'            => 'required|max:255',
             'last_name'             => 'required|max:255',
             'gender'                => 'required|in:male,female,other',
@@ -54,6 +55,7 @@ class Registrar implements RegistrarContract {
             'user_id' => $user->id
         ]);
         Bus::dispatch(new EmailCreated($email));
+        Bus::dispatch(new CreateSettings($user));
         Bus::dispatch(new CreateVerifiedPhoneNumber($user, $data['phonefield'], $data['phonefield_country']));
 
         return $user;

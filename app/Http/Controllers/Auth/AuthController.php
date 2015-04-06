@@ -134,7 +134,7 @@ class AuthController extends Controller {
         if ($verifiedEmail = $this->email->verifyEmail($token)) {
                 Auth::login($verifiedEmail->user);
                 flash()->success('auth/email.verified');
-                return redirect()->action('UsersController@show', $verifiedEmail->user->username);
+                return redirect()->action('UsersController@show', [$verifiedEmail->user->username]);
         }
         flash()->error('auth/email.token-expired');
         return redirect()->to('auth/login');

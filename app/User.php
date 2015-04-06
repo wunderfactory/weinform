@@ -52,6 +52,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\UserProfile');
     }
 
+    public function settings()
+    {
+        return $this->hasOne('App\UserSettings');
+    }
+
     public function phoneNumbers()
     {
         return $this->hasMany('App\VerifiedPhoneNumber');

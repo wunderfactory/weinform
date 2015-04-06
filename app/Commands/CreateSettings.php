@@ -2,12 +2,13 @@
 
 use App\Commands\Command;
 
-use App\Driver;
+use App\UserSettings;
 use Illuminate\Contracts\Bus\SelfHandling;
 
-class CreateDriver extends Command implements SelfHandling {
+class CreateSettings extends Command implements SelfHandling {
 
     protected $user;
+
     /**
      * Create a new command instance.
      *
@@ -25,10 +26,10 @@ class CreateDriver extends Command implements SelfHandling {
 	 */
 	public function handle()
 	{
-        $driver = new Driver();
-		$driver->user()->associate($this->user);
-        $driver->save();
-        return $driver;
+		$settings = new UserSettings();
+        $settings->user()->associate($this->user);
+        $settings->save();
+        return $settings;
 	}
 
 }

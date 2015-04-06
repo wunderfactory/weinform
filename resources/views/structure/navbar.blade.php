@@ -32,6 +32,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('/user/'.Auth::user()->username.'/settings') }}">
+                            <i class="pe-7s-config"></i> Settings
+                        </a>
+
+                    <li>
                         <a href="{{ url('/auth/logout') }}">
                              <i class="pe-7s-ticket"></i> Logout
                         </a>

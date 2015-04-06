@@ -10,7 +10,7 @@ class VerifiedEmail extends Model {
 
     protected  $fillable = ['email', 'user_id'];
 
-    protected  $protected = ['verify_token'];
+    protected  $hidden = ['verify_token'];
 
     protected $dates = ['deleted_at'];
 

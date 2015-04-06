@@ -8,6 +8,7 @@ use Facebook\FacebookSession;
 use Facebook\GraphUser;
 use Illuminate\Support\Facades\Config;
 use App\FacebookUser;
+use Illuminate\Support\Facades\Validator;
 
 class Facebook {
     private $loginHelper;
@@ -77,11 +78,11 @@ class Facebook {
 
     public function createFacebookUser($profile)
     {
-        $fbuser = new FacebookUser();
-        $fbuser->save();
-        $fbuser->id = $profile->getId();
-        $fbuser->save();
-        return $fbuser;
+        $fbUser = new FacebookUser();
+        $fbUser->save();
+        $fbUser->id = $profile->getId();
+        $fbUser->save();
+        return $fbUser;
     }
 
     public function createInput()
@@ -94,6 +95,10 @@ class Facebook {
         }
         if (array_has($input, 'name')) {
             $input['name'] = strtolower(str_replace(' ','', $input['name']));
+            $vali = Validator::make(['name' => $input['name']], ['name' => 'alpha_num']);
+            if($vali->fails()) {
+                $input['name'] =  preg_replace('/[^a-zA-Z0-9\s]/', '', $input['name']);
+            }
         }
         return $input;
     }
