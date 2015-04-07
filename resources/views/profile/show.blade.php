@@ -80,8 +80,6 @@
                                   <div class="description">
                                       <h3>Info</h3>
                                       <hr>
-
-
                                       @if($user->profile->hometown && $user->settings->hidden_hometown)
                                         <p><i class="fa fa-map-marker"></i> Wohnort: {{ $user->profile->hometown }}</p>
                                       @else
@@ -98,8 +96,6 @@
                                         <p><i class="fa fa-user"></i> Über {{ $user->first_name }}: {{ $user->profile->bio }}</p>
                                       @else
                                       @endif
-
-
                                   </div>
                              </div>
                           </div>
