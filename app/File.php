@@ -28,6 +28,6 @@ class File extends Model {
     }
 
     public function fullPath(){
-        return storage_path($this->path.$this->stored_name);
+        return storage_path($this->path.'/'.$this->stored_name);
     }
 }

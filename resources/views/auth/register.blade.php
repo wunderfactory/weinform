@@ -46,7 +46,7 @@ label{
 	                            <div class="image">
 	                                 <img src="{{ asset('images/backgrounds/sf.png') }}" alt="">
 	                            </div>
-                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}" enctype="multipart/form-data">
 	                            <div class="content">
 	                                <div class="author">
 

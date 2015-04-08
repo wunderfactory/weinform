@@ -135,7 +135,6 @@ class ProfileController extends Controller {
 
     public function profilePicture($user){
         if($user->profile->picture) {
-            dd($user->profile->picture->fullPath());
             return response()->download($user->profile->picture->fullPath(), $user->profile->picture->name);
         }
        return false;

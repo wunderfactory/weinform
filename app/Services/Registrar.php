@@ -1,5 +1,6 @@
 <?php namespace App\Services;
 
+use App\Commands\CreateProfile;
 use App\Commands\CreateSettings;
 use App\Commands\CreateVerifiedPhoneNumber;
 use App\Commands\EmailCreated;
@@ -57,7 +58,7 @@ class Registrar implements RegistrarContract {
         Bus::dispatch(new EmailCreated($email));
         Bus::dispatch(new CreateSettings($user));
         Bus::dispatch(new CreateVerifiedPhoneNumber($user, $data['phonefield'], $data['phonefield_country']));
-
+        Bus::dispatch(new CreateProfile($user));
         return $user;
 	}
 
