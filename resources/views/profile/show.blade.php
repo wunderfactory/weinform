@@ -42,8 +42,8 @@
                         <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
                         @endif
                           <h4 class="title"> <br>
-                            <p>{{ $user->username }}</p>
-                             <small>{{ $user->first_name }} {{ $user->last_name }}</small>
+                            <h3>{{ $user->username }}</h3>
+                             <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                           </h4>
                     </div>
 
@@ -51,12 +51,11 @@
 
                     <div class="row">
                           <div class="col-md-4">
-                             <div class="info">
                                   {{-- <div class="icon icon-azure">
                                       <i class="pe-7s-note2"></i>
                                   </div> --}}
                                   <div class="description">
-                                      <h3>Verifizierte Identifikation</h3>
+                                      <h4>Verifizierte Identifikation</h4>
                                       <hr>
                                       <div class="align">
                                       <p><i class="fa fa-check green"></i> E-Mail-Adresse bestätigt</p>
@@ -70,15 +69,13 @@
                                       @endif
                                       </div>
                                   </div>
-                             </div>
                           </div>
                           <div class="col-md-4">
-                             <div class="info">
                                   {{-- <div class="icon icon-purple">
                                       <i class="pe-7s-home"></i>
                                   </div> --}}
                                   <div class="description">
-                                      <h3>Info</h3>
+                                      <h4>Info</h4>
                                       <hr>
                                       @if($user->profile->hometown && $user->settings->hidden_hometown)
                                         <p><i class="fa fa-map-marker"></i> Wohnort: {{ $user->profile->hometown }}</p>
@@ -97,19 +94,16 @@
                                       @else
                                       @endif
                                   </div>
-                             </div>
                           </div>
                           <div class="col-md-4">
-                             <div class="info">
                                   {{-- <div class="icon icon-pink">
                                       <i class="pe-7s-star"></i>
                                   </div> --}}
                                   <div class="description">
-                                      <h3>Bewertungen</h3>
+                                      <h4>Bewertungen</h4>
                                       <hr>
                                       <p>{{ $user->first_name }} hat noch keine Bewertungen erhalten.</p>
                                   </div>
-                             </div>
                           </div>
                       </div>
 
