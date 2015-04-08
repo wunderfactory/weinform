@@ -25,8 +25,14 @@ Route::resource('user.driver',          'DriverController');
 Route::group(['prefix' => 'user/{user}'], function()
 {
     Route::controller('settings',        'SettingsController');
+    Route::get('profile/picture/show', 'ProfileController@profilePicture');
 });
-Route::get('test', function() {
-    return view('chat.index');
+Route::get('test2', function() {
+    return view('home');
+});
+
+Route::post('test', function() {
+    $file = \App\File::file(\Illuminate\Support\Facades\Request::file('file'), \App\UserProfile::first());
+    return  $file;
 });
 Route::controller('/', 'StaticController');

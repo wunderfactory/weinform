@@ -8,7 +8,11 @@
 				<div class="panel-heading">Home</div>
 
 				<div class="panel-body">
-					You are logged in!
+					<form action="test" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="file" name="file" id="fileToUpload">
+                        <input type="submit" id="fileToUpload">
+                    </form>
 				</div>
 			</div>
 		</div>

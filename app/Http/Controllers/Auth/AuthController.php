@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Auth;
 
+use App\Commands\CreateProfilePicture;
 use App\FacebookUser;
 use App\Services\Email;
 use App\Services\Loginar;
@@ -108,6 +109,9 @@ class AuthController extends Controller {
 			$fb->save();
 			$this->session->forget('facebookUser_id');
 		}
+        if($request->hasFile('profile_picture')) {
+            $this->dispatch(new CreateProfilePicture($request->file('profile_picture'), $user));
+        }
 		//$this->auth->login($user);
         flash()->warning('Please verify your E-Mail to login.');
 		return redirect('auth/login');

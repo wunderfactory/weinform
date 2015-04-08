@@ -30,6 +30,7 @@
     <div class="row" id="profile-cards">
          <div class="col-md-6 col-md-offset-3">
             <div id="card" class="card card-user">
+
                 <div class="image">
                      <img src="{{ asset('images/backgrounds/hello.png') }}" alt="...">
                 </div>
@@ -37,9 +38,9 @@
                     <div class="author">
                       
                         @if($user->facebookUser)
-                        <img class="avatar" src="https://graph.facebook.com/{{ $user->facebookUser->id }}/picture?type=large" alt="...">
+                            <img class="avatar" src="https://graph.facebook.com/{{ $user->facebookUser->id }}/picture?type=large" alt="...">
                         @else
-                        <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
+                            <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
                         @endif
                           <h4 class="title"> <br>
                             <h3>{{ $user->username }}</h3>
@@ -105,8 +106,11 @@
                                       <p>{{ $user->first_name }} hat noch keine Bewertungen erhalten.</p>
                                   </div>
                           </div>
-                      </div>
 
+                      </div>
+                    @if(Auth::user()->id == $user->id)
+                        {!! link_to_action('ProfileController@edit', 'Edit',[$user->username, 1]) !!}
+                    @endif
                 </div>
                 <hr>
             </div> <!-- end card -->

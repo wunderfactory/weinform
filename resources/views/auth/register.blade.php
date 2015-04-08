@@ -46,20 +46,20 @@ label{
 	                            <div class="image">
 	                                 <img src="{{ asset('images/backgrounds/sf.png') }}" alt="">
 	                            </div>
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
 	                            <div class="content">
 	                                <div class="author">
 
 	                                    <img id="profile_picture" class="avatar" src="{{old('id') ? 'https://graph.facebook.com/'.old('id').'/picture?type=large' : asset('gsd/img/faces/face-1.jpg') }}" alt="...">
 	                                    <br>
 	                                    @if(!old('id'))
-	                                   	<input type="file" id="profile_picture_input">
+	                                   	<input type="file" id="profile_picture_input" name="profile_picture">
 	                                   	@endif
 	                                    <h4 class="title"> <br>
 	                                         <small></small>
 	                                      </h4> 
 	                                </div>
 
-	                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                         <label class="control-label">{{ Lang::get('auth/register.username') }}</label>

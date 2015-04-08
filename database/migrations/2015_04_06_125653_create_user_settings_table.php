@@ -16,10 +16,10 @@ class CreateUserSettingsTable extends Migration {
 		{
 			$table->increments('id');
             $table->bigInteger('user_id');
-            $table->boolean('hidden_hometown')->default(false);
-            $table->boolean('hidden_job')->default(false);
-            $table->boolean('hidden_bio')->default(false);
-            $table->boolean('hidden_languages')->default(false);
+            $table->boolean('hidden_hometown')->default(true);
+            $table->boolean('hidden_job')->default(true);
+            $table->boolean('hidden_bio')->default(true);
+            $table->boolean('hidden_languages')->default(true);
 			$table->timestamps();
 		});
 	}
