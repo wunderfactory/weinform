@@ -48,13 +48,15 @@ label{
 	                            </div>
 	                            <div class="content">
 	                                <div class="author">
-	                                     <a href="#">
-	                                    <img class="avatar" src="{{old('id') ? 'https://graph.facebook.com/'.old('id').'/picture?type=large' : asset('gsd/img/faces/face-1.jpg') }}" alt="...">
-	                                   
-	                                      <h4 class="title"> <br>
+
+	                                    <img id="profile_picture" class="avatar" src="{{old('id') ? 'https://graph.facebook.com/'.old('id').'/picture?type=large' : asset('gsd/img/faces/face-1.jpg') }}" alt="...">
+	                                    <br>
+	                                    @if(!old('id'))
+	                                   	<input type="file" id="profile_picture_input">
+	                                   	@endif
+	                                    <h4 class="title"> <br>
 	                                         <small></small>
 	                                      </h4> 
-	                                    </a>
 	                                </div>
 
 	                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
@@ -115,4 +117,35 @@ label{
 		</div>
 	</div>
 </div>
+
+
+
+@endsection
+
+@section('script')
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+    // Prepare the preview for profile picture
+    $("#profile_picture_input").change(function(){
+    	console.log('adsasd');
+        readURL(this);
+    });
+
+	 //Function to show image before upload
+
+	function readURL(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+
+	        reader.onload = function (e) {
+	            $('#profile_picture').attr('src', e.target.result).fadeIn('slow');
+	        }
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+});
+</script>
 @endsection

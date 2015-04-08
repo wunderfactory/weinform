@@ -70,6 +70,6 @@
 	<!-- GSDK Pro functions -->
 	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
     <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
-
+	@yield('script')
 </body>
 </html>
