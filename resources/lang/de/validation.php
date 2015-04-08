@@ -28,13 +28,13 @@ return [
 		"array"   => "The :attribute must have between :min and :max items.",
 	],
 	"boolean"              => "The :attribute field must be true or false.",
-	"confirmed"            => "The :attribute confirmation does not match.",
+	"confirmed"            => "Das Feld :attribute stimmt nicht mit dem ersten Feld überein.",
 	"date"                 => "The :attribute is not a valid date.",
-	"date_format"          => "The :attribute does not match the format :format.",
+	"date_format"          => "Das Feld :attribute hat nicht das vorgeschriebene Format. Beispiel: 03.02.1988",
 	"different"            => "The :attribute and :other must be different.",
 	"digits"               => "The :attribute must be :digits digits.",
 	"digits_between"       => "The :attribute must be between :min and :max digits.",
-	"email"                => "The :attribute must be a valid email address.",
+	"email"                => "Das Feld :attribute muss eine E-Mail-Adresse beinhalten.",
 	"filled"               => "The :attribute field is required.",
 	"exists"               => "The selected :attribute is invalid.",
 	"image"                => "The :attribute must be an image.",
@@ -51,13 +51,14 @@ return [
 	"min"                  => [
 		"numeric" => "The :attribute must be at least :min.",
 		"file"    => "The :attribute must be at least :min kilobytes.",
-		"string"  => "The :attribute must be at least :min characters.",
+		"string"  => "Das Feld :attribute muss mindestens :min Zeichen lang sein.",
 		"array"   => "The :attribute must have at least :min items.",
 	],
+	"mobile_phone"         => "Das Feld :attribute muss eine Mobiltelefonnummer enthalten, die zur Ländervorwahl passt.",
 	"not_in"               => "The selected :attribute is invalid.",
 	"numeric"              => "The :attribute must be a number.",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "The :attribute field is required.",
+	"required"             => "Das Feld :attribute muss ausgefüllt sein.",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -70,9 +71,9 @@ return [
 		"string"  => "The :attribute must be :size characters.",
 		"array"   => "The :attribute must contain :size items.",
 	],
-	"unique"               => "The :attribute has already been taken.",
+	"unique"               => "Das Eingabe des Feldes :attribute ist bereits vergeben.",
 	"url"                  => "The :attribute format is invalid.",
-    "user"                 => "The :attribute must be a verified e-mail or a username with a verified e-mail.",
+    "user"                 => ":attribute müssen bestätigt sein und zu einem Account gehören. Eventuell besteht noch kein Account mit dieser :attribute.",
 	"timezone"             => "The :attribute must be a valid zone.",
 
 	/*
@@ -103,6 +104,14 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => ['username' => 'E-Mail oder Nutzername',
+	 					'password' => 'Passwort',
+	 					'name' => 'Nutzername',
+	 					'first_name' => 'Vorname',
+	 					'last_name' => 'Nachname',
+	 					'gender' => 'Geschlecht',
+	 					'phonefield' => 'Handynummer',
+	 					'email' => 'E-Mail',
+	 					'birth_date' => 'Geburtsdatum'],
 
 ];

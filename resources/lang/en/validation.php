@@ -54,7 +54,7 @@ return [
 		"string"  => "The :attribute must be at least :min characters.",
 		"array"   => "The :attribute must have at least :min items.",
 	],
-    "mobile_phone"         => "The :attribute field contains an invalid mobile phone number.",
+    "mobile_phone"         => "The field :attribute contains an invalid mobile phone number.",
 	"not_in"               => "The selected :attribute is invalid.",
 	"numeric"              => "The :attribute must be a number.",
     "phone"                => "The :attribute field contains an invalid number.",
@@ -74,7 +74,7 @@ return [
 	],
 	"unique"               => "The :attribute has already been taken.",
 	"url"                  => "The :attribute format is invalid.",
-    "user"                 => "The :attribute must be a verified e-mail or a username with a verified e-mail.",
+    "user"                 => "The :attribute must be verified and registered. There has to be an account with either :attribute.",
 	"timezone"             => "The :attribute must be a valid zone.",
 
 	/*
@@ -105,6 +105,6 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => ['username' => 'email or username', 'phonefield' => 'Mobile phone'],
 
 ];

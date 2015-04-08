@@ -39,7 +39,7 @@
 							<p>{{ Lang::get('auth/password.text') }}</p>
 							<br>
 							<div class="col-md-6">
-								<label class="control-label label_email">E-Mail Address</label>
+								<label class="control-label label_email">{{ Lang::get('auth/password.email') }}</label>
 								<br>
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>

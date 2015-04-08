@@ -15,10 +15,10 @@
       <ul  class="nav navbar-nav navbar-right">
             @if (Auth::guest())
             <li>
-                <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">{{ Lang::get('navbar/navbar.login') }} </a>
+                <a href="{{url('auth/login')}}">{{ Lang::get('navbar/navbar.login') }} </a>
             </li>
             <li>
-                <a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">{{ Lang::get('navbar/navbar.register') }}</a>
+                <a href="{{url('auth/register')}}">{{ Lang::get('navbar/navbar.register') }}</a>
             </li>
             
             @else
@@ -66,73 +66,3 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
-
-<style type="text/css">
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #434343 !important;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #434343 !important;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #434343 !important;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #434343 !important;
-}
-</style>
-
-
-<div class="modal fade login" id="loginModal">
-    <div class="modal-dialog login animated">
-        <div class="modal-content">
-           <div class="modal-header" style="text-align:center;">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">{{ Lang::get('navbar/navbar.login') }}</h4>
-          </div>
-          <div class="modal-body">  
-              <div class="box">
-                   <div class="content">
-                      <div class="social">
-                          <a id="facebook_login" class="circle facebook" href="{{ url('/auth/facebook') }}">
-                              <i class="fa fa-facebook fa-fw"></i>
-                          </a>
-                      </div>
-                      <div class="division">
-                          <div class="line l"></div>
-                            <span>{{ Lang::get('navbar/navbar.or') }}</span>
-                          <div class="line r"></div>
-                      </div>
-                      <div class="error"></div>
-                      <div class="form loginBox">
-                          <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                          <input id="email" class="form-control" type="text" placeholder="Email" name="username">
-                          <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                          <input class="btn btn-default btn-login" type="submit" value="Login">
-                          </form>
-                      </div>
-                   </div>
-              </div>
-              <div class="box">
-                  <div class="content registerBox" style="display:none; text-align:center;">
-                   <a href="{{ url('auth/register') }}"><p>{{ Lang::get('navbar/navbar.move_to_register') }}</p></a>
-                  </div>
-              </div>
-          </div>
-          <div class="modal-footer">
-              <div class="forgot login-footer">
-                  <span>{{ Lang::get('navbar/navbar.looking_to') }} 
-                       <a href="javascript: showRegisterForm();">{{ Lang::get('navbar/navbar.create_account') }}</a>
-                  </span>
-              </div>
-              <div class="forgot register-footer" style="display:none">
-                   <span>{{ Lang::get('navbar/navbar.have_account') }}</span>
-                   <a href="javascript: showLoginForm();">{{ Lang::get('navbar/navbar.login') }}</a>
-              </div>
-          </div>        
-        </div>
-    </div>
-</div>

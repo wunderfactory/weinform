@@ -1,6 +1,30 @@
 @extends('app')
 
 @section('content')
+
+<style type="text/css">
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #434343 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #434343 !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #434343 !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #434343 !important;
+}
+label{
+	margin-top: 5px;
+}
+.card{
+	margin-top: 30px;
+}
+</style>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -8,7 +32,7 @@
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<strong>{{ Lang::get('auth/register.whoops') }}</strong>{{ Lang::get('auth/register.problem') }}<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -16,17 +40,6 @@
 							</ul>
 						</div>
 					@endif
-
-
-<style type="text/css">
-label{
-	margin-top: 5px;
-}
-.card{
-	margin-top: 70px;
-}
-</style>
-
 					<div class="row" id="profile-cards card">
 	                     <div class="col-md-5 col-md-offset-4">
 	                        <div class="card card-user">
@@ -47,46 +60,46 @@ label{
 	                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                        <label class="control-label">Username</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.username') }}</label>
                                         <input type="text" class="form-control" name="name" value="{{ old('name') }}">
 
-                                        <label class="control-label">Gender</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.gender') }}</label>
                                         <select class="form-control" name="gender">
                                         <option></option>
-                                            <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>female</option>
-                                            <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>male</option>
-                                            <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>other</option>
+                                            <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>{{ Lang::get('auth/register.female') }}</option>
+                                            <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>{{ Lang::get('auth/register.male') }}</option>
+                                            <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>{{ Lang::get('auth/register.other') }}</option>
                                         </select>
 
-                                        <label class="control-label">First name</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.first_name') }}</label>
                                         <input type="text" class="form-control" name="first_name" value="{{ old('first_name')}}">
 
-                                        <label class="control-label">Last name</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.last_name') }}</label>
                                         <input type="text" class="form-control" name="last_name" value="{{ old('last_name')}}">
 
-                                        <label class="control-label">Birth date (dd.mm.yyyy)</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.birth_date') }} (dd.mm.yyyy)</label>
                                         <input type="text" class="form-control" name="birth_date" value="{{ old('birth_date')}}">
 
-                                        <label class="control-label">E-Mail Address</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.email') }}</label>
                                         <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                                        <label class="control-label">Phone</label>
-                                        {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), null, array('class' =>'form-control')) !!}
+                                        <label class="control-label">{{ Lang::get('auth/register.phone') }}</label>
+                                        {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), 'DE', array('class' =>'form-control')) !!}
                                         <input type="text" class="form-control" name="phonefield" style="margin-top: 5px;" value="{{ old('phonefield') }}">
 
 
-                                        <label class="control-label">Password</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.password') }}</label>
                                         <input type="password" class="form-control" name="password">
 
-                                        <label class="control-label">Confirm Password</label>
+                                        <label class="control-label">{{ Lang::get('auth/register.confirm_password') }}</label>
                                         <input type="password" class="form-control" name="password_confirmation">
 
                                         <br>
 
                                         <div class="form-group">
-                                            <div class="col-md-6 col-md-offset-4">
+                                            <div class="col-md-6">
                                                 <button type="submit" class="btn btn-primary">
-                                                    Register
+                                                    {{ Lang::get('auth/register.register_button') }}
                                                 </button>
                                             </div>
                                         </div>

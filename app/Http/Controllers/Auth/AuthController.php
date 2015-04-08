@@ -124,7 +124,7 @@ class AuthController extends Controller {
             return redirect()->action('UsersController@show', Auth::user()->username);
         } else {
             return redirect($this->loginPath())
-                ->withInput($request->only('email', 'remember'))
+                ->withInput($request->only('username', 'remember'))
                 ->withErrors([
                     'email' => $this->getFailedLoginMessage(),
                 ]);
@@ -155,4 +155,9 @@ class AuthController extends Controller {
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/overview';
     }
+
+    protected function getFailedLoginMessage()
+ 	{
+ 		return Lang::get('auth/login.failed');
+  	}
 }

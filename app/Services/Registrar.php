@@ -25,7 +25,7 @@ class Registrar implements RegistrarContract {
             'first_name'            => 'required|max:255',
             'last_name'             => 'required|max:255',
             'gender'                => 'required|in:male,female,other',
-            'phonefield'            => 'mobile_phone',
+            'phonefield'            => 'required|mobile_phone',
             'phonefield_country'    => 'required_with:phonefield',
 			'email'                 => 'required|email|max:255|unique:verified_emails',
             'birth_date'            => 'required|date_format:d.m.Y',
