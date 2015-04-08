@@ -50,6 +50,13 @@ label{
 	                            <div class="content">
 	                                <div class="author">
 
+<style type="text/css">
+#profile_picture{
+object-fit: cover;
+object-position: 0 0;
+}
+</style>
+
 	                                    <img id="profile_picture" class="avatar" src="{{old('id') ? 'https://graph.facebook.com/'.old('id').'/picture?type=large' : asset('gsd/img/faces/face-1.jpg') }}" alt="...">
 	                                    <br>
 	                                    @if(!old('id'))
