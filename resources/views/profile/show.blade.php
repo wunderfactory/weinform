@@ -31,7 +31,7 @@
   color: #ea555c;
 }
 .white{
-  color: white;
+  color: white !important;
 }
 .icon_large{
   font-size: 30px;
@@ -54,13 +54,38 @@
 }
 .avatar {
     width: 100%;
+    z-index: -1;
 }
+#overlay{
+  width: 200px;
+  height: 200px;
+  margin-top: 0px;
+  position: absolute;
+  background-color: #ea555c;
+  display: none;
+  padding-top: 50px;
+}
+.camera_icon{
+  font-size: 70px;
+}
+#profile_container:hover #overlay{
+  display: block;
+}
+
+
+
 </style>
 
 <div class="container dashboard">
     <div class="row from_top">
         <div class="col-md-3">
             <div id="profile_container">
+                @if(Auth::user()->id == $user->id)
+                <div id="overlay">
+                  <a class="white" href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}"><p><i class="pe-7s-camera camera_icon"></i><br>
+                  Profilbild ändern</p></a>
+                </div>
+                @endif
                 <img class="avatar" src="{{ action('UsersController@getPicture', [$user->username]) }}" alt="Profile Picture">
                 <div>
                   <h3>{{ $user->first_name }} {{ $user->last_name }}</h3>
