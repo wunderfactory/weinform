@@ -62,8 +62,8 @@
                   <h3>{{ $user->first_name }}</h3>
                 </div>
                 <div>
-                    <a href=""><p class="rose">Profil ansehen</p></a>
-                    <a href=""><p class="rose">Profil bearbeiten</p></a>
+                    <a href="{{ url('/user/'.Auth::user()->username) }}"><p class="rose">Profil ansehen</p></a>
+                    <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/') }}"><p class="rose">Profil bearbeiten</p></a>
                 </div>
             </div>
             <div id="left_news_container">
@@ -183,7 +183,7 @@
               </div>
               <div>
               <br>
-              <a href="{{url('#')}}"><p class="rose"><strong>Verifizierungen hinzufügen</strong></p></a>
+              <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/verifications') }}"><p class="rose"><strong>Verifizierungen hinzufügen</strong></p></a>
               </div>
             </div> 
           </div>

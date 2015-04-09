@@ -2,7 +2,12 @@
 .navbar_container{
     max-width: 980px !important;
 }
+#flash_message_container{
+
+}
 </style>
+
+
 
 <nav class="navbar navbar-default">
   <div class="container navbar_container">
@@ -16,3 +21,5 @@
     </ul>
   </div>
 </nav>
+
+<div id="flash_message_container">@include('flash::message')</div>
