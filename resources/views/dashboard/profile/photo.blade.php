@@ -115,19 +115,19 @@
                     <div class="infobox_content">
 
 <style type="text/css">
-li{
+.width_fifthy{
     width: 50%;
     text-align: center;
 }
 </style>
 
                             <ul class="nav nav-pills" role="tablist">
-                                  <li class="active">
+                                  <li class="width_fifthy active">
                                     <a href="#" onclick="file()" role="tab" data-toggle="tab" aria-expanded="true">
                                          Foto hochladen
                                     </a>
                                   </li>
-                                  <li class="">
+                                  <li class="width_fifthy">
                                     <a href="#" onclick="webcam()" role="tab" data-toggle="tab" aria-expanded="false">
                                          WEBCAM
                                     </a>
@@ -136,10 +136,8 @@ li{
 
                             <div id="webcam" style="display: none;">
                                 <div class="panel-body">
-                                    <div id="webcam_container">
-
-                                    </div>
-                                    <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
+                                    <div id="webcam_container"></div><br>
+                                    <a class="btn btn-default" href="javascript:void(take_snapshot())">Foto aufnehmen</a>
                                 </div>
                             </div>
 
