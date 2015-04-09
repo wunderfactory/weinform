@@ -63,6 +63,7 @@
   position: absolute;
   background-color: #ea555c;
   display: none;
+  opacity: 0.9;
   padding-top: 50px;
 }
 .camera_icon{
@@ -71,9 +72,6 @@
 #profile_container:hover #overlay{
   display: block;
 }
-
-
-
 </style>
 
 <div class="container dashboard">

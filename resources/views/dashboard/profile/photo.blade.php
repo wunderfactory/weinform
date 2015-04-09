@@ -114,12 +114,6 @@
 
                     <div class="infobox_content">
 
-<style type="text/css">
-ul{
-    width: 100%;
-}
-</style>
-
                         <ul class="nav nav-pills" role="tablist">
                               <li class="">
                                 <a href="#info" role="tab" data-toggle="tab" aria-expanded="false">

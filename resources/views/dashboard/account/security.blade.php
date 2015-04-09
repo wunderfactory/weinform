@@ -95,6 +95,8 @@ input{
                           <input type="password" class="form-control" name="password">
 
                           <input type="password" class="form-control" name="password_confirmation">
+                          <br>
+                          <button class="btn btn-default">Speichern</button>
                         </div>
                     </div>
                 </div> 
