@@ -68,7 +68,7 @@
                 </div>
                 <div>
                   @if(Auth::user()->id == $user->id)
-                  {!! link_to_action('ProfileController@edit', 'Profil bearbeiten',[$user->username, 1]) !!}
+                      <a href="{{ action('SettingsProfileController@getIndex',[$user->username]) }}"> @lang('profile.edit')</a>
                   @endif
                 </div>
             </div>

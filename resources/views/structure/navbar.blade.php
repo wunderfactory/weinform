@@ -14,7 +14,7 @@
 
       <!---------------- -->
 
-      <a class="navbar-brand" href="{{ url('OVERVIEW LINK!!!') }}">wundership</a>
+      <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username])  }}">wundership</a>
       @endif
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,7 @@
 
                       <!---------------- Der Link hier müsste auf das Profil gehen nicht auf das dashboard -->
 
-                        <a href="{{ url('/user/'.Auth::user()->username.'/profile') }}">
+                        <a href="{{ url('/user/'.Auth::user()->username.'/') }}">
                             <i class="pe-7s-id"></i> Profile
                         </a>
                     </li>
@@ -45,7 +45,7 @@
                     <!---------------- Der Link hier müsste auf das dashboard gehen -->
 
                     <li>
-                        <a href="#">
+                        <a href="{{ action('UsersController@getDashboard', [Auth::user()->username]) }}">
                             <i class="pe-7s-home"></i> Dashboard
                         </a>
                     </li>

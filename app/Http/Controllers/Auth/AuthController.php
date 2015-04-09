@@ -125,7 +125,7 @@ class AuthController extends Controller {
             );
         }
         if ($this->loginar->login($request->all())) {
-            return redirect()->action('UsersController@show', Auth::user()->username);
+            return redirect()->action('UsersController@getOverview', Auth::user()->username);
         } else {
             return redirect($this->loginPath())
                 ->withInput($request->only('username', 'remember'))
@@ -139,7 +139,7 @@ class AuthController extends Controller {
         if ($verifiedEmail = $this->email->verifyEmail($token)) {
                 Auth::login($verifiedEmail->user);
                 flash()->success('auth/email.verified');
-                return redirect()->action('UsersController@show', [$verifiedEmail->user->username]);
+                return redirect()->action('UsersController@getOverview', [$verifiedEmail->user->username]);
         }
         flash()->error('auth/email.token-expired');
         return redirect()->to('auth/login');

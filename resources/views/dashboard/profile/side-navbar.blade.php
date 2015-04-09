@@ -5,7 +5,7 @@
         <a href="{{ action('SettingsProfileController@getVerifications', [Auth::user()->username]) }}"><p class="nav_text"><strong>Vertrauen und Verifizierung</strong></p></a>
         <a href="{{ action('SettingsProfileController@getRatings', [Auth::user()->username]) }}"><p class="nav_text"><strong>Bewertungen</strong></p></a>
         <hr>
-        <a href="{{ action('UsersController@getProfile', [Auth::user()->username]) }}"><button type="button" class="btn btn-block btn-warning">Profil ansehen</button></a>
+        <a href="{{ action('UsersController@getIndex', [Auth::user()->username]) }}"><button type="button" class="btn btn-block btn-warning">Profil ansehen</button></a>
     </div>
 </div>
 

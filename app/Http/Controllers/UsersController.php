@@ -18,35 +18,16 @@ class UsersController extends Controller {
     }
 
 
-
-
-    public function getProfile($user)
-	{
-      return view('dashboard.overview')->withUser($user);
-	}
-
-    public function getComplete()
+    public function getDashboard($user)
     {
-        return view('profile.complete');
+        return view('dashboard.index')->withUser($user);
     }
-
-    public function postComplete(Request $request)
+    public function getOverview($user)
     {
-        if(Auth::user()->profile) {
-            flash()->error('You already have a profile');
-            return redirect()->back();
-        }
-        $validator = $this->profiler->validate($request->all());
-        if($validator->fails()){
-            return redirect()->back()->withInput($request->all())->withErrors($validator->errors());
-        }
-        $this->dispatch(
-            new CreateUserProfile(Auth::user(), $request->only('hometown', 'languages', 'job', 'bio'))
-        );
-        return view('profile.verify');
+        return view('product.overview')->withUser($user);
     }
 
     public function getIndex($user){
-        return view('product.overview')->withUser($user);
+        return view('profile.show')->withUser($user);
     }
 }

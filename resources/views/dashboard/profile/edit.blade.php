@@ -81,7 +81,7 @@
                                 </button>
                             </div>
                             <div class="col-md-6" style="text-align: center;">
-                                <a href="{{ action('UsersController@getProfile', [Auth::user()->username]) }}"
+                                <a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}"
                                     <button type="submit"  class="btn btn-block btn-lg btn-default">
                                         Reset
                                     </button>
