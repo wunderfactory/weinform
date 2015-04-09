@@ -19,6 +19,8 @@
 }
 </style>
 
+@include('flash::message')
+
 <div class="wrapper">
 	<div class="section">
 		<div class="container">
