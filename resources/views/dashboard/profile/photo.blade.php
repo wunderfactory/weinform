@@ -64,6 +64,10 @@
 
                     <div class="infobox_content">
                         <input id="picture_upload" type="file" name="">
+                        <a href="javascript:void(take_snapshot())">Snap</a>
+                        <div id="webcam_container">
+
+                        </div>
                         <div id="image_container">
                             <div class="cropper">
                                 <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
@@ -116,7 +120,7 @@
                     highlight: false,
                     dragCrop: false,
                     movable: true,
-                    resizable: false
+                    resizable: true
                 });
                 active = true;
         }
@@ -153,6 +157,26 @@
             $('#picture_form').val($('.cropper > img').cropper('getCroppedCanvas').toDataURL("image/jpeg").replace(/^data\:image\/\w+\;base64\,/, ''));
             this.submit();
         })
+    </script>
+    <script>
+        Webcam.set({
+            width: 320,
+            height: 320,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+        Webcam.attach( '#webcam_container' );
+
+        function take_snapshot() {
+            Webcam.snap( function(data_uri) {
+                stop();
+                if($('#image_container').css('display') == 'none') {
+                    $('#image_container').css('display', 'block')
+                }
+                $('.cropper').empty().html('<img src="'+ data_uri+'">');
+                start();
+            });
+        }
     </script>
 @endsection
 

@@ -12,4 +12,8 @@ class File extends Model {
     {
         return $this->morphTo();
     }
+
+    public function filePath(){
+        return $this->path.'/'.$this->stored_name;
+    }
 }

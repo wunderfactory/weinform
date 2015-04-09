@@ -48,17 +48,17 @@
   color: white;
   border-color: white;
 }
+
+.avatar {
+    width: 100%;
+}
 </style>
 
 <div class="container dashboard">
     <div class="row">
         <div class="col-md-3">
             <div id="profile_container">
-                @if($user->facebookUser)
-                    <img class="avatar" src="https://graph.facebook.com/{{ $user->facebookUser->id }}/picture?type=large" alt="...">
-                @else
-                    <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
-                @endif
+                <img class="avatar" src="{{ action('UsersController@getPicture', [$user->username]) }}" alt="Profile Picture">
                 <div>
                   <h3>{{ $user->first_name }}</h3>
                 </div>

@@ -6,6 +6,7 @@ use App\Services\ProfilerContract;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 class UsersController extends Controller {
     use DispatchesCommands;
@@ -16,8 +17,6 @@ class UsersController extends Controller {
         $this->profiler = $profiler;
         //$this->middleware('auth',['except' => ['profile']]);
     }
-
-
     public function getDashboard($user)
     {
         return view('dashboard.index')->withUser($user);
@@ -29,5 +28,16 @@ class UsersController extends Controller {
 
     public function getIndex($user){
         return view('profile.show')->withUser($user);
+    }
+
+    public function getPicture($user) {
+        if($user->profile && $user->profile->picture)
+        {
+            return Response::download(storage_path('app/'.$user->profile->picture->filePath()));
+        }
+        if($user->facebookUser) {
+            return Response::make(file_get_contents('https://graph.facebook.com/'.$user->facebookUser->id.'/picture?type=large'))->header('Content-Type', 'image/jpeg');
+        }
+        return Response::download(storage_path('app/no_image.jpg'));
     }
 }
