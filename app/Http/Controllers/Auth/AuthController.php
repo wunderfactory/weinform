@@ -71,7 +71,7 @@ class AuthController extends Controller {
                         })->count() > 0) {
                         Facebook::getFriends();
                         Auth::login(Facebook::getFacebookUser()->user);
-                        return redirect()->action('UsersController@show', Auth::user()->username);
+                        return redirect()->action('UsersController@getIndex', Auth::user()->username);
                     }
                     return redirect()->to('auth/login')->withErrors(['user' => Lang::get('auth/facebook.email_verified')]);
 
@@ -157,7 +157,7 @@ class AuthController extends Controller {
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/overview';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/'.Auth::user()->username;
     }
 
     protected function getFailedLoginMessage()
