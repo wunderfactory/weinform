@@ -73,6 +73,9 @@
   border-bottom: 1px solid #ea555c;
   vertical-align: center;
 }
+.heading_container{
+  margin-top: 2px;
+}
 .warningbox_content{
   padding: 15px; 
 }
@@ -88,7 +91,9 @@
 
             <div class="warningbox">
                 <div class="warningbox_header">
-                   <p class="white"><i class="pe-7s-gleam hep"></i><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p>
+                    <div class="col-md-1"><i class="pe-7s-gleam hep"></i></div>
+                    <div class="col-md-8 heading_container"><p class="white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
+                   
                 </div>
                 <div class="warningbox_content">
                     <p class="rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
@@ -101,7 +106,6 @@
                 </div>
                 <div class="infobox_content">
                     {{-- <p class="very_small">Diese Daten musst Du nicht angeben, Du kannst diese Felder auch leerlassen. Es macht dein Profil aber vertrauenswürdiger, wenn Du etwas über Dich schreibst.</p> --}}
-                    <hr>
                     <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateProfile', [Auth::user()->username]) }}">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input name="_method" type="hidden" value="PUT">
