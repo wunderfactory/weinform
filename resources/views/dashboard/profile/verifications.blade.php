@@ -17,42 +17,9 @@
 
 @include('dashboard.navbar')
 
-<style type="text/css">
-.rose{
-  color: #ea555c;
-}
-#right_navbar_container{
-  padding: 20px;
-}
-.nav_text{
-  color: #797979;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  /* ...and now for the proper property */
-  transition:.5s;
-}
-.nav_text:hover{
-  color: #c1c1c1;
-}
-.active{
-  color: #404040 !important;
-}
-</style>
-
 <div class="container profile">
     <div class="row">
-        <div class="col-md-3">
-          <div id="right_navbar_container">
-            <a href=""><p class="nav_text active"><strong>Profil bearbeiten</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Profilfoto</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Vertrauen und Verifizierung</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Bewertungen</strong></p></a>
-            <hr>
-            <button href="#" class="btn btn-block btn-warning">Profil ansehen</button>
-          </div>      
-        </div>
+        @include('dashboard.profile.side-navbar')
 
 
 <style type="text/css">
@@ -94,17 +61,16 @@
                         @if($user->phoneNumbers->first()->verified)
                             <i class="fa-check-circle-o fa green"></i></p>
                         @else
-                            {!! link_to_action('SettingsController@getSendVerificationToken', 'Send token', [$user->username, $user->phoneNumbers->first()->id]) !!}
+                            {!! link_to_action('SettingsProfileController@getSendVerificationToken', 'Send token', [$user->username, $user->phoneNumbers->first()->id]) !!}
                         @endif
                         <br>
-                        @if($user->phoneNumbers->first()->verified)
-                        @else
-                        <form action="{{ action('SettingsController@postVerifyPhone',[$user->username]) }}" method="POST">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <label for="token">Token</label>
-                            <input id="token" type="input" name="token">
-                            <input type="submit" >
-                        </form>
+                        @if(!$user->phoneNumbers->first()->verified)
+                            <form action="{{ action('SettingsProfileController@postVerifyPhone',[$user->username]) }}" method="POST">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <label for="token">Token</label>
+                                <input id="token" type="input" name="token">
+                                <input type="submit" >
+                            </form>
                         @endif
                 </div> 
             </div>

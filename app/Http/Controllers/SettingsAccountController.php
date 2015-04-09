@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class SettingsAccountController extends Controller {
 
-
+    public function getIndex($user)
+    {
+        return view('dashboard.account.notifications')->withUser($user);
+    }
 
 }

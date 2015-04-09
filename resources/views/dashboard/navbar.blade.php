@@ -12,7 +12,7 @@
         <li><a href="#">Deine Fahrten</a></li>
         <li><a href="#">Deine Sendungen</a></li>
         <li><a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}">Profil</a></li>
-        <li><a href="{{url('account')}}">Account</a></li>
+        <li><a href="{{ action('SettingsAccountController@getIndex', [Auth::user()->username]) }}">Account</a></li>
     </ul>
   </div>
 </nav>

@@ -21,7 +21,7 @@
 
 <div class="container profile">
     <div class="row">
-        @include('dashboard.side-navbar')
+        @include('dashboard.profile.side-navbar')
 
 <style type="text/css">
 .infobox{
