@@ -62,8 +62,8 @@
                   <h3>{{ $user->first_name }}</h3>
                 </div>
                 <div>
-                  <p class="rose">Profil ansehen<br>
-                  Profil bearbeiten</p>
+                    <a href=""><p class="rose">Profil ansehen</p></a>
+                    <a href=""><p class="rose">Profil bearbeiten</p></a>
                 </div>
             </div>
             <div id="left_news_container">
