@@ -45,6 +45,14 @@
 .grey{
   color: #828282;
 }
+.input_label{
+  margin-top: 3px;
+  margin-left: 3px;
+}
+.very_small{
+  font-size: 15px;
+  margin: 4px;
+}
 </style>
 
 <!-- INFOBOXES -->
@@ -55,39 +63,40 @@
                     <p class="grey"><strong>Profil bearbeiten</strong></p>
                 </div>
                 <div class="infobox_content">
-                      <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateProfile', [Auth::user()->username]) }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input name="_method" type="hidden" value="PUT">
+                    <p class="very_small">Keine Sorge, wir nutzen diese Daten nur zur internen Auswertung unserer Nutzer. Keine Daten von Dir werden jemals weitergeben.</p>
+                    <hr>
+                    <form class="form-horizontal" role="form" method="POST" action="#">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input name="_method" type="hidden" value="PUT">
 
+                      <label class="control-label input_label"><p class="rose">Ich bin</p></label>
+                      <select class="form-control" name="gender">
+                      <option></option>
+                          <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>{{ Lang::get('auth/register.female') }}</option>
+                          <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>{{ Lang::get('auth/register.male') }}</option>
+                          <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>{{ Lang::get('auth/register.other') }}</option>
+                      </select>
+                      
 
-                        <label class="control-label">Hometown</label>
-                        <input type="text" class="form-control" name="hometown" value="{{ old('hometown')}}">
+                      <label class="control-label"><p class="rose">Geburtsdatum (dd.mm.yyyy)</p></label>
+                      <input type="text" class="form-control" name="birth_date" value="{{ old('birth_date')}}">
 
-                        <label class="control-label">Job</label>
-                        <input type="text" class="form-control" name="job" value="{{ old('job') }}">
+                      <br>
 
-                        <label class="control-label">Languages</label>
-                        <input type="text" class="form-control" name="languages" value="{{ old('languages') }}">
-
-                        <label class="control-label">Short Description about yourself</label>
-                        <input type="text" class="form-control" name="bio" value="{{ old('bio') }}">
-
-                        <br>
-
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                <button type="submit" class="btn btn-block btn-lg btn-info">
-                                    Save
-                                </button>
-                            </div>
-                            <div class="col-md-6" style="text-align: center;">
-                                <a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}"
-                                    <button type="submit"  class="btn btn-block btn-lg btn-default">
-                                        Reset
-                                    </button>
-                                </a>
-                            </div>
-                    </div>
+                      <div class="form-group">
+                          <div class="col-md-6">
+                              <button type="submit" class="btn btn-block btn-info">
+                                  Speichern
+                              </button>
+                          </div>
+                          <div class="col-md-6" style="text-align: center;">
+                              <a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}"
+                                  <button type="submit"  class="btn btn-block btn-default">
+                                      Zurücksetzen
+                                  </button>
+                              </a>
+                          </div>
+                        </div>
                     </form>
                 </div> 
             </div>
@@ -97,7 +106,42 @@
                     <p class="grey"><strong>Optionale Angaben</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">HIER ALLE DINGE, die optional sind.</p>
+                    <p class="very_small">Diese Daten musst Du nicht angeben, Du kannst diese Felder auch leerlassen. Es macht dein Profil aber vertrauenswürdiger, wenn Du etwas über Dich schreibst.</p>
+                    <hr>
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateProfile', [Auth::user()->username]) }}">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input name="_method" type="hidden" value="PUT">
+
+
+                      <label class="control-label input_label"><p class="rose">Hometown</p></label>
+                      <input type="text" class="form-control" name="hometown" value="{{ old('hometown')}}">
+
+                      <label class="control-label input_label"><p class="rose">Job</p></label>
+                      <input type="text" class="form-control" name="job" value="{{ old('job') }}">
+
+                      <label class="control-label input_label"><p class="rose">Languages</p></label>
+                      <input type="text" class="form-control" name="languages" value="{{ old('languages') }}">
+
+                      <label class="control-label input_label"><p class="rose">Short Description about yourself</p></label>
+                      <input type="text" class="form-control" name="bio" value="{{ old('bio') }}">
+
+                      <br>
+
+                      <div class="form-group">
+                          <div class="col-md-6">
+                              <button type="submit" class="btn btn-block btn-info">
+                                  Speichern
+                              </button>
+                          </div>
+                          <div class="col-md-6" style="text-align: center;">
+                              <a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}"
+                                  <button type="submit"  class="btn btn-block btn-default">
+                                      Zurücksetzen
+                                  </button>
+                              </a>
+                          </div>
+                        </div>
+                      </form>
                 </div> 
             </div>
 

@@ -10,6 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('hep', function(){
+
+	return Request::segements();
+
+});
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

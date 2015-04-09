@@ -2,10 +2,17 @@
 .navbar_container{
     max-width: 980px !important;
 }
+<<<<<<< HEAD
 .active {
     color:red !important;
+=======
+#flash_message_container{
+
+>>>>>>> origin/master
 }
 </style>
+
+
 
 <nav class="navbar navbar-default">
   <div class="container navbar_container">
@@ -19,3 +26,5 @@
     </ul>
   </div>
 </nav>
+
+<div id="flash_message_container">@include('flash::message')</div>

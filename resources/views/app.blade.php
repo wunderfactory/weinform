@@ -44,7 +44,6 @@
 
 	@include('structure.navbar')
     <div style="margin-top: 72px;">
-        @include('flash::message')
 	    @yield('content')
     </div>
 	@include('structure.footer')

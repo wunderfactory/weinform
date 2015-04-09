@@ -11,9 +11,6 @@
       @if (Auth::guest())
       <a class="navbar-brand" href="{{ url('/') }}">wundership</a>
       @else
-
-      <!---------------- -->
-
       <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username])  }}">wundership</a>
       @endif
     </div>
@@ -34,16 +31,10 @@
                   </a>
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
-
-                      <!---------------- Der Link hier müsste auf das Profil gehen nicht auf das dashboard -->
-
                         <a href="{{ url('/user/'.Auth::user()->username.'/') }}">
                             <i class="pe-7s-id"></i> Profile
                         </a>
                     </li>
-
-                    <!---------------- Der Link hier müsste auf das dashboard gehen -->
-
                     <li>
                         <a href="{{ action('UsersController@getDashboard', [Auth::user()->username]) }}">
                             <i class="pe-7s-home"></i> Dashboard
