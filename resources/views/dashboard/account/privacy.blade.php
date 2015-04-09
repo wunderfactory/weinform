@@ -43,18 +43,7 @@
 
 <div class="container notifications">
     <div class="row">
-        <div class="col-md-3">
-          <div id="right_navbar_container">
-            <a href=""><p class="nav_text active"><strong>Benachrichtigungen</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Zahlungsarten</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Auszahlungen</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Privatsphäre</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Sicherheit</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Einstellungen</strong></p></a>
-            <hr>
-            <button href="#" class="btn btn-block btn-warning">Freunde einladen!</button>
-          </div>      
-        </div>
+        @include('dashboard.account.side-navbar')
 
 
 <style type="text/css">

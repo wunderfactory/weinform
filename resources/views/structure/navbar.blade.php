@@ -11,9 +11,6 @@
       @if (Auth::guest())
       <a class="navbar-brand" href="{{ url('/') }}">wundership</a>
       @else
-
-      <!---------------- -->
-
       <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username])  }}">wundership</a>
       @endif
     </div>
