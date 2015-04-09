@@ -114,57 +114,38 @@
 
                     <div class="infobox_content">
 
-<style type="text/css">
-ul{
-    width: 100%;
-}
-</style>
+                            <style type="text/css">
+                            li{
+                                width: 50%;
+                                text-align: center;
+                            }
+                            </style>
 
-                        <ul class="nav nav-pills" role="tablist">
-                              <li class="">
-                                <a href="#info" role="tab" data-toggle="tab" aria-expanded="false">
-                                     Foto hochladen
-                                </a>
-                              </li>
-                              <li class="">
-                                <a href="#concept" role="tab" data-toggle="tab" aria-expanded="false">
-                                     WEBCAM
-                                </a>
-                              </li>
-                        </ul>
+                            <ul class="nav nav-pills" role="tablist">
+                                  <li class="active">
+                                    <a href="#" onclick="file()" role="tab" data-toggle="tab" aria-expanded="true">
+                                         Foto hochladen
+                                    </a>
+                                  </li>
+                                  <li class="">
+                                    <a href="#" onclick="webcam()" role="tab" data-toggle="tab" aria-expanded="false">
+                                         WEBCAM
+                                    </a>
+                                  </li>
+                            </ul>
 
-                        <div id="acordeon">
-                            <div class="panel-group" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-target="#collapseOne" href="#collapseOne" data-toggle="gsdk-collapse" class="" onclick="webcam()">
-                                                Webcam
-                                            </a>
-                                        </h4>
+                            <div id="webcam" style="display: none;">
+                                <div class="panel-body">
+                                    <div id="webcam_container">
+
                                     </div>
-                                    <div id="collapseOne" class="panel-collapse collapse gsdk-collapse" style="height: 0px;">
-                                        <div class="panel-body">
-                                            <div id="webcam_container">
-
-                                            </div>
-                                            <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
-                                        </div>
-                                    </div>
+                                    <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-target="#collapseTwo" href="#collapseTwo"  data-toggle="gsdk-collapse" class="">
-                                                File upload
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse gsdk-collapse" style="height: 0px;">
-                                        <div class="panel-body">
-                                            <input id="picture_upload" type="file" name="">
-                                        </div>
-                                    </div>
+                            </div>
+
+                            <div id="file">
+                                <div class="panel-body">
+                                    <input id="picture_upload" type="file" name="">
                                 </div>
                             </div>
 
@@ -267,12 +248,16 @@ ul{
             jpeg_quality: 90
         });
         function webcam(){
-            if($('#webcam_container').children().length == 0){
                 Webcam.attach( '#webcam_container')
-            }else {
-                Webcam.reset();
-                $('#webcam_container').empty();
-            }
+                $('#file').css('display','none');
+                $('#webcam').css('display','block');
+        }
+
+        function file(){
+            $('#webcam').css('display','none');
+            $('#file').css('display','block');
+            Webcam.reset();
+            $('#webcam_container').empty();
         }
 
         function take_snapshot() {
