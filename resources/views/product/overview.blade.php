@@ -146,22 +146,14 @@
 <!-- INFOBOXES -->
       <div class="row">
         <div class="col-md-12">
-            <div class="infobox">
-                <div class="infobox_header">
-                    <p class="grey">Vervollständige dein <strong>Profil</strong></p>
-                </div>
-                <div class="infobox_content">
-                    <p class="grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                </div> 
-            </div>
 
 <style type="text/css">
-.image_left{
+#text_left{
   float: left;
   position: relative;
   width: 460px;
 }
-.image_right{
+#image_right{
   float: left;
   position: relative;
 }
@@ -190,7 +182,7 @@
 </style>
 
             <div class="infobox_image">
-                <div class="image_left">
+                <div id="text_left">
                   <div class="image_infobox_header">
                     <p class="grey"><strong>Lade deine Freunde ein!</strong></p>
                   </div>
@@ -199,9 +191,117 @@
                     <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
                   </div>
                 </div>
-                <div class="image_right col-md-6">
+                <div id="image_right" class="col-md-6">
                   <div class="image_container"></div>
                 </div>  
+            </div>
+
+<!-- WARNINGBOX -->
+
+<style type="text/css">
+.warningbox{
+  width: 100%;
+  background-color: white;
+  border: 1px solid red;
+  margin-bottom: 20px;
+}
+.warningbox_header{
+  width: 100%;
+  position: top;
+  height: 60px;
+  padding: 15px;
+  color: white;
+  background-color: #ea555c;
+  border-bottom: 1px solid #ea555c;
+  vertical-align: center;
+}
+.heading_container{
+  margin-top: 2px;
+}
+.warningbox_content{
+  padding: 15px; 
+}
+.icon_large{
+  font-size: 30px;
+}
+</style>
+
+            <div class="warningbox">
+                <div class="warningbox_header">
+                    <div class="col-md-1"><i class="pe-7s-gleam icon_large"></i></div>
+                    <div class="col-md-8 heading_container"><p class="white"><strong>Bitte vervollständige Dein Profil.</strong></p></div>
+                   
+                </div>
+                <div class="warningbox_content">
+                    <p class="rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                </div> 
+            </div>
+
+
+<style type="text/css">
+#text_right{
+  float: left;
+  position: relative;
+  width: 460px;
+}
+#image_left{
+  float: left;
+  position: relative;
+  z-index: 1;
+}
+.infobox_image{
+  background-color: white;
+  border: 1px solid #ababab;
+  margin-top: 20px;
+  height: 302px;
+  margin-bottom: 20px;
+}
+#image_infobox_header_image_left{
+  position: top;
+  height: 60px;
+  padding: 15px;
+  width: 475px;
+  margin-left: -2px;
+  z-index: -1;
+  background-color: #e8e8e8;
+  /*border-bottom: 1px solid #ababab;*/
+}
+#image_container_left{
+  width: 473px;
+  background-color: red;
+  height: 300px;
+  background-image: url('{{ asset('images/presentation/shipments/ship1.jpg') }}');
+  background-size: cover;
+}
+</style>
+
+            <div class="infobox_image">
+                <div id="text_right">
+                    <div id="image_container_left"></div>
+                </div>
+                <div id="image_left" class="col-md-6">
+                  <div id="image_infobox_header_image_left">
+                      <p class="grey"><strong>Das Wunder des Tages!</strong></p>
+                  </div>
+                  <div class="infobox_content">
+                      <p class="rose">Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
+                      <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
+                  </div>
+                </div>  
+            </div>
+
+
+
+
+
+
+            <div class="infobox">
+                <div class="infobox_header">
+                    <p class="grey">Wir suchen <strong>Praktikanten</strong></p>
+                </div>
+                <div class="infobox_content">
+                    <p class="grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div> 
             </div>
 
 <!-- MESSAGES -->
