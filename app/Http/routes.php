@@ -31,7 +31,7 @@ Route::get('test2', function() {
 Route::get('test', function(Request $request) {
     //$file = \App\File::file(\Illuminate\Support\Facades\Request::file('file'), \App\UserProfile::first());
     //return  $file;
-    return $request->get
+    return Request::segments();
 });
 Route::controller('/', 'StaticController');
 
