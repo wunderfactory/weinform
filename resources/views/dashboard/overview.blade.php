@@ -11,13 +11,11 @@
 .dashboard{
   max-width: 980px !important;
 }
-.from_top{
-  margin-top: 30px;
-  position: relative;
-}
 </style>
 
 <div id="background">
+
+@include('dashboard.navbar')
 
 <style type="text/css">
 #profile_container{
@@ -34,12 +32,13 @@
   color: white;
 }
 .icon_large{
-  font-size: 30px;
+  font-size: 20px;
 }
-#left_info_container{
+#left_news_container{
   max-width: 200px;
-  background-color: #ffa200;
+  background-color: #70aaab;
   margin-top: 20px;
+  text-align: center;
   padding: 20px;
   position: relative;
   margin-bottom: 20px;
@@ -48,13 +47,10 @@
   color: white;
   border-color: white;
 }
-.dark_grey{
-  color: #2e2e2e;
-}
 </style>
 
 <div class="container dashboard">
-    <div class="row from_top">
+    <div class="row">
         <div class="col-md-3">
             <div id="profile_container">
                 @if($user->facebookUser)
@@ -63,20 +59,18 @@
                     <img class="avatar" src="{{ asset('gsd/img/faces/face-1.jpg') }}" alt="...">
                 @endif
                 <div>
-                  <h3>{{ $user->first_name }} {{ $user->last_name }}</h3>
-                  <p>{{ $user->username }}</p>
+                  <h3>{{ $user->first_name }}</h3>
                 </div>
                 <div>
-                  @if(Auth::user()->id == $user->id)
-                  {!! link_to_action('ProfileController@edit', 'Profil bearbeiten',[$user->username, 1]) !!}
-                  @endif
+                  <p class="rose">Profil ansehen<br>
+                  Profil bearbeiten</p>
                 </div>
             </div>
-            <div id="left_info_container">
+            <div id="left_news_container">
                 <i class="fa fa-car white icon_large"></i>
-                <h4>{{ $user->first_name}} ist Fahrer!</h4>
-                <p>Mit einem verfizierten Profil und ein paar Klicks finanziert {{ $user->first_name }} jetzt mit wundership seine Autofahrten oder Zugreisen!<br> Hört sich gut an?</p>
-                <a href=""><p class="dark_grey"><strong>Fahrer werden!</strong></p></a>
+                <h4>Fahrer werden!</h4>
+                <p>Werde Fahrer und verdiene schnell eingene Euronen! Es ist herrlich, für wundership zu fahren! Du wirst es so genießen!</p><br>
+                <button href="#" class="btn btn-block btn-lg btn-fill btn-warning">Ja, Ich will!</button>
             </div>
         </div>
 
@@ -108,48 +102,32 @@
 <!-- INFOBOXES -->
 
         <div class="col-md-8">
-
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Hi! Ich bin {{ $user->first_name }}!</strong></p>
+                    <p class="grey"><strong>Hinweis!</strong></p>
                 </div>
                 <div class="infobox_content">
-                  @if($user->profile->hometown && $user->settings->hidden_hometown)
-                    <p><i class="fa fa-map-marker"></i> Wohnort: {{ $user->profile->hometown }}</p>
-                  @else
-                  @endif
-                  @if($user->profile->job && $user->settings->hidden_job)
-                    <p><i class="fa fa-university"></i> Job: {{ $user->profile->job }}</p>
-                  @else
-                  @endif
-                  @if($user->profile->languages && $user->settings->hidden_languages)
-                    <p><i class="fa fa-language"></i> Sprachen, die {{ $user->first_name }} spricht: {{ $user->profile->languages }}</p>
-                  @else
-                  @endif
+                    <p class="rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </div> 
             </div>
 
-
-            @if($user->profile->bio && $user->settings->hidden_bio)
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Über mich</strong></p>
+                    <p class="grey"><strong>Hinweis!</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">{{ $user->profile->bio }}</p>
+                    <p class="rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                 </div> 
             </div>
-            @else
-            @endif
 
 <!-- MESSAGES -->
 
           <div class="infobox">
             <div class="infobox_header">
-                <p class="grey"><strong>Bewertungen</strong></p>
+                <p class="grey"><strong>Nachrichten</strong></p>
             </div>
             <div class="infobox_content">
-                <p class="rose">{{ $user->first_name }} hat noch keine <strong>Bewertungen</strong> erhalten.</p>
+                <p class="rose">Messages</p>
             </div> 
           </div>
 
@@ -202,6 +180,10 @@
                   </div>
                   @else
                   @endif
+              </div>
+              <div>
+              <br>
+              <a href="{{url('#')}}"><p class="rose"><strong>Verifizierungen hinzufügen</strong></p></a>
               </div>
             </div> 
           </div>

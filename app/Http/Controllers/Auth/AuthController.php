@@ -73,7 +73,7 @@ class AuthController extends Controller {
                         Auth::login(Facebook::getFacebookUser()->user);
                         return redirect()->action('UsersController@show', Auth::user()->username);
                     }
-                    return redirect()->to('auth/login')->withErrors(['user' => Lang::get('validation.user')]);
+                    return redirect()->to('auth/login')->withErrors(['user' => Lang::get('auth/facebook.email_verified')]);
 
 				} else {
 					$this->session->put(['facebookUser_id' => Facebook::getFacebookUser()->id]);

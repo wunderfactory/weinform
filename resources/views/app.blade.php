@@ -49,6 +49,8 @@
 	<!-- Scripts -->
 
 
+
+
 	<script src="{{ URL::asset('gsd/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
 	<script src="{{ URL::asset('gsd/js/jquery-ui-1.10.4.custom.min.js') }}" type="text/javascript"></script>
 
@@ -71,5 +73,32 @@
 	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
     <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
 	@yield('script')
+
+
+		<!-- OVERVIEW WIGGLE -->
+
+		<script type="text/javascript">
+		$(document).ready(function() {     
+		    $('#pickup_container').hover(function(){     
+		        $('#car_icon').addClass('wiggle');    
+		    },     
+		    function(){
+		        $('#car_icon').removeClass('wiggle');     
+		    });
+		});
+		$(document).ready(function() {     
+		    $('#send_container').hover(function(){     
+		        $('#parcel_icon').addClass('wiggle');    
+		    },     
+		    function(){
+		        $('#parcel_icon').removeClass('wiggle');     
+		    });
+		});
+		</script>
+
+
+
+
+
 </body>
 </html>

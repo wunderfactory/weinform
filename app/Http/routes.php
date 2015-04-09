@@ -11,6 +11,52 @@
 |
 */
 
+Route::get('dashboard', function(){
+
+	$user = Auth::user();
+
+	return View::make('dashboard.overview')->with(['user' => $user]);
+
+});
+
+
+Route::get('profile', function(){
+
+	$user = Auth::user();
+
+	return View::make('dashboard.profile.edit')->with(['user' => $user]);
+
+});
+
+Route::get('account', function(){
+
+	$user = Auth::user();
+
+	return View::make('dashboard.account.notifications')->with(['user' => $user]);
+
+});
+
+Route::get('overview', function(){
+
+	if(Auth::user()){
+		$user = Auth::user();
+	}
+
+	return View::make('product.overview')->with(['user' => $user]);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -36,3 +82,10 @@ Route::post('test', function() {
     return  $file;
 });
 Route::controller('/', 'StaticController');
+
+
+
+
+
+
+
