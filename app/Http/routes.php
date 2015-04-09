@@ -28,10 +28,8 @@ Route::get('test2', function() {
     return view('home');
 });
 
-Route::get('test', function(Request $request) {
-    //$file = \App\File::file(\Illuminate\Support\Facades\Request::file('file'), \App\UserProfile::first());
-    //return  $file;
-    return Request::segments();
+Route::post('test', function() {
+    Storage::put('2.jpg', base64_decode(str_replace(' ', '+', Request::get('picture'))));
 });
 Route::controller('/', 'StaticController');
 

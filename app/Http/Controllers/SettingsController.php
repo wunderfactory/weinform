@@ -17,7 +17,6 @@ class SettingsController extends Controller {
 	 */
 	public function getIndex($user)
 	{
-		//
         return view('settings.show')->withUser($user);
 	}
 

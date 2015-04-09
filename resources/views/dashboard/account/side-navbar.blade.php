@@ -21,7 +21,7 @@
 
 <div class="col-md-3">
   <div id="right_navbar_container">
-    <a href="{{ action('SettingsAccountController@getIndex', [Auth::user()->username]) }}"><p class="nav_text {{ Request::segment(array_search('settings', Request::segments())+2) == 'account' ? 'active':''}}"><strong>Benachrichtigungen</strong></p></a>
+    <a href="{{ action('SettingsAccountController@getIndex', [Auth::user()->username]) }}"><p class="nav_text {{ Request::segment(array_search('settings', Request::segments())+2) == 'account' && Request::segment(array_search('settings', Request::segments())+3) == false? 'active':''}}"><strong>Benachrichtigungen</strong></p></a>
 
     <a href="{{ action('SettingsAccountController@getPaymentDetails', [Auth::user()->username]) }}"><p class="nav_text {{ Request::segment(array_search('settings', Request::segments())+3) == 'payment-details' ? 'active':''}}"><strong>Zahlungsarten</strong></p></a>
 

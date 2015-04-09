@@ -19,9 +19,9 @@
                         <div class="cropper">
                             <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
                         </div>
-                        <form method="POST" action="">
-                            <input type="hidden" name="_token" value="_token">
-                            <input type="hidden" name="picture">
+                        <form method="POST" action="{{url('test')}}" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input id="picture_form" type="hidden" name="picture">
                             <input type="submit">
                         </form>
                     </div>
@@ -41,7 +41,25 @@
 
 
     <script>
-        var imgData;
+        function dataURItoBlob(dataURI) {
+            // convert base64/URLEncoded data component to raw binary data held in a string
+            var byteString;
+            if (dataURI.split(',')[0].indexOf('base64') >= 0)
+                byteString = atob(dataURI.split(',')[1]);
+            else
+                byteString = unescape(dataURI.split(',')[1]);
+
+            // separate out the mime component
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+            // write the bytes of the string to a typed array
+            var ia = new Uint8Array(byteString.length);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+
+            return new Blob([ia], {type:mimeString});
+        }
         $('.cropper > img').cropper({
             aspectRatio: 1,
             autoCropArea: 0.65,
@@ -50,15 +68,12 @@
             highlight: false,
             dragCrop: false,
             movable: false,
-            resizable: false,
-            crop: function(data) {
-                imgData = data;
-                // Output the result data for cropping image.
-            }
+            resizable: false
         });
         $('form').submit(function(e){
             e.preventDefault();
-            console.log($('.cropper > img').cropper('getCroppedCanvas').toDataURL("image/jpeg").replace(/^data\:image\/\w+\;base64\,/, ''));
+            $('#picture_form').val($('.cropper > img').cropper('getCroppedCanvas').toDataURL("image/jpeg").replace(/^data\:image\/\w+\;base64\,/, ''));
+            this.submit();
         })
     </script>
 @endsection

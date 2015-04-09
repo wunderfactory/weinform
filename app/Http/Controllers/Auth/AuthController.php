@@ -109,10 +109,6 @@ class AuthController extends Controller {
 			$fb->save();
 			$this->session->forget('facebookUser_id');
 		}
-        if($request->hasFile('profile_picture')) {
-            $this->dispatch(new CreateProfilePicture($request->file('profile_picture'), $user->profile));
-        }
-		//$this->auth->login($user);
         flash()->warning('Please verify your E-Mail to login.');
 		return redirect('auth/login');
 	}

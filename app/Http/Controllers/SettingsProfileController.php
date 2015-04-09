@@ -48,6 +48,12 @@ class SettingsProfileController extends Controller {
         return view('dashboard.profile.photo')->withUser($user);
     }
 
+    public function postUploadImage(Request $request, $user)
+    {
+        $this->validate($request, ['picture' => 'required']);
+        Storage::put('2.jpg', base64_decode(str_replace(' ', '+', $request->get('picture'))));
+    }
+
     public function putProfilePicture($user)
     {
         return view('dashboard.profile.photo')->withUser($user);
