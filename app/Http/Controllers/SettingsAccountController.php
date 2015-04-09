@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class SettingsAccountController extends Controller {
 
@@ -25,6 +26,17 @@ class SettingsAccountController extends Controller {
     public function getPrivacy($user)
     {
         return view('dashboard.account.privacy')->withUser($user);
+    }
+
+    public function postUpdatePrivacy(Request $request, $user){
+        $settings = $user->settings;
+        $keys = ['hometown', 'bio', 'job', 'languages'];
+        foreach($keys as $key) {
+            $settings->{'hidden_'.$key} = $request->has($key);
+        }
+        $settings->save();
+        flash()->success(Lang::get('privacy.updated'));
+        return redirect()->back();
     }
 
     public function getSecurity($user)
