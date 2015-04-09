@@ -8,7 +8,14 @@
         <span class="icon-bar bar2"></span>
         <span class="icon-bar bar3"></span>
       </button>
+      @if (Auth::guest())
       <a class="navbar-brand" href="{{ url('/') }}">wundership</a>
+      @else
+
+      <!---------------- -->
+
+      <a class="navbar-brand" href="{{ url('OVERVIEW LINK!!!') }}">wundership</a>
+      @endif
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse">
@@ -27,18 +34,33 @@
                   </a>
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
+
+                      <!---------------- Der Link hier müsste auf das Profil gehen nicht auf das dashboard -->
+
                         <a href="{{ url('/user/'.Auth::user()->username.'/profile') }}">
                             <i class="pe-7s-id"></i> Profile
+                        </a>
+                    </li>
+
+                    <!---------------- Der Link hier müsste auf das dashboard gehen -->
+
+                    <li>
+                        <a href="#">
+                            <i class="pe-7s-home"></i> Dashboard
                         </a>
                     </li>
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">
                             <i class="pe-7s-config"></i> Settings
                         </a>
-
+                    <li>
+                    <li>
+                        <a href="{{ url('/user/'.Auth::user()->username.'/settings/account') }}">
+                            <i class="pe-7s-user"></i> Account
+                        </a>
                     <li>
                         <a href="{{ url('/auth/logout') }}">
-                             <i class="pe-7s-ticket"></i> Logout
+                             <i class="pe-7s-close-circle"></i> Logout
                         </a>
                     </li>
                   </ul>
