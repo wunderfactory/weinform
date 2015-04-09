@@ -14,19 +14,15 @@ class UsersController extends Controller {
     function __construct(ProfilerContract $profiler)
     {
         $this->profiler = $profiler;
-        $this->middleware('auth',['except' => ['profile']]);
+        //$this->middleware('auth',['except' => ['profile']]);
     }
 
-    public function profile($user)
+
+
+
+    public function getProfile($user)
 	{
-        if(Auth::user() == $user) {
-            return 'Autherizated user profile';
-        } else if (Auth::user()){
-            return 'Autherizated user other profile';
-        } else {
-            return 'guest user';
-        }
-	    return $user;
+      return view('dashboard.overview')->withUser($user);
 	}
 
     public function getComplete()
@@ -50,13 +46,7 @@ class UsersController extends Controller {
         return view('profile.verify');
     }
 
-    /* RESTful controller part*/
-
-    public function index(){
-        return 'hi';
-    }
-
-    public function show($user){
-        return view('product.overview');
+    public function getIndex($user){
+        return view('product.overview')->withUser($user);
     }
 }

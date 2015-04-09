@@ -17,43 +17,11 @@
 
 @include('dashboard.navbar')
 
-<style type="text/css">
-.rose{
-  color: #ea555c;
-}
-#right_navbar_container{
-  padding: 20px;
-}
-.nav_text{
-  color: #797979;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  /* ...and now for the proper property */
-  transition:.5s;
-}
-.nav_text:hover{
-  color: #c1c1c1;
-}
-.active{
-  color: #404040 !important;
-}
-</style>
+
 
 <div class="container profile">
     <div class="row">
-        <div class="col-md-3">
-          <div id="right_navbar_container">
-            <a href=""><p class="nav_text active"><strong>Profil bearbeiten</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Profilfoto</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Vertrauen und Verifizierung</strong></p></a>
-            <a href=""><p class="nav_text"><strong>Bewertungen</strong></p></a>
-            <hr>
-            <button href="#" class="btn btn-block btn-warning">Profil ansehen</button>
-          </div>      
-        </div>
-
+        @include('dashboard.side-navbar')
 
 <style type="text/css">
 .infobox{
@@ -87,7 +55,7 @@
                     <p class="grey"><strong>Profil bearbeiten</strong></p>
                 </div>
                 <div class="infobox_content">
-                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/'.Auth::user()->username.'/profile/1') }}">
+                      <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateProfile', [Auth::user()->username]) }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input name="_method" type="hidden" value="PUT">
 
@@ -113,7 +81,7 @@
                                 </button>
                             </div>
                             <div class="col-md-6" style="text-align: center;">
-                                <a href="{{ action('ProfileController@index', [Auth::user()->username]) }}"
+                                <a href="{{ action('UsersController@getProfile', [Auth::user()->username]) }}"
                                     <button type="submit"  class="btn btn-block btn-lg btn-default">
                                         Reset
                                     </button>

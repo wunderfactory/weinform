@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/user/'.Auth::user()->username.'/settings') }}">
+                        <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">
                             <i class="pe-7s-config"></i> Settings
                         </a>
 

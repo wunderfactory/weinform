@@ -47,16 +47,6 @@ Route::get('overview', function(){
 });
 
 
-
-
-
-
-
-
-
-
-
-
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -64,15 +54,13 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-
-Route::resource('user',                 'UsersController');
-Route::resource('user.profile',         'ProfileController');
-Route::resource('user.driver',          'DriverController');
-Route::group(['prefix' => 'user/{user}'], function()
+Route::group(['prefix' => 'user/{user}/settings/'], function()
 {
-    Route::controller('settings',        'SettingsController');
+    Route::controller('profile',        'SettingsProfileController');
+    Route::controller('account',        'SettingsAccountController');
     Route::get('profile/picture/show', 'ProfileController@profilePicture');
 });
+Route::controller('user/{user}',                 'UsersController');
 Route::get('test2', function() {
     return view('home');
 });

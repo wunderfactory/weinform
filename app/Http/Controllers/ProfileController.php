@@ -6,7 +6,6 @@ use App\Http\Requests;
 use App\Services\ProfilerContract;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
