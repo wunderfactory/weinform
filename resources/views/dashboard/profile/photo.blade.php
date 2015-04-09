@@ -82,7 +82,7 @@
 
 
 
-
+                @if($user->profile->picture || $user->facebookUser )
                 <div class="infobox_image">
                     <div id="text_left">
                       <div class="image_infobox_header">
@@ -96,7 +96,7 @@
                       <div class="image_container"></div>
                     </div>  
                 </div>
-
+                @else
                 <div class="warningbox">
                     <div class="warningbox_header">
                         <div class="col-md-1"><i class="pe-7s-smile icon_large"></i></div>
@@ -107,7 +107,7 @@
                         <p class="grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sachen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
                     </div> 
                 </div>
-
+                @endif
 
                 <div class="infobox">
                     <div class="infobox_header">
@@ -115,12 +115,40 @@
                     </div>
 
                     <div class="infobox_content">
-                        <input id="picture_upload" type="file" name="">
+                        <div id="acordeon">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-target="#collapseOne" href="#collapseOne" data-toggle="gsdk-collapse" class="" onclick="webcam()">
+                                                Webcam
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse gsdk-collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <div id="webcam_container">
 
-                        <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
-                        <a href="javascript:void(webcam())">webcam</a>
-
-                        <div id="webcam_container">
+                                            </div>
+                                            <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-target="#collapseTwo" href="#collapseTwo"  data-toggle="gsdk-collapse" class="">
+                                                File upload
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse gsdk-collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <input id="picture_upload" type="file" name="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                         <div id="image_container">
@@ -221,7 +249,12 @@
             jpeg_quality: 90
         });
         function webcam(){
-            Webcam.attach( '#webcam_container' );
+            if($('#webcam_container').children().length == 0){
+                Webcam.attach( '#webcam_container')
+            }else {
+                Webcam.reset();
+                $('#webcam_container').empty();
+            }
         }
 
         function take_snapshot() {
