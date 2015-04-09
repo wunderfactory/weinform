@@ -21,24 +21,6 @@
 .rose{
   color: #ea555c;
 }
-#right_navbar_container{
-  padding: 20px;
-}
-.nav_text{
-  color: #797979;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  /* ...and now for the proper property */
-  transition:.5s;
-}
-.nav_text:hover{
-  color: #c1c1c1;
-}
-.active{
-  color: #404040 !important;
-}
 </style>
 
 <div class="container notifications">
@@ -75,10 +57,10 @@
         <div class="col-md-8">
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Einstellungen</strong></p>
+                    <p class="grey"><strong>Account löschen</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">HIER MUSS</p>
+                    <button href="#" class="btn btn-fill btn-danger">Account löschen</button>
                 </div> 
             </div>
 

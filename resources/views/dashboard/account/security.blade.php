@@ -21,24 +21,6 @@
 .rose{
   color: #ea555c;
 }
-#right_navbar_container{
-  padding: 20px;
-}
-.nav_text{
-  color: #797979;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  /* ...and now for the proper property */
-  transition:.5s;
-}
-.nav_text:hover{
-  color: #c1c1c1;
-}
-.active{
-  color: #404040 !important;
-}
 </style>
 
 <div class="container notifications">
@@ -68,6 +50,24 @@
 .grey{
   color: #828282;
 }
+.middle_container{
+  text-align: right;
+  margin-top: 10px;
+}
+.very_small{
+  font-size: 15px;
+  margin-bottom: 21px;
+}
+.large_icon{
+  font-size: 80px;
+}
+.lock_icon{
+  margin-top: 24px;
+  margin-left: 10px;
+}
+input{
+  margin-top: 2px;
+}
 </style>
 
 <!-- INFOBOXES -->
@@ -75,10 +75,28 @@
         <div class="col-md-8">
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Sicherheit</strong></p>
+                    <p class="grey"><strong>Passwort ändern</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">HIER MUSS</p>
+                    <div class="row">
+                        <div class="col-md-2">
+
+                            <i class="pe-7s-door-lock large_icon lock_icon"></i>
+
+                        </div>
+                        <div class="col-md-5 middle_container">
+                            <p class="very_small">Dein <strong>altes</strong> Passwort</p>
+                            <p class="very_small">Dein <strong>neues</strong> Passwort</p>
+                            <p class="very_small">Bestätige Dein <strong>neues</strong> Passwort</p>
+                        </div>
+                        <div class="col-md-4">
+                          <input type="password" class="form-control" name="password">
+
+                          <input type="password" class="form-control" name="password">
+
+                          <input type="password" class="form-control" name="password_confirmation">
+                        </div>
+                    </div>
                 </div> 
             </div>
 
