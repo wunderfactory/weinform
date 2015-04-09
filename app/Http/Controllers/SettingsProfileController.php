@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Commands\CreateProfile;
+use App\Commands\CreateProfilePicture;
+use App\Commands\CreateUserProfile;
 use App\Commands\SendVerificationForPhone;
 use App\Commands\UpdateUserProfile;
 use App\Commands\VerifyPhone;
@@ -34,11 +37,19 @@ class SettingsProfileController extends Controller {
         if($user->id != Auth::user()->id) {
             return response('Unauthorized.', 401);
         }
+
         $vali = $this->profiler->validate($request->all());
-        if ($vali->fails()){
+        if ($vali->fails())
+        {
             return redirect()->back()->withInput($request->all())->withErrors($vali->errors());
         }
-        $this->dispatch(new UpdateUserProfile($user->profile, $request->only(['hometown', 'languages', 'job', 'bio'])));
+        if(!$user->profile)
+        {
+            $this->dispatch(new CreateUserProfile($user, $request->only(['hometown', 'languages', 'job', 'bio'])));
+        } else
+        {
+            $this->dispatch(new UpdateUserProfile($user->profile, $request->only(['hometown', 'languages', 'job', 'bio'])));
+        }
         flash()->success(Lang::get('successfully.update.profile'));
         return redirect()->action('SettingsProfileController@getIndex', [$user->username]);
     }
@@ -51,7 +62,11 @@ class SettingsProfileController extends Controller {
     public function postUploadImage(Request $request, $user)
     {
         $this->validate($request, ['picture' => 'required']);
-        Storage::put('2.jpg', base64_decode(str_replace(' ', '+', $request->get('picture'))));
+        if($user->profile->picture) {
+            $user->profile->picture->delete();
+        }
+        $this->dispatch(new CreateProfilePicture($request->get('picture'), $user));
+        return redirect()->back();
     }
 
     public function putProfilePicture($user)

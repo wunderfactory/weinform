@@ -1,9 +1,8 @@
 <?php namespace App\Commands;
 
-use App\Commands\Command;
-
 use App\File;
 use Illuminate\Contracts\Bus\SelfHandling;
+use Illuminate\Support\Facades\Storage;
 
 class CreateProfilePicture extends Command implements SelfHandling {
 
@@ -30,7 +29,16 @@ class CreateProfilePicture extends Command implements SelfHandling {
 	 */
 	public function handle()
 	{
-		return File::file($this->picture, $this->owner);
+        $newFile = File::create([
+            'name'          => 'profile_picture_'.$this->owner->username,
+            'extension'     => 'jpg',
+            'stored_name'   => str_random(64).'.jpg',
+            'path'          => 'profile_pictures',
+        ]);
+        $newFile->owner()->associate($this->owner->profile);
+        $newFile->save();
+        Storage::put($newFile->path.'/'.$newFile->stored_name, base64_decode(str_replace(' ', '+', $this->picture)));
+        return $newFile;
 	}
 
 }

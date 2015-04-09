@@ -15,15 +15,19 @@
                     <div class="infobox_header">
                         <p class="grey"><strong>Profilfoto ändern</strong></p>
                     </div>
+
                     <div class="infobox_content">
-                        <div class="cropper">
-                            <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
+                        <input id="picture_upload" type="file" name="">
+                        <div id="image_container">
+                            <div class="cropper">
+                                <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
+                            </div>
+                            <form method="POST" action="{{ action('SettingsProfileController@postUploadImage', [Auth::user()->username]) }}" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input id="picture_form" type="hidden" name="picture">
+                                <input type="submit">
+                            </form>
                         </div>
-                        <form method="POST" action="{{url('test')}}" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input id="picture_form" type="hidden" name="picture">
-                            <input type="submit">
-                        </form>
                     </div>
                 </div>
 
@@ -41,35 +45,63 @@
 
 
     <script>
-        function dataURItoBlob(dataURI) {
-            // convert base64/URLEncoded data component to raw binary data held in a string
-            var byteString;
-            if (dataURI.split(',')[0].indexOf('base64') >= 0)
-                byteString = atob(dataURI.split(',')[1]);
-            else
-                byteString = unescape(dataURI.split(',')[1]);
-
-            // separate out the mime component
-            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-            // write the bytes of the string to a typed array
-            var ia = new Uint8Array(byteString.length);
-            for (var i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
+        var $cropper = $('.cropper img');
+        var url, active;
+        var support =  {
+            fileList: !!$('<input type="file">').prop('files'),
+            blobURLs: !!window.URL && URL.createObjectURL,
+            formData: !!window.FormData
+        };
+        function isImageFile(file) {
+            if (file.type) {
+                return /^image\/\w+$/.test(file.type);
+            } else {
+                return /\.(jpg|jpeg|png|gif)$/.test(file);
             }
-
-            return new Blob([ia], {type:mimeString});
         }
-        $('.cropper > img').cropper({
-            aspectRatio: 1,
-            autoCropArea: 0.65,
-            strict: false,
-            guides: false,
-            highlight: false,
-            dragCrop: false,
-            movable: false,
-            resizable: false
+
+        function start(){
+
+                $('.cropper img').cropper({
+                    aspectRatio: 1,
+                    autoCropArea: 0.65,
+                    strict: true,
+                    guides: false,
+                    highlight: false,
+                    dragCrop: false,
+                    movable: true,
+                    resizable: false
+                });
+                active = true;
+        }
+
+        function stop() {
+            if (active) {
+                $('.cropper img').cropper('destroy');
+                active = false;
+            }
+        }
+
+        $('#picture_upload').on('change',function(){
+            stop();
+            if($('#image_container').css('display') == 'none') {
+                $('#image_container').css('display', 'block')
+            }
+            var file, files;
+            files =  $('#picture_upload').prop('files');
+            if (files.length > 0) {
+                file = files[0];
+                if (isImageFile(file)) {
+                    var FR = new FileReader();
+                    FR.onload = function(e) {
+                        $('.cropper').empty().html('<img src="'+ e.target.result+'">');
+                        start();
+                    };
+                    FR.readAsDataURL(file);
+                }
+            }
         });
+
         $('form').submit(function(e){
             e.preventDefault();
             $('#picture_form').val($('.cropper > img').cropper('getCroppedCanvas').toDataURL("image/jpeg").replace(/^data\:image\/\w+\;base64\,/, ''));
@@ -112,6 +144,10 @@
 
         .cropper img{
             width: 100%;
+        }
+
+        #image_container {
+            display: none;
         }
     </style>
     <link href="{{ asset('css/cropper.min.css') }}" rel="stylesheet" />

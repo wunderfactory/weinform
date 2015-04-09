@@ -20,6 +20,7 @@ class CreateFilesTable extends Migration {
             $table->string('extension');
             $table->string('path');
             $table->string('stored_name');
+            $table->softDeletes();
 			$table->timestamps();
 		});
 	}

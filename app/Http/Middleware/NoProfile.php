@@ -14,7 +14,7 @@ class NoProfile {
 	 */
 	public function handle($request, Closure $next)
 	{
-        if (Auth::user() && !Auth::user()->profile && $request->fullUrl() != action('ProfileController@create', [Auth::user()->username]) && ($request->fullUrl() != action('ProfileController@store', [Auth::user()->username]) && $request->method() != 'POST') ) {
+        if (Auth::user() && !Auth::user()->profile && $request->fullUrl() != action('SettingsProfileController@getIndex', [Auth::user()->username]) && ($request->fullUrl() != action('SettingsProfileController@putUpdateProfile', [Auth::user()->username])) ) {
             return redirect()->action('SettingsProfileController@getIndex', [Auth::user()->username]);
         }
 		return $next($request);
