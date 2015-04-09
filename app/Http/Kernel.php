@@ -33,6 +33,7 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
         'driver' => 'App\Http\Middleware\Driver',
         'notDriver' => 'App\Http\Middleware\NotDriver',
+        'user' => 'App\Http\Middleware\User',
 	];
 
 }

@@ -116,7 +116,10 @@
 
                     <div class="infobox_content">
                         <input id="picture_upload" type="file" name="">
+
                         <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
+                        <a href="javascript:void(webcam())">webcam</a>
+
                         <div id="webcam_container">
 
                         </div>
@@ -217,7 +220,9 @@
             image_format: 'jpeg',
             jpeg_quality: 90
         });
-        Webcam.attach( '#webcam_container' );
+        function webcam(){
+            Webcam.attach( '#webcam_container' );
+        }
 
         function take_snapshot() {
             Webcam.snap( function(data_uri) {
