@@ -142,7 +142,7 @@ text-decoration: none;
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <label for="token">Code eingeben</label>
                                         <input id="token" type="input" name="token">
-                                        <input type="submit" value="Bestätigen">
+                                        <input class="btn btn-info" type="submit" value="Bestätigen">
                                     </form>
                             </div>
                       </div>

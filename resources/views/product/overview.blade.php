@@ -284,8 +284,8 @@
                       <p class="grey"><strong>Das Wunder des Tages!</strong></p>
                   </div>
                   <div class="infobox_content">
-                      <p class="rose">Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
-                      <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
+                      <p class="rose">Armin hat erfolgreich seinen Biolite Hightech-Grill von Hamburg nach Berlin versendet!</p><br>
+                      <a href="#"><button class="btn btn-default">Mehr Wunder sehen!</button></a>
                   </div>
                 </div>  
             </div>

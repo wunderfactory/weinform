@@ -43,7 +43,59 @@
 }
 </style>
 
+            
+
+<style type="text/css">
+#text_left{
+  float: left;
+  position: relative;
+  width: 306px;
+}
+#image_right{
+  float: left;
+  position: relative;
+}
+.infobox_image{
+  background-color: white;
+  border: 1px solid #ababab;
+  margin-top: 20px;
+  height: 302px;
+  margin-bottom: 20px;
+}
+.image_infobox_header{
+  position: top;
+  height: 60px;
+  padding: 15px;
+  width: 325px;
+  background-color: #e8e8e8;
+  /*border-bottom: 1px solid #ababab;*/
+}
+.image_container{
+  width: 300px;
+  background-color: red;
+  height: 300px;
+  background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');
+  background-size: cover;
+}
+</style>
             <div class="col-md-8">
+
+
+
+
+                <div class="infobox_image">
+                    <div id="text_left">
+                      <div class="image_infobox_header">
+                        <p class="grey"><strong>Dein Profilbild</strong></p>
+                      </div>
+                      <div class="infobox_content">
+                        <p class="rose"></p><br>
+                      </div>
+                    </div>
+                    <div id="image_right" class="col-md-6">
+                      <div class="image_container"></div>
+                    </div>  
+                </div>
 
                 <div class="warningbox">
                     <div class="warningbox_header">
@@ -59,12 +111,12 @@
 
                 <div class="infobox">
                     <div class="infobox_header">
-                        <p class="grey"><strong>Profilfoto ändern</strong></p>
+                        <p class="grey"><strong>Profilbild ändern</strong></p>
                     </div>
 
                     <div class="infobox_content">
                         <input id="picture_upload" type="file" name="">
-                        <a href="javascript:void(take_snapshot())">Snap</a>
+                        <a href="javascript:void(take_snapshot())">Foto aufnehmen</a>
                         <div id="webcam_container">
 
                         </div>
