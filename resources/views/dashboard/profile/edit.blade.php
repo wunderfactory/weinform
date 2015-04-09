@@ -87,7 +87,40 @@
                     <p class="grey"><strong>Profil bearbeiten</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/'.Auth::user()->username.'/profile/1') }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input name="_method" type="hidden" value="PUT">
+
+
+                        <label class="control-label">Hometown</label>
+                        <input type="text" class="form-control" name="hometown" value="{{ old('hometown')}}">
+
+                        <label class="control-label">Job</label>
+                        <input type="text" class="form-control" name="job" value="{{ old('job') }}">
+
+                        <label class="control-label">Languages</label>
+                        <input type="text" class="form-control" name="languages" value="{{ old('languages') }}">
+
+                        <label class="control-label">Short Description about yourself</label>
+                        <input type="text" class="form-control" name="bio" value="{{ old('bio') }}">
+
+                        <br>
+
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-block btn-lg btn-info">
+                                    Save
+                                </button>
+                            </div>
+                            <div class="col-md-6" style="text-align: center;">
+                                <a href="{{ action('ProfileController@index', [Auth::user()->username]) }}"
+                                    <button type="submit"  class="btn btn-block btn-lg btn-default">
+                                        Reset
+                                    </button>
+                                </a>
+                            </div>
+                    </div>
+                    </form>
                 </div> 
             </div>
 
