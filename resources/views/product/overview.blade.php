@@ -195,7 +195,8 @@
                     <p class="grey"><strong>Lade deine Freunde ein!</strong></p>
                   </div>
                   <div class="infobox_content">
-                    <p class="rose">Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p>
+                    <p class="rose">Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
+                    <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
                   </div>
                 </div>
                 <div class="image_right col-md-6">

@@ -43,6 +43,7 @@
   padding: 20px;
   position: relative;
   margin-bottom: 20px;
+  border: 1px solid #ababab;
 }
 .btn-white{
   color: white;
@@ -72,11 +73,43 @@
                   @endif
                 </div>
             </div>
+
+<style type="text/css">
+.car_icon{
+
+}
+</style>
+
+
             <div id="left_info_container">
-                <i class="fa fa-car white icon_large"></i>
+                <i class="pe-7s-car large_icon"></i>
                 <h4>{{ $user->first_name}} ist Fahrer!</h4>
-                <p>Mit einem verfizierten Profil und ein paar Klicks finanziert {{ $user->first_name }} jetzt mit wundership seine Autofahrten oder Zugreisen!<br> Hört sich gut an?</p>
+                <p>Mit einem verfizierten Profil und ein paar Klicks finanziert {{ $user->first_name }} jetzt mit <strong>wundership</strong> seine Autofahrten oder Zugreisen!<br> Hört sich gut an?</p>
                 <a href=""><p class="dark_grey"><strong>Fahrer werden!</strong></p></a>
+            </div>
+
+            <hr>
+
+<style type="text/css">
+#action_container{
+  max-width: 200px;
+  background-color: #ab4848;
+  margin-top: 20px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ab4848;
+}
+.attention_icon{
+  margin-bottom: 10px;
+}
+</style>
+
+
+            <div id="action_container">
+                <i class="pe-7s-attention large_icon attention_icon"></i>
+                <p>Gab es ein Problem mit {{ $user->first_name }}?</p>
+                <a href=""><p class="dark_grey"><strong>Patrick melden.</strong></p></a>
             </div>
         </div>
 
@@ -103,31 +136,92 @@
 .grey{
   color: #828282;
 }
+.right_container{
+  margin-left: 10px;
+  margin-top: 11px;
+}
+.large_icon{
+  font-size: 40px;
+}
+.map_icon{
+  margin-left: 10px;
+}
+.way_icon{
+  margin-left: 12px;
+}
+.culture_icon{
+  margin-left: 8px;
+}
+.lock_icon{
+  margin-left: 8px;
+}
 </style>
 
 <!-- INFOBOXES -->
 
         <div class="col-md-8">
-
             <div class="infobox">
                 <div class="infobox_header">
                     <p class="grey"><strong>Hi! Ich bin {{ $user->first_name }}!</strong></p>
                 </div>
                 <div class="infobox_content">
-                  @if($user->profile->hometown && $user->settings->hidden_hometown)
-                    <p><i class="fa fa-map-marker"></i> Wohnort: {{ $user->profile->hometown }}</p>
-                  @else
-                  @endif
-                  @if($user->profile->job && $user->settings->hidden_job)
-                    <p><i class="fa fa-university"></i> Job: {{ $user->profile->job }}</p>
-                  @else
-                  @endif
-                  @if($user->profile->languages && $user->settings->hidden_languages)
-                    <p><i class="fa fa-language"></i> Sprachen, die {{ $user->first_name }} spricht: {{ $user->profile->languages }}</p>
-                  @else
-                  @endif
+                    @if($user->profile->hometown && $user->settings->hidden_hometown)
+                    <div class="row">
+                        <div class="col-md-1">
+
+                            <i class="pe-7s-map-2 large_icon map_icon"></i>
+
+                        </div>
+                        <div class="col-md-8 right_container">
+                            {{ $user->profile->hometown }}
+                        </div>
+                    </div>
+                    @else
+                    @endif
+                    @if($user->profile->job && $user->settings->hidden_job)
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-1">
+
+                            <i class="pe-7s-culture large_icon culture_icon"></i>
+
+                        </div>
+                        <div class="col-md-8 right_container">
+                            {{ $user->profile->job }}
+                        </div>
+                    </div>
+                    @else
+                    @endif
+                    @if($user->profile->languages && $user->settings->hidden_languages)
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-1">
+
+                            <i class="pe-7s-way large_icon way_icon"></i>
+
+                        </div>
+                        <div class="col-md-8 right_container">
+                            Sprachen, die {{ $user->first_name }} spricht: {{ $user->profile->languages }}
+                        </div>
+                    </div>
+                    @else
+                    @endif
+                    @if(!$user->profile->languages && !$user->profile->job && !$user->profile->hometown || !$user->settings->hidden_languages && !$user->settings->hidden_job && !$user->settings->hidden_hometown)
+                    <div class="row">
+                        <div class="col-md-1">
+
+                            <i class="pe-7s-door-lock large_icon lock_icon"></i>
+
+                        </div>
+                        <div class="col-md-8 right_container">
+                            {{ $user->first_name }} hat noch keine Profilinfos freigegeben.
+                        </div>
+                    </div>
+                    @else
+                    @endif
                 </div> 
             </div>
+
 
 
             @if($user->profile->bio && $user->settings->hidden_bio)
@@ -136,7 +230,7 @@
                     <p class="grey"><strong>Über mich</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">{{ $user->profile->bio }}</p>
+                    <p class="grey">{{ $user->profile->bio }}</p>
                 </div> 
             </div>
             @else

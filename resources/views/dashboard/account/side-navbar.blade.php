@@ -32,6 +32,6 @@
 
     <a href="{{ action('SettingsAccountController@getSettings', [Auth::user()->username]) }}"><p class="nav_text {{ Request::segment(array_search('settings', Request::segments())+3) == 'settings' ? 'active':''}}"><strong>Einstellungen</strong></p></a>
     <hr>
-    <button href="#" class="btn btn-block btn-warning">Freunde einladen!</button>
+    <a href="{{ url('friends') }}"><button class="btn btn-block btn-warning">Freunde einladen!</button></a>
   </div>      
 </div>

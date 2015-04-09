@@ -50,4 +50,36 @@ class StaticController extends Controller {
 		return view('product.overview');
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* STATIC INFORMATION PAGES */
+
+	public function getSecurity()
+	{
+		return view('static.static_information.security_informations');
+	}
+
+	/* CALL TO ACTION PAGES */
+
+	public function getFriends()
+	{
+		return view('static.call_to_action.invite_friends');
+	}
 }

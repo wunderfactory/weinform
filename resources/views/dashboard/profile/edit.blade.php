@@ -56,6 +56,8 @@
 }
 </style>
 
+<!-- WARNINGBOX -->
+
 <style type="text/css">
 .warningbox{
   width: 100%;
@@ -79,7 +81,7 @@
 .warningbox_content{
   padding: 15px; 
 }
-.hep{
+.icon_large{
   font-size: 30px;
 }
 </style>
@@ -91,7 +93,7 @@
 
             <div class="warningbox">
                 <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-gleam hep"></i></div>
+                    <div class="col-md-1"><i class="pe-7s-gleam icon_large"></i></div>
                     <div class="col-md-8 heading_container"><p class="white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
                    
                 </div>

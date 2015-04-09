@@ -8,9 +8,55 @@
     <div class="container profile">
         <div class="row">
             @include('dashboard.profile.side-navbar')
-            <!-- INFOBOXES -->
+
+
+<!-- WARNINGBOX -->
+
+<style type="text/css">
+.grey{
+    color: #828282;
+}
+.warningbox{
+  width: 100%;
+  background-color: white;
+  border: 1px solid #52b856;
+  margin-bottom: 20px;
+}
+.warningbox_header{
+  width: 100%;
+  position: top;
+  height: 60px;
+  padding: 15px;
+  color: white;
+  background-color: #52b856;
+  border-bottom: 1px solid #52b856;
+  vertical-align: center;
+}
+.heading_container{
+  margin-top: 2px;
+}
+.warningbox_content{
+  padding: 15px; 
+}
+.icon_large{
+  font-size: 30px;
+}
+</style>
 
             <div class="col-md-8">
+
+                <div class="warningbox">
+                    <div class="warningbox_header">
+                        <div class="col-md-1"><i class="pe-7s-smile icon_large"></i></div>
+                        <div class="col-md-10 heading_container"><p class="white"><strong>Heyho {{ $user->first_name }}! Schön, dass Du ein Profilbild höchlädst.</strong></p></div>
+                       
+                    </div>
+                    <div class="warningbox_content">
+                        <p class="grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sachen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
+                    </div> 
+                </div>
+
+
                 <div class="infobox">
                     <div class="infobox_header">
                         <p class="grey"><strong>Profilfoto ändern</strong></p>
