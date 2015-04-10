@@ -16,13 +16,13 @@
 .grey{
     color: #828282;
 }
-.warningbox{
+.successbox{
   width: 100%;
   background-color: white;
   border: 1px solid #52b856;
   margin-bottom: 20px;
 }
-.warningbox_header{
+.successbox_header{
   width: 100%;
   position: top;
   height: 60px;
@@ -35,7 +35,7 @@
 .heading_container{
   margin-top: 2px;
 }
-.warningbox_content{
+.successbox_content{
   padding: 15px; 
 }
 .icon_large{
@@ -87,7 +87,7 @@
                         <p class="grey"><strong>Dein Profilbild</strong></p>
                       </div>
                       <div class="infobox_content">
-                        <p class="rose">TIPP: Achte darauf, dass Du auf deinem Profilbild gut zu erkennen bist. Wir verifizieren Deinen Account anhand Deines Bildes.</p><br>
+                        <p class="rose"><strong>TIPP:</strong> Achte darauf, dass Du auf deinem Profilbild gut zu erkennen bist. Wir verifizieren Deinen Account anhand Deines Bildes.</p><br>
                       </div>
                     </div>
                     <div id="image_right" class="col-md-6">
@@ -95,14 +95,14 @@
                     </div>  
                 </div>
                 @else
-                <div class="warningbox">
-                    <div class="warningbox_header">
-                        <div class="col-md-1"><i class="pe-7s-smile icon_large"></i></div>
+                <div class="successbox">
+                    <div class="successbox_header">
+                        <div class="col-md-1"><i class="pe-7s-camera icon_large"></i></div>
                         <div class="col-md-10 heading_container"><p class="white"><strong>Heyho {{ $user->first_name }}! Schön, dass Du ein Profilbild höchlädst.</strong></p></div>
                        
                     </div>
-                    <div class="warningbox_content">
-                        <p class="grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sachen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
+                    <div class="successbox_content">
+                        <p class="grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
                     </div> 
                 </div>
                 @endif
