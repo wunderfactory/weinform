@@ -102,8 +102,6 @@
                 <a href="#"><p class="dark_grey"><strong>Ja, ich will!</strong></p></a>
             </div>
 
-
-
 <style type="text/css">
 #action_container{
   max-width: 200px;
@@ -125,93 +123,130 @@
 }
 </style>
 
-
             <div id="action_container">
                 <i class="pe-7s-help1 large_icon help_icon"></i>
                 <p>Gab es ein Problem, {{ $user->first_name }}?</p>
                 <a href="#"><p class="dark_grey"><strong>Kontaktiere das wundership team.</strong></p></a>
             </div>
 
-
-
         </div>
 
 
-<style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
-.grey{
-  color: #828282;
-}
-</style>
+<!-------------------------------------------- -->
 
-<!-- INFOBOXES -->
 
         <div class="col-md-8">
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Hinweis!</strong></p>
+                    <p class="box_grey"><strong>Hinweis!</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p class="box_rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </div> 
             </div>
 
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Hinweis!</strong></p>
+                    <p class="box_grey"><strong>Hinweis!</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <p class="box_rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                 </div> 
             </div>
 
+
+<!-------------------------------------------- -->
+
+
+            <div class="warningbox">
+                <div class="warningbox_header">
+                    <div class="col-md-1"><i class="pe-7s-user box_icon_large"></i></div>
+                    <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
+                   
+                </div>
+                <div class="warningbox_content">
+                    <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                </div> 
+            </div>
+
+<!-------------------------------------------- -->
+
+
+            <div class="warningbox">
+                <div class="warningbox_header">
+                    <div class="col-md-1"><i class="pe-7s-id box_icon_large"></i></div>
+                    <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p></div>
+                   
+                </div>
+                <div class="warningbox_content">
+                    <p class="rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                </div> 
+            </div>
+
+
+<!-------------------------------------------- -->
+
+
+            <div class="successbox">
+                <div class="successbox_header">
+                    <div class="col-md-1"><i class="pe-7s-check box_icon_large"></i></div>
+                    <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
+                   
+                </div>
+                <div class="successbox_content">
+                    <p class="grey">Ab jetzt kannst Du Sendungen mitnehmen. Finanziere Deine Fahrten indem Du Sendungen mitnimmst. <strong>Jetzt loslegen.</strong></p>
+                </div> 
+            </div>
+
+
+<!-------------------------------------------- -->
+
+
+            <div class="orangebox">
+                <div class="orangebox_header">
+                    <div class="col-md-1"><i class="pe-7s-clock box_icon_large"></i></div>
+                    <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
+                   
+                </div>
+                <div class="orangebox_content">
+                    <p class="grey">Bitte hab noch einen Moment Geduld. Wir bearbeiten gerade die <strong>Verifizierung Deiner Identität</strong>.</p>
+                </div> 
+            </div>
+
+
+<!-------------------------------------------- -->
+
+
 <!-- MESSAGES -->
 
-          <div class="infobox">
-            <div class="infobox_header">
-                <p class="grey"><strong>Nachrichten</strong></p>
-            </div>
-            <div class="infobox_content">
-                <p class="rose">Messages</p>
-            </div> 
-          </div>
+<div class="infobox">
+  <div class="infobox_header">
+      <p class="grey"><strong>Nachrichten</strong></p>
+  </div>
+  <div class="infobox_content">
+      <p class="rose">Messages</p>
+  </div> 
+</div>
 
 
 <style type="text/css">
-  .question{
-    font-size: 20px;
-  }
-  .verification_button{
-    margin-top: -6px;
-  }
-  .check_container{
-    float: left;
-    padding-top: 6px;
-  }
-  .text_container{
-    float: left;
-    margin-left: 17px;
-  }
-  .check{
-    color: #2fd155;
-  }
+.question{
+  font-size: 20px;
+}
+.verification_button{
+  margin-top: -6px;
+}
+.check_container{
+  float: left;
+  padding-top: 6px;
+}
+.text_container{
+  float: left;
+  margin-left: 17px;
+}
+.check{
+  color: #2fd155;
+}
 </style>
 
 

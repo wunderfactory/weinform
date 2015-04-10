@@ -110,31 +110,7 @@
 
 
         </div>
-
-
-<style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
-.grey{
-  color: #828282;
-}
-</style>
+        
 
 <!-- INFOBOXES -->
 
@@ -170,23 +146,23 @@
 
 
 <style type="text/css">
-  .question{
-    font-size: 20px;
-  }
-  .verification_button{
-    margin-top: -6px;
-  }
-  .check_container{
-    float: left;
-    padding-top: 6px;
-  }
-  .text_container{
-    float: left;
-    margin-left: 17px;
-  }
-  .check{
-    color: #2fd155;
-  }
+.question{
+  font-size: 20px;
+}
+.verification_button{
+  margin-top: -6px;
+}
+.check_container{
+  float: left;
+  padding-top: 6px;
+}
+.text_container{
+  float: left;
+  margin-left: 17px;
+}
+.check{
+  color: #2fd155;
+}
 </style>
 
 

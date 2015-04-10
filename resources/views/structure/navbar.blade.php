@@ -32,7 +32,7 @@
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/') }}">
-                            <i class="pe-7s-id"></i> Profile
+                            <i class="pe-7s-user"></i> Profile
                         </a>
                     </li>
                     <li>
@@ -47,7 +47,7 @@
                     <li>
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/settings/account') }}">
-                            <i class="pe-7s-user"></i> Account
+                            <i class="pe-7s-lock"></i> Account
                         </a>
                     <li>
                         <a href="{{ url('/auth/logout') }}">

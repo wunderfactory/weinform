@@ -1,0 +1,117 @@
+.box_grey{
+    color: #828282;
+}
+.box_rose{
+  color: #ea555c;
+}
+.box_white{
+  color: white !important;
+}
+
+
+.box_icon_large{
+  font-size: 30px;
+}
+
+
+
+.box_heading_container{
+  margin-top: 2px;
+}
+
+
+
+
+
+/* ORANGE */
+
+.orangebox{
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ffc000;
+  margin-bottom: 20px;
+}
+.orangebox_header{
+  width: 100%;
+  position: top;
+  height: 60px;
+  padding: 15px;
+  color: white;
+  background-color: #ffc000;
+  border-bottom: 1px solid #ffc000;
+  vertical-align: center;
+}
+.orangebox_content{
+  padding: 15px; 
+}
+
+
+
+/* SUCCESS */
+
+.successbox{
+  width: 100%;
+  background-color: white;
+  border: 1px solid #52b856;
+  margin-bottom: 20px;
+}
+.successbox_header{
+  width: 100%;
+  position: top;
+  height: 60px;
+  padding: 15px;
+  color: white;
+  background-color: #52b856;
+  border-bottom: 1px solid #52b856;
+  vertical-align: center;
+}
+.successbox_content{
+  padding: 15px; 
+}
+
+
+
+/* INFO */
+
+.infobox{
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ababab;
+  margin-bottom: 20px;
+}
+.infobox_header{
+  width: 100%;
+  position: top;
+  height: 60px;
+  padding: 15px;
+  background-color: #e8e8e8;
+  border-bottom: 1px solid #ababab;
+  vertical-align: center;
+}
+.infobox_content{
+  padding: 15px; 
+}
+
+
+
+/* WARNING */
+
+.warningbox{
+  width: 100%;
+  background-color: white;
+  border: 1px solid red;
+  margin-bottom: 20px;
+}
+.warningbox_header{
+  width: 100%;
+  position: top;
+  height: 60px;
+  padding: 15px;
+  color: white;
+  background-color: #ea555c;
+  border-bottom: 1px solid #ea555c;
+  vertical-align: center;
+}
+.warningbox_content{
+  padding: 15px; 
+}

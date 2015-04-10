@@ -23,39 +23,15 @@
     <div class="row">
         @include('dashboard.profile.side-navbar')
 
-<style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
-.grey{
-  color: #828282;
-}
-</style>
-
 <!-- INFOBOXES -->
 
         <div class="col-md-8">
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Profilfoto ändern</strong></p>
+                    <p class="box_grey"><strong>Profilfoto ändern</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">HIER die Bewertungen des users</p>
+                    <p class="box_rose">HIER die Bewertungen des users</p>
                 </div> 
             </div>
 

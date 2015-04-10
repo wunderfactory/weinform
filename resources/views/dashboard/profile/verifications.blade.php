@@ -23,27 +23,6 @@
 
 
 <style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
-.grey{
-  color: #828282;
-}
 .check{
     color: #2fd155;
 }
@@ -64,16 +43,16 @@
 
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Vertrauen bei wundership</strong></p>
+                    <p class="box_grey"><strong>Vertrauen bei wundership</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">Verifiziere Dein Profil, um für andere Nutzer und das Team von wundership vertrauenswürdiger zu erscheinen. Wundership basiert darauf, dass Du Deinem wundership Kurier vertraust und auch Dir andere Nutzer vertrauen, wenn Du Ihnen deine Sendung mitgibst.</p>
+                    <p class="box_rose">Verifiziere Dein Profil, um für andere Nutzer und das Team von wundership vertrauenswürdiger zu erscheinen. Wundership basiert darauf, dass Du Deinem wundership Kurier vertraust und auch Dir andere Nutzer vertrauen, wenn Du Ihnen deine Sendung mitgibst.</p>
                 </div> 
             </div>
 
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Verifiziere Deine Identität</strong></p>
+                    <p class="box_grey"><strong>Verifiziere Deine Identität</strong></p>
                 </div>
                 <div class="infobox_content">
                   <div class="row">
@@ -90,7 +69,7 @@
 
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Deine aktuellen Verifikationen</strong></p>
+                    <p class="box_grey"><strong>Deine aktuellen Verifikationen</strong></p>
                 </div>
                 <div class="infobox_content">
                       <p>Email: {{$user->emails->first()->email}} <i class="fa-check-circle-o fa check"></i></p>

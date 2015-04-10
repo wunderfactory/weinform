@@ -117,35 +117,8 @@
     </div><!-- /row -->
 
 
-
-<style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
-.grey{
-  color: #828282;
-}
-</style>
-
-<!-- INFOBOXES -->
-      <div class="row">
-        <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
 
 <style type="text/css">
 #text_left{
@@ -196,44 +169,18 @@
                 </div>  
             </div>
 
-<!-- WARNINGBOX -->
 
-<style type="text/css">
-.warningbox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid red;
-  margin-bottom: 20px;
-}
-.warningbox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  color: white;
-  background-color: #ea555c;
-  border-bottom: 1px solid #ea555c;
-  vertical-align: center;
-}
-.heading_container{
-  margin-top: 2px;
-}
-.warningbox_content{
-  padding: 15px; 
-}
-.icon_large{
-  font-size: 30px;
-}
-</style>
+<!------------------------------- -->
+
 
             <div class="warningbox">
                 <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-gleam icon_large"></i></div>
-                    <div class="col-md-8 heading_container"><p class="white"><strong>Bitte vervollständige Dein Profil.</strong></p></div>
+                    <div class="col-md-1"><i class="pe-7s-user box_icon_large"></i></div>
+                    <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Bitte vervollständige Dein Profil.</strong></p></div>
                    
                 </div>
                 <div class="warningbox_content">
-                    <p class="rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong><a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/profile-picture') }}">Profilbild</a></strong> von Dir hilft dabei.</p>
+                    <p class="box_rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong><a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/profile-picture') }}">Profilbild</a></strong> von Dir hilft dabei.</p>
                 </div> 
             </div>
 
@@ -292,17 +239,18 @@
 
 
 
-
-
+<!------------------------------- -->
 
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey">Wir suchen <strong>Praktikanten</strong></p>
+                    <p class="box_grey">Wir suchen <strong>Praktikanten</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p class="box_grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </div> 
             </div>
+
+<!------------------------------- -->
 
 <!-- MESSAGES -->
 

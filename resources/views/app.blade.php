@@ -10,6 +10,13 @@
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
+
+	<!-- BOX SYSTEM -->
+
+	<link href="{{ asset('/css/box_system.css') }}" rel="stylesheet">
+
+	
+
 	<link href="{{ asset('gsd/css/gsdk.css') }}" rel="stylesheet"/>
     
     <link href="{{ asset('gsd/css/demo.css') }}" rel="stylesheet" />
@@ -41,6 +48,17 @@
 
 </head>
 <body>
+
+	<style type="text/css">
+	.rose{
+	  color: #ea555c;
+	}
+	.grey{
+	  color: #828282;
+	}
+	</style>
+
+
 
 	@include('structure.navbar')
     <div style="margin-top: 72px;">

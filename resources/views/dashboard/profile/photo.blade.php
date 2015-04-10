@@ -9,42 +9,6 @@
         <div class="row">
             @include('dashboard.profile.side-navbar')
 
-
-<!-- WARNINGBOX -->
-
-<style type="text/css">
-.grey{
-    color: #828282;
-}
-.successbox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #52b856;
-  margin-bottom: 20px;
-}
-.successbox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  color: white;
-  background-color: #52b856;
-  border-bottom: 1px solid #52b856;
-  vertical-align: center;
-}
-.heading_container{
-  margin-top: 2px;
-}
-.successbox_content{
-  padding: 15px; 
-}
-.icon_large{
-  font-size: 30px;
-}
-</style>
-
-            
-
 <style type="text/css">
 #text_left{
   float: left;
@@ -97,19 +61,19 @@
                 @else
                 <div class="successbox">
                     <div class="successbox_header">
-                        <div class="col-md-1"><i class="pe-7s-camera icon_large"></i></div>
-                        <div class="col-md-10 heading_container"><p class="white"><strong>Heyho {{ $user->first_name }}! Schön, dass Du ein Profilbild höchlädst.</strong></p></div>
+                        <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Heyho {{ $user->first_name }}! Schön, dass Du ein Profilbild höchlädst.</strong></p></div>
                        
                     </div>
                     <div class="successbox_content">
-                        <p class="grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
+                        <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
                     </div> 
                 </div>
                 @endif
 
                 <div class="infobox">
                     <div class="infobox_header">
-                        <p class="grey"><strong>Profilbild ändern</strong></p>
+                        <p class="box_grey"><strong>Profilbild ändern</strong></p>
                     </div>
 
                     <div class="infobox_content">
@@ -282,28 +246,6 @@
         .profile{
             max-width: 980px !important;
         }
-        .infobox{
-            width: 100%;
-            background-color: white;
-            border: 1px solid #ababab;
-            margin-bottom: 20px;
-        }
-        .infobox_header{
-            width: 100%;
-            position: top;
-            height: 60px;
-            padding: 15px;
-            background-color: #e8e8e8;
-            border-bottom: 1px solid #ababab;
-            vertical-align: center;
-        }
-        .infobox_content{
-            padding: 15px;
-        }
-        .grey{
-            color: #828282;
-        }
-
         .cropper img{
             width: 100%;
         }

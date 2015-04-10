@@ -29,27 +29,6 @@
 
 
 <style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
-.grey{
-  color: #828282;
-}
 .middle_container{
   text-align: right;
   margin-top: 10px;
@@ -75,7 +54,7 @@ input{
         <div class="col-md-8">
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Passwort ändern</strong></p>
+                    <p class="box_grey"><strong>Passwort ändern</strong></p>
                 </div>
                 <div class="infobox_content">
                     <div class="row">
