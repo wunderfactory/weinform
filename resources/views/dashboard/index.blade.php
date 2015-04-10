@@ -36,7 +36,7 @@
 }
 #left_news_container{
   max-width: 200px;
-  background-color: #ffa200;
+  background-color: #ffc000;
   margin-top: 20px;
   text-align: center;
   padding: 20px;
@@ -260,19 +260,19 @@
             <div class="infobox_content">
               <div class="row">
                   <div class="col-md-4">
-                    <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
+                    <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
                     <div class="text_container"><p>E-Mail-Adresse<br>Bestätigt</p></div>
                   </div>
                   @if($user->phoneNumbers->first()->verified)                   
                   <div class="col-md-4">
-                    <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
+                    <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
                     <div class="text_container"><p>Handynummer<br>Bestätigt</p></div>
                   </div>
                   @else
                   @endif
                   @if($user->facebookUser)
                   <div class="col-md-4">
-                    <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
+                    <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
                     <div class="text_container"><p>Facebook-Freunde<br>{{ $user->facebookUser->friends }} Freunde</p></div>
                   </div>
                   @else

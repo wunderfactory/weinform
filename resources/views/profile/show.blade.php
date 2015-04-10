@@ -271,7 +271,7 @@
 }
 .text_container{
   float: left;
-  margin-left: 17px;
+  margin-left: 13px;
 }
 .check{
   color: #2fd155;
@@ -317,19 +317,19 @@
               <hr>
               <div class="row">
                   <div class="col-md-4">
-                    <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
+                    <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
                     <div class="text_container"><p>E-Mail-Adresse<br>Bestätigt</p></div>
                   </div>
                   @if($user->phoneNumbers->first()->verified)                   
                   <div class="col-md-4">
-                    <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
+                    <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
                     <div class="text_container"><p>Handynummer<br>Bestätigt</p></div>
                   </div>
                   @else
                   @endif
                   @if($user->facebookUser)
                   <div class="col-md-4">
-                    <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
+                    <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
                     <div class="text_container"><p>Facebook-Freunde<br>{{ $user->facebookUser->friends }} Freunde</p></div>
                   </div>
                   @else
