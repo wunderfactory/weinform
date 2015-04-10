@@ -25,7 +25,7 @@ Route::group(['prefix' => 'user/{user}/settings/'], function()
 {
     Route::controller('profile',        'SettingsProfileController');
     Route::controller('account',        'SettingsAccountController');
-    Route::get('profile/picture/show', 'ProfileController@profilePicture');
+    Route::controller('verify',   'SettingsVerificationController');
 });
 Route::controller('user/{user}', 'UsersController');
 
