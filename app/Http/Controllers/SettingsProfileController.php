@@ -29,7 +29,11 @@ class SettingsProfileController extends Controller {
         if($user->id != Auth::user()->id) {
             returnresponse('Unauthorized.', 401);
         }
-        $input = $user->profile->toArray();
+        if($user->profile) {
+            $input = $user->profile->toArray();
+        } else {
+            $input = [];
+        }
         $input['gender'] = $user->gender;
         $split = explode('-', $user->birth_date);
         $input['birth_date'] = $split[2].'.'.$split[1].'.'.$split[0];
