@@ -160,12 +160,12 @@
 
             <div class="warningbox">
                 <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-user box_icon_large"></i></div>
+                    <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
                     <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
                    
                 </div>
                 <div class="warningbox_content">
-                    <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                    <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
                 </div> 
             </div>
 
