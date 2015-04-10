@@ -242,7 +242,7 @@
 }
 .text_container{
   float: left;
-  margin-left: 17px;
+  margin-left: 12px;
 }
 .check{
   color: #2fd155;
