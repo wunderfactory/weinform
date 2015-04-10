@@ -10,6 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('test', function(){
+
+	return View::make('dashboard.profile.verify.start');
+
+});
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -31,10 +37,8 @@ Route::get('test2', function() {
 Route::post('test', function() {
     Storage::put('2.jpg', base64_decode(str_replace(' ', '+', Request::get('picture'))));
 });
+
 Route::controller('/', 'StaticController');
-
-
-
 
 
 

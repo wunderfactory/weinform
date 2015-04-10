@@ -258,36 +258,41 @@
             @else
             @endif
 
-<!-- MESSAGES -->
-
-          <div class="infobox">
-            <div class="infobox_header">
-                <p class="grey"><strong>Bewertungen</strong></p>
-            </div>
-            <div class="infobox_content">
-                <p class="rose">{{ $user->first_name }} hat noch keine <strong>Bewertungen</strong> erhalten.</p>
-            </div> 
-          </div>
-
-
 <style type="text/css">
-  .question{
-    font-size: 20px;
-  }
-  .verification_button{
-    margin-top: -6px;
-  }
-  .check_container{
-    float: left;
-    padding-top: 6px;
-  }
-  .text_container{
-    float: left;
-    margin-left: 17px;
-  }
-  .check{
-    color: #2fd155;
-  }
+.question{
+  font-size: 20px;
+}
+.verification_button{
+  margin-top: -6px;
+}
+.check_container{
+  float: left;
+  padding-top: 6px;
+}
+.text_container{
+  float: left;
+  margin-left: 17px;
+}
+.check{
+  color: #2fd155;
+}
+.not_verified_icon{
+  font-size: 55px;
+  color: #2fd155;
+}
+.id_icon{
+  margin-left: 6px;
+}
+.right_container{
+  margin-left: 20px;
+  margin-top: 16px;
+}
+.button_help{
+  border: none;
+}
+.identity_button{
+  margin-top: -10px;
+}
 </style>
 
 
@@ -296,9 +301,20 @@
           <div class="infobox">
             <div class="infobox_header">
                 <p class="grey"><strong>Verifizierungen</strong>
-                <button type="button" class="btn btn-default pull-right verification_button" data-toggle="popover" data-placement="left" title="" data-content="Mit einem verifiziertem Profil erscheinst du für andere Nutzer vertrauenswürdiger. So nehmen Fahrer deine Sendungen gern an und das wundership-team wählt dich gern als Fahrer aus." data-html="true" data-original-title="Verifizierungen">Was ist das?</button>
+                <button type="button" class="btn btn-default pull-right verification_button button_help" data-toggle="popover" data-placement="left" title="" data-content="Mit einem verifiziertem Profil erscheinst du für andere Nutzer vertrauenswürdiger. So nehmen Fahrer deine Sendungen gern an und das wundership-team wählt dich gern als Fahrer aus." data-html="true" data-original-title="Verifizierungen"><strong>?</strong></button>
             </div>
             <div class="infobox_content">
+              <div class="row">
+                  <div class="col-md-1">
+                       <i class="pe-7s-id not_verified_icon id_icon"></i>
+                  </div>
+                  <div class="col-md-8 right_container">
+                      <p class="grey"><strong>{{ $user->first_name }} hat seine Identität verifiziert.</strong></p>
+                  </div>
+                  <div class="right_container"><button type="button" class="btn btn-default identity_button" data-toggle="popover" data-placement="left" title="" data-content="Wir haben Patricks Identität anhand eines Fotos eines offiziellen Ausweises (Führerschein, Personalausweis oder Reisepass) bestätigt." data-html="true" data-original-title="Verifizierte Identität">Was ist das?</button></div>
+                    
+              </div>
+              <hr>
               <div class="row">
                   <div class="col-md-4">
                     <div class="check_container"><i class="fa fa-check fa-2x check"></i></div>
@@ -320,7 +336,17 @@
                   @endif
               </div>
             </div> 
-          </div>
+          </div><!-- /infobox -->
+
+
+          <div class="infobox">
+            <div class="infobox_header">
+                <p class="grey"><strong>Bewertungen</strong></p>
+            </div>
+            <div class="infobox_content">
+                <p class="rose">{{ $user->first_name }} hat noch keine <strong>Bewertungen</strong> erhalten.</p>
+            </div> 
+          </div><!-- /infobox -->
 
       </div><!-- /col-md-8 -->
   </div><!-- /row -->

@@ -233,7 +233,7 @@
                    
                 </div>
                 <div class="warningbox_content">
-                    <p class="rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                    <p class="rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong><a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/profile-picture') }}">Profilbild</a></strong> von Dir hilft dabei.</p>
                 </div> 
             </div>
 

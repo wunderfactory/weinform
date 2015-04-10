@@ -24,7 +24,6 @@ class DriverController extends Controller {
      */
 	public function index($user)
 	{
-		//
         return $user;
 	}
 

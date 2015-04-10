@@ -87,7 +87,7 @@
                         <p class="grey"><strong>Dein Profilbild</strong></p>
                       </div>
                       <div class="infobox_content">
-                        <p class="rose"></p><br>
+                        <p class="rose">TIPP: Achte darauf, dass Du auf deinem Profilbild gut zu erkennen bist. Wir verifizieren Deinen Account anhand Deines Bildes.</p><br>
                       </div>
                     </div>
                     <div id="image_right" class="col-md-6">
@@ -155,7 +155,8 @@
                             <form method="POST" action="{{ action('SettingsProfileController@postUploadImage', [Auth::user()->username]) }}" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input id="picture_form" type="hidden" name="picture">
-                                <input type="submit">
+                                <br>
+                                <input class="btn btn-default" value="Speichern" type="submit">
                             </form>
                         </div>
                     </div>

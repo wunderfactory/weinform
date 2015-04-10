@@ -50,19 +50,49 @@
 .facebook_disconnect_button{
   margin-left: 30px;
 }
+.not_verified_icon{
+  font-size: 55px;
+}
+.id_icon{
+  margin-left: 6px;
+}
 </style>
 
 <!-- INFOBOXES -->
 
         <div class="col-md-8">
+
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="grey"><strong>Verifizierte Identifikationen</strong></p>
+                    <p class="grey"><strong>Vertrauen bei wundership</strong></p>
                 </div>
                 <div class="infobox_content">
-                      <p class="rose">Verifiziere Dein Profil, um für andere Nutzer und das Team von wundership vertrauenswürdiger zu erscheinen. Wundership basiert darauf, dass Du Deinem wundership Kurier vertraust und auch Dir andere Nutzer vertrauen, wenn Du Ihnen deine Sendung mitgibst.</p>
-                      <hr>
-                      <h4>Deine aktuellen Verifikationen</h4>
+                    <p class="rose">Verifiziere Dein Profil, um für andere Nutzer und das Team von wundership vertrauenswürdiger zu erscheinen. Wundership basiert darauf, dass Du Deinem wundership Kurier vertraust und auch Dir andere Nutzer vertrauen, wenn Du Ihnen deine Sendung mitgibst.</p>
+                </div> 
+            </div>
+
+            <div class="infobox">
+                <div class="infobox_header">
+                    <p class="grey"><strong>Verifiziere Deine Identität</strong></p>
+                </div>
+                <div class="infobox_content">
+                  <div class="row">
+                        <div class="col-md-1">
+                             <i class="pe-7s-id not_verified_icon id_icon"></i>
+                        </div>
+                        <div class="col-md-9 right_container">
+                            <p class="rose">Eine <strong>Verifikation deiner Identität</strong> ist der einfachste und schnellste Weg, in der wundership Community Vertrauen aufzubauen. Wir gleichen dazu Deine Profildaten mit deinem offiziellen Ausweis ab. Diese Verfizierung ist besonders vertrauenswürdig und sehr wichtig, wenn Du <strong>Sendungen mitnehmen</strong> möchtest.<br> Der Vorgang dauert nur etwa <strong>eine Minute.</strong></p>
+                            <a href="#"><button class="btn btn-default"><strong>Verifikation meiner Identität starten</strong></button></a> 
+                          </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="infobox">
+                <div class="infobox_header">
+                    <p class="grey"><strong>Deine aktuellen Verifikationen</strong></p>
+                </div>
+                <div class="infobox_content">
                       <p>Email: {{$user->emails->first()->email}} <i class="fa-check-circle-o fa check"></i></p>
                       @if($user->phoneNumbers->first()->verified)
                       <p>Handynummer:
@@ -80,11 +110,8 @@
 
 
 <style type="text/css">
-.not_verified_icon{
-  font-size: 55px;
-}
 .right_container{
-  margin-left: 13px;
+  margin-left: 16px;
 }
 .facebook{
   -webkit-font-smoothing: antialiased;
@@ -122,9 +149,6 @@ text-decoration: none;
 .facebook:hover{
   color: white;
 }
-.id_icon{
-  margin-left: 6px;
-}
 </style>
 
 
@@ -159,15 +183,6 @@ text-decoration: none;
                       </div>
                       <hr>
                       @endif
-                      <div class="row">
-                          <div class="col-md-1">
-                               <i class="pe-7s-id not_verified_icon id_icon"></i>
-                          </div>
-                          <div class="col-md-9 right_container">
-                              <p class="rose">Bestätige Deine Identität, indem Du Deinen <strong>Führerschein</strong> oder <strong>Personalausweis</strong> hochlädst. Wir sehen uns dein Dokument dann an und schalten die Verifizierung für dich frei.<br><br>Diese Verfizierung ist besonders vertrauenswürdig und sehr wichtig, wenn Du <strong>Pakete mitnehmen</strong> möchtest.</p>   
-                            </div>
-                      </div>
-                      <hr>
                 </div> 
             </div>
 
