@@ -71,7 +71,7 @@ class AuthController extends Controller {
                         })->count() > 0) {
                         Facebook::getFriends();
                         Auth::login(Facebook::getFacebookUser()->user);
-                        return redirect()->action('UsersController@getIndex', Auth::user()->username);
+                        return redirect()->action('UsersController@getOverview', Auth::user()->username);
                     }
                     return redirect()->to('auth/login')->withErrors(['user' => Lang::get('auth/facebook.email_verified')]);
 
