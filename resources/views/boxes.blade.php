@@ -18,51 +18,72 @@
     </div> 
 </div>
 
-
-<!---------------- WARNINGBOX -->
-
 <style type="text/css">
-.warningbox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid red;
-  margin-bottom: 20px;
-}
-.warningbox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  color: white;
-  background-color: #ea555c;
-  border-bottom: 1px solid #ea555c;
-  vertical-align: center;
-}
-.heading_container{
-  margin-top: 2px;
-}
-.warningbox_content{
-  padding: 15px; 
-}
-.icon_large{
-  font-size: 30px;
+.controler{
+/*  -webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-box-shadow: none;
+-webkit-font-smoothing: antialiased;
+-webkit-transition-delay: 0s;
+-webkit-transition-duration: 0.1s;
+-webkit-transition-property: all;
+-webkit-transition-timing-function: ease-in-out;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: rgb(197, 205, 205);
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgb(57, 54, 50);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(57, 54, 50);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(57, 54, 50);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-top-style: none;
+border-top-width: 0px;
+box-shadow: none;
+box-sizing: border-box;
+color: rgb(57, 54, 50);
+display: inline-block;
+font-family: museo-sans, Verdana, 'Gill Sans', 'Lucida Grande', Arial, Helvetica, sans-serif;
+font-size: 18px;
+font-weight: 300;
+height: 35px;
+line-height: 34px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: none;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+min-height: 34px;
+outline-color: rgb(57, 54, 50);
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 40px;
+padding-right: 0px;
+padding-top: 0px;
+text-align: left;
+transition-delay: 0s;
+transition-duration: 0.1s;
+transition-property: all;
+transition-timing-function: ease-in-out;
+vertical-align: baseline;
+width: 295px;*/
 }
 </style>
-
-
-            <div class="warningbox">
-                <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-gleam icon_large"></i></div>
-                    <div class="col-md-8 heading_container"><p class="white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
-                   
-                </div>
-                <div class="warningbox_content">
-                    <p class="rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
-                </div> 
-            </div>
-
-
-
 
 
 

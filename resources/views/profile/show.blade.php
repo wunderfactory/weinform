@@ -131,7 +131,7 @@
             <div id="action_container">
                 <i class="pe-7s-attention large_icon attention_icon"></i>
                 <p>Gab es ein Problem mit {{ $user->first_name }}?</p>
-                <a href=""><p class="dark_grey"><strong>Patrick melden.</strong></p></a>
+                <a href=""><p class="dark_grey"><strong>{{ $user->first_name }} melden.</strong></p></a>
             </div>
         </div>
 
