@@ -101,7 +101,7 @@
                 <div class="infobox_content">
                     <p class="very_small">Keine Sorge, wir nutzen diese Daten nur zur internen Auswertung unserer Nutzer. Keine Daten von Dir werden jemals weitergeben.</p>
                     <hr>
-                    <form class="form-horizontal" role="form" method="POST" action="#">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateUser', [Auth::user()->username]) }}">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input name="_method" type="hidden" value="PUT">
 

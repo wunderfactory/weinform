@@ -157,62 +157,64 @@
 
 <!-------------------------------------------- -->
 
+            @if(!$user->profile || !$user->profile->languages || !$user->profile->hometown || !$user->profile->job || !$user->profile->bio)
+                <div class="warningbox">
+                    <div class="warningbox_header">
+                        <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
+                        <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
 
-            <div class="warningbox">
-                <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
-                    <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
-                   
+                    </div>
+                    <div class="warningbox_content">
+                        <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
+                    </div>
                 </div>
-                <div class="warningbox_content">
-                    <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
-                </div> 
-            </div>
+            @endif
 
 <!-------------------------------------------- -->
 
+            @if(!$user->verification)
+                <div class="warningbox">
+                    <div class="warningbox_header">
+                        <div class="col-md-1"><i class="pe-7s-id box_icon_large"></i></div>
+                        <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p></div>
 
-            <div class="warningbox">
-                <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-id box_icon_large"></i></div>
-                    <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p></div>
-                   
+                    </div>
+                    <div class="warningbox_content">
+                        <p class="rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                    </div>
                 </div>
-                <div class="warningbox_content">
-                    <p class="rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
-                </div> 
-            </div>
+            @endif
+
+<!-------------------------------------------- -->
+
+            @if($user->verification && $user->verification->verified)
+                <div class="successbox">
+                    <div class="successbox_header">
+                        <div class="col-md-1"><i class="pe-7s-check box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
+
+                    </div>
+                    <div class="successbox_content">
+                        <p class="grey">Ab jetzt kannst Du Sendungen mitnehmen. Finanziere Deine Fahrten indem Du Sendungen mitnimmst. <strong>Jetzt loslegen.</strong></p>
+                    </div>
+                </div>
+            @endif
 
 
 <!-------------------------------------------- -->
 
+            @if($user->verification && !$user->verification->verified)
+                <div class="orangebox">
+                    <div class="orangebox_header">
+                        <div class="col-md-1"><i class="pe-7s-clock box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
 
-            <div class="successbox">
-                <div class="successbox_header">
-                    <div class="col-md-1"><i class="pe-7s-check box_icon_large"></i></div>
-                    <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
-                   
+                    </div>
+                    <div class="orangebox_content">
+                        <p class="grey">Bitte hab noch einen Moment Geduld. Wir bearbeiten gerade die <strong>Verifizierung Deiner Identität</strong>.</p>
+                    </div>
                 </div>
-                <div class="successbox_content">
-                    <p class="grey">Ab jetzt kannst Du Sendungen mitnehmen. Finanziere Deine Fahrten indem Du Sendungen mitnimmst. <strong>Jetzt loslegen.</strong></p>
-                </div> 
-            </div>
-
-
-<!-------------------------------------------- -->
-
-
-            <div class="orangebox">
-                <div class="orangebox_header">
-                    <div class="col-md-1"><i class="pe-7s-clock box_icon_large"></i></div>
-                    <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
-                   
-                </div>
-                <div class="orangebox_content">
-                    <p class="grey">Bitte hab noch einen Moment Geduld. Wir bearbeiten gerade die <strong>Verifizierung Deiner Identität</strong>.</p>
-                </div> 
-            </div>
-
+            @endif
 
 <!-------------------------------------------- -->
 

@@ -8,6 +8,7 @@ use App\Commands\UpdateUserProfile;
 use App\Commands\VerifyPhone;
 use App\Http\Requests;
 use App\VerifiedPhoneNumber;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
@@ -28,7 +29,11 @@ class SettingsProfileController extends Controller {
         if($user->id != Auth::user()->id) {
             returnresponse('Unauthorized.', 401);
         }
-        Session::flash("_old_input",$user->profile );
+        $input = $user->profile->toArray();
+        $input['gender'] = $user->gender;
+        $split = explode('-', $user->birth_date);
+        $input['birth_date'] = $split[2].'.'.$split[1].'.'.$split[0];
+        Session::flash("_old_input",$input );
         return view('dashboard.profile.edit')->withUser($user);
     }
 
@@ -54,8 +59,25 @@ class SettingsProfileController extends Controller {
         return redirect()->action('SettingsProfileController@getIndex', [$user->username]);
     }
 
+    public function putUpdateUser(Request $request, $user)
+    {
+        if($user->id != Auth::user()->id) {
+            return response('Unauthorized.', 401);
+        }
+        $this->validate($request, ['gender' => 'required|in:male,female,other', 'birth_date' => 'required|date_format:d.m.Y']);
+        $user->gender = $request->get('gender');
+        $bDaySplit = explode ('.' , $request->get('birth_date'));
+        $user->birth_date = Carbon::createFromDate($bDaySplit[2],$bDaySplit[1], $bDaySplit[0]);
+        $user->save();
+        flash()->success(Lang::get('successfully.updated.user'));
+        return redirect()->action('SettingsProfileController@getIndex', $user->username);
+    }
+
     public function getProfilePicture($user)
     {
+        if($user->id != Auth::user()->id) {
+            return response('Unauthorized.', 401);
+        }
         return view('dashboard.profile.photo')->withUser($user);
     }
 
