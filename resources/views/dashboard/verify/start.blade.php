@@ -125,7 +125,7 @@
                     <div class="cropper">
                         <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
                     </div>
-                    <form method="POST" action="{{ action('SettingsProfileController@postUploadImage', [Auth::user()->username]) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ action('SettingsVerificationController@postUploadImage', [Auth::user()->username]) }}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input id="picture_form" type="hidden" name="picture">
                         <br>

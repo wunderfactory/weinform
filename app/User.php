@@ -66,4 +66,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasOne('App\Driver');
     }
+
+    public function verification()
+    {
+        return $this->hasOne('App\Verification');
+    }
 }
