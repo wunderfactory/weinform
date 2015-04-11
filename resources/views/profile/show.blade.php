@@ -301,9 +301,10 @@
           <div class="infobox">
             <div class="infobox_header">
                 <p class="grey"><strong>Verifizierungen</strong>
-                <button type="button" class="btn btn-default pull-right verification_button button_help" data-toggle="popover" data-placement="left" title="" data-content="Mit einem verifiziertem Profil erscheinst du für andere Nutzer vertrauenswürdiger. So nehmen Fahrer deine Sendungen gern an und das wundership-team wählt dich gern als Fahrer aus." data-html="true" data-original-title="Verifizierungen"><strong>?</strong></button>
+                <button type="button" class="btn btn-default pull-right verification_button button_help" data-toggle="popover" data-placement="left" title="" data-content="Ein verifiziertes Profil signalisiert anderen Nutzern Vertrauenswürdigkeit. So nehmen Kuriere die Sendungen von verifizierten Nutzern gern an und das wundership-team wählt verifizierte Nutzer gern als Fahrer aus." data-html="true" data-original-title="Verifizierungen"><strong>?</strong></button>
             </div>
             <div class="infobox_content">
+              @if($user->verification && $user->verification->verified)
               <div class="row">
                   <div class="col-md-1">
                        <i class="pe-7s-id not_verified_icon id_icon"></i>
@@ -315,6 +316,7 @@
                     
               </div>
               <hr>
+              @endif
               <div class="row">
                   <div class="col-md-4">
                     <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
