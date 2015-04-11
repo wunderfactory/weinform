@@ -3,6 +3,13 @@
 @section('content')
 
 <style type="text/css">
+#background{
+    background-color: #f0f0f0;
+}
+.register{
+    padding-top: 30px;
+    position: relative; 
+}
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #434343 !important;
 }
@@ -17,79 +24,160 @@
 :-ms-input-placeholder { /* Internet Explorer 10+ */
    color:    #434343 !important;
 }
-label{
-	margin-top: 5px;
+.input_label{
+  margin-top: 3px;
+  margin-left: 3px;
+}
+.very_small{
+  font-size: 15px;
+  margin: 4px;
+}
+.control_style{
+  margin-top: -12px;
+  margin-bottom: 7px;
+}
+.grey_row{
+    background-color: #f2f2f2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.white_row{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 </style>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>{{ Lang::get('auth/register.whoops') }}</strong>{{ Lang::get('auth/register.problem') }}<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+<div id="background">
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}" enctype="multipart/form-data">
-                    
+        <div class="container register">
+        	<div class="row">
+        		<div class="col-md-6 col-md-offset-3">
+        					@if (count($errors) > 0)
+        						<div class="alert alert-danger">
+        							<strong>{{ Lang::get('auth/register.whoops') }}</strong>{{ Lang::get('auth/register.problem') }}<br><br>
+        							<ul>
+        								@foreach ($errors->all() as $error)
+        									<li>{{ $error }}</li>
+        								@endforeach
+        							</ul>
+        						</div>
+        					@endif
+
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                            <label class="control-label">{{ Lang::get('auth/register.username') }}</label>
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <div class="warningbox">
+                                    <div class="warningbox_header">
+                                        <div class="col-md-1"><i class="pe-7s-gleam box_icon_large"></i></div>
+                                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Registriere Dich mit Deiner E-Mail</strong></p></div> 
+                                    </div>
+                                    <div class="warningbox_content">
+                                        <div class="row white_row">
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.first_name') }}</p></label>
+                                                <input type="text" class="form-control control_style" name="first_name" value="{{ old('first_name')}}">
+                                            </div>
 
-                            <label class="control-label">{{ Lang::get('auth/register.gender') }}</label>
-                            <select class="form-control" name="gender">
-                            <option></option>
-                                <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>{{ Lang::get('auth/register.female') }}</option>
-                                <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>{{ Lang::get('auth/register.male') }}</option>
-                                <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>{{ Lang::get('auth/register.other') }}</option>
-                            </select>
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.last_name') }}</p></label>
+                                                <input type="text" class="form-control control_style" name="last_name" value="{{ old('last_name')}}">
+                                            </div>
+                                        </div>
+                                        <div class="row  grey_row">
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.username') }}</p></label>
+                                                <input type="text" class="form-control control_style" name="name" value="{{ old('name') }}">
+                                            </div>
 
-                            <label class="control-label">{{ Lang::get('auth/register.first_name') }}</label>
-                            <input type="text" class="form-control" name="first_name" value="{{ old('first_name')}}">
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.email') }}</p></label>
+                                                <input type="email" class="form-control control_style" name="email" value="{{ old('email') }}">
+                                            </div>
+                                        </div>
+                                        <div class="row white_row">
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.birth_date') }}</p></label>
+                                                <input type="text" class="form-control control_style" name="birth_date" value="{{ old('birth_date')}}">
+                                            </div>
 
-                            <label class="control-label">{{ Lang::get('auth/register.last_name') }}</label>
-                            <input type="text" class="form-control" name="last_name" value="{{ old('last_name')}}">
-
-                            <label class="control-label">{{ Lang::get('auth/register.birth_date') }} (dd.mm.yyyy)</label>
-                            <input type="text" class="form-control" name="birth_date" value="{{ old('birth_date')}}">
-
-                            <label class="control-label">{{ Lang::get('auth/register.email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                            <label class="control-label">{{ Lang::get('auth/register.phone') }}</label>
-                            {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), 'DE', array('class' =>'form-control')) !!}
-                            <input type="text" class="form-control" name="phonefield" style="margin-top: 5px;" value="{{ old('phonefield') }}">
-
-
-                            <label class="control-label">{{ Lang::get('auth/register.password') }}</label>
-                            <input type="password" class="form-control" name="password">
-
-                            <label class="control-label">{{ Lang::get('auth/register.confirm_password') }}</label>
-                            <input type="password" class="form-control" name="password_confirmation">
-
-                            <br>
-
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ Lang::get('auth/register.register_button') }}
-                                    </button>
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.gender') }}</p></label>
+                                                <select class="form-control control_style" name="gender">
+                                                <option></option>
+                                                    <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>{{ Lang::get('auth/register.female') }}</option>
+                                                    <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>{{ Lang::get('auth/register.male') }}</option>
+                                                    <option value="other" {{(old('gender') == 'other') ? 'selected=selected:':''}}>{{ Lang::get('auth/register.other') }}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row grey_row">
+                                            <div class="col-md-12">
+                                               <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.phone') }}</p></label>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), 'DE', array('class' =>'form-control control_style')) !!}
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control control_style" name="phonefield" style="margin-top: 5px;" value="{{ old('phonefield') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row white_row">
+                                            <div class="col-md-6">
+                                               <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.password') }}</p></label>
+                                                <input type="password" class="form-control control_style" name="password">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.confirm_password') }}</p></label>
+                                                <input type="password" class="form-control control_style" name="password_confirmation">
+                                            </div>
+                                        </div>
+                                        <div class="row white_row">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-warning btn-fill btn-block">
+                                                {{ Lang::get('auth/register.register_button') }}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> 
                                 </div>
-                            </div>
-						</form>
+                            
+                                    
 
-		</div>
-	</div>
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+
+                                    
+
+                                    
+
+                                    <br>
+
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            
+                                        </div>
+                                    </div>
+        						</form>
+
+        		</div>
+        	</div>
+        </div>
+
 </div>
-
-
 
 @endsection
 

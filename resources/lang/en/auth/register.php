@@ -9,7 +9,7 @@ return [
 	'gender' => 'Gender',
 	'first_name' => 'First name',
 	'last_name' => 'Last name',
-	'birth_date' => 'Birth date',
+	'birth_date' => 'Birth date (dd.mm.yyyy)',
 	'email' => 'Email',
 	'phone' => 'Mobile phone',
 	'password' => 'Password',

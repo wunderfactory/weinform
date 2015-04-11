@@ -30,6 +30,10 @@
   font-size: 15px;
   margin: 4px;
 }
+.control_style{
+  margin-top: -8px;
+  margin-bottom: 7px;
+}
 </style>
 
 <!-- BOXES -->
@@ -60,16 +64,16 @@
 
 
                       <label class="control-label input_label"><p class="rose">Hometown</p></label>
-                      <input type="text" class="form-control" name="hometown" value="{{ old('hometown')}}">
+                      <input type="text" class="form-control control_style" name="hometown" value="{{ old('hometown')}}">
 
                       <label class="control-label input_label"><p class="rose">Job</p></label>
-                      <input type="text" class="form-control" name="job" value="{{ old('job') }}">
+                      <input type="text" class="form-control control_style" name="job" value="{{ old('job') }}">
 
                       <label class="control-label input_label"><p class="rose">Languages</p></label>
-                      <input type="text" class="form-control" name="languages" value="{{ old('languages') }}">
+                      <input type="text" class="form-control control_style" name="languages" value="{{ old('languages') }}">
 
                       <label class="control-label input_label"><p class="rose">Short Description about yourself</p></label>
-                      <input type="text" class="form-control" name="bio" value="{{ old('bio') }}">
+                      <input type="text" class="form-control control_style" name="bio" value="{{ old('bio') }}">
 
                       <br>
 
@@ -106,7 +110,7 @@
                       <input name="_method" type="hidden" value="PUT">
 
                       <label class="control-label input_label"><p class="rose">Ich bin</p></label>
-                      <select class="form-control" name="gender">
+                      <select class="form-control control_style" name="gender">
                       <option></option>
                           <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>{{ Lang::get('auth/register.female') }}</option>
                           <option value="male" {{(old('gender') == 'male') ? 'selected=selected':''}}>{{ Lang::get('auth/register.male') }}</option>
@@ -115,7 +119,7 @@
                       
 
                       <label class="control-label"><p class="rose">Geburtsdatum (dd.mm.yyyy)</p></label>
-                      <input type="text" class="form-control" name="birth_date" value="{{ old('birth_date')}}">
+                      <input type="text" class="form-control control_style" name="birth_date" value="{{ old('birth_date')}}">
 
                       <br>
 
