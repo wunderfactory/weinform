@@ -20,9 +20,6 @@
 label{
 	margin-top: 5px;
 }
-.card{
-	margin-top: 30px;
-}
 </style>
 
 <div class="container">

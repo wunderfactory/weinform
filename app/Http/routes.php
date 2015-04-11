@@ -12,7 +12,7 @@
 */
 Route::get('test', function(){
 
-	return View::make('dashboard.profile.verify.start');
+	return View::make('test');
 
 });
 
