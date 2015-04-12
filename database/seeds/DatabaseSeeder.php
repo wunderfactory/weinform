@@ -18,6 +18,13 @@ class DatabaseSeeder extends Seeder {
         $this->command->info('Seeded the countries!');
 
         // $this->call('UserTableSeeder');
+		$this->call('UsersTableSeeder');
+		$this->call('FacebookUsersTableSeeder');
+		$this->call('LogsTableSeeder');
+		$this->call('UserProfilesTableSeeder');
+		$this->call('UserSettingsTableSeeder');
+		$this->call('VerifiedEmailsTableSeeder');
+		$this->call('VerifiedPhoneNumbersTableSeeder');
 	}
 
 }
