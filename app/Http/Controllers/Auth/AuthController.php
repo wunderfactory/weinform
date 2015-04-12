@@ -160,4 +160,9 @@ class AuthController extends Controller {
  	{
  		return Lang::get('auth/login.failed');
   	}
+
+    public function getChoose()
+    {
+        return view('auth.choose_register');
+    }
 }
