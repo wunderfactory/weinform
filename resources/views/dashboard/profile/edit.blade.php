@@ -40,7 +40,7 @@
 
         <div class="col-md-8">
 
-
+            @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
             <div class="warningbox">
                 <div class="warningbox_header">
                     <div class="col-md-1"><i class="pe-7s-gleam box_icon_large"></i></div>
@@ -48,9 +48,29 @@
                    
                 </div>
                 <div class="warningbox_content">
-                    <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong>Profilbild</strong> von Dir hilft dabei.</p>
+                    <p class="box_rose">Bitte vervollständige dein Profil, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint.</p>
                 </div> 
             </div>
+            @endif
+
+<!------------------------------ -->
+
+
+            @if($user->profile->languages || $user->profile->hometown || $user->profile->job || $user->profile->bio)
+                @if($user->profile->picture || $user->facebookUser)
+                @else
+                <div class="orangebox">
+                    <div class="orangebox_header">
+                        <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Heyho {{ $user->first_name }}! Bitte lade ein Profilbild von Dir hoch.</strong></p></div>
+                       
+                    </div>
+                    <div class="orangebox_content">
+                        <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Jetzt <a href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">Profilbild hochladen</a>.</p>
+                    </div> 
+                </div>
+                @endif
+            @endif
 
             <div class="infobox">
                 <div class="infobox_header">
@@ -65,6 +85,10 @@
 
                       <label class="control-label input_label"><p class="rose">Hometown</p></label>
                       <input type="text" class="form-control control_style" name="hometown" value="{{ old('hometown')}}">
+
+                      <br>
+
+                      <p class="box_grey">Die nachfolgenden Angaben sind <strong>optional</strong>. Dein Profil wird aber <strong>vollständiger</strong>, wenn Du auch hier etwas schreibst.</p>
 
                       <label class="control-label input_label"><p class="rose">Job</p></label>
                       <input type="text" class="form-control control_style" name="job" value="{{ old('job') }}">

@@ -36,7 +36,7 @@
 }
 .image_container{
   width: 300px;
-  background-color: red;
+  background-color: grey;
   height: 300px;
   background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');
   background-size: cover;
@@ -44,14 +44,14 @@
 </style>
             <div class="col-md-8">
 
-                @if($user->profile->picture || $user->facebookUser )
+                @if($user->profile->picture || $user->facebookUser)
                 <div class="infobox_image">
                     <div id="text_left">
                       <div class="image_infobox_header">
                         <p class="grey"><strong>Dein Profilbild</strong></p>
                       </div>
                       <div class="infobox_content">
-                        <p class="rose"><strong>TIPP:</strong> Achte darauf, dass Du auf deinem Profilbild gut zu erkennen bist. Wir verifizieren Deinen Account anhand Deines Bildes.</p><br>
+                        <p class="rose"><strong>TIPP:</strong> Achte darauf, dass Du auf deinem Profilbild <strong>gut zu erkennen</strong> bist. Wir verifizieren Deinen Account auch anhand Deines Bildes.</p><br>
                       </div>
                     </div>
                     <div id="image_right" class="col-md-6">
@@ -66,7 +66,7 @@
                        
                     </div>
                     <div class="successbox_content">
-                        <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
+                        <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. <strong>Ein Profilbild hilft dabei</strong>. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
                     </div> 
                 </div>
                 @endif

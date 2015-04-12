@@ -157,7 +157,7 @@
 
 <!-------------------------------------------- -->
 
-            @if(!$user->profile || !$user->profile->languages || !$user->profile->hometown || !$user->profile->job || !$user->profile->bio)
+            @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
                 <div class="warningbox">
                     <div class="warningbox_header">
                         <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
@@ -167,6 +167,22 @@
                     <div class="warningbox_content">
                         <p class="box_rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
                     </div>
+                </div>
+            @endif
+
+<!-------------------------------------------- -->
+
+            @if($user->profile->picture || $user->facebookUser)
+            @else
+                <div class="orangebox">
+                    <div class="orangebox_header">
+                        <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Heyho {{ $user->first_name }}! Bitte lade ein Profilbild von Dir hoch.</strong></p></div>
+                       
+                    </div>
+                    <div class="orangebox_content">
+                        <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Jetzt <a href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">Profilbild hochladen</a>.</p>
+                    </div> 
                 </div>
             @endif
 
