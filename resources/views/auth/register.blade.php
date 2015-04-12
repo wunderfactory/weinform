@@ -72,7 +72,7 @@
                                 <div class="warningbox">
                                     <div class="warningbox_header">
                                         <div class="col-md-1"><i class="pe-7s-gleam box_icon_large"></i></div>
-                                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Registriere Dich mit Deiner E-Mail</strong></p></div> 
+                                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Gleich geschafft!</strong></p></div> 
                                     </div>
                                     <div class="warningbox_content">
                                         <div class="row white_row">
