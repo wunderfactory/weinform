@@ -22,7 +22,7 @@
                 <a href="{{url('auth/login')}}">{{ Lang::get('navbar/navbar.login') }} </a>
             </li>
             <li>
-                <a href="{{url('auth/register')}}">{{ Lang::get('navbar/navbar.register') }}</a>
+                <a href="{{url('auth/choose')}}">{{ Lang::get('navbar/navbar.register') }}</a>
             </li>
             
             @else
