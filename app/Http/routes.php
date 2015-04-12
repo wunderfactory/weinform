@@ -12,7 +12,7 @@
 */
 Route::get('test', function(){
 
-	return View::make('test');
+	return View::make('auth.choose_register');
 
 });
 

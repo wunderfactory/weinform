@@ -45,6 +45,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+#phone_number_input{
+    margin-left: -20px;
+}
 </style>
 
 <div id="background">
@@ -118,7 +121,7 @@
                                                         {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), 'DE', array('class' =>'form-control control_style')) !!}
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control control_style" name="phonefield" style="margin-top: 5px;" value="{{ old('phonefield') }}">
+                                                        <input type="text" id="phone_number_input" class="form-control control_style" name="phonefield" value="{{ old('phonefield') }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,26 +188,26 @@
 <script type="text/javascript">
 
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    // Prepare the preview for profile picture
-    $("#profile_picture_input").change(function(){
-    	console.log('adsasd');
-        readURL(this);
-    });
+//     // Prepare the preview for profile picture
+//     $("#profile_picture_input").change(function(){
+//     	console.log('adsasd');
+//         readURL(this);
+//     });
 
-	 //Function to show image before upload
+// 	 //Function to show image before upload
 
-	function readURL(input) {
-	    if (input.files && input.files[0]) {
-	        var reader = new FileReader();
+// 	function readURL(input) {
+// 	    if (input.files && input.files[0]) {
+// 	        var reader = new FileReader();
 
-	        reader.onload = function (e) {
-	            $('#profile_picture').attr('src', e.target.result).fadeIn('slow');
-	        }
-	        reader.readAsDataURL(input.files[0]);
-	    }
-	}
-});
+// 	        reader.onload = function (e) {
+// 	            $('#profile_picture').attr('src', e.target.result).fadeIn('slow');
+// 	        }
+// 	        reader.readAsDataURL(input.files[0]);
+// 	    }
+// 	}
+// });
 </script>
 @endsection
