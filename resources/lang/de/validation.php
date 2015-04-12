@@ -71,7 +71,7 @@ return [
 		"string"  => "The :attribute must be :size characters.",
 		"array"   => "The :attribute must contain :size items.",
 	],
-	"unique"               => "Das Eingabe des Feldes :attribute ist bereits vergeben.",
+	"unique"               => "Die Eingabe des Feldes :attribute ist bereits vergeben.",
 	"url"                  => "The :attribute format is invalid.",
     "user"                 => ":attribute müssen bestätigt sein und zu einem Account gehören. Eventuell besteht noch kein Account mit dieser :attribute.",
 	"timezone"             => "The :attribute must be a valid zone.",

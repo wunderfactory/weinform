@@ -1,20 +1,41 @@
 @extends('app')
 
 @section('content')
+
 <style type="text/css">
-.reset_password{
-	margin-top: 90px;
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #434343 !important;
 }
-.label_email{
-	margin-bottom: 20px !important;
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #434343 !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #434343 !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #434343 !important;
+}
+#background{
+    background-color: #f0f0f0;
+}
+.register{
+    padding-top: 30px;
+    position: relative; 
+}
+#email_input{
+	margin-bottom: 10px;
 }
 </style>
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default reset_password">
-				<div class="panel-body">
+<div id="background">
+
+	@include('flash::message')
+
+        <div class="container register">
+        	<div class="row">
+        		<div class="col-md-6 col-md-offset-3">
 					@if (session('status'))
 						<div class="alert alert-success">
 							{{ session('status') }}
@@ -31,31 +52,25 @@
 							</ul>
 						</div>
 					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<p>{{ Lang::get('auth/password.text') }}</p>
-							<br>
-							<div class="col-md-6">
-								<label class="control-label label_email">{{ Lang::get('auth/password.email') }}</label>
+                    <div class="warningbox">
+                        <div class="warningbox_header">
+                            <div class="col-md-1"><i class="pe-7s-gleam box_icon_large"></i></div>
+                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Passwort zurücksetzen</strong></p></div> 
+                        </div>
+                        <div class="warningbox_content choose_container">
+                        	<p class="box_rose">{{ Lang::get('auth/password.text') }}</p>
+                        	<hr class="box_grey">
+                        	<label class="control-label label_email">{{ Lang::get('auth/password.email') }}</label>
 								<br>
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6">
-								<button type="submit" class="btn btn-primary">
-									{{ Lang::get('auth/password.reset_button') }}
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+							<input id="email_input" type="email" class="form-control" name="email" value="{{ old('email') }}">
+							<button type="submit" class="btn btn-default">
+								{{ Lang::get('auth/password.reset_button') }}
+							</button>
+                        </div> 
+                    </div>          
+        		</div>
+        	</div>
+        </div>
 </div>
-@endsection
+
+@stop

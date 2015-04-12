@@ -63,6 +63,9 @@ text-decoration: none;
 .facebook:hover{
   color: white !important;
 }
+#password_input{
+    margin-top: 5px;
+}
 </style>
 
 <div id="background">
@@ -108,8 +111,9 @@ text-decoration: none;
 			                    <div class="col-md-6">
 			                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 			                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
 			                        <input id="email" class="form-control" type="text" placeholder="{{ Lang::get('auth/login.email') }}" name="username">
-			                        <input id="password" class="form-control" type="password" placeholder="{{ Lang::get('auth/login.password') }}" name="password">
+			                        <input id="password_input" class="form-control" type="password" placeholder="{{ Lang::get('auth/login.password') }}" name="password">
 			                        <br>
 			                        <input class="btn btn-default btn-login" type="submit" value="Login">
 			                        </form>
