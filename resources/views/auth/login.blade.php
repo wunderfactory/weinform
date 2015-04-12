@@ -119,7 +119,7 @@ text-decoration: none;
 			                        </form>
 			                    </div>
 			                    <div class="col-md-6">
-			                        <p>{{ Lang::get('auth/login.looking_to') }} <a href="{{url('auth/register')}}">{{ Lang::get('auth/login.create_account') }}</a></p>
+			                        <p>{{ Lang::get('auth/login.looking_to') }} <a href="{{url('auth/choose')}}">{{ Lang::get('auth/login.create_account') }}</a></p>
 									<a class="btn btn-default btn-login" href="{{ url('/password/email') }}">{{ Lang::get('auth/login.forgot_password') }}</a>
 								</div>
                             </div>

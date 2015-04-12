@@ -71,7 +71,7 @@ text-decoration: none;
                             </div>
                             <hr class="box_grey">
                             <div class="row">
-                                <a href=""><p class="box_grey">Registriere Dich mit Deiner <strong>E-Mail-Adresse</strong></p></a>
+                                <p class="box_grey">Registriere Dich mit Deiner <strong><a href="{{ url('auth/register') }}">E-Mail-Adresse</a></strong></p>
                             </div>
                         </div> 
                     </div>          
