@@ -146,6 +146,7 @@ return [
         'Laracasts\Flash\FlashServiceProvider',
         'Twilio\Laravel5TwilioServiceProvider',
         'Laravel\Socialite\SocialiteServiceProvider',
+        'Orangehill\Iseed\IseedServiceProvider',
 
 		/*
 		 * Application Service Providers...
