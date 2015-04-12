@@ -50,6 +50,24 @@
                 </div> 
             </div>
 
+<!----------------------------- -->
+
+            @if($user->verification && $user->verification->verified)
+                <div class="successbox">
+                    <div class="successbox_header">
+                        <div class="col-md-1"><i class="pe-7s-check box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
+
+                    </div>
+                    <div class="successbox_content">
+                        <p class="grey">Ab jetzt kannst Du Sendungen mitnehmen. Finanziere Deine Fahrten indem Du Sendungen mitnimmst. <strong>Jetzt loslegen.</strong></p>
+                    </div>
+                </div>
+            @endif
+
+<!----------------------------- -->
+
+            @if(!$user->verification)
             <div class="infobox">
                 <div class="infobox_header">
                     <p class="box_grey"><strong>Verifiziere Deine Identität</strong></p>
@@ -66,6 +84,24 @@
                     </div>
                 </div> 
             </div>
+            @endif
+
+<!----------------------------- -->
+
+            @if($user->verification && !$user->verification->verified)
+                <div class="orangebox">
+                    <div class="orangebox_header">
+                        <div class="col-md-1"><i class="pe-7s-clock box_icon_large"></i></div>
+                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
+
+                    </div>
+                    <div class="orangebox_content">
+                        <p class="grey">Bitte hab noch einen Moment Geduld. Wir bearbeiten gerade die <strong>Verifizierung Deiner Identität</strong>.</p>
+                    </div>
+                </div>
+            @endif
+
+<!----------------------------- -->
 
             <div class="infobox">
                 <div class="infobox_header">
@@ -131,36 +167,38 @@ text-decoration: none;
 </style>
 
 
-
-                      <h4>Verifikationen hinzufügen</h4>
-                      @if(!$user->phoneNumbers->first()->verified)
-                      <div class="row">
-                          <div class="col-md-1">
-                               <i class="pe-7s-phone not_verified_icon"></i>
-                          </div>
-                          <div class="col-md-9 right_container">
-                              <p class="rose">Bestätige deine Handynummer /  
-                                    {!! link_to_action('SettingsProfileController@getSendVerificationToken', 'Jetzt Code zusenden', [$user->username, $user->phoneNumbers->first()->id]) !!}</p>
-                                    <form action="{{ action('SettingsProfileController@postVerifyPhone',[$user->username]) }}" method="POST">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <label for="token">Code eingeben</label>
-                                        <input id="token" type="input" name="token">
-                                        <input class="btn btn-info" type="submit" value="Bestätigen">
-                                    </form>
+                      @if($user->facebookUser && $user->phoneNumbers->first()->verified)
+                      @else
+                        <h4>Verifikationen hinzufügen</h4>
+                        @if(!$user->phoneNumbers->first()->verified)
+                        <div class="row">
+                            <div class="col-md-1">
+                                 <i class="pe-7s-phone not_verified_icon"></i>
                             </div>
-                      </div>
-                      <hr>
-                      @endif
-                      @if(!$user->facebookUser)
-                      <div class="row">
-                          <div class="col-md-1">
-                               <a id="facebook_login" class="facebook" href="{{ url('/auth/facebook') }}"><i class="fa fa-facebook fa-fw"></i></a>
-                          </div>
-                          <div class="col-md-9 right_container">
-                              <p class="grey">Bestätige Deine Identität, indem Du Deinen Account mit Facebook verbindest. <a href="#">Mit Facebook verbinden</a></p>   
+                            <div class="col-md-9 right_container">
+                                <p class="rose">Bestätige deine Handynummer /  
+                                      {!! link_to_action('SettingsProfileController@getSendVerificationToken', 'Jetzt Code zusenden', [$user->username, $user->phoneNumbers->first()->id]) !!}</p>
+                                      <form action="{{ action('SettingsProfileController@postVerifyPhone',[$user->username]) }}" method="POST">
+                                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                          <label for="token">Code eingeben</label>
+                                          <input id="token" type="input" name="token">
+                                          <input class="btn btn-info" type="submit" value="Bestätigen">
+                                      </form>
+                              </div>
+                        </div>
+                        <hr>
+                        @endif
+                        @if(!$user->facebookUser)
+                        <div class="row">
+                            <div class="col-md-1">
+                                 <a id="facebook_login" class="facebook" href="{{ url('/auth/facebook') }}"><i class="fa fa-facebook fa-fw"></i></a>
                             </div>
-                      </div>
-                      <hr>
+                            <div class="col-md-9 right_container">
+                                <p class="grey">Bestätige Deine Identität, indem Du Deinen Account mit Facebook verbindest. <a href="#">Mit Facebook verbinden</a></p>   
+                              </div>
+                        </div>
+                        <hr>
+                        @endif
                       @endif
                 </div> 
             </div>

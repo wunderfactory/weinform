@@ -136,7 +136,7 @@
 
 
         <div class="col-md-8">
-            <div class="infobox">
+            {{-- <div class="infobox">
                 <div class="infobox_header">
                     <p class="box_grey"><strong>Hinweis!</strong></p>
                 </div>
@@ -152,7 +152,7 @@
                 <div class="infobox_content">
                     <p class="box_rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                 </div> 
-            </div>
+            </div> --}}
 
 
 <!-------------------------------------------- -->
@@ -281,8 +281,11 @@
                   @endif
               </div>
               <div>
-              <br>
-              <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/verifications') }}"><p class="rose"><strong>Verifizierungen hinzufügen</strong></p></a>
+              @if($user->facebookUser && $user->phoneNumbers->first()->verified)
+              @else
+                <br>
+                <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/verifications') }}"><p class="rose"><strong>Verifizierungen hinzufügen</strong></p></a>
+              @endif
               </div>
             </div> 
           </div>
