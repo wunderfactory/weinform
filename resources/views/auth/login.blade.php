@@ -3,6 +3,20 @@
 @section('content')
 
 <style type="text/css">
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #434343 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #434343 !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #434343 !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #434343 !important;
+}
 #background{
     background-color: #f0f0f0;
 }
