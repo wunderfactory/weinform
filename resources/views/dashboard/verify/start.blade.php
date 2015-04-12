@@ -32,6 +32,9 @@
 .active{
   color: #ea555c !important;
 }
+.image{
+    width: 235px;
+}
 </style>
 
 <div id="background">
@@ -45,6 +48,9 @@
         <div class="col-md-3">
           <div id="right_navbar_container">
               <p class="nav_text"><strong>Danke, dass Du deine Identität verifizierst.</strong></p>
+          </div>
+          <div>
+            <img class="image" src="http://upload.wikimedia.org/wikipedia/commons/7/7e/Muster_des_Personalausweises_VS.jpg" alt="Muster des Personalausweises VS.jpg">
           </div>
         </div>
 
@@ -85,7 +91,7 @@
                     <p class="grey"><strong>Schritt 1</strong></p>
                 </div>
                 <div class="infobox_content">
-                    <p class="rose">Bitte wähle aus, ob Du ein Bild von Deinem Ausweis <strong>hochladen</strong> möchtest oder eins mit deiner <strong>Webcam aufnehmen</strong> möchtest.<br> <strong>TIPP: </strong>Mit der Webcam aufnehmen dauert nur ein paar Sekunden.</p>
+                    <p class="rose">Bitte wähle aus, ob Du ein Bild von Deinem <strong>Führerschein</strong> oder <strong>Personalausweis</strong> <strong>hochladen</strong> oder eins mit deiner <strong>Webcam aufnehmen</strong> möchtest.<br> <strong>TIPP: </strong>Mit der Webcam aufnehmen dauert nur ein paar Sekunden.</p>
                     <hr>
                     <style type="text/css">
                         .width_fifthy{
