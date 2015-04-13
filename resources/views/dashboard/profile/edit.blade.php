@@ -40,7 +40,7 @@
 
         <div class="col-md-8">
 
-            @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
+            @if(!$user->profile || ($user->profile && !$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio))
             <div class="warningbox">
                 <div class="warningbox_header">
                     <div class="col-md-1"><i class="pe-7s-gleam box_icon_large"></i></div>
@@ -56,7 +56,7 @@
 <!------------------------------ -->
 
 
-            @if($user->profile->languages || $user->profile->hometown || $user->profile->job || $user->profile->bio)
+            @if($user->profile && ($user->profile->languages || $user->profile->hometown || $user->profile->job || $user->profile->bio))
                 @if($user->profile->picture || $user->facebookUser)
                 @else
                 <div class="orangebox">
@@ -154,7 +154,7 @@
                               </button>
                           </div>
                           <div class="col-md-6" style="text-align: center;">
-                              <a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}"
+                              <a href="{{ action('SettingsProfileController@getIndex', [Auth::user()->username]) }}">
                                   <button type="submit"  class="btn btn-block btn-default">
                                       Zurücksetzen
                                   </button>
