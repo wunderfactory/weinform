@@ -10,13 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('test', function(){
-
-	return View::make('auth.choose_register');
-
-});
-
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -28,15 +21,7 @@ Route::group(['prefix' => 'user/{user}/settings/'], function()
     Route::controller('verify',   'SettingsVerificationController');
 });
 Route::controller('user/{user}', 'UsersController');
-
-
-Route::get('test2', function() {
-    return view('home');
-});
-
-Route::post('test', function() {
-    Storage::put('2.jpg', base64_decode(str_replace(' ', '+', Request::get('picture'))));
-});
+Route::controller('user/{user}/driver', 'DriverController');
 
 Route::controller('/', 'StaticController');
 

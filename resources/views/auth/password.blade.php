@@ -60,12 +60,15 @@
                         <div class="warningbox_content choose_container">
                         	<p class="box_rose">{{ Lang::get('auth/password.text') }}</p>
                         	<hr class="box_grey">
-                        	<label class="control-label label_email">{{ Lang::get('auth/password.email') }}</label>
-								<br>
-							<input id="email_input" type="email" class="form-control" name="email" value="{{ old('email') }}">
-							<button type="submit" class="btn btn-default">
-								{{ Lang::get('auth/password.reset_button') }}
-							</button>
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <label class="control-label label_email">{{ Lang::get('auth/password.email') }}</label>
+                                    <br>
+                                <input id="email_input" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <button type="submit" class="btn btn-default">
+                                    {{ Lang::get('auth/password.reset_button') }}
+                                </button>
+                            </form>
                         </div> 
                     </div>          
         		</div>
