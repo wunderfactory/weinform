@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'hello@wundership.com', 'name' => 'wundership'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -119,6 +119,6 @@ return [
 	|
 	*/
 
-	'pretend' => true,
+	'pretend' => false,
 
 ];

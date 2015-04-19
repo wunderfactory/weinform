@@ -22,8 +22,19 @@
   background-color: white;
   max-width: 202px;
   text-align: center;
-  padding-bottom: 30px;
-  border: 1px solid #ababab;
+  border-top: 1px solid #ababab;
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
+}
+#profile_info_container{
+  background-color: white;
+  max-width: 202px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ababab;
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
 }
 .rose{
   color: #ea555c;
@@ -78,12 +89,17 @@
         <div class="col-md-3">
             <div id="profile_container">
                 @if(Auth::user()->id == $user->id)
-                <div id="overlay">
-                  <a class="white" href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}"><p><i class="pe-7s-camera camera_icon"></i><br>
-                  Profilbild ändern</p></a>
-                </div>
+                <a class="white" href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">
+                  <div id="overlay">
+                    <p><i class="pe-7s-camera camera_icon"></i><br>
+                    Profilbild ändern</p>
+                  </div>
+                </a>
                 @endif
+                <div class="avatar"></div>
                 <img class="avatar" src="{{ action('UsersController@getPicture', [$user->username]) }}" alt="Profile Picture">
+            </div>
+            <div id="profile_info_container">
                 <div>
                   <h3>{{ $user->first_name }}</h3>
                 </div>
@@ -238,14 +254,14 @@
 
 <!-- MESSAGES -->
 
-<div class="infobox">
+{{-- <div class="infobox">
   <div class="infobox_header">
       <p class="grey"><strong>Nachrichten</strong></p>
   </div>
   <div class="infobox_content">
       <p class="rose">Messages</p>
   </div> 
-</div>
+</div> --}}
 
 
 <style type="text/css">

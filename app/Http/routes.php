@@ -10,6 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/test', function(){
+
+	$token = '123';
+
+	return View::make('emails.verify')->with(['token' => $token]);
+
+});
+
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -24,7 +33,3 @@ Route::controller('user/{user}', 'UsersController');
 Route::controller('user/{user}/driver', 'DriverController');
 
 Route::controller('/', 'StaticController');
-
-
-
-

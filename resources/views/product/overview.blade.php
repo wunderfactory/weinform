@@ -173,16 +173,18 @@
 <!------------------------------- -->
 
 
-            <div class="warningbox">
-                <div class="warningbox_header">
-                    <div class="col-md-1"><i class="pe-7s-user box_icon_large"></i></div>
-                    <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Bitte vervollständige Dein Profil.</strong></p></div>
-                   
+            @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
+                <div class="warningbox">
+                    <div class="warningbox_header">
+                        <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
+                        <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
+
+                    </div>
+                    <div class="warningbox_content">
+                        <p class="box_rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
+                    </div>
                 </div>
-                <div class="warningbox_content">
-                    <p class="box_rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Auch ein <strong><a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/profile-picture') }}">Profilbild</a></strong> von Dir hilft dabei.</p>
-                </div> 
-            </div>
+            @endif
 
 
 <style type="text/css">
