@@ -5,34 +5,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>wundership</title>
-
     <link href="{{ asset('gsd/bootstrap3/css/bootstrap.min.css') }}" rel="stylesheet" />
-
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
-
 	<!-- BOX SYSTEM -->
-
 	<link href="{{ asset('/css/box_system.css') }}" rel="stylesheet">
-
-	
-
 	<link href="{{ asset('gsd/css/gsdk.css') }}" rel="stylesheet"/>
-    
     <link href="{{ asset('gsd/css/demo.css') }}" rel="stylesheet" />
-
     <link href="{{ asset('gsd/css/examples.css') }}" rel="stylesheet" /> 
-
     <link href="{{ asset('gsd/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
-
     <link href="{{ asset('gsd/css/chartist.min.css') }}" rel="stylesheet" />
-
     <!-- LOGIN REGISTER CREATIVE TIM -->
-
     <link href="{{ asset('creative_tim/login_register/login-register.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -54,14 +38,14 @@
 	  color: #ea555c;
 	}
 	.grey{
-	  color: #828282;
+	  color: #828282 !important;
 	}
 	</style>
 
 
 
 	@include('structure.navbar')
-    <div style="margin-top: 72px;">
+    <div style="margin-top: 84px;">
 	    @yield('content')
     </div>
 	@include('structure.footer')

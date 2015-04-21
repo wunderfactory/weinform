@@ -59,7 +59,6 @@
   color: white;
   border-color: white;
 }
-
 .avatar {
     width: 100%;
 }

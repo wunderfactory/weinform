@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-default navbar-icons" role="navigation">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -19,15 +19,35 @@
       <ul  class="nav navbar-nav navbar-right">
             @if (Auth::guest())
             <li>
-                <a href="{{url('auth/login')}}">{{ Lang::get('navbar/navbar.login') }} </a>
+                <a href="{{url('auth/login')}}">
+                  <i class="pe-7s-user"></i>
+                  <p>{{ Lang::get('navbar/navbar.login') }}</p>
+                </a>
             </li>
             <li>
-                <a href="{{url('auth/choose')}}">{{ Lang::get('navbar/navbar.register') }}</a>
+                <a href="{{url('auth/choose')}}">
+                  <i class="pe-7s-news-paper"></i>
+                  <p>{{ Lang::get('navbar/navbar.register') }}</p>
+                </a>
             </li>
-            
             @else
+            <li>
+                <a href="#">
+                    <i class="pe-7s-car"></i>
+                    <p>Mitnehmen</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="pe-7s-box1"></i>
+                    <p>Versenden</p>
+                </a>
+            </li>
             <li class="dropdown">
-                <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi {{ Auth::user()->username }}!<span class="caret"></span></a>
+                <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="pe-7s-menu"></i>
+                    <p></p>Hi {{ Auth::user()->first_name }}!<span class="caret"></span>
+                </a>
                   </a>
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
@@ -57,7 +77,7 @@
                   </ul>
             </li>
             @endif
-            <li class="dropdown">
+{{--             <li class="dropdown">
               @if(App::getLocale() == 'de')
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
                 <img src="{{ asset('gsd/img/flags/DE.png') }}">
@@ -73,7 +93,7 @@
                 <li><a href="{{ url('/lang/de') }}"><img src="{{ asset('gsd/img/flags/DE.png') }}"> Deutsch</a></li>
                 <li><a href="{{ url('/lang/en') }}"><img src="{{ asset('gsd/img/flags/GB.png') }}"> English</a></li>                    
               </ul>
-            </li>
+            </li> --}}
        </ul>
       
     </div><!-- /.navbar-collapse -->

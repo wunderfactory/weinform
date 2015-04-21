@@ -26,15 +26,15 @@
 
 			<div class="infobox">
 			    <div class="infobox_header">
-			        <p class="box_grey"><strong>Passwort zurücksetzen</strong></p>
+			        <p class="box_grey"><strong>Identität verifiziert</strong></p>
 			    </div>
 			    <div class="infobox_content">
 			    	<br>
-			        <p class="box_rose"><strong>Hi! Setze nun Dein Passwort zurück.</strong><br>Mit einem Klick auf den Button unten kannst Du ganz einfach Dein Passwort zurücksetzen und ein neues vergeben.</p>
+			        <p class="box_rose"><strong>Hi {{ $user->first_name }}! Deine Identität wurde verifiziert.</strong><br> Ab jetzt kannst Du auf wundership Sendungen mitnehmen und Dein Profil ist für andere Nutzer besonders vertrauenswürdig.</p>
 			        <br>
-			        <a href="{{ url('password/reset/'.$token) }}">
+			        <a href="{{ url('/') }}">
                           <button type="submit"  class="btn btn-default">
-								Passwort zurücksetzen
+								Jetzt zu wundership und Sendungen mitnehmen
                           </button>
                     </a><br>
                     <br>
@@ -44,7 +44,6 @@
 			</div>
 		</div>
 	</div>
-	@include('emails.structure.footer')
 </div>
 
 </body>

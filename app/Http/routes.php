@@ -10,11 +10,39 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/test', function(){
+Route::get('/button', function(){
 
-	$token = '123';
+	return View::make('test');
 
-	return View::make('emails.verify')->with(['token' => $token]);
+});
+
+Route::post('/test', function(){
+
+	$input = Input::all();
+
+	return $input;
+
+});
+
+Route::get('/rate', function(){
+
+	$user = Auth::user();
+
+	return View::make('actions.rate')->with(['user' => $user]);
+
+});
+Route::get('/yourdeliveries', function(){
+
+	$user = Auth::user();
+
+	return View::make('dashboard.carry.index')->with(['user' => $user]);
+
+});
+Route::get('/yourpackages', function(){
+
+	$user = Auth::user();
+
+	return View::make('dashboard.send.index')->with(['user' => $user]);
 
 });
 

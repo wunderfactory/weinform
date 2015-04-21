@@ -11,6 +11,9 @@
 .privacy{
   max-width: 980px !important;
 }
+.save_button{
+    margin-top: 10px;
+}
 </style>
 
 <div id="background">
@@ -46,7 +49,7 @@
                             <label for="bio">Bio</label>
                             <input id="bio" type="checkbox" name="bio" {{ $user->settings->hidden_bio? 'checked': '' }}>
                             <br>
-                            <input type="submit" class="btn btn-warning" value="Speichern">
+                            <input type="submit" class="btn btn-warning save_button" value="Speichern">
                         </form>
                 </div> 
             </div>
