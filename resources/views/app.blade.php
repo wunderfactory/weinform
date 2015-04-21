@@ -9,6 +9,10 @@
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<!-- BOX SYSTEM -->
 	<link href="{{ asset('/css/box_system.css') }}" rel="stylesheet">
+	<!-- / -->
+	<!-- BUTTONS -->
+	<link href="{{ asset('/css/buttons.css') }}" rel="stylesheet">
+	<!-- / -->
 	<link href="{{ asset('gsd/css/gsdk.css') }}" rel="stylesheet"/>
     <link href="{{ asset('gsd/css/demo.css') }}" rel="stylesheet" />
     <link href="{{ asset('gsd/css/examples.css') }}" rel="stylesheet" /> 
@@ -76,28 +80,6 @@
 	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
     <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
 	@yield('script')
-
-
-		<!-- OVERVIEW WIGGLE -->
-
-		<script type="text/javascript">
-		$(document).ready(function() {     
-		    $('#pickup_container').hover(function(){     
-		        $('#car_icon').addClass('wiggle');    
-		    },     
-		    function(){
-		        $('#car_icon').removeClass('wiggle');     
-		    });
-		});
-		$(document).ready(function() {     
-		    $('#send_container').hover(function(){     
-		        $('#parcel_icon').addClass('wiggle');    
-		    },     
-		    function(){
-		        $('#parcel_icon').removeClass('wiggle');     
-		    });
-		});
-		</script>
 
 
 </body>

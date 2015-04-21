@@ -270,6 +270,27 @@
       </div><!-- /row -->
 </div><!-- /container -->
 
+@section('script')
+<!-- OVERVIEW WIGGLE -->
 
+<script type="text/javascript">
+$(document).ready(function() {     
+    $('#pickup_container').hover(function(){     
+        $('#car_icon').addClass('wiggle');    
+    },     
+    function(){
+        $('#car_icon').removeClass('wiggle');     
+    });
+});
+$(document).ready(function() {     
+    $('#send_container').hover(function(){     
+        $('#parcel_icon').addClass('wiggle');    
+    },     
+    function(){
+        $('#parcel_icon').removeClass('wiggle');     
+    });
+});
+</script>
+@stop
 
 @endsection

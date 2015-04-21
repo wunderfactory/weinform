@@ -1,0 +1,199 @@
+/* EMAIL NOTIFICATONS SETTINGS */
+
+.switcher {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  background: #4cd964;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}
+.switcher span {
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  margin: -2px 0px 0px -4px;
+  background: #fff;
+  display: block;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.switcher span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  margin-top: -8px;
+  background: #fff;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+input[type=radio] {
+  display: none;
+}
+.switcher label {
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  width: 60px;
+  line-height: 50px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+label[for=first_yes] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+}
+label[for=first_no] {
+  position: absolute;
+  right: 0px;
+}
+#first_no:checked ~ .switcher {
+  background: #ff3b30;
+}
+#first_no:checked ~ .switcher span {
+  background: #fff;
+  margin-left: -8px;
+}
+#first_no:checked ~ .switcher span:after {
+  background: #fff;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#first_yes:checked ~ .switcher label[for=first_yes] {
+  color: #fff;
+}
+#first_no:checked ~ .switcher label[for=first_no] {
+  color: #fff;
+}
+
+
+/* EMAIL NOTIFICATONS SETTINGS 2 */
+
+
+
+label[for=second_yes] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+}
+label[for=second_no] {
+  position: absolute;
+  right: 0px;
+}
+#second_no:checked ~ .switcher {
+  background: #ff3b30;
+}
+#second_no:checked ~ .switcher span {
+  background: #fff;
+  margin-left: -8px;
+}
+#second_no:checked ~ .switcher span:after {
+  background: #fff;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#second_yes:checked ~ .switcher label[for=second_yes] {
+  color: #fff;
+}
+#second_no:checked ~ .switcher label[for=second_no] {
+  color: #fff;
+}
+
+
+/* EMAIL NOTIFICATONS SETTINGS 3 */
+
+
+
+label[for=third_yes] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+}
+label[for=third_no] {
+  position: absolute;
+  right: 0px;
+}
+#third_no:checked ~ .switcher {
+  background: #ff3b30;
+}
+#third_no:checked ~ .switcher span {
+  background: #fff;
+  margin-left: -8px;
+}
+#third_no:checked ~ .switcher span:after {
+  background: #fff;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#third_yes:checked ~ .switcher label[for=third_yes] {
+  color: #fff;
+}
+#third_no:checked ~ .switcher label[for=third_no] {
+  color: #fff;
+}
+
+
+
+/* EMAIL NOTIFICATONS SETTINGS 4 */
+
+
+
+label[for=fourth_yes] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+}
+label[for=fourth_no] {
+  position: absolute;
+  right: 0px;
+}
+#fourth_no:checked ~ .switcher {
+  background: #ff3b30;
+}
+#fourth_no:checked ~ .switcher span {
+  background: #fff;
+  margin-left: -8px;
+}
+#fourth_no:checked ~ .switcher span:after {
+  background: #fff;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#fourth_yes:checked ~ .switcher label[for=fourth_yes] {
+  color: #fff;
+}
+#fourth_no:checked ~ .switcher label[for=fourth_no] {
+  color: #fff;
+}
