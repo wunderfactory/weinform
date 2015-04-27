@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Wundership;
 
 
 use Webpatser\Countries\Countries;

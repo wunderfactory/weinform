@@ -1,4 +1,4 @@
-<?php namespace App\Services\GeoIP;
+<?php namespace Wundership\Services\GeoIP;
 
 use Torann\GeoIP\GeoIPFacade as GeoIP;
 class GeoIPTorann implements GeoIPInterface{

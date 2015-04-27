@@ -1,8 +1,8 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\UserSettings;
+use Wundership\UserSettings;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class CreateSettings extends Command implements SelfHandling {

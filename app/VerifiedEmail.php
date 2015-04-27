@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Wundership;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -26,7 +26,7 @@ class VerifiedEmail extends Model {
 
     public function user ()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('Wundership\User');
     }
 
 }

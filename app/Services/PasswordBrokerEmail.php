@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Services;
+namespace Wundership\Services;
 
 
 use Illuminate\Auth\Passwords\PasswordBroker;

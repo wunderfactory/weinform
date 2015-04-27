@@ -1,8 +1,8 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\VerifiedPhoneNumber;
+use Wundership\VerifiedPhoneNumber;
 use Carbon\Carbon;
 use Illuminate\Contracts\Bus\SelfHandling;
 

@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Wundership\Events;
 
 abstract class Event {
 

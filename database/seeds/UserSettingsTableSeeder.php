@@ -47,6 +47,17 @@ class UserSettingsTableSeeder extends Seeder {
 				'created_at' => '2015-04-10 13:23:11',
 				'updated_at' => '2015-04-10 13:23:11',
 			),
+			3 =>
+				array (
+					'id' => '4',
+					'user_id' => '4',
+					'hidden_hometown' => '1',
+					'hidden_job' => '1',
+					'hidden_bio' => '1',
+					'hidden_languages' => '1',
+					'created_at' => '2015-04-10 13:23:11',
+					'updated_at' => '2015-04-10 13:23:11',
+				),
 		));
 	}
 

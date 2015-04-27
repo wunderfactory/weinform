@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php namespace Wundership\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Services\PasswordBrokerEmail;
+use Wundership\Http\Controllers\Controller;
+use Wundership\Services\PasswordBrokerEmail;
 use Illuminate\Auth\Passwords\PasswordBroker;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\ResetsPasswords;

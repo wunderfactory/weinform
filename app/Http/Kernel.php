@@ -1,4 +1,4 @@
-<?php namespace App\Http;
+<?php namespace Wundership\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Support\Facades\Session;
@@ -16,10 +16,10 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'App\Http\Middleware\VerifyCsrfToken',
-        'App\Http\Middleware\Logging',
-        'App\Http\Middleware\Locale',
-        'App\Http\Middleware\NoProfile',
+		'Wundership\Http\Middleware\VerifyCsrfToken',
+        'Wundership\Http\Middleware\Logging',
+        'Wundership\Http\Middleware\Locale',
+        'Wundership\Http\Middleware\NoProfile',
 	];
 
 	/**
@@ -28,12 +28,12 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'App\Http\Middleware\Authenticate',
+		'auth' => 'Wundership\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-        'driver' => 'App\Http\Middleware\Driver',
-        'notDriver' => 'App\Http\Middleware\NotDriver',
-        'user' => 'App\Http\Middleware\User',
+		'guest' => 'Wundership\Http\Middleware\RedirectIfAuthenticated',
+        'driver' => 'Wundership\Http\Middleware\Driver',
+        'notDriver' => 'Wundership\Http\Middleware\NotDriver',
+        'user' => 'Wundership\Http\Middleware\User',
 	];
 
 }

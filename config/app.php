@@ -151,15 +151,15 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'App\Providers\AppServiceProvider',
-		'App\Providers\BusServiceProvider',
-		'App\Providers\ConfigServiceProvider',
-		'App\Providers\EventServiceProvider',
-		'App\Providers\RouteServiceProvider',
-		'App\Providers\FacebookServiceProvider',
-        'App\Providers\GeoIPServiceProvider',
-        'App\Providers\PhoneValidatorServiceProvider',
-        'App\Providers\SMSServiceProvider',
+		'Wundership\Providers\AppServiceProvider',
+		'Wundership\Providers\BusServiceProvider',
+		'Wundership\Providers\ConfigServiceProvider',
+		'Wundership\Providers\EventServiceProvider',
+		'Wundership\Providers\RouteServiceProvider',
+		'Wundership\Providers\FacebookServiceProvider',
+        'Wundership\Providers\GeoIPServiceProvider',
+        'Wundership\Providers\PhoneValidatorServiceProvider',
+        'Wundership\Providers\SMSServiceProvider',
 
 	],
 

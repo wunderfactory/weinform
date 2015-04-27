@@ -1,4 +1,4 @@
-<?php namespace App\Services;
+<?php namespace Wundership\Services;
 
 
 use Facebook\FacebookRedirectLoginHelper;
@@ -8,7 +8,7 @@ use Facebook\FacebookSession;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
 use Illuminate\Support\Facades\Config;
-use App\FacebookUser;
+use Wundership\FacebookUser;
 use Illuminate\Support\Facades\Validator;
 
 class Facebook {

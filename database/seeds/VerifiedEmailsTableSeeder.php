@@ -40,19 +40,32 @@ class VerifiedEmailsTableSeeder extends Seeder {
 				'created_at' => '2015-04-10 13:22:18',
 				'updated_at' => '2015-04-10 13:22:18',
 			),
-			2 => 
-			array (
-				'id' => '3',
-				'email' => 'reto.gericke@googlemail.com',
-				'user_id' => '3',
-				'verified' => '1',
-				'verify_token' => 'XaqJk7t6xwRokHzJorXRUwivIrKzNrMKbHejYW6MbNP8QzWTkOptHyPZuzLd1qeH',
-				'expires_at' => '2015-04-10 14:23:11',
-				'verified_at' => '0000-00-00 00:00:00',
-				'deleted_at' => NULL,
-				'created_at' => '2015-04-10 13:23:11',
-				'updated_at' => '2015-04-10 13:23:11',
-			),
+			2 =>
+				array (
+					'id' => '3',
+					'email' => 'reto.gericke@googlemail.com',
+					'user_id' => '3',
+					'verified' => '1',
+					'verify_token' => 'XaqJk7t6xwRokHzJorXRUwivIrKzNrMKbHejYW6MbNP8QzWTkOptHyPZuzLd1qeH',
+					'expires_at' => '2015-04-10 14:23:11',
+					'verified_at' => '0000-00-00 00:00:00',
+					'deleted_at' => NULL,
+					'created_at' => '2015-04-10 13:23:11',
+					'updated_at' => '2015-04-10 13:23:11',
+				),
+			3 =>
+				array (
+					'id' => '4',
+					'email' => 'moritz.ewert@wunderfactory.de',
+					'user_id' => '4',
+					'verified' => '1',
+					'verify_token' => 'XaqJk7t6xwRokHzJorXRUwivIrKzNrMKbHejYW6MbNP8QzWTkOptHyPZuzLd1qeH',
+					'expires_at' => '2015-04-10 14:23:11',
+					'verified_at' => '0000-00-00 00:00:00',
+					'deleted_at' => NULL,
+					'created_at' => '2015-04-10 13:23:11',
+					'updated_at' => '2015-04-10 13:23:11',
+				),
 		));
 	}
 

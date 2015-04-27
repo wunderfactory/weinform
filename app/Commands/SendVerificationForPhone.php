@@ -1,6 +1,6 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Services\SMS\SMSInterface;
+use Wundership\Services\SMS\SMSInterface;
 use Carbon\Carbon;
 use Illuminate\Contracts\Bus\SelfHandling;
 

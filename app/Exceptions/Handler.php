@@ -1,4 +1,4 @@
-<?php namespace App\Exceptions;
+<?php namespace Wundership\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

@@ -1,19 +1,19 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Commands\CreateProfile;
-use App\Commands\CreateProfilePicture;
-use App\Commands\CreateUserProfile;
-use App\Commands\SendVerificationForPhone;
-use App\Commands\UpdateUserProfile;
-use App\Commands\VerifyPhone;
-use App\Http\Requests;
-use App\VerifiedPhoneNumber;
+use Wundership\Commands\CreateProfile;
+use Wundership\Commands\CreateProfilePicture;
+use Wundership\Commands\CreateUserProfile;
+use Wundership\Commands\SendVerificationForPhone;
+use Wundership\Commands\UpdateUserProfile;
+use Wundership\Commands\VerifyPhone;
+use Wundership\Http\Requests;
+use Wundership\VerifiedPhoneNumber;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
-use App\Services\ProfilerContract;
+use Wundership\Services\ProfilerContract;
 class SettingsProfileController extends Controller {
     protected $profiler;
 
