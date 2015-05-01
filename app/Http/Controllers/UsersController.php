@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Commands\CreateUserProfile;
-use App\Http\Requests;
-use App\Services\ProfilerContract;
+use Wundership\Commands\CreateUserProfile;
+use Wundership\Http\Requests;
+use Wundership\Services\ProfilerContract;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

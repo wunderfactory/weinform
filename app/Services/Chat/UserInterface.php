@@ -1,4 +1,4 @@
-<?php namespace App\Services\Chat;
+<?php namespace Wundership\Services\Chat;
 
 use Ratchet\ConnectionInterface;
 

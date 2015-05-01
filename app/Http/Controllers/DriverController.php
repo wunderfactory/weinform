@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Commands\CreateDriver;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Wundership\Commands\CreateDriver;
+use Wundership\Http\Requests;
+use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 

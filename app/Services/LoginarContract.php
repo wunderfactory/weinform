@@ -1,4 +1,4 @@
-<?php namespace App\Services;
+<?php namespace Wundership\Services;
  interface LoginarContract {
      /**
       * Get a validator for an incoming registration request.

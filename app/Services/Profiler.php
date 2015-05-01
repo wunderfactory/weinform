@@ -1,4 +1,4 @@
-<?php namespace App\Services;
+<?php namespace Wundership\Services;
 
 
 use Illuminate\Support\Facades\Validator;

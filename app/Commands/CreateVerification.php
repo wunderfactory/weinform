@@ -1,8 +1,8 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\Verification;
+use Wundership\Verification;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Support\Facades\Bus;
 

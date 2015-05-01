@@ -1,10 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Commands\CreateUserProfile;
-use App\Commands\UpdateUserProfile;
-use App\Http\Requests;
-use App\Services\ProfilerContract;
-use App\User;
+use Wundership\Commands\CreateUserProfile;
+use Wundership\Commands\UpdateUserProfile;
+use Wundership\Http\Requests;
+use Wundership\Services\ProfilerContract;
+use Wundership\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;

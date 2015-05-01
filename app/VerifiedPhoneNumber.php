@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Wundership;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -20,7 +20,7 @@ class VerifiedPhoneNumber extends Model {
 
     public function user ()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('Wundership\User');
     }
 
     public function getNumberAttribute()

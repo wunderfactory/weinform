@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Commands\SendVerificationForPhone;
-use App\Commands\VerifyPhone;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Wundership\Commands\SendVerificationForPhone;
+use Wundership\Commands\VerifyPhone;
+use Wundership\Http\Requests;
+use Wundership\Http\Controllers\Controller;
 
-use App\VerifiedPhoneNumber;
+use Wundership\VerifiedPhoneNumber;
 use Illuminate\Http\Request;
 
 class SettingsController extends Controller {

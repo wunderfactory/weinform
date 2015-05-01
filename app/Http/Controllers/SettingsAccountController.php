@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Wundership\Http\Requests;
+use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;

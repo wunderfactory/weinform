@@ -1,8 +1,8 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\Services\ProfilerContract;
+use Wundership\Services\ProfilerContract;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class UpdateUserProfile extends Command implements SelfHandling {

@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace Wundership\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +11,7 @@ class SMSServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->app->bind('App\Services\SMS\SMSInterface','App\Services\SMS\SMSTwilio');
+		$this->app->bind('Wundership\Services\SMS\SMSInterface','Wundership\Services\SMS\SMSTwilio');
 	}
 
 	/**

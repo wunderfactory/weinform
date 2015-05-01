@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Wundership;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,11 +8,11 @@ class Verification extends Model {
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('Wundership\User');
     }
 
     public function picture()
     {
-        return $this->morphOne('App\File', 'owner');
+        return $this->morphOne('Wundership\File', 'owner');
     }
 }

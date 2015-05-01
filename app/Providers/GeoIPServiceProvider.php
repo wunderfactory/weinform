@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace Wundership\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +11,7 @@ class GeoIPServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->app->bind('App\Services\GeoIP\GeoIPInterface', 'App\Services\GeoIP\GeoIPTorann');
+		$this->app->bind('Wundership\Services\GeoIP\GeoIPInterface', 'Wundership\Services\GeoIP\GeoIPTorann');
 	}
 
 	/**

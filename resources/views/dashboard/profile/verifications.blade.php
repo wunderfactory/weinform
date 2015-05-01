@@ -116,9 +116,11 @@
                       @else   
                       @endif
                       @if($user->facebookUser)
-                      <p>Facebook-Freunde {{ $user->facebookUser->friends }} Freunde<i class="fa-check-circle-o fa check"></i>
-                        <button class="btn btn-info facebook_disconnect_button"><i class="fa fa-facebook"></i> Verbindung trennen</button>
-                      </p>
+                      <a href="{{ action('SettingsVerificationController@getRemoveFacebook', [Auth::user()->username]) }}">
+                          <p>Facebook-Freunde {{ $user->facebookUser->friends }} Freunde<i class="fa-check-circle-o fa check"></i>
+                              <button class="btn btn-info facebook_disconnect_button"><i class="fa fa-facebook"></i> Verbindung trennen</button>
+                          </p>
+                      </a>
                       @else
                       @endif
                       <hr>
@@ -194,7 +196,7 @@ text-decoration: none;
                                  <a id="facebook_login" class="facebook" href="{{ url('/auth/facebook') }}"><i class="fa fa-facebook fa-fw"></i></a>
                             </div>
                             <div class="col-md-9 right_container">
-                                <p class="grey">Bestätige Deine Identität, indem Du Deinen Account mit Facebook verbindest. <a href="#">Mit Facebook verbinden</a></p>   
+                                <p class="grey">Bestätige Deine Identität, indem Du Deinen Account mit Facebook verbindest. <a href="{{ action('SettingsVerificationController@getFacebook', [Auth::user()->username]) }}">Mit Facebook verbinden</a></p>
                               </div>
                         </div>
                         <hr>

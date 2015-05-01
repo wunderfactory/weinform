@@ -1,11 +1,11 @@
-<?php namespace App\Services;
+<?php namespace Wundership\Services;
 
-use App\Commands\CreateProfile;
-use App\Commands\CreateSettings;
-use App\Commands\CreateVerifiedPhoneNumber;
-use App\Commands\EmailCreated;
-use App\User;
-use App\VerifiedEmail;
+use Wundership\Commands\CreateProfile;
+use Wundership\Commands\CreateSettings;
+use Wundership\Commands\CreateVerifiedPhoneNumber;
+use Wundership\Commands\EmailCreated;
+use Wundership\User;
+use Wundership\VerifiedEmail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Bus;
 use Validator;

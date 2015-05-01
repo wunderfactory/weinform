@@ -1,6 +1,6 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;

@@ -1,6 +1,6 @@
-<?php namespace App\Http\Middleware;
+<?php namespace Wundership\Http\Middleware;
 
-use App\Services\GeoIP\GeoIPInterface as GeoIP;
+use Wundership\Services\GeoIP\GeoIPInterface as GeoIP;
 use Closure;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Config;

@@ -1,7 +1,7 @@
-<?php namespace App\Console\Commands;
+<?php namespace Wundership\Console\Commands;
 
-use App\Services\Chat\ChatInterface;
-use App\Services\Chat\UserInterface;
+use Wundership\Services\Chat\ChatInterface;
+use Wundership\Services\Chat\UserInterface;
 use Illuminate\Console\Command;
 use Ratchet\Http\HttpServer;
 use Ratchet\Server\IoServer;

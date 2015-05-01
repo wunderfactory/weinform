@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+<<<<<<< HEAD
 Route::get('/button', function(){
 
 	return View::make('test');
@@ -56,8 +57,44 @@ Route::group(['prefix' => 'user/{user}/settings/'], function()
     Route::controller('profile',        'SettingsProfileController');
     Route::controller('account',        'SettingsAccountController');
     Route::controller('verify',   'SettingsVerificationController');
-});
-Route::controller('user/{user}', 'UsersController');
-Route::controller('user/{user}/driver', 'DriverController');
+=======
 
+Route::post('oauth/token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
+Route::group(['prefix' => 'api/v1/'], function(){
+
+>>>>>>> origin/master
+});
+
+<<<<<<< HEAD
 Route::controller('/', 'StaticController');
+=======
+include("routes/tour.php");
+
+
+Route::group(['middleware' => ['csrf']], function(){
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
+    Route::group(['prefix' => 'user/{user}/settings/'], function()
+    {
+        Route::controller('profile',        'SettingsProfileController');
+        Route::controller('account',        'SettingsAccountController');
+        Route::controller('verify',   'SettingsVerificationController');
+    });
+    Route::controller('user/{user}', 'UsersController');
+    Route::controller('user/{user}/driver', 'DriverController');
+
+    Route::controller('/', 'StaticController');
+});
+
+
+
+
+
+
+
+>>>>>>> origin/master

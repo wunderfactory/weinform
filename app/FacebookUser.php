@@ -1,8 +1,10 @@
-<?php namespace App;
+<?php namespace Wundership;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FacebookUser extends Model {
+    use SoftDeletes;
 
 
 
@@ -22,7 +24,7 @@ class FacebookUser extends Model {
     protected $guarded = [];
 
 	public function user() {
-		return $this->belongsTo('App\User');
+		return $this->belongsTo('Wundership\User');
 	}
 
 }

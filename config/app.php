@@ -147,19 +147,21 @@ return [
         'Twilio\Laravel5TwilioServiceProvider',
         'Laravel\Socialite\SocialiteServiceProvider',
         'Orangehill\Iseed\IseedServiceProvider',
+        'LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider',
+        'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
 
 		/*
 		 * Application Service Providers...
 		 */
-		'App\Providers\AppServiceProvider',
-		'App\Providers\BusServiceProvider',
-		'App\Providers\ConfigServiceProvider',
-		'App\Providers\EventServiceProvider',
-		'App\Providers\RouteServiceProvider',
-		'App\Providers\FacebookServiceProvider',
-        'App\Providers\GeoIPServiceProvider',
-        'App\Providers\PhoneValidatorServiceProvider',
-        'App\Providers\SMSServiceProvider',
+		'Wundership\Providers\AppServiceProvider',
+		'Wundership\Providers\BusServiceProvider',
+		'Wundership\Providers\ConfigServiceProvider',
+		'Wundership\Providers\EventServiceProvider',
+		'Wundership\Providers\RouteServiceProvider',
+		'Wundership\Providers\FacebookServiceProvider',
+        'Wundership\Providers\GeoIPServiceProvider',
+        'Wundership\Providers\PhoneValidatorServiceProvider',
+        'Wundership\Providers\SMSServiceProvider',
 
 	],
 
@@ -216,6 +218,7 @@ return [
         'Flash' => 'Laracasts\Flash\Flash',
         'Twilio'    => 'Twilio\Facades\Twilio',
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+        'Authorizer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizerFacade',
 
     ],
 

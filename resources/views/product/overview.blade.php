@@ -94,7 +94,7 @@
       </div>
 
         <div class="col-md-6">
-          <a href=""><div id="pickup_container">
+          <a href="{!! route('tour.create') !!}"><div id="pickup_container">
             <div class="icon_wrapper col-md-5">
                 <i id="car_icon" class="fa fa-car white large_icon"></i>
             </div>

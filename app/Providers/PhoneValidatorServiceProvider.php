@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace Wundership\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,8 +11,8 @@ class PhoneValidatorServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->app['validator']->extend('phone', 'App\Services\PhoneValidator@phone');
-        $this->app['validator']->extend('mobile_phone', 'App\Services\PhoneValidator@mobilePhone');
+		$this->app['validator']->extend('phone', 'Wundership\Services\PhoneValidator@phone');
+        $this->app['validator']->extend('mobile_phone', 'Wundership\Services\PhoneValidator@mobilePhone');
 	}
 
 	/**

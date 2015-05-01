@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Wundership;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -34,42 +34,42 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function facebookUser()
     {
-		return $this->hasOne('App\FacebookUser');
+		return $this->hasOne('Wundership\FacebookUser');
 	}
 
     public function logs()
     {
-        return $this->hasMany('App\Logs');
+        return $this->hasMany('Wundership\Logs');
     }
 
     public function emails()
     {
-        return $this->hasMany('App\VerifiedEmail');
+        return $this->hasMany('Wundership\VerifiedEmail');
     }
 
     public function profile()
     {
-        return $this->hasOne('App\UserProfile');
+        return $this->hasOne('Wundership\UserProfile');
     }
 
     public function settings()
     {
-        return $this->hasOne('App\UserSettings');
+        return $this->hasOne('Wundership\UserSettings');
     }
 
     public function phoneNumbers()
     {
-        return $this->hasMany('App\VerifiedPhoneNumber');
+        return $this->hasMany('Wundership\VerifiedPhoneNumber');
     }
 
     public function driver()
     {
-        return $this->hasOne('App\Driver');
+        return $this->hasOne('Wundership\Driver');
     }
 
     public function verification()
     {
-        return $this->hasOne('App\Verification');
+        return $this->hasOne('Wundership\Verification');
     }
 
     public function getEmailForPasswordReset()

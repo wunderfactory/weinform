@@ -1,9 +1,9 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\Services\ProfilerContract;
-use App\UserProfile;
+use Wundership\Services\ProfilerContract;
+use Wundership\UserProfile;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Support\Facades\Bus;
 
