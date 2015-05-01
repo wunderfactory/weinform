@@ -149,7 +149,7 @@ class Facebook {
             $fbuser->user_id = $user->id;
             $fbuser->save();
             $this->facebookUser = $fbuser;
-            $this->facebook->getFriends();
+            $this->getFriends();
             return $fbuser;
         }
         if ($fbuser) {
