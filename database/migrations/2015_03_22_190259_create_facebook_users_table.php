@@ -17,6 +17,7 @@ class CreateFacebookUsersTable extends Migration {
 			$table->unsignedBigInteger('id')->index();
 			$table->unsignedBigInteger('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('friends');
+            $table->softDeletes();
 			$table->timestamps();
 		});
 	}

@@ -10,20 +10,38 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-Route::group(['prefix' => 'user/{user}/settings/'], function()
-{
-    Route::controller('profile',        'SettingsProfileController');
-    Route::controller('account',        'SettingsAccountController');
-    Route::controller('verify',   'SettingsVerificationController');
-});
-Route::controller('user/{user}', 'UsersController');
-Route::controller('user/{user}/driver', 'DriverController');
 
-Route::controller('/', 'StaticController');
+Route::get('test', function(){
+   return str_random(32);
+});
+
+Route::post('oauth/token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
+Route::group(['prefix' => 'api/v1/'], function(){
+
+});
+
+Route::group(['middleware' => ['csrf']], function(){
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
+    Route::group(['prefix' => 'user/{user}/settings/'], function()
+    {
+        Route::controller('profile',        'SettingsProfileController');
+        Route::controller('account',        'SettingsAccountController');
+        Route::controller('verify',   'SettingsVerificationController');
+    });
+    Route::controller('user/{user}', 'UsersController');
+    Route::controller('user/{user}/driver', 'DriverController');
+
+    Route::controller('/', 'StaticController');
+});
+
+
+
 
 
 

@@ -16,7 +16,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'App\Http\Middleware\VerifyCsrfToken',
+        'LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware',
         'App\Http\Middleware\Logging',
         'App\Http\Middleware\Locale',
         'App\Http\Middleware\NoProfile',
@@ -34,6 +34,7 @@ class Kernel extends HttpKernel {
         'driver' => 'App\Http\Middleware\Driver',
         'notDriver' => 'App\Http\Middleware\NotDriver',
         'user' => 'App\Http\Middleware\User',
+        'csrf' =>'App\Http\Middleware\VerifyCsrfToken',
 	];
 
 }
