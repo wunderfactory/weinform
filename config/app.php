@@ -147,6 +147,8 @@ return [
         'Twilio\Laravel5TwilioServiceProvider',
         'Laravel\Socialite\SocialiteServiceProvider',
         'Orangehill\Iseed\IseedServiceProvider',
+        'LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider',
+        'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -216,6 +218,7 @@ return [
         'Flash' => 'Laracasts\Flash\Flash',
         'Twilio'    => 'Twilio\Facades\Twilio',
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+        'Authorizer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizerFacade',
 
     ],
 

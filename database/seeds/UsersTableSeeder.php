@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder {
 				'username' => 'magnuslanganke',
 				'first_name' => 'Magnus',
 				'last_name' => 'Langanke',
-				'password' => '$2y$10$BOCRV4c3nNtz55ertT2bnO4a2VIntp4snPXimSCYC.4LCWgvWnoLu',
+				'password' => bcrypt('1234'),
 				'birth_date' => '1994-12-20',
 				'gender' => 'male',
 				'remember_token' => NULL,

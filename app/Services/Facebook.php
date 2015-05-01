@@ -66,7 +66,8 @@ class Facebook {
         }
     }
 
-    public function getFriends(){
+    public function getFriends()
+    {
         try {
             $friends = (new FacebookRequest(
                 $this->session, 'GET', '/me/friends'
@@ -123,7 +124,7 @@ class Facebook {
         return $this->facebookUser;
     }
 
-    public  function facebookUserData()
+    public function facebookUserData()
     {
         $request = new FacebookRequest(
             $this->getAppSession(),
@@ -134,5 +135,31 @@ class Facebook {
         dd($response);
         $graphObject = $response->getGraphObject();
         return $graphObject;
+    }
+
+    public function connectUser($user)
+    {
+        if(!$profile = $this->getUserProfile())
+        {
+            return false;
+        }
+        $fbuser = FacebookUser::where("id", $profile->getId())->first();
+        if($fbuser && $fbuser->user_id == 0)
+        {
+            $fbuser->user_id = $user->id;
+            $fbuser->save();
+            $this->facebookUser = $fbuser;
+            $this->facebook->getFriends();
+            return $fbuser;
+        }
+        if ($fbuser) {
+            return false;
+        }
+        $fbuser = $this->createFacebookUser($profile);
+        $fbuser->user_id = $user->id;
+        $fbuser->save();
+        $this->facebookUser = $fbuser;
+        $this->facebook->getFriends();
+        return $fbuser;
     }
 }
