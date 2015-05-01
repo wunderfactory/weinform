@@ -10,54 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-<<<<<<< HEAD
-Route::get('/button', function(){
-
-	return View::make('test');
-
-});
-
-Route::post('/test', function(){
-
-	$input = Input::all();
-
-	return $input;
-
-});
-
-Route::get('/rate', function(){
-
-	$user = Auth::user();
-
-	return View::make('actions.rate')->with(['user' => $user]);
-
-});
-Route::get('/yourdeliveries', function(){
-
-	$user = Auth::user();
-
-	return View::make('dashboard.carry.index')->with(['user' => $user]);
-
-});
-Route::get('/yourpackages', function(){
-
-	$user = Auth::user();
-
-	return View::make('dashboard.send.index')->with(['user' => $user]);
-
-});
-
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-Route::group(['prefix' => 'user/{user}/settings/'], function()
-{
-    Route::controller('profile',        'SettingsProfileController');
-    Route::controller('account',        'SettingsAccountController');
-    Route::controller('verify',   'SettingsVerificationController');
-=======
 
 Route::post('oauth/token', function() {
     return Response::json(Authorizer::issueAccessToken());
@@ -65,16 +17,54 @@ Route::post('oauth/token', function() {
 
 Route::group(['prefix' => 'api/v1/'], function(){
 
->>>>>>> origin/master
 });
 
-<<<<<<< HEAD
-Route::controller('/', 'StaticController');
-=======
 include("routes/tour.php");
 
 
 Route::group(['middleware' => ['csrf']], function(){
+
+    
+
+
+    Route::get('/button', function(){
+
+        return View::make('test');
+
+    });
+
+    Route::post('/test', function(){
+
+        $input = Input::all();
+
+        return $input;
+
+    });
+
+    Route::get('/rate', function(){
+
+        $user = Auth::user();
+
+        return View::make('actions.rate')->with(['user' => $user]);
+
+    });
+    Route::get('/yourdeliveries', function(){
+
+        $user = Auth::user();
+
+        return View::make('dashboard.carry.index')->with(['user' => $user]);
+
+    });
+    Route::get('/yourpackages', function(){
+
+        $user = Auth::user();
+
+        return View::make('dashboard.send.index')->with(['user' => $user]);
+
+    });
+
+
+
     Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',
@@ -90,11 +80,3 @@ Route::group(['middleware' => ['csrf']], function(){
 
     Route::controller('/', 'StaticController');
 });
-
-
-
-
-
-
-
->>>>>>> origin/master
