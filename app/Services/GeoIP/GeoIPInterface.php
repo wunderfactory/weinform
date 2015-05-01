@@ -1,4 +1,4 @@
-<?php namespace App\Services\GeoIP;
+<?php namespace Wundership\Services\GeoIP;
 
 
 interface GeoIPInterface {

@@ -1,12 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
-use App\Commands\CreateVerification;
-use App\FacebookUser;
-use App\Http\Requests;
-use App\Services\Facebook;
+use Wundership\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
+use Wundership\Services\Facebook;
 
 class SettingsVerificationController extends Controller
 {

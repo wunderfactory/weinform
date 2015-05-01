@@ -1,6 +1,6 @@
-<?php namespace App\Http\Middleware;
+<?php namespace Wundership\Http\Middleware;
 
-use App\Log;
+use Wundership\Log;
 use Auth;
 use Closure;
 use Illuminate\Contracts\Routing\TerminableMiddleware;

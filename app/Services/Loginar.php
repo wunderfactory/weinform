@@ -1,8 +1,11 @@
-<?php namespace App\Services;
+<?php
 
 
-use App\User;
-use App\VerifiedEmail;
+namespace Wundership\Services;
+
+
+use Wundership\User;
+use Wundership\VerifiedEmail;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 

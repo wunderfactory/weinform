@@ -36,6 +36,17 @@ class UserProfilesTableSeeder extends Seeder {
 				'created_at' => '2015-04-10 13:24:30',
 				'updated_at' => '2015-04-10 13:24:30',
 			),
+			1 =>
+				array (
+					'id' => '3',
+					'user_id' => '4',
+					'hometown' => 'Kassel',
+					'languages' => 'Deutsch',
+					'job' => 'Student',
+					'bio' => 'Hi, ich bin der Typ der dich an Magie glauben lässt.',
+					'created_at' => '2015-04-10 13:24:30',
+					'updated_at' => '2015-04-10 13:24:30',
+				),
 		));
 	}
 

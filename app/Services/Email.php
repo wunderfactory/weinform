@@ -1,7 +1,7 @@
-<?php namespace App\Services;
+<?php namespace Wundership\Services;
 
 
-use App\VerifiedEmail;
+use Wundership\VerifiedEmail;
 use Carbon\Carbon;
 
 class Email {

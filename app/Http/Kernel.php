@@ -1,4 +1,4 @@
-<?php namespace App\Http;
+<?php namespace Wundership\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Support\Facades\Session;
@@ -17,9 +17,9 @@ class Kernel extends HttpKernel {
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
         'LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware',
-        'App\Http\Middleware\Logging',
-        'App\Http\Middleware\Locale',
-        'App\Http\Middleware\NoProfile',
+        'Wundership\Http\Middleware\Logging',
+        'Wundership\Http\Middleware\Locale',
+        'Wundership\Http\Middleware\NoProfile',
 	];
 
 	/**
@@ -28,13 +28,13 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'App\Http\Middleware\Authenticate',
+		'auth' => 'Wundership\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-        'driver' => 'App\Http\Middleware\Driver',
-        'notDriver' => 'App\Http\Middleware\NotDriver',
-        'user' => 'App\Http\Middleware\User',
-        'csrf' =>'App\Http\Middleware\VerifyCsrfToken',
+        'csrf' =>'Wundership\Http\Middleware\VerifyCsrfToken',
+		'guest' => 'Wundership\Http\Middleware\RedirectIfAuthenticated',
+        'driver' => 'Wundership\Http\Middleware\Driver',
+        'notDriver' => 'Wundership\Http\Middleware\NotDriver',
+        'user' => 'Wundership\Http\Middleware\User',
 	];
 
 }

@@ -1,6 +1,6 @@
-<?php namespace App\Providers;
+<?php namespace Wundership\Providers;
 
-use App\Services\Facebook;
+use Wundership\Services\Facebook;
 use Illuminate\Support\ServiceProvider;
 class FacebookServiceProvider extends ServiceProvider {
 

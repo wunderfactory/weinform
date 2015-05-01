@@ -1,6 +1,6 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\File;
+use Wundership\File;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Support\Facades\Storage;
 

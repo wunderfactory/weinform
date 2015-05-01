@@ -1,6 +1,6 @@
-<?php namespace App\Events;
+<?php namespace Wundership\Events;
 
-use App\Events\Event;
+use Wundership\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
 

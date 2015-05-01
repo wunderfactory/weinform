@@ -1,4 +1,4 @@
-<?php namespace App\Http\Middleware;
+<?php namespace Wundership\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

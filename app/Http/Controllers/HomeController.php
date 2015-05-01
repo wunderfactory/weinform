@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Wundership\Http\Controllers;
 
 class HomeController extends Controller {
 

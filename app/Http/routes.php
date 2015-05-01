@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('test', function(){
-   return str_random(32);
-});
-
 Route::post('oauth/token', function() {
     return Response::json(Authorizer::issueAccessToken());
 });
@@ -22,6 +18,9 @@ Route::post('oauth/token', function() {
 Route::group(['prefix' => 'api/v1/'], function(){
 
 });
+
+include("routes/tour.php");
+
 
 Route::group(['middleware' => ['csrf']], function(){
     Route::controllers([

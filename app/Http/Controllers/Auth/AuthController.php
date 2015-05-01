@@ -1,12 +1,12 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php namespace Wundership\Http\Controllers\Auth;
 
-use App\Commands\CreateProfilePicture;
-use App\FacebookUser;
-use App\Services\Email;
-use App\Services\Loginar;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Wunderfactory\Facades\Facebook;
+use Wundership\Commands\CreateProfilePicture;
+use Wundership\FacebookUser;
+use Wundership\Services\Email;
+use Wundership\Services\Loginar;
+use Wundership\Http\Controllers\Controller;
+use Wundership\User;
+use Wundership\Wunderfactory\Facades\Facebook;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;

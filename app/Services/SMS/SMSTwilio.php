@@ -1,4 +1,4 @@
-<?php namespace App\Services\SMS;
+<?php namespace Wundership\Services\SMS;
 
 
 use Twilio\Facades\Twilio;

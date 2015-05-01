@@ -1,7 +1,7 @@
-<?php namespace App\Providers;
+<?php namespace Wundership\Providers;
 
-use App\User;
-use App\VerifiedEmail;
+use Wundership\User;
+use Wundership\VerifiedEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
@@ -41,15 +41,15 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
+			'Wundership\Services\Registrar'
 		);
 		$this->app->bind(
-            'App\Services\Chat\ChatInterface',
-            'App\Services\Chat\Chat'
+            'Wundership\Services\Chat\ChatInterface',
+            'Wundership\Services\Chat\Chat'
         );
 		$this->app->bind(
-            'App\Services\Chat\UserInterface',
-            'App\Services\Chat\User'
+            'Wundership\Services\Chat\UserInterface',
+            'Wundership\Services\Chat\User'
         );
 		$this->app->bind(
             'Evenement\EventEmitterInterface',
@@ -60,8 +60,8 @@ class AppServiceProvider extends ServiceProvider {
             'Evenement\EventEmitter'
         );
         $this->app->bind(
-            'App\Services\ProfilerContract',
-            'App\Services\Profiler'
+            'Wundership\Services\ProfilerContract',
+            'Wundership\Services\Profiler'
         );
 	}
 

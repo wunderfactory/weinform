@@ -1,8 +1,8 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\Driver;
+use Wundership\Driver;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class CreateDriver extends Command implements SelfHandling {

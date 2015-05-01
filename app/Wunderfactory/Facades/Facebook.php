@@ -1,4 +1,4 @@
-<?php namespace App\Wunderfactory\Facades;
+<?php namespace Wundership\Wunderfactory\Facades;
 
 
 use Illuminate\Support\Facades\Facade;

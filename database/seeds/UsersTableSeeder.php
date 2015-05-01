@@ -53,6 +53,19 @@ class UsersTableSeeder extends Seeder {
 				'created_at' => '2015-04-10 13:23:11',
 				'updated_at' => '2015-04-10 13:23:11',
 			),
+			3 =>
+				array (
+					'id' => '4',
+					'username' => 'moritzewert',
+					'first_name' => 'Moritz',
+					'last_name' => 'Ewert',
+					'password' => Hash::make('1234'),
+					'birth_date' => '1993-04-26',
+					'gender' => 'male',
+					'remember_token' => NULL,
+					'created_at' => '2015-04-10 13:23:11',
+					'updated_at' => '2015-04-10 13:23:11',
+				),
 		));
 	}
 

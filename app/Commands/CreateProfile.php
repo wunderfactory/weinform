@@ -1,8 +1,8 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
-use App\Commands\Command;
+use Wundership\Commands\Command;
 
-use App\UserProfile;
+use Wundership\UserProfile;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class CreateProfile extends Command implements SelfHandling {

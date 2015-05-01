@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Wundership\Commands;
 
 abstract class Command {
 
