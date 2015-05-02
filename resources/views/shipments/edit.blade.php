@@ -57,7 +57,12 @@
             @endif
         </div>
         <h3>Größe</h3>
-        @include('components.shipment.sizepicker', ['name' => 'size', 'selected' => $shipment->size])
+        @if($shipment->size_id)
+            <p>{{ $shipment->size->name }} <small>{{ $shipment->size->description }}</small></p>
+            {!! link_to_route('shipments.size.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+        @else
+            {!! link_to_route('shipments.size.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+        @endif
         <h3>Specs</h3>
         @include('components.shipment.specpicker', ['name' => 'specs', 'selected' => $shipment->specs])
         <h2>Typ</h2>
