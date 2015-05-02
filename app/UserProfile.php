@@ -6,7 +6,8 @@ class UserProfile extends Model {
 
 	protected $fillable = ['user_id', 'hometown', 'job', 'languages', 'bio'];
 
-    public function picture(){
+    public function picture()
+    {
         return $this->morphOne('Wundership\File', 'owner');
     }
     public function user()
