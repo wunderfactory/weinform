@@ -3,8 +3,8 @@
         <div class="list-group-item">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="{{ $name }}" {{ $selected == $spec ? 'selected' : '' }}>
-                    {{ $spec->name }}
+                    <input value="{{ $spec->id }}" data-toggle="checkbox" type="checkbox" name="{{ $name }}" {{ $selected == $spec ? 'checked' : '' }}>
+                    {{ $spec->name }} <small>{{ $spec->description }}</small>
                 </label>
             </div>
         </div>

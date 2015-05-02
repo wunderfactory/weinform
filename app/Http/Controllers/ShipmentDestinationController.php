@@ -1,9 +1,12 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Wundership\Shipment;
 
 class ShipmentDestinationController extends Controller {
 
@@ -12,9 +15,13 @@ class ShipmentDestinationController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($shipment)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$addresses = Auth::user()->addresses;
+		return view('shipments.edit.destination.index')
+			->with('shipment', $shipment)
+			->with('addresses', $addresses);
 	}
 
 	/**
@@ -22,9 +29,9 @@ class ShipmentDestinationController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($shipment)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -32,53 +39,62 @@ class ShipmentDestinationController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($shipment)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $destination
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($shipment, $destination)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $destination
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($shipment, $destination)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $destination
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($shipment, $destination)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $destination
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($shipment, $destination)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+	}
+
+	public function select($shipment)
+	{
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$address = Auth::user()->addresses()->findOrFail(Input::get('address'));
+		$shipment->destination()->associate($address);
+		$shipment->save();
+		return redirect(route('shipments.edit', $shipment));
 	}
 
 }

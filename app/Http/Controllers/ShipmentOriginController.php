@@ -1,11 +1,13 @@
 <?php namespace Wundership\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Wundership\Shipment;
+use Wundership\User;
 
 class ShipmentOriginController extends Controller {
 
@@ -16,9 +18,11 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function index($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 		$addresses = Auth::user()->addresses;
-		return view('shipments.edit.origin.index');
+		return view('shipments.edit.origin.index')
+			->with('shipment', $shipment)
+			->with('addresses', $addresses);
 	}
 
 	/**
@@ -28,7 +32,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -38,7 +42,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function store($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -49,7 +53,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function show($shipment, $origin)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -60,7 +64,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function edit($shipment, $origin)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -71,7 +75,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function update($shipment, $origin)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -82,7 +86,16 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function destroy($shipment, $origin)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+	}
+
+	public function select($shipment)
+	{
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$address = Auth::user()->addresses()->findOrFail(Input::get('address'));
+		$shipment->origin()->associate($address);
+		$shipment->save();
+		return redirect(route('shipments.edit', $shipment));
 	}
 
 }

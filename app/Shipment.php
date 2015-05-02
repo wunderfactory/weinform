@@ -4,7 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shipment extends Model {
 
-	protected $appends = ['is_published'];
+	protected $appends = [
+		'is_published',
+		'is_complete'
+	];
 
 	public function user()
 	{
@@ -36,7 +39,7 @@ class Shipment extends Model {
 		return $this->belongsTo('Wundership\Address', 'destination_id');
 	}
 
-	public function isPublishedAttribute()
+	public function getIsPublishedAttribute()
 	{
 		if($this->published_at == null)
 		{
@@ -49,5 +52,14 @@ class Shipment extends Model {
 				'published_at' => $this->attributes['published_at']
 			];
 		}
+	}
+
+	public function getIsCompleteAttribute()
+	{
+		if($this->size && $this->origin && $this->destination && $this->typeable_id && $this->typeable_type)
+		{
+			return true;
+		}
+		return false;
 	}
 }

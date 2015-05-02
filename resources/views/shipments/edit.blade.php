@@ -1,12 +1,28 @@
 @extends('app')
 
 @section('userbar')
-    <div class="alert alert-warning">
-        <p>Die Sendung ist noch nicht komplett. Gib alle Daten an um sie zu veröffentlichen</p>
-    </div>
-    <div class="alert alert-info">
-        <p>Deine Sendung ist komplett. Überprüfe alle Daten oder veröffentliche sie, um einen Fahrer zu finden. <a class="btn btn-primary btn-sm pull-right">Jetzt Fahrer finden</a></p>
-    </div>
+    <style type="text/css">
+        .navbar_container{
+            max-width: 980px !important;
+        }
+        .active_topbar {
+            color: #ea555c !important;
+        }
+    </style>
+    @if($shipment->is_complete)
+        <nav class="navbar navbar-default">
+            <div class="container navbar_container">
+                <a class="btn btn-sm btn-default navbar-right navbar-btn">Jetzt Fahrer finden</a>
+                <p class="navbar-text">Deine Sendung ist komplett. Überprüfe alle Daten oder veröffentliche sie, um einen Fahrer zu finden.</p>
+            </div>
+        </nav>
+    @else
+        <nav class="navbar navbar-default">
+            <div class="container navbar_container">
+                <p class="navbar-text">Die Sendung ist noch nicht komplett. Gib alle Daten an um sie zu veröffentlichen</p>
+            </div>
+        </nav>
+    @endif
 @endsection
 
 @section('content')
@@ -14,20 +30,32 @@
         <h1>Sendung bearbeiten</h1>
         <h2>Details</h2>
         <h3>Strecke</h3>
-        <h4>Abholung</h4>
-        @if($shipment->origin_id)
-            <?php print_r($shipment->origin) ?>
-            {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
-        @else
-            {!! link_to_route('shipments.origin.index', 'Select', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
-        @endif
+        <div class="col-sm-6">
+            <h4>Abholung</h4>
+            @if($shipment->origin_id)
+                <address>
+                    <strong>{{ $shipment->origin->title }}</strong><br>
+                    {{ $shipment->origin->address }}<br>
+                    {{ $shipment->origin->zip }} {{ $shipment->origin->city }}
+                </address>
+                {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            @else
+                {!! link_to_route('shipments.origin.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            @endif
+        </div>
+        <div class="col-sm-6">
         <h4>Lieferung</h4>
-        @if($shipment->destination_id)
-            <?php print_r($shipment->destination) ?>
-            {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
-        @else
-            {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
-        @endif
+            @if($shipment->destination_id)
+                <address>
+                    <strong>{{ $shipment->destination->title }}</strong><br>
+                    {{ $shipment->destination->address }}<br>
+                    {{ $shipment->destination->zip }} {{ $shipment->destination->city }}
+                </address>
+                {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            @else
+                {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            @endif
+        </div>
         <h3>Größe</h3>
         @include('components.shipment.sizepicker', ['name' => 'size', 'selected' => $shipment->size])
         <h3>Specs</h3>

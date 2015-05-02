@@ -44,21 +44,36 @@ class VerifiedPhoneNumbersTableSeeder extends Seeder {
 				'created_at' => '2015-04-10 13:22:18',
 				'updated_at' => '2015-04-10 13:28:36',
 			),
-			2 => 
-			array (
-				'id' => '3',
-				'user_id' => '3',
-				'country_prefix' => '49',
-				'country' => 'DE',
-				'phone_number' => '15256195619',
-				'verified' => '1',
-				'verify_token' => 'gPtUQY',
-				'verified_at' => '2015-04-10 13:28:14',
-				'expires_at' => '2015-04-10 14:28:00',
-				'deleted_at' => NULL,
-				'created_at' => '2015-04-10 13:23:11',
-				'updated_at' => '2015-04-10 13:28:14',
-			),
+			2 =>
+				array (
+					'id' => '3',
+					'user_id' => '3',
+					'country_prefix' => '49',
+					'country' => 'DE',
+					'phone_number' => '15256195619',
+					'verified' => '1',
+					'verify_token' => 'gPtUQY',
+					'verified_at' => '2015-04-10 13:28:14',
+					'expires_at' => '2015-04-10 14:28:00',
+					'deleted_at' => NULL,
+					'created_at' => '2015-04-10 13:23:11',
+					'updated_at' => '2015-04-10 13:28:14',
+				),
+			3 =>
+				array (
+					'id' => '4',
+					'user_id' => '4',
+					'country_prefix' => '49',
+					'country' => 'DE',
+					'phone_number' => '15786118235',
+					'verified' => '1',
+					'verify_token' => 'gPtUQY',
+					'verified_at' => '2015-04-10 13:28:14',
+					'expires_at' => '2015-04-10 14:28:00',
+					'deleted_at' => NULL,
+					'created_at' => '2015-04-10 13:23:11',
+					'updated_at' => '2015-04-10 13:28:14',
+				),
 		));
 	}
 

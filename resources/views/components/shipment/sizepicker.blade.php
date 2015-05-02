@@ -3,8 +3,8 @@
         <div class="list-group-item">
             <div class="radio">
                 <label>
-                    <input type="radio" name="{{ $name }}" {{ $selected == $size ? 'selected' : '' }}>
-                    {{ $size->name }}
+                    <input value="{{ $size->id }}" data-toggle="radio" type="radio" name="{{ $name }}" {{ $selected == $size ? 'checked' : '' }}>
+                    {{ $size->name }} <small>{{ $size->description }}</small>
                 </label>
             </div>
         </div>
