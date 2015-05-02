@@ -20,6 +20,7 @@ Route::group(['prefix' => 'api/v1/'], function(){
 });
 
 include("routes/tour.php");
+include("routes/shipments.php");
 
 
 Route::group(['middleware' => ['csrf']], function(){

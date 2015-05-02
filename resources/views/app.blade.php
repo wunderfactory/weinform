@@ -50,6 +50,7 @@
 
 	@include('structure.navbar')
     <div style="margin-top: 84px;">
+        @yield('userbar')
 	    @yield('content')
     </div>
 	@include('structure.footer')

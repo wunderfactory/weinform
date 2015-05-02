@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('shipments.create') }}">
                     <i class="pe-7s-box1"></i>
                     <p>Versenden</p>
                 </a>
