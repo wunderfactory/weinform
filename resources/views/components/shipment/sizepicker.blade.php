@@ -3,7 +3,7 @@
         <div class="list-group-item">
             <div class="radio">
                 <label>
-                    <input type="radio" name="{{ $name }}">
+                    <input type="radio" name="{{ $name }}" {{ $selected == $size ? 'selected' : '' }}>
                     {{ $size->name }}
                 </label>
             </div>

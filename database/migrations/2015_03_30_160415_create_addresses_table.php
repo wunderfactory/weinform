@@ -19,8 +19,7 @@ class CreateAddressesTable extends Migration {
 			$table->string('address');
 			$table->string('city');
 			$table->string('zip');
-			$table->unsignedInteger('country_id');
-			$table->boolean('is_beacon');
+			$table->unsignedInteger('user_id');
 			$table->timestamps();
 		});
 	}

@@ -11,8 +11,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'Grüner Waldweg 57',
 			'city'          => 'Kassel',
 			'zip'           => '34121',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 
 		Address::create([
@@ -20,8 +19,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'Elstalgraben',
 			'city'          => 'Göttingen',
 			'zip'           => '37079',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 
 		Address::create([
@@ -29,8 +27,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'Asseburgstraße 11',
 			'city'          => 'Hannover',
 			'zip'           => '30451',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 
 		Address::create([
@@ -38,8 +35,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'Bahnhofsplatz 18',
 			'city'          => 'Bremen',
 			'zip'           => '28195',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 
 		Address::create([
@@ -47,8 +43,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'Reesendamm 3',
 			'city'          => 'Hamburg',
 			'zip'           => '20095',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 
 		Address::create([
@@ -56,8 +51,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'Fürholzen',
 			'city'          => 'Fürholzen',
 			'zip'           => '85376',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 
 		Address::create([
@@ -65,8 +59,7 @@ class BeaconTableSeeder extends Seeder {
 			'address'       => 'A5',
 			'city'          => 'Eschborn',
 			'zip'           => '65760',
-			'country_id'    => 276,
-			'is_beacon'     => true
+			'user_id'       => 4
 		]);
 	}
 

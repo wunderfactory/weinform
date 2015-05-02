@@ -82,4 +82,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('Wundership\Shipment');
 	}
 
+	public function addresses()
+	{
+		return $this->hasMany('Wundership\Address');
+	}
+
 }

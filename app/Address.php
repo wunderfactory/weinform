@@ -5,8 +5,8 @@ use Wundership\Interfaces\Models\Mapable;
 
 class Address extends Model {
 
-	public function country()
+	public function user()
 	{
-		return $this->belongsTo('Wundership\Country');
+		return $this->belongsTo('Wundership\User');
 	}
 }

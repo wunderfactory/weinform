@@ -1,6 +1,5 @@
 <?php namespace Wundership\Http\Controllers;
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
@@ -8,18 +7,18 @@ use Wundership\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Wundership\Shipment;
 
-class ShipmentController extends Controller {
+class ShipmentOriginController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($shipment)
 	{
-		$shipments = Shipment::where('published_at', 'not', 'null')->get();
-		return view('shipments.index')
-			->with('shipments', $shipments);
+		$shipment = Shipment::findOrFail($shipment);
+		$addresses = Auth::user()->addresses;
+		return view('shipments.edit.origin.index');
 	}
 
 	/**
@@ -27,9 +26,9 @@ class ShipmentController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($shipment)
 	{
-		return view('shipments.create');
+		$shipment = Shipment::findOrFail($shipment);
 	}
 
 	/**
@@ -37,51 +36,40 @@ class ShipmentController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($shipment)
 	{
-		$shipment = Shipment::create([]);
-		$user = Auth::user()->shipments()->save($shipment);
-		return redirect(route('shipments.show', ['shipment' => $shipment]));
+		$shipment = Shipment::findOrFail($shipment);
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $shipment
+	 * @param  int  $shipment, $origin
 	 * @return Response
 	 */
-	public function show($shipment)
+	public function show($shipment, $origin)
 	{
 		$shipment = Shipment::findOrFail($shipment);
-		if($shipment->published_at != null || $shipment->user->id == Auth::user()->id)
-		{
-			return view('shipments.show')->with('shipment', $shipment);
-		}
-		else
-		{
-			return App::abort(404);
-		}
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $shipment
+	 * @param  int  $shipment, $origin
 	 * @return Response
 	 */
-	public function edit($shipment)
+	public function edit($shipment, $origin)
 	{
 		$shipment = Shipment::findOrFail($shipment);
-		return view('shipments.edit')->with('shipment', $shipment);
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $shipment
+	 * @param  int  $shipment, $origin
 	 * @return Response
 	 */
-	public function update($shipment)
+	public function update($shipment, $origin)
 	{
 		$shipment = Shipment::findOrFail($shipment);
 	}
@@ -89,10 +77,10 @@ class ShipmentController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $shipment
+	 * @param  int  $shipment, $origin
 	 * @return Response
 	 */
-	public function destroy($shipment)
+	public function destroy($shipment, $origin)
 	{
 		$shipment = Shipment::findOrFail($shipment);
 	}
