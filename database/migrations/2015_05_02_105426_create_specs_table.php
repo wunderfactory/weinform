@@ -12,7 +12,7 @@ class CreateSpecsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('specs', function(Blueprint $table)
+		Schema::create('spec', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
@@ -28,7 +28,7 @@ class CreateSpecsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('specs');
+		Schema::drop('spec');
 	}
 
 }

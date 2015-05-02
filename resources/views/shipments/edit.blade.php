@@ -64,7 +64,14 @@
             {!! link_to_route('shipments.size.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
         @endif
         <h3>Specs</h3>
-        @include('components.shipment.specpicker', ['name' => 'specs', 'selected' => $shipment->specs])
+        @if(count($shipment->specs))
+            @foreach($shipment->specs as $spec)
+                <span class="label label-info"><strong>{{ $spec->name }}</strong> {{ $spec->description }}</span>
+            @endforeach
+            {!! link_to_route('shipments.specs.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+        @else
+            {!! link_to_route('shipments.specs.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+        @endif
         <h2>Typ</h2>
     </div>
 @endsection
