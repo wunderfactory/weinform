@@ -10,3 +10,5 @@ Route::resource('shipments.size',                       'ShipmentSizeController'
 Route::post('shipments/{shipment}/size/select',         ['as' => 'shipments.size.select', 'uses' => 'ShipmentSizeController@select']);
 Route::resource('shipments.specs',                      'ShipmentSpecController');
 Route::post('shipments/{shipment}/specs/select',        ['as' => 'shipments.specs.select', 'uses' => 'ShipmentSpecController@select']);
+Route::resource('shipments.auction',                    'ShipmentAuctionController');
+Route::resource('shipments.immediate',                  'ShipmentImmediateController');

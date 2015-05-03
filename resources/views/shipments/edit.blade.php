@@ -26,7 +26,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container" style="padding-bottom: 40px;">
         <h1>Sendung bearbeiten</h1>
         <h2>Details</h2>
         <h3>Strecke</h3>
@@ -73,5 +73,13 @@
             {!! link_to_route('shipments.specs.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
         @endif
         <h2>Typ</h2>
+        @if($shipment->typeable_id && $shipment->typeable_type)
+
+        @else
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                {!! link_to_route('shipments.auction.create', 'Auction', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
+                {!! link_to_route('shipments.immediate.create', 'Immediate', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
+            </div>
+        @endif
     </div>
 @endsection

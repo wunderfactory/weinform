@@ -4,15 +4,16 @@ use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Wundership\Shipment;
 
-class ShipmentTypeController extends Controller {
+class ShipmentAuctionController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($shipment)
 	{
 		//
 	}
@@ -22,9 +23,11 @@ class ShipmentTypeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($shipment)
 	{
-		//
+		$shipment = Shipment::findOrFail($shipment);
+		return view('shipments.edit.type.auction.create')
+			->with('shipment', $shipment);
 	}
 
 	/**
@@ -32,7 +35,7 @@ class ShipmentTypeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($shipment)
 	{
 		//
 	}
@@ -40,10 +43,10 @@ class ShipmentTypeController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $type
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($shipment, $type)
 	{
 		//
 	}
@@ -51,10 +54,10 @@ class ShipmentTypeController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $type
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($shipment, $type)
 	{
 		//
 	}
@@ -62,10 +65,10 @@ class ShipmentTypeController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $type
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($shipment, $type)
 	{
 		//
 	}
@@ -73,10 +76,10 @@ class ShipmentTypeController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int  $shipment, $type
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($shipment, $type)
 	{
 		//
 	}
