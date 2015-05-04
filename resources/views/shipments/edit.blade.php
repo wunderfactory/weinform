@@ -38,9 +38,9 @@
                     {{ $shipment->origin->street }}<br>
                     {{ $shipment->origin->zip }} {{ $shipment->origin->city }}
                 </address>
-                {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+                {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
             @else
-                {!! link_to_route('shipments.origin.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+                {!! link_to_route('shipments.origin.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
             @endif
         </div>
         <div class="col-sm-6">
@@ -51,34 +51,37 @@
                     {{ $shipment->destination->street }}<br>
                     {{ $shipment->destination->zip }} {{ $shipment->destination->city }}
                 </address>
-                {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+                {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
             @else
-                {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+                {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
             @endif
         </div>
         <h3>Größe</h3>
         @if($shipment->size_id)
             <p>{{ $shipment->size->name }} <small>{{ $shipment->size->description }}</small></p>
-            {!! link_to_route('shipments.size.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            {!! link_to_route('shipments.size.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
         @else
-            {!! link_to_route('shipments.size.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            {!! link_to_route('shipments.size.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
         @endif
         <h3>Specs</h3>
         @if(count($shipment->specs))
             @foreach($shipment->specs as $spec)
                 <span class="label label-info"><strong>{{ $spec->name }}</strong> {{ $spec->description }}</span>
             @endforeach
-            {!! link_to_route('shipments.specs.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            {!! link_to_route('shipments.specs.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
         @else
-            {!! link_to_route('shipments.specs.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
+            {!! link_to_route('shipments.specs.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
         @endif
         <h2>Typ</h2>
         @if($shipment->typeable_id && $shipment->typeable_type)
-
+            @if($shipment->typeable instanceof Wundership\Auction)
+            @elseif($shipment->typeable instanceof Wundership\Immediate)
+                @include('shipments.edit.type.immediate.show', ['immediate' => $shipment->typeable])
+            @endif
         @else
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                {!! link_to_route('shipments.auction.create', 'Auction', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
-                {!! link_to_route('shipments.immediate.create', 'Immediate', ['shipment' => $shipment], ['class' => 'btn btn-default']) !!}
+                {!! link_to_route('shipments.auction.create', 'Auction', ['shipment' => $shipment], ['class' => 'btn btn-primary']) !!}
+                {!! link_to_route('shipments.immediate.create', 'Immediate', ['shipment' => $shipment], ['class' => 'btn btn-primary']) !!}
             </div>
         @endif
     </div>

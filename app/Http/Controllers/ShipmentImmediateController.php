@@ -1,12 +1,11 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Wundership\Http\Requests;
-use Wundership\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
 use Wundership\Immediate;
-use Wundership\Shipment;
 
 class ShipmentImmediateController extends Controller {
 
@@ -40,7 +39,20 @@ class ShipmentImmediateController extends Controller {
 	public function store($shipment)
 	{
 		$shipment = Auth::user()->shipments()->findOrFail($shipment);
-		$immediate = new Immediate([]);
+
+		$input = Input::only('price');
+
+		$validator = Validator::make(
+			array($input),
+			array(Immediate::$rules)
+		);
+
+		if ($validator->fails())
+		{
+			return Redirect::route('shipments.immediate.create', [$shipment])->withErrors($validator);
+		}
+
+		$immediate = new Immediate([$input]);
 		$immediate->save();
 		$immediate->shipment()->save($shipment);
 		return redirect(route('shipments.edit', [$shipment]));
@@ -87,7 +99,14 @@ class ShipmentImmediateController extends Controller {
 	 */
 	public function destroy($shipment, $type)
 	{
-		//
+		return 'foo';
+		/*
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$type = $shipment->typeable()->findOrFail($type);
+		$shipment->typeable()->delete();
+		$type->destroy();
+		return redirect(route('shipments.edit', $shipment));
+		*/
 	}
 
 }

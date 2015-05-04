@@ -8,7 +8,7 @@
             <label for="inputPrice">Preis</label>
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-eur"></i></div>
-                {!! Form::text('price', '', ['id' => 'inputPrice', 'class' => 'form-control', '0.00']) !!}
+                {!! Form::text('price', null, ['id' => 'inputPrice', 'class' => 'form-control', '0.00']) !!}
             </div>
         </div>
         {!! Form::submit('Typ wählen', ['class' => 'btn btn-primary btn-block']) !!}

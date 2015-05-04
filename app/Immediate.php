@@ -5,7 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 class Immediate extends Model {
 
 	static $rules = [
-		'price' => 'numeric'
+		'price' => ['required', 'numeric']
+	];
+
+	protected $fillable = [
+		'price'
 	];
 
 	public function shipment()

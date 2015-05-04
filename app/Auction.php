@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Auction extends Model {
 
 	static $rules = [
-		'price' => 'numeric'
+		'price' => 'required|numeric'
 	];
 
 	public function shipment()
