@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Auction extends Model {
 
-	public function shipments()
+	public function shipment()
 	{
 		return $this->morphOne('Wundership\Shipment', 'typeable');
 	}

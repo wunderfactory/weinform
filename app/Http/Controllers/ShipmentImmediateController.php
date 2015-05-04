@@ -5,6 +5,7 @@ use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Wundership\Immediate;
 use Wundership\Shipment;
 
 class ShipmentImmediateController extends Controller {
@@ -39,7 +40,10 @@ class ShipmentImmediateController extends Controller {
 	public function store($shipment)
 	{
 		$shipment = Auth::user()->shipments()->findOrFail($shipment);
-
+		$immediate = new Immediate([]);
+		$immediate->save();
+		$immediate->shipment()->save($shipment);
+		return redirect(route('shipments.edit', [$shipment]));
 	}
 
 	/**

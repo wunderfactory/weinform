@@ -72,7 +72,8 @@ class ShipmentController extends Controller {
 	public function edit($shipment)
 	{
 		$shipment = Auth::user()->shipments()->findOrFail($shipment);
-		return view('shipments.edit')->with('shipment', $shipment);
+		return view('shipments.edit')
+			->with('shipment', $shipment);
 	}
 
 	/**
