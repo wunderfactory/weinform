@@ -1,10 +1,7 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Wundership\Http\Requests;
-use Wundership\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-use Wundership\Shipment;
 
 class ShipmentAuctionController extends Controller {
 
@@ -25,7 +22,7 @@ class ShipmentAuctionController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 		return view('shipments.edit.type.auction.create')
 			->with('shipment', $shipment);
 	}

@@ -71,7 +71,7 @@ class ShipmentController extends Controller {
 	 */
 	public function edit($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 		return view('shipments.edit')->with('shipment', $shipment);
 	}
 
@@ -83,7 +83,7 @@ class ShipmentController extends Controller {
 	 */
 	public function update($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 	/**
@@ -94,7 +94,7 @@ class ShipmentController extends Controller {
 	 */
 	public function destroy($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 	}
 
 }

@@ -1,5 +1,6 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
@@ -25,7 +26,7 @@ class ShipmentImmediateController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
 		return view('shipments.edit.type.immediate.create')
 			->with('shipment', $shipment);
 	}
@@ -37,7 +38,8 @@ class ShipmentImmediateController extends Controller {
 	 */
 	public function store($shipment)
 	{
-		//
+		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+
 	}
 
 	/**
