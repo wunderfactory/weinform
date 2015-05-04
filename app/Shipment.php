@@ -4,6 +4,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shipment extends Model {
 
+	static $rules = [
+		'title'     => ''
+	];
+
+	static $publishing_rules = [
+		//TODO
+	];
+
 	protected $appends = [
 		'is_published',
 		'is_complete'
