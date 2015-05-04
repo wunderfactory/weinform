@@ -16,7 +16,7 @@ class CreateAddressesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title');
-			$table->string('address');
+			$table->string('street');
 			$table->string('city');
 			$table->string('zip');
 			$table->unsignedInteger('user_id');

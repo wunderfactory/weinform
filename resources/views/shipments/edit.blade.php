@@ -35,7 +35,7 @@
             @if($shipment->origin_id)
                 <address>
                     <strong>{{ $shipment->origin->title }}</strong><br>
-                    {{ $shipment->origin->address }}<br>
+                    {{ $shipment->origin->street }}<br>
                     {{ $shipment->origin->zip }} {{ $shipment->origin->city }}
                 </address>
                 {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
@@ -48,7 +48,7 @@
             @if($shipment->destination_id)
                 <address>
                     <strong>{{ $shipment->destination->title }}</strong><br>
-                    {{ $shipment->destination->address }}<br>
+                    {{ $shipment->destination->street }}<br>
                     {{ $shipment->destination->zip }} {{ $shipment->destination->city }}
                 </address>
                 {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-default']) !!}
