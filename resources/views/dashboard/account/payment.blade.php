@@ -2,52 +2,13 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.payment{
-  max-width: 980px !important;
-}
-</style>
-
-<div id="background">
+<div class="background_dashboard_area">
 
 @include('dashboard.navbar')
 
-<style type="text/css">
-.rose{
-  color: #ea555c;
-}
-</style>
-
-<div class="container payment">
+<div class="container dashboard_area_container">
     <div class="row">
         @include('dashboard.account.side-navbar')
-
-
-<style type="text/css">
-.middle_container{
-  text-align: right;
-  margin-top: 10px;
-}
-.very_small{
-  font-size: 15px;
-  margin-bottom: 21px;
-}
-.large_icon{
-  font-size: 80px;
-}
-.note_icon{
-  margin-top: 24px;
-  margin-left: 10px;
-}
-input{
-  margin-top: 2px;
-}
-</style>
 
 <!-- INFOBOXES -->
 

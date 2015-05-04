@@ -24,6 +24,11 @@
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
+
+	<!-- Custom style sheets -->
+	<link href="{{ asset('/css/views/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/views/dashboard/style.css') }}" rel="stylesheet">
+
     @yield('style')
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

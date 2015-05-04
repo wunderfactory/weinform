@@ -2,44 +2,13 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.notifications{
-  max-width: 980px !important;
-}
-</style>
-
-<div id="background">
+<div class="background_dashboard_area">
 
 @include('dashboard.navbar')
 
-<div class="container notifications">
+<div class="container dashboard_area_container">
     <div class="row">
         @include('dashboard.account.side-navbar')
-
-
-<style type="text/css">
-.mail_icon{
-  margin-left: 6px;
-}
-.large_icon{
-  font-size: 55px;
-}
-.right_container{
-  margin-left: 17px;
-  display: inline-block;
-}
-.button_container {
-  text-align: center;
-}
-.button_wrapper{
-
-}
-</style>
 
 <!-- INFOBOXES -->
 

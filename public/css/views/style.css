@@ -1,0 +1,28 @@
+.navbar_container{
+    max-width: 980px !important;
+}
+.active_topbar {
+    color: #ea555c !important;
+}
+
+
+.very_large_icon{
+	font-size: 80px;
+}
+
+
+.rose{
+  color: #ea555c;
+}
+.white{
+  color: white !important;
+}
+
+/* check green */
+
+.check{
+  color: #2fd155;
+}
+.large_icon{
+  font-size: 40px;
+}

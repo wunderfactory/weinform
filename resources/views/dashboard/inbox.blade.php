@@ -2,55 +2,11 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.dashboard{
-  max-width: 980px !important;
-}
-</style>
-
-<div id="background">
+<div class="background_dashboard_area">
 
 @include('dashboard.navbar')
 
-<style type="text/css">
-#profile_container{
-  background-color: white;
-  max-width: 202px;
-  text-align: center;
-  padding-bottom: 30px;
-  border: 1px solid #ababab;
-}
-.rose{
-  color: #ea555c;
-}
-.white{
-  color: white;
-}
-.icon_large{
-  font-size: 20px;
-}
-#left_news_container{
-  max-width: 200px;
-  background-color: #ffa200;
-  margin-top: 20px;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  margin-bottom: 20px;
-  border: 1px solid #ababab;
-}
-.btn-white{
-  color: white;
-  border-color: white;
-}
-</style>
-
-<div class="container dashboard">
+<div class="container">
     <div class="row">
         <div class="col-md-3">
             <div id="profile_container">
@@ -68,8 +24,6 @@
                 </div>
             </div>
 
-
-
             <div id="left_news_container">
                 <i class="pe-7s-car large_icon help_icon"></i>
                 <h4>Fahrer werden!</h4>
@@ -77,40 +31,13 @@
                 <a href="#"><p class="dark_grey"><strong>Ja, ich will!</strong></p></a>
             </div>
 
-
-
-<style type="text/css">
-#action_container{
-  max-width: 200px;
-  background-color: white;
-  margin-top: 20px;
-  padding: 20px;
-  position: relative;
-  margin-bottom: 20px;
-  border: 1px solid #ababab;
-}
-.help_icon{
-  margin-bottom: 10px;
-}
-.dark_grey{
-  color: #2e2e2e;
-}
-.large_icon{
-  font-size: 40px;
-}
-</style>
-
-
             <div id="action_container">
                 <i class="pe-7s-help1 large_icon help_icon"></i>
                 <p>Gab es ein Problem, {{ $user->first_name }}?</p>
                 <a href="#"><p class="dark_grey"><strong>Kontaktiere das wundership team.</strong></p></a>
             </div>
 
-
-
-        </div>
-        
+        </div>  
 
 <!-- INFOBOXES -->
 
@@ -143,28 +70,6 @@
                 <p class="rose">Messages</p>
             </div> 
           </div>
-
-
-<style type="text/css">
-.question{
-  font-size: 20px;
-}
-.verification_button{
-  margin-top: -6px;
-}
-.check_container{
-  float: left;
-  padding-top: 6px;
-}
-.text_container{
-  float: left;
-  margin-left: 17px;
-}
-.check{
-  color: #2fd155;
-}
-</style>
-
 
 <!-- VERIFICATIONS -->
 

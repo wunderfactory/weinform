@@ -1,13 +1,3 @@
-<style type="text/css">
-.navbar_container{
-    max-width: 980px !important;
-}
-.active_topbar {
-    color: #ea555c !important;
-}
-</style>
-
-
 <nav class="navbar navbar-default">
   <div class="container navbar_container">
     <ul class="nav navbar-nav">

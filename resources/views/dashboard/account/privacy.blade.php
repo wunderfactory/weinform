@@ -2,29 +2,14 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.privacy{
-  max-width: 980px !important;
-}
-.save_button{
-    margin-top: 10px;
-}
-</style>
-
-<div id="background">
+<div class="background_dashboard_area">
 
 @include('dashboard.navbar')
 
-<div class="container privacy">
+<div class="container dashboard_area_container">
     <div class="row">
+        
         @include('dashboard.account.side-navbar')
-
-<!-- INFOBOXES -->
 
         <div class="col-md-8">
             <div class="infobox">
