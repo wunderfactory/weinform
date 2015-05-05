@@ -28,35 +28,6 @@
   border-left: 1px solid #ababab;
   border-right: 1px solid #ababab;
 }
-
-#profile_info_container{
-  background-color: white;
-  max-width: 202px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ababab;
-  border-left: 1px solid #ababab;
-  border-right: 1px solid #ababab;
-}
-.rose{
-  color: #ea555c;
-}
-.white{
-  color: white !important;
-}
-.icon_large{
-  font-size: 30px;
-}
-#left_info_container{
-  max-width: 200px;
-  background-color: #ffa200;
-  margin-top: 20px;
-  padding: 20px;
-  position: relative;
-  margin-bottom: 20px;
-  border: 1px solid #ababab;
-}
 .btn-white{
   color: white;
   border-color: white;
@@ -102,7 +73,7 @@
                 <div class="avatar"></div>
                 <img class="avatar" src="{{ action('UsersController@getPicture', [$user->username]) }}" alt="Profile Picture">
             </div>
-            <div id="profile_info_container">
+            <div class="user_infobox">
                 <div>
                   <h3>{{ $user->first_name }} {{ $user->last_name }}</h3>
                   <p>{{ $user->username }}</p>
@@ -114,16 +85,8 @@
                 </div>
             </div>
             
-
-<style type="text/css">
-.car_icon{
-
-}
-</style>
-
-
-            <div id="left_info_container">
-                <i class="pe-7s-car large_icon"></i>
+            <div class="tall_actionbox">
+                <i class="pe-7s-car"></i>
                 <h4>{{ $user->first_name}} ist Fahrer!</h4>
                 <p>Mit einem verfizierten Profil und ein paar Klicks finanziert {{ $user->first_name }} jetzt mit <strong>wundership</strong> seine Autofahrten oder Zugreisen!<br> Hört sich gut an?</p>
                 <a href=""><p class="dark_grey"><strong>Fahrer werden!</strong></p></a>
@@ -131,49 +94,16 @@
 
             <hr>
 
-<style type="text/css">
-#action_container{
-  max-width: 200px;
-  background-color: #ab4848;
-  margin-top: 20px;
-  padding: 20px;
-  position: relative;
-  margin-bottom: 20px;
-  border: 1px solid #ab4848;
-}
-.attention_icon{
-  margin-bottom: 10px;
-}
-</style>
-
-
-            <div id="action_container">
-                <i class="pe-7s-attention large_icon attention_icon"></i>
+            <div class="actionbox">
+                <i class="pe-7s-attention"></i>
                 <p>Gab es ein Problem mit {{ $user->first_name }}?</p>
                 <a href=""><p class="dark_grey"><strong>{{ $user->first_name }} melden.</strong></p></a>
             </div>
+
         </div>
 
 
 <style type="text/css">
-.infobox{
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-bottom: 20px;
-}
-.infobox_header{
-  width: 100%;
-  position: top;
-  height: 60px;
-  padding: 15px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #ababab;
-  vertical-align: center;
-}
-.infobox_content{
-  padding: 15px; 
-}
 .grey{
   color: #828282;
 }

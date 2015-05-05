@@ -2,6 +2,10 @@
 
 @section('content')
 
+<style type="text/css">
+
+</style>
+
 <div class="background_dashboard_area">
 
 @include('dashboard.navbar')
@@ -21,7 +25,7 @@
                     <div class="avatar"></div>
                     <img class="avatar" src="{{ action('UsersController@getPicture', [$user->username]) }}" alt="Profile Picture">
                 </div>
-                <div id="profile_info_dashboard_container">
+                <div class="user_infobox">
                     <div>
                       <h3>{{ $user->first_name }}</h3>
                     </div>
@@ -31,17 +35,15 @@
                     </div>
                 </div>
 
-
-
-                <div id="left_news_container">
-                    <i class="pe-7s-car large_icon help_icon"></i>
+                <div class="tall_actionbox">
+                    <i class="pe-7s-car"></i>
                     <h4>Fahrer werden!</h4>
                     <p>Werde Fahrer und verdiene schnell eingene Euronen! Es ist herrlich, für wundership zu fahren! Du wirst es so genießen!</p><br>
                     <a href="#"><p class="dark_grey"><strong>Ja, ich will!</strong></p></a>
                 </div>
 
-                <div id="action_container">
-                    <i class="pe-7s-help1 large_icon help_icon"></i>
+                <div class="actionbox">
+                    <i class="pe-7s-help1"></i>
                     <p>Gab es ein Problem, {{ $user->first_name }}?</p>
                     <a href="#"><p class="dark_grey"><strong>Kontaktiere das wundership team.</strong></p></a>
                 </div>
@@ -53,24 +55,6 @@
 
 
             <div class="col-md-8">
-                {{-- <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Hinweis!</strong></p>
-                    </div>
-                    <div class="infobox_content">
-                        <p class="box_rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                    </div> 
-                </div>
-
-                <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Hinweis!</strong></p>
-                    </div>
-                    <div class="infobox_content">
-                        <p class="box_rose">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div> 
-                </div> --}}
-
                 @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
                     <div class="warningbox">
                         <div class="warningbox_header">
@@ -137,8 +121,6 @@
                         </div>
                     </div>
                 @endif
-
-    <!-- VERIFICATIONS -->
 
               <div class="infobox">
                 <div class="infobox_header">

@@ -2,41 +2,13 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.profile{
-  max-width: 980px !important;
-}
-</style>
-
-<div id="background">
+<div class="background_dashboard_area">
 
 @include('dashboard.navbar')
 
-<div class="container profile">
+<div class="container dashboard_area_container">
     <div class="row">
         @include('dashboard.profile.side-navbar')
-
-<style type="text/css">
-.input_label{
-  margin-top: 3px;
-  margin-left: 3px;
-}
-.very_small{
-  font-size: 15px;
-  margin: 4px;
-}
-.control_style{
-  margin-top: -8px;
-  margin-bottom: 7px;
-}
-</style>
-
-<!-- BOXES -->
 
         <div class="col-md-8">
 
@@ -52,9 +24,6 @@
                 </div> 
             </div>
             @endif
-
-<!------------------------------ -->
-
 
             @if($user->profile && ($user->profile->languages || $user->profile->hometown || $user->profile->job || $user->profile->bio))
                 @if($user->profile->picture || $user->facebookUser)
@@ -119,9 +88,6 @@
                 </div> 
             </div>
 
-
-
-
             <div class="infobox">
                 <div class="infobox_header">
                     <p class="box_grey"><strong>Profil bearbeiten</strong></p>
@@ -163,7 +129,7 @@
                         </div>
                     </form>
                 </div> 
-            </div>
+            </div><!-- /infobox -->
 
       </div><!-- /col-md-8 -->
   </div><!-- /row -->

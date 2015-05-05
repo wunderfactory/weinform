@@ -1,13 +1,8 @@
 @extends('app')
 
 @section('content')
-<div id="background">
 
-    @include('dashboard.navbar')
-
-    <div class="container profile">
-        <div class="row">
-            @include('dashboard.profile.side-navbar')
+<div class="background_dashboard_area">
 
 <style type="text/css">
 #text_left{
@@ -42,6 +37,13 @@
   background-size: cover;
 }
 </style>
+
+@include('dashboard.navbar')
+
+<div class="container dashboard_area_container">
+    <div class="row">
+        @include('dashboard.profile.side-navbar')
+
             <div class="col-md-8">
 
                 @if($user->profile->picture || $user->facebookUser)
@@ -75,54 +77,42 @@
                     <div class="infobox_header">
                         <p class="box_grey"><strong>Profilbild ändern</strong></p>
                     </div>
-
                     <div class="infobox_content">
-
-<style type="text/css">
-.width_fifthy{
-    width: 50%;
-    text-align: center;
-}
-</style>
-
-                            <ul class="nav nav-pills" role="tablist">
-                                  <li class="width_fifthy active">
-                                    <a href="#" onclick="file()" role="tab" data-toggle="tab" aria-expanded="true">
-                                         Foto hochladen
-                                    </a>
-                                  </li>
-                                  <li class="width_fifthy">
-                                    <a href="#" onclick="webcam()" role="tab" data-toggle="tab" aria-expanded="false">
-                                         WEBCAM
-                                    </a>
-                                  </li>
-                            </ul>
-
-                            <div id="webcam" style="display: none;">
-                                <div class="panel-body">
-                                    <div id="webcam_container"></div><br>
-                                    <a class="btn btn-default" href="javascript:void(take_snapshot())">Foto aufnehmen</a>
-                                </div>
+                        <ul class="nav nav-pills" role="tablist">
+                              <li class="width_fifthy active">
+                                <a href="#" onclick="file()" role="tab" data-toggle="tab" aria-expanded="true">
+                                     Foto hochladen
+                                </a>
+                              </li>
+                              <li class="width_fifthy">
+                                <a href="#" onclick="webcam()" role="tab" data-toggle="tab" aria-expanded="false">
+                                     WEBCAM
+                                </a>
+                              </li>
+                        </ul>
+                        <div id="webcam" style="display: none;">
+                            <div class="panel-body">
+                                <div id="webcam_container"></div><br>
+                                <a class="btn btn-default" href="javascript:void(take_snapshot())">Foto aufnehmen</a>
                             </div>
-
-                            <div id="file">
-                                <div class="panel-body">
-                                    <input id="picture_upload" type="file" name="">
-                                </div>
-                            </div>
-
                         </div>
-                        <div id="image_container">
-                            <div class="cropper">
-                                <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
+
+                        <div id="file">
+                            <div class="panel-body">
+                                <input id="picture_upload" type="file" name="">
                             </div>
-                            <form method="POST" action="{{ action('SettingsProfileController@postUploadImage', [Auth::user()->username]) }}" enctype="multipart/form-data">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input id="picture_form" type="hidden" name="picture">
-                                <br>
-                                <input class="btn btn-default" value="Speichern" type="submit">
-                            </form>
                         </div>
+                    </div>
+                    <div id="image_container">
+                        <div class="cropper">
+                            <img src="{{asset('images/backgrounds/sf.png')}}" alt="Picture">
+                        </div>
+                        <form method="POST" action="{{ action('SettingsProfileController@postUploadImage', [Auth::user()->username]) }}" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input id="picture_form" type="hidden" name="picture">
+                            <br>
+                            <input class="btn btn-default" value="Speichern" type="submit">
+                        </form>
                     </div>
                 </div>
 

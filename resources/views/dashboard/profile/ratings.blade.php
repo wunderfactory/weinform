@@ -2,44 +2,14 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.infobox_content{
-    border-top: 1px solid #ababab;
-}
-.ratings{
-  max-width: 980px !important;
-}
-.yellow{
-  color: #fff000;
-}
-.user_image{
-  margin: 20px;
-  height: 60px;
-}
-.star_container{
-  padding-top: 30px;
-}
-.button_container{
-  padding-top: 20px;
-}
-</style>
-
-<div id="background">
+<div class="background_dashboard_area">
 
 @include('dashboard.navbar')
 
-
-
-<div class="container ratings">
+<div class="container dashboard_area_container">
     <div class="row">
-        @include('dashboard.profile.side-navbar')
 
-<!-- INFOBOXES -->
+        @include('dashboard.profile.side-navbar')
 
         <div class="col-md-8">
             <div class="infobox">
@@ -49,7 +19,7 @@
                 <div class="infobox_content">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="avatar img-circle user_image" src="https://graph.facebook.com/moritzew/picture?width=200&height=200" alt="Profile Picture">
+                            <img class="img-circle ratings_user_image" src="https://graph.facebook.com/moritzew/picture?width=200&height=200" alt="Profile Picture">
                         </div>
                         <div class="col-md-4 star_container">
                           <i class="pe-7s-star box_icon_large yellow"></i>
@@ -71,7 +41,7 @@
                 <div class="infobox_content">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="avatar img-circle user_image" src="https://graph.facebook.com/magnus.langanke/picture?width=200&height=200" alt="Profile Picture">
+                            <img class="img-circle ratings_user_image" src="https://graph.facebook.com/magnus.langanke/picture?width=200&height=200" alt="Profile Picture">
                         </div>
                         <div class="col-md-4 star_container">
                           <i class="pe-7s-star box_icon_large yellow"></i>

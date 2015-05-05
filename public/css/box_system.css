@@ -137,3 +137,56 @@
 .warningbox_content{
   padding: 15px; 
 }
+
+
+
+/* ACTION */
+
+.actionbox{
+  max-width: 200px;
+  background-color: #ab4848;
+  margin-top: 10px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ab4848;
+}
+.actionbox i{
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+
+/* ACTIONBOX TALL */
+
+.tall_actionbox{
+  max-width: 200px;
+  background-color: #ffa200;
+  margin-top: 20px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ababab;
+}
+.tall_actionbox i{
+  font-size: 40px;
+}
+
+
+/* USER IMAGEBOX*/
+
+
+
+/* USER INFOBOX*/
+
+.user_infobox{
+  background-color: white;
+  max-width: 202px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ababab;
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
+}
+

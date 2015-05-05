@@ -32,56 +32,7 @@
 
 
 /* INDEX */
-#profile_image_dashboard_container{
-  background-color: white;
-  max-width: 202px;
-  text-align: center;
-  border-top: 1px solid #ababab;
-  border-left: 1px solid #ababab;
-  border-right: 1px solid #ababab;
-}
-    #profile_image_dashboard_container:hover #overlay{
-      display: block;
-    }
-    .avatar {
-    width: 100%;
-    }
-    #overlay{
-      width: 200px;
-      height: 200px;
-      margin-top: 0px;
-      position: absolute;
-      background-color: #ea555c;
-      opacity: 0.9;
-      display: none;
-      padding-top: 50px;
-    }
-    .camera_icon{
-      font-size: 70px;
-    }
 
-#profile_info_dashboard_container{
-  background-color: white;
-  max-width: 202px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ababab;
-  border-left: 1px solid #ababab;
-  border-right: 1px solid #ababab;
-}
-
-
-#left_news_container{
-  max-width: 200px;
-  background-color: #ffc000;
-  margin-top: 20px;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  margin-bottom: 20px;
-  border: 1px solid #ababab;
-}
 .btn-white{
   color: white;
   border-color: white;
@@ -116,27 +67,27 @@
 }
 
 
-    /* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
+/* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
 
 
-    #right_navbar_container{
-      padding: 20px;
-    }
-    .nav_text{
-      color: #797979;
-      -o-transition:.5s;
-      -ms-transition:.5s;
-      -moz-transition:.5s;
-      -webkit-transition:.5s;
-      /* ...and now for the proper property */
-      transition:.5s;
-    }
-    .nav_text:hover{
-      color: #404040;
-    }
-    .side_navbar_active{
-      color: #ea555c !important;
-    }
+#right_navbar_container{
+  padding: 20px;
+}
+.nav_text{
+  color: #797979;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
+.nav_text:hover{
+  color: #404040;
+}
+.side_navbar_active{
+  color: #ea555c !important;
+}
 
 
     /* ACCOUNT */ 
@@ -191,4 +142,62 @@
     .security_input_container input{
       margin-top: 2px;
     }
+
+
+    /* PROFILE */
+
+    /* EDIT */
+
+    .input_label{
+      margin-top: 3px;
+      margin-left: 3px;
+    }
+    .very_small{
+      font-size: 15px;
+      margin: 4px;
+    }
+    .control_style{
+      margin-top: -8px;
+      margin-bottom: 7px;
+    }
+
+    /* PHOTO */
+
+    .width_fifthy{
+        width: 50%;
+        text-align: center;
+    }
+
+    /* RATINGS */
+
+    .infobox_content{
+        border-top: 1px solid #ababab;
+    }
+    .ratings{
+      max-width: 980px !important;
+    }
+    .yellow{
+      color: #fff000;
+    }
+    .ratings_user_image{
+      margin: 20px;
+      height: 60px;
+    }
+    .star_container{
+      padding-top: 30px;
+    }
+    .button_container{
+      padding-top: 20px;
+    }
+
+    /* VERIFICATIONS */
+
+    .right_container_verifications{
+      margin-left: 16px;
+    }
+    .not_verified_id_icon{
+      font-size: 60px;
+      margin-left: 1px;
+    }
+
 
