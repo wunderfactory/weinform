@@ -57,7 +57,7 @@ class ShipmentImmediateController extends Controller {
 			return Redirect::route('shipments.immediate.create', [$shipment])->withErrors($validator);
 		}
 
-		$immediate = new Immediate([$input]);
+		$immediate = new Immediate($input);
 		$immediate->save();
 		$immediate->shipment()->save($shipment);
 		return redirect(route('shipments.edit', [$shipment]));
