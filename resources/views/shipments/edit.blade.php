@@ -67,8 +67,9 @@
         <h2>Typ</h2>
         @if($shipment->typeable_id && $shipment->typeable_type)
             @if($shipment->typeable instanceof Wundership\Auction)
+                @include('shipments.edit.type.auction.show', ['shipment' => $shipment, 'auction' => $shipment->typeable])
             @elseif($shipment->typeable instanceof Wundership\Immediate)
-                @include('shipments.edit.type.immediate.show', ['immediate' => $shipment->typeable])
+                @include('shipments.edit.type.immediate.show', ['shipment' => $shipment, 'immediate' => $shipment->typeable])
             @endif
         @else
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
