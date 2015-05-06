@@ -31,7 +31,7 @@ class ShipmentImmediateController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		return view('shipments.edit.type.immediate.create')
 			->with('shipment', $shipment);
 	}
@@ -43,7 +43,7 @@ class ShipmentImmediateController extends Controller {
 	 */
 	public function store($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 
 		$input = Input::only('price');
 
@@ -106,7 +106,7 @@ class ShipmentImmediateController extends Controller {
 	{
 		return 'foo';
 		/*
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$type = $shipment->typeable()->findOrFail($type);
 		$shipment->typeable()->delete();
 		$type->destroy();

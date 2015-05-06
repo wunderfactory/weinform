@@ -22,7 +22,7 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function index($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$specs = Spec::all();
 		return view('shipments.edit.spec.index')
 			->with('shipment', $shipment)
@@ -36,7 +36,7 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -46,7 +46,7 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function store($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -57,7 +57,7 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function show($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -68,7 +68,7 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function edit($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -79,7 +79,7 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function update($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -90,12 +90,12 @@ class ShipmentSpecController extends Controller {
 	 */
 	public function destroy($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	public function select($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$specs = Input::get('specs');
 		$shipment->specs()->detach();
 		foreach($specs as $spec)

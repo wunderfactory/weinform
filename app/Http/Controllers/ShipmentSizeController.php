@@ -24,7 +24,7 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function index($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$sizes = Size::all();
 		return view('shipments.edit.size.index')
 			->with('shipment', $shipment)
@@ -38,7 +38,7 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -48,7 +48,7 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function store($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -59,7 +59,7 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function show($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -70,7 +70,7 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function edit($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -81,7 +81,7 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function update($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -92,12 +92,12 @@ class ShipmentSizeController extends Controller {
 	 */
 	public function destroy($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	public function select($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$size = Size::findOrFail(Input::get('size'));
 		$shipment->size()->associate($size);
 		$shipment->save();

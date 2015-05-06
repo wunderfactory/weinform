@@ -27,7 +27,7 @@ class ShipmentAuctionController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		return view('shipments.edit.type.auction.create')
 			->with('shipment', $shipment);
 	}

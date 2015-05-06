@@ -23,7 +23,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function index($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$addresses = Auth::user()->addresses;
 		return view('shipments.edit.origin.index')
 			->with('shipment', $shipment)
@@ -37,7 +37,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function create($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -47,7 +47,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function store($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -58,7 +58,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function show($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -69,7 +69,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function edit($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -80,7 +80,7 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function update($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	/**
@@ -91,12 +91,12 @@ class ShipmentOriginController extends Controller {
 	 */
 	public function destroy($shipment, $origin)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
 	public function select($shipment)
 	{
-		$shipment = Auth::user()->shipments()->findOrFail($shipment);
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$address = Auth::user()->addresses()->findOrFail(Input::get('address'));
 		$shipment->origin()->associate($address);
 		$shipment->save();
