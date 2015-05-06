@@ -22,7 +22,7 @@ class ShipmentController extends Controller {
 	 */
 	public function index()
 	{
-		$shipments = Shipment::where('published_at', 'not', 'null')->get();
+		$shipments = Shipment::all();
 		return view('shipments.index')
 			->with('shipments', $shipments);
 	}
@@ -57,14 +57,14 @@ class ShipmentController extends Controller {
 	 */
 	public function show($shipment)
 	{
-		$shipment = Shipment::findOrFail($shipment);
-		if($shipment->published_at != null || $shipment->user->id == Auth::user()->id)
+		$shipment = Shipment::withUnpublished()->findOrFail($shipment);
+		if($shipment->published_at != null || (Auth::user() && $shipment->user->id == Auth::user()->id))
 		{
 			return view('shipments.show')->with('shipment', $shipment);
 		}
 		else
 		{
-			return App::abort(404);
+			abort(404, 'Shipment not found');
 		}
 	}
 
