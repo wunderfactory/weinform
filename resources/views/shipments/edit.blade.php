@@ -33,11 +33,7 @@
         <div class="col-sm-6">
             <h4>Abholung</h4>
             @if($shipment->origin_id)
-                <address>
-                    <strong>{{ $shipment->origin->title }}</strong><br>
-                    {{ $shipment->origin->street }}<br>
-                    {{ $shipment->origin->zip }} {{ $shipment->origin->city }}
-                </address>
+                @include('shipments.edit.origin.show', ['origin' => $shipment->origin])
                 {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
             @else
                 {!! link_to_route('shipments.origin.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
@@ -46,11 +42,7 @@
         <div class="col-sm-6">
         <h4>Lieferung</h4>
             @if($shipment->destination_id)
-                <address>
-                    <strong>{{ $shipment->destination->title }}</strong><br>
-                    {{ $shipment->destination->street }}<br>
-                    {{ $shipment->destination->zip }} {{ $shipment->destination->city }}
-                </address>
+                @include('shipments.edit.destination.show', ['destination' => $shipment->destination])
                 {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
             @else
                 {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
