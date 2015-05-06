@@ -26,3 +26,13 @@
 .large_icon{
   font-size: 40px;
 }
+
+
+
+.btn-white{
+  color: white;
+  border-color: white;
+}
+.dark_grey{
+  color: #2e2e2e;
+}

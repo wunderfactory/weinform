@@ -2,24 +2,13 @@
 
 @section('content')
 
+<div class="background_dashboard_area">
+
 <style type="text/css">
-#background{
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.dashboard{
-  max-width: 980px !important;
-}
 .from_top{
   margin-top: 30px;
   position: relative;
 }
-</style>
-
-<div id="background">
-
-<style type="text/css">
 #profile_container{
   background-color: white;
   max-width: 202px;
@@ -27,13 +16,6 @@
   border-top: 1px solid #ababab;
   border-left: 1px solid #ababab;
   border-right: 1px solid #ababab;
-}
-.btn-white{
-  color: white;
-  border-color: white;
-}
-.dark_grey{
-  color: #2e2e2e;
 }
 .avatar {
     width: 100%;

@@ -3,7 +3,35 @@
 @section('content')
 
 <style type="text/css">
-
+#profile_container{
+  background-color: white;
+  max-width: 202px;
+  text-align: center;
+  border-top: 1px solid #ababab;
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
+}
+.avatar {
+    width: 100%;
+    background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');
+}
+#overlay{
+  width: 200px;
+  height: 200px;
+  margin-top: 0px;
+  position: absolute;
+  background-color: #ea555c;
+  display: none;
+  opacity: 0.9;
+  padding-top: 50px;
+  z-index: 10000;
+}
+.camera_icon{
+  font-size: 70px;
+}
+#profile_container:hover #overlay{
+  display: block;
+}
 </style>
 
 <div class="background_dashboard_area">
@@ -13,7 +41,7 @@
     <div class="container dashboard_area_container">
         <div class="row">
             <div class="col-md-3">
-                <div class="profile_image_dashboard_container">
+                <div class="profile_container">
                     @if(Auth::user()->id == $user->id)
                     <a class="white" href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">
                       <div id="overlay">
