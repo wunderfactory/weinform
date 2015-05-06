@@ -104,14 +104,13 @@ class ShipmentImmediateController extends Controller {
 	 */
 	public function destroy($shipment, $type)
 	{
-		return 'foo';
-		/*
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$type = $shipment->typeable()->findOrFail($type);
-		$shipment->typeable()->delete();
-		$type->destroy();
+		$shipment->typeable->delete();
+		$shipment->typeable_id = 0;
+		$shipment->typeable_type = '';
+		$shipment->save();
 		return redirect(route('shipments.edit', $shipment));
-		*/
 	}
 
 }
