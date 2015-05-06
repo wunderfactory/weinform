@@ -5,6 +5,11 @@ use Wundership\Http\Requests;
 
 class ShipmentAuctionController extends Controller {
 
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
