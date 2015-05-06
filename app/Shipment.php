@@ -1,8 +1,10 @@
 <?php namespace Wundership;
 
 use Illuminate\Database\Eloquent\Model;
+use Wundership\Traits\Publishes;
 
 class Shipment extends Model {
+	use Publishes;
 
 	static $rules = [
 		'title'     => ''
