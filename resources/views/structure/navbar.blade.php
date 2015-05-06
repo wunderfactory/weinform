@@ -32,7 +32,7 @@
             </li>
             @else
             <li>
-                <a href="#">
+                <a href="{{ route('shipments.index') }}">
                     <i class="pe-7s-car"></i>
                     <p>Mitnehmen</p>
                 </a>
