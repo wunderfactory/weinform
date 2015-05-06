@@ -54,7 +54,7 @@
 
 
 	@include('structure.navbar')
-    <div style="margin-top: 84px;">
+    <div style="margin-top: 84px; padding: 5px;">
         @yield('userbar')
         @foreach ($errors->all('<p class="alert alert-warning">:message</p>') as $error)
             {!! $error !!}
