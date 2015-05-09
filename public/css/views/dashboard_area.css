@@ -164,27 +164,6 @@
   float: left;
   position: relative;
 }
-.dashboard_area #photo .infobox_image {
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-top: 20px;
-  height: 302px;
-  margin-bottom: 20px;
-}
-.dashboard_area #photo .image_infobox_header {
-  position: top;
-  height: 60px;
-  padding: 15px;
-  width: 325px;
-  background-color: #e8e8e8;
-  /*border-bottom: 1px solid #ababab;*/
-}
-.dashboard_area #photo .image_container {
-  width: 300px;
-  background-color: grey;
-  height: 300px;
-  background-size: cover;
-}
 .dashboard_area #ratings .infobox_content {
   border-top: 1px solid #ababab;
 }

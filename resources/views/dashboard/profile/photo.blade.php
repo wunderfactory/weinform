@@ -15,35 +15,35 @@
                 @if($user->profile->picture || $user->facebookUser)
                 <div class="infobox_image">
                     <div id="text_left">
-                      <div class="image_infobox_header">
-                        <p class="grey"><strong>Dein Profilbild</strong></p>
+                      <div class="header">
+                        <p><strong>Dein Profilbild</strong></p>
                       </div>
-                      <div class="infobox_content">
+                      <div class="content">
                         <p class="rose"><strong>TIPP:</strong> Achte darauf, dass Du auf deinem Profilbild <strong>gut zu erkennen</strong> bist. Wir verifizieren Deinen Account auch anhand Deines Bildes.</p><br>
                       </div>
                     </div>
                     <div id="image_right" class="col-md-6">
-                      <div class="image_container" style="background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');"></div>
+                      <div class="container" style="background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');"></div>
                     </div>  
                 </div>
                 @else
                 <div class="successbox">
-                    <div class="successbox_header">
-                        <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
-                        <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Heyho {{ $user->first_name }}! Schön, dass Du ein Profilbild höchlädst.</strong></p></div>
+                    <div class="header">
+                        <div class="col-md-1"><i class="pe-7s-camera"></i></div>
+                        <div class="col-md-10"><p><strong>Heyho {{ $user->first_name }}! Schön, dass Du ein Profilbild höchlädst.</strong></p></div>
                        
                     </div>
-                    <div class="successbox_content">
-                        <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. <strong>Ein Profilbild hilft dabei</strong>. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
+                    <div class="content">
+                        <p class="info_text"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. <strong>Ein Profilbild hilft dabei</strong>. Als Versender wird Dein wundership Kurier gern bei Dir vorbeikommen, wenn er Dich schon einmal gesehen hat.</p>
                     </div> 
                 </div>
                 @endif
 
                 <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Profilbild ändern</strong></p>
+                    <div class="header">
+                        <p><strong>Profilbild ändern</strong></p>
                     </div>
-                    <div class="infobox_content">
+                    <div class="content">
                         <ul class="nav nav-pills" role="tablist">
                               <li class="width_fifthy active">
                                 <a href="#" onclick="file()" role="tab" data-toggle="tab" aria-expanded="true">

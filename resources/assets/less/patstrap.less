@@ -1,21 +1,13 @@
 @first: #ea555c;
 
 @bright_grey: #828282;
-@dark_grey: #2e2e2e;
+@dark_grey: #585858;
 
 @third: #333;
 
 
-
-
-
 .bluebox, .orangebox, .successbox, .infobox, .warningbox{
-  .box_icon_large{
-  font-size: 30px;
-  }
-  .box_heading_container{
-    margin-top: 2px;
-  }
+
 }
 
 
@@ -70,7 +62,7 @@
   background-color: white;
   border: 1px solid #52b856;
   margin-bottom: 20px;
-  .successbox_header{
+  .header{
   width: 100%;
   position: top;
   height: 60px;
@@ -79,9 +71,19 @@
   background-color: #52b856;
   border-bottom: 1px solid #52b856;
   vertical-align: center;
+    p{
+      color: white;
+      margin-top: 2px;
+    }
+    i{
+      font-size: 30px;
+    }
   }
-  .successbox_content{
+  .content{
     padding: 15px; 
+    .info_text{
+      color: @dark_grey;
+    }
   }
 }
 
@@ -115,6 +117,43 @@
   }
   
 }
+
+/* INFO IMAGE */
+
+.infobox_image{
+  background-color: white;
+  border: 1px solid #ababab;
+  margin-top: 20px;
+  height: 302px;
+  margin-bottom: 20px;
+  .header{
+  position: top;
+  height: 60px;
+  padding: 15px;
+  width: 325px;
+  background-color: #e8e8e8;
+  /*border-bottom: 1px solid #ababab;*/
+    p{
+      color: @bright_grey;
+    }
+  }
+  .content{
+    padding: 15px;
+    p{
+      color: @first;
+    }
+    .info_text{
+      color: @dark_grey;
+    }
+  }
+  .container{
+    width: 300px;
+    background-color: grey;
+    height: 300px;
+    background-size: cover;
+  }
+}
+
 
 /* WARNING */
 
