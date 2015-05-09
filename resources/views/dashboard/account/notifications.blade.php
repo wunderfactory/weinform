@@ -6,7 +6,7 @@
 
 @include('dashboard.navbar')
 
-<div class="container dashboard_area_container">
+<div id="notifications" class="container dashboard_area_container">
     <div class="row">
         @include('dashboard.account.side-navbar')
 
