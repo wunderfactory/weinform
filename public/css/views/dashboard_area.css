@@ -1,0 +1,233 @@
+/* OVERALL CONTAINER */
+.dashboard_area {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  /* INDEX */
+  /* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
+  /* ACCOUNT */
+  /* PROFILE */
+  /* left side action container */
+}
+.dashboard_area #index,
+.dashboard_area #inbox {
+  background-color: #f0f0f0;
+  max-width: 980px;
+}
+.dashboard_area #index #profile_container {
+  background-color: white;
+  max-width: 202px;
+  text-align: center;
+  border-top: 1px solid #ababab;
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
+}
+.dashboard_area #index .avatar {
+  width: 100%;
+}
+.dashboard_area #index #overlay {
+  width: 200px;
+  height: 200px;
+  margin-top: 0px;
+  position: absolute;
+  background-color: #ea555c;
+  display: none;
+  opacity: 0.9;
+  padding-top: 50px;
+  z-index: 10000;
+}
+.dashboard_area #index .camera_icon {
+  font-size: 70px;
+}
+.dashboard_area #index #profile_container:hover #overlay {
+  display: block;
+}
+.dashboard_area #index .btn-white {
+  color: white;
+  border-color: white;
+}
+.dashboard_area #index .verification_button {
+  margin-top: -6px;
+}
+.dashboard_area #index .check_container {
+  float: left;
+  padding-top: 6px;
+}
+.dashboard_area #index .text_container {
+  float: left;
+  margin-left: 12px;
+}
+.dashboard_area #account_sidebar .right_navbar_container,
+.dashboard_area #profile_sidebar .right_navbar_container {
+  padding: 20px;
+}
+.dashboard_area #account_sidebar .nav_text,
+.dashboard_area #profile_sidebar .nav_text {
+  color: #797979;
+  /* ...and now for the proper property */
+  transition: .5s;
+}
+.dashboard_area #account_sidebar .nav_text:hover,
+.dashboard_area #profile_sidebar .nav_text:hover {
+  color: #404040;
+}
+.dashboard_area #account_sidebar .side_navbar_active,
+.dashboard_area #profile_sidebar .side_navbar_active {
+  color: #ea555c !important;
+}
+.dashboard_area #account_sidebar .active,
+.dashboard_area #profile_sidebar .active {
+  color: #ea555c !important;
+}
+.dashboard_area #notifications,
+.dashboard_area #payment,
+.dashboard_area #payout,
+.dashboard_area #security,
+.dashboard_area #privacy,
+.dashboard_area #security {
+  background-color: #f0f0f0;
+  max-width: 980px;
+}
+.dashboard_area #notifications .notifications {
+  max-width: 980px;
+}
+.dashboard_area #notifications .mail_icon {
+  margin-left: 6px;
+}
+.dashboard_area #notifications .large_icon {
+  font-size: 55px;
+}
+.dashboard_area #notifications .right_container {
+  margin-left: 17px;
+  display: inline-block;
+}
+.dashboard_area #notifications .button_container {
+  text-align: center;
+}
+.dashboard_area #payment .middle_container,
+.dashboard_area #payout .middle_container,
+.dashboard_area #security .middle_container {
+  text-align: right;
+  margin-top: 10px;
+}
+.dashboard_area #payment .very_small,
+.dashboard_area #payout .very_small,
+.dashboard_area #security .very_small {
+  font-size: 15px;
+  margin-bottom: 21px;
+}
+.dashboard_area #payment .note_icon,
+.dashboard_area #payout .note_icon,
+.dashboard_area #security .note_icon {
+  margin-top: 24px;
+  margin-left: 10px;
+}
+.dashboard_area #privacy .save_button {
+  margin-top: 10px;
+}
+.dashboard_area #security .lock_icon {
+  margin-top: 24px;
+  margin-left: 10px;
+}
+.dashboard_area #security .security_input_container input {
+  margin-top: 2px;
+}
+.dashboard_area #edit,
+.dashboard_area #photo,
+.dashboard_area #ratings,
+.dashboard_area #verifications {
+  background-color: #f0f0f0;
+  max-width: 980px;
+}
+.dashboard_area #edit .input_label {
+  margin-top: 3px;
+  margin-left: 3px;
+}
+.dashboard_area #edit .very_small {
+  font-size: 15px;
+  margin: 4px;
+}
+.dashboard_area #edit .control_style {
+  margin-top: -8px;
+  margin-bottom: 7px;
+}
+.dashboard_area #photo .width_fifthy {
+  width: 50%;
+  text-align: center;
+}
+.dashboard_area #photo #text_left {
+  float: left;
+  position: relative;
+  width: 306px;
+}
+.dashboard_area #photo #image_right {
+  float: left;
+  position: relative;
+}
+.dashboard_area #photo .infobox_image {
+  background-color: white;
+  border: 1px solid #ababab;
+  margin-top: 20px;
+  height: 302px;
+  margin-bottom: 20px;
+}
+.dashboard_area #photo .image_infobox_header {
+  position: top;
+  height: 60px;
+  padding: 15px;
+  width: 325px;
+  background-color: #e8e8e8;
+  /*border-bottom: 1px solid #ababab;*/
+}
+.dashboard_area #photo .image_container {
+  width: 300px;
+  background-color: grey;
+  height: 300px;
+  background-size: cover;
+}
+.dashboard_area #ratings .infobox_content {
+  border-top: 1px solid #ababab;
+}
+.dashboard_area #ratings .ratings {
+  max-width: 980px !important;
+}
+.dashboard_area #ratings .yellow {
+  color: #fff000;
+}
+.dashboard_area #ratings .ratings_user_image {
+  margin: 20px;
+  height: 60px;
+}
+.dashboard_area #ratings .star_container {
+  padding-top: 30px;
+}
+.dashboard_area #ratings .button_container {
+  padding-top: 20px;
+}
+.dashboard_area #verifications .right_container_verifications {
+  margin-left: 16px;
+}
+.dashboard_area #verifications .not_verified_id_icon {
+  font-size: 60px;
+  margin-left: 1px;
+}
+.dashboard_area #action_container {
+  max-width: 200px;
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ababab;
+}
+.dashboard_area .help_icon {
+  margin-bottom: 10px;
+}
+.dashboard_area .dark_grey {
+  color: #2e2e2e;
+}
+.dashboard_area .question {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=../views/dashboard_area.css.map */

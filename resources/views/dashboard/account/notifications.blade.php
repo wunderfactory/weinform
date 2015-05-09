@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="background_dashboard_area">
+<div class="dashboard_area">
 
 @include('dashboard.navbar')
 
-<div id="notifications" class="container dashboard_area_container">
+<div id="notifications" class="container">
     <div class="row">
         @include('dashboard.account.side-navbar')
 
@@ -15,7 +15,7 @@
         <div class="col-md-8">
             <div class="infobox">
                 <div class="infobox_header">
-                    <p class="box_grey"><strong>E-Mail-Einstellungen</strong></p>
+                    <p><strong>E-Mail-Einstellungen</strong></p>
                 </div>
                 <div class="infobox_content">
                     <div class="row">

@@ -2,13 +2,12 @@
 
 @section('content')
 
-<div class="background_dashboard_area">
+<div class="dashboard_area">
 
 @include('dashboard.navbar')
 
-<div class="container dashboard_area_container">
+<div id="privacy" class="container">
     <div class="row">
-        
         @include('dashboard.account.side-navbar')
 
         <div class="col-md-8">

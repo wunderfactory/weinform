@@ -2,45 +2,11 @@
 
 @section('content')
 
-<div class="background_dashboard_area">
-
-<style type="text/css">
-#text_left{
-  float: left;
-  position: relative;
-  width: 306px;
-}
-#image_right{
-  float: left;
-  position: relative;
-}
-.infobox_image{
-  background-color: white;
-  border: 1px solid #ababab;
-  margin-top: 20px;
-  height: 302px;
-  margin-bottom: 20px;
-}
-.image_infobox_header{
-  position: top;
-  height: 60px;
-  padding: 15px;
-  width: 325px;
-  background-color: #e8e8e8;
-  /*border-bottom: 1px solid #ababab;*/
-}
-.image_container{
-  width: 300px;
-  background-color: grey;
-  height: 300px;
-  background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');
-  background-size: cover;
-}
-</style>
+<div class="dashboard_area">
 
 @include('dashboard.navbar')
 
-<div class="container dashboard_area_container">
+<div id="photo" class="container">
     <div class="row">
         @include('dashboard.profile.side-navbar')
 
@@ -57,7 +23,7 @@
                       </div>
                     </div>
                     <div id="image_right" class="col-md-6">
-                      <div class="image_container"></div>
+                      <div class="image_container" style="background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');"></div>
                     </div>  
                 </div>
                 @else

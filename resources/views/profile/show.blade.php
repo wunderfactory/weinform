@@ -19,7 +19,7 @@
 }
 .avatar {
     width: 100%;
-    background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');
+    
 }
 #overlay{
   width: 200px;
@@ -52,7 +52,7 @@
                   </div>
                 </a>
                 @endif
-                <div class="avatar"></div>
+                <div class="avatar" style="background-image: url('{{ action('UsersController@getPicture', [$user->username]) }}');"></div>
                 <img class="avatar" src="{{ action('UsersController@getPicture', [$user->username]) }}" alt="Profile Picture">
             </div>
             <div class="user_infobox">

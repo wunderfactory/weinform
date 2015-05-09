@@ -1,37 +1,25 @@
-.box_grey{
-    color: #828282;
-}
-.box_rose{
-  color: #ea555c;
-}
-.box_white{
-  color: white !important;
-}
-
-
-.box_icon_large{
+.bluebox .box_icon_large,
+.orangebox .box_icon_large,
+.successbox .box_icon_large,
+.infobox .box_icon_large,
+.warningbox .box_icon_large {
   font-size: 30px;
 }
-
-
-
-.box_heading_container{
+.bluebox .box_heading_container,
+.orangebox .box_heading_container,
+.successbox .box_heading_container,
+.infobox .box_heading_container,
+.warningbox .box_heading_container {
   margin-top: 2px;
 }
-
-
-
-
-
-/* ORANGE */
-
-.bluebox{
+/* BLUE */
+.bluebox {
   width: 100%;
   background-color: white;
   border: 1px solid #00B3FF;
   margin-bottom: 20px;
 }
-.bluebox_header{
+.bluebox .bluebox_header {
   width: 100%;
   position: top;
   height: 60px;
@@ -41,20 +29,17 @@
   border-bottom: 1px solid #00B3FF;
   vertical-align: center;
 }
-.bluebox_content{
-  padding: 15px; 
+.bluebox .bluebox_content {
+  padding: 15px;
 }
-
-
 /* BLUE */
-
-.orangebox{
+.orangebox {
   width: 100%;
   background-color: white;
   border: 1px solid #ffc000;
   margin-bottom: 20px;
 }
-.orangebox_header{
+.orangebox .orangebox_header {
   width: 100%;
   position: top;
   height: 60px;
@@ -64,20 +49,17 @@
   border-bottom: 1px solid #ffc000;
   vertical-align: center;
 }
-.orangebox_content{
-  padding: 15px; 
+.orangebox .orangebox_content {
+  padding: 15px;
 }
-
-
 /* SUCCESS */
-
-.successbox{
+.successbox {
   width: 100%;
   background-color: white;
   border: 1px solid #52b856;
   margin-bottom: 20px;
 }
-.successbox_header{
+.successbox .successbox_header {
   width: 100%;
   position: top;
   height: 60px;
@@ -87,21 +69,17 @@
   border-bottom: 1px solid #52b856;
   vertical-align: center;
 }
-.successbox_content{
-  padding: 15px; 
+.successbox .successbox_content {
+  padding: 15px;
 }
-
-
-
 /* INFO */
-
-.infobox{
+.infobox {
   width: 100%;
   background-color: white;
   border: 1px solid #ababab;
   margin-bottom: 20px;
 }
-.infobox_header{
+.infobox .header {
   width: 100%;
   position: top;
   height: 60px;
@@ -110,21 +88,26 @@
   border-bottom: 1px solid #ababab;
   vertical-align: center;
 }
-.infobox_content{
-  padding: 15px; 
+.infobox .header p {
+  color: #828282;
 }
-
-
-
+.infobox .content {
+  padding: 15px;
+}
+.infobox .content p {
+  color: #ea555c;
+}
+.infobox .content .info_text {
+  color: #2e2e2e;
+}
 /* WARNING */
-
-.warningbox{
+.warningbox {
   width: 100%;
   background-color: white;
   border: 1px solid red;
   margin-bottom: 20px;
 }
-.warningbox_header{
+.warningbox .warningbox_header {
   width: 100%;
   position: top;
   height: 60px;
@@ -134,15 +117,11 @@
   border-bottom: 1px solid #ea555c;
   vertical-align: center;
 }
-.warningbox_content{
-  padding: 15px; 
+.warningbox .warningbox_content {
+  padding: 15px;
 }
-
-
-
 /* ACTION */
-
-.actionbox{
+.actionbox {
   max-width: 200px;
   background-color: #ab4848;
   margin-top: 10px;
@@ -151,15 +130,12 @@
   margin-bottom: 20px;
   border: 1px solid #ab4848;
 }
-.actionbox i{
+.actionbox i {
   margin-bottom: 10px;
   font-size: 40px;
 }
-
-
 /* ACTIONBOX TALL */
-
-.tall_actionbox{
+.tall_actionbox {
   max-width: 200px;
   background-color: #ffa200;
   margin-top: 20px;
@@ -168,14 +144,11 @@
   margin-bottom: 20px;
   border: 1px solid #ababab;
 }
-.tall_actionbox i{
+.tall_actionbox i {
   font-size: 40px;
 }
-
-
 /* USER INFOBOX*/
-
-.user_infobox{
+.user_infobox {
   background-color: white;
   max-width: 202px;
   text-align: center;
@@ -186,3 +159,4 @@
   border-right: 1px solid #ababab;
 }
 
+/*# sourceMappingURL=patstrap.css.map */

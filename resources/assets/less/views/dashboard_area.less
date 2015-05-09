@@ -1,0 +1,277 @@
+@background: #f0f0f0;
+
+/* OVERALL CONTAINER */
+.dashboard_area{
+  width: 100%;
+  height: 100%;
+  background-color:@background;
+
+
+    /* INDEX */
+
+    #index, #inbox{
+      background-color:@background;
+      max-width: 980px;
+    }
+
+    #index{
+      #profile_container{
+        background-color: white;
+        max-width: 202px;
+        text-align: center;
+        border-top: 1px solid #ababab;
+        border-left: 1px solid #ababab;
+        border-right: 1px solid #ababab;
+      }
+      .avatar {
+        width: 100%;   
+      }
+      #overlay{
+        width: 200px;
+        height: 200px;
+        margin-top: 0px;
+        position: absolute;
+        background-color: #ea555c;
+        display: none;
+        opacity: 0.9;
+        padding-top: 50px;
+        z-index: 10000;
+      }
+      .camera_icon{
+        font-size: 70px;
+      }
+      #profile_container:hover #overlay{
+        display: block;
+      }
+      .btn-white{
+        color: white;
+        border-color: white;
+      }
+      .verification_button{
+        margin-top: -6px;
+      }
+      .check_container{
+        float: left;
+        padding-top: 6px;
+      }
+      .text_container{
+        float: left;
+        margin-left: 12px;
+      }
+    }
+
+    #inbox{
+
+    }
+
+    /* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
+
+    #account_sidebar, #profile_sidebar{
+      .right_navbar_container{
+        padding: 20px;
+      }
+      .nav_text{
+        color: #797979;
+        -o-transition:.5s;
+        -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+        /* ...and now for the proper property */
+        transition:.5s;
+      }
+      .nav_text:hover{
+        color: #404040;
+      }
+      .side_navbar_active{
+        color: #ea555c !important;
+      }
+      .active{
+        color: #ea555c !important;
+      }
+    }
+
+
+    /* ACCOUNT */
+
+    #notifications, #payment, #payout, #security, #privacy, #security{
+      background-color:@background;
+      max-width: 980px;
+    }
+
+    #notifications {
+      .notifications{
+        max-width: 980px;
+      }
+      .mail_icon{
+        margin-left: 6px;
+      }
+      .large_icon{
+        font-size: 55px;
+      }
+      .right_container{
+        margin-left: 17px;
+        display: inline-block;
+      }
+      .button_container {
+        text-align: center;
+      }
+      .button_wrapper{
+      }
+    }
+
+    #payment, #payout, #security{
+      .middle_container{
+        text-align: right;
+        margin-top: 10px;
+      }
+      .very_small{
+        font-size: 15px;
+        margin-bottom: 21px;
+      }
+      .note_icon{
+        margin-top: 24px;
+        margin-left: 10px;
+      }
+    }
+
+    #privacy{
+      .save_button{
+        margin-top: 10px;
+      }
+    }    
+
+    #security{
+      .lock_icon{
+      margin-top: 24px;
+      margin-left: 10px;
+      }
+      .security_input_container input{
+        margin-top: 2px;
+      }
+    }
+
+
+
+    /* PROFILE */
+
+    #edit, #photo, #ratings, #verifications{
+      background-color:@background;
+      max-width: 980px;
+    }
+
+    #edit{
+      .input_label{
+      margin-top: 3px;
+      margin-left: 3px;
+      }
+      .very_small{
+        font-size: 15px;
+        margin: 4px;
+      }
+      .control_style{
+        margin-top: -8px;
+        margin-bottom: 7px;
+      }
+    }
+
+    #photo{
+      .width_fifthy{
+        width: 50%;
+        text-align: center;
+      }
+      #text_left{
+        float: left;
+        position: relative;
+        width: 306px;
+      }
+      #image_right{
+        float: left;
+        position: relative;
+      }
+      .infobox_image{
+        background-color: white;
+        border: 1px solid #ababab;
+        margin-top: 20px;
+        height: 302px;
+        margin-bottom: 20px;
+      }
+      .image_infobox_header{
+        position: top;
+        height: 60px;
+        padding: 15px;
+        width: 325px;
+        background-color: #e8e8e8;
+        /*border-bottom: 1px solid #ababab;*/
+      }
+      .image_container{
+        width: 300px;
+        background-color: grey;
+        height: 300px;
+        
+        background-size: cover;
+      }
+    }
+
+    #ratings{
+      .infobox_content{
+        border-top: 1px solid #ababab;
+      }
+      .ratings{
+        max-width: 980px !important;
+      }
+      .yellow{
+        color: #fff000;
+      }
+      .ratings_user_image{
+        margin: 20px;
+        height: 60px;
+      }
+      .star_container{
+        padding-top: 30px;
+      }
+      .button_container{
+        padding-top: 20px;
+      }
+    }
+    
+    #verifications{
+      .right_container_verifications{
+      margin-left: 16px;
+      }
+      .not_verified_id_icon{
+        font-size: 60px;
+        margin-left: 1px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+    /* left side action container */
+
+    #action_container{
+      max-width: 200px;
+      background-color: white;
+      margin-top: 20px;
+      padding: 20px;
+      position: relative;
+      margin-bottom: 20px;
+      border: 1px solid #ababab;
+    }
+    .help_icon{
+      margin-bottom: 10px;
+    }
+    .dark_grey{
+      color: #2e2e2e;
+    }
+    .question{
+      font-size: 20px;
+    }
+}
+
+

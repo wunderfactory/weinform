@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>wundership</title>
     <link href="{{ asset('gsd/bootstrap3/css/bootstrap.min.css') }}" rel="stylesheet" />
+
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<!-- BOX SYSTEM -->
 	<link href="{{ asset('/css/box_system.css') }}" rel="stylesheet">
@@ -25,9 +26,10 @@
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
 
-	<!-- Custom style sheets -->
-	<link href="{{ asset('/css/views/style.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/views/dashboard/style.css') }}" rel="stylesheet">
+	<!-- Custom style sheets LESS LESS LESS -->
+	<link href="{{ asset('/css/wundership.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/patstrap.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/views/dashboard_area.css') }}" rel="stylesheet">
 
     @yield('style')
 
@@ -41,17 +43,6 @@
 
 </head>
 <body>
-
-	<style type="text/css">
-	.rose{
-	  color: #ea555c;
-	}
-	.grey{
-	  color: #828282 !important;
-	}
-	</style>
-
-
 
 	@include('structure.navbar')
     <div style="margin-top: 84px; padding: 5px;">

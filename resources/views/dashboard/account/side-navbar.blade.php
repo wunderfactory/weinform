@@ -1,5 +1,5 @@
-<div class="col-md-3">
-  <div id="right_navbar_container">
+<div id="account_sidebar" class="col-md-3">
+  <div class="right_navbar_container">
     <a href="{{ action('SettingsAccountController@getIndex', [Auth::user()->username]) }}"><p class="nav_text {{ Request::segment(array_search('settings', Request::segments())+2) == 'account' && Request::segment(array_search('settings', Request::segments())+3) == false? 'side_navbar_active':''}}"><strong>Benachrichtigungen</strong></p></a>
 
     <a href="{{ action('SettingsAccountController@getPaymentDetails', [Auth::user()->username]) }}"><p class="nav_text {{ Request::segment(array_search('settings', Request::segments())+3) == 'payment-details' ? 'side_navbar_active':''}}"><strong>Zahlungsarten</strong></p></a>

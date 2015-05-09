@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="background_dashboard_area">
+<div class="dashboard_area">
 
 @include('dashboard.navbar')
 
-<div class="container dashboard_area_container">
+<div id="edit" class="container">
     <div class="row">
         @include('dashboard.profile.side-navbar')
 
@@ -42,30 +42,30 @@
             @endif
 
             <div class="infobox">
-                <div class="infobox_header">
-                    <p class="box_grey"><strong>Angaben über Dich</strong></p>
+                <div class="header">
+                    <p><strong>Angaben über Dich</strong></p>
                 </div>
-                <div class="infobox_content">
+                <div class="content">
                     {{-- <p class="very_small">Diese Daten musst Du nicht angeben, Du kannst diese Felder auch leerlassen. Es macht dein Profil aber vertrauenswürdiger, wenn Du etwas über Dich schreibst.</p> --}}
                     <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateProfile', [Auth::user()->username]) }}">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input name="_method" type="hidden" value="PUT">
 
 
-                      <label class="control-label input_label"><p class="rose">Hometown</p></label>
+                      <label class="control-label input_label"><p>Hometown</p></label>
                       <input type="text" class="form-control control_style" name="hometown" value="{{ old('hometown')}}">
 
                       <br>
 
-                      <p class="box_grey">Die nachfolgenden Angaben sind <strong>optional</strong>. Dein Profil wird aber <strong>vollständiger</strong>, wenn Du auch hier etwas schreibst.</p>
+                      <p class="info_text">Die nachfolgenden Angaben sind <strong>optional</strong>. Dein Profil wird aber <strong>vollständiger</strong>, wenn Du auch hier etwas schreibst.</p>
 
-                      <label class="control-label input_label"><p class="rose">Job</p></label>
+                      <label class="control-label input_label"><p>Job</p></label>
                       <input type="text" class="form-control control_style" name="job" value="{{ old('job') }}">
 
-                      <label class="control-label input_label"><p class="rose">Languages</p></label>
+                      <label class="control-label input_label"><p>Languages</p></label>
                       <input type="text" class="form-control control_style" name="languages" value="{{ old('languages') }}">
 
-                      <label class="control-label input_label"><p class="rose">Short Description about yourself</p></label>
+                      <label class="control-label input_label"><p>Short Description about yourself</p></label>
                       <input type="text" class="form-control control_style" name="bio" value="{{ old('bio') }}">
 
                       <br>
@@ -89,17 +89,17 @@
             </div>
 
             <div class="infobox">
-                <div class="infobox_header">
-                    <p class="box_grey"><strong>Profil bearbeiten</strong></p>
+                <div class="header">
+                    <p><strong>Profil bearbeiten</strong></p>
                 </div>
-                <div class="infobox_content">
-                    <p class="very_small">Keine Sorge, wir nutzen diese Daten nur zur internen Auswertung unserer Nutzer. Keine Daten von Dir werden jemals weitergeben.</p>
+                <div class="content">
+                    <p class="very_small info_text">Keine Sorge, wir nutzen diese Daten nur zur internen Auswertung unserer Nutzer. Keine Daten von Dir werden jemals weitergeben.</p>
                     <hr>
                     <form class="form-horizontal" role="form" method="POST" action="{{ action('SettingsProfileController@putUpdateUser', [Auth::user()->username]) }}">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input name="_method" type="hidden" value="PUT">
 
-                      <label class="control-label input_label"><p class="rose">Ich bin</p></label>
+                      <label class="control-label input_label"><p>Ich bin</p></label>
                       <select class="form-control control_style" name="gender">
                       <option></option>
                           <option value="female" {{(old('gender') == 'female') ? 'selected=selected':''}}>{{ Lang::get('auth/register.female') }}</option>
@@ -108,7 +108,7 @@
                       </select>
                       
 
-                      <label class="control-label"><p class="rose">Geburtsdatum (dd.mm.yyyy)</p></label>
+                      <label class="control-label"><p>Geburtsdatum (dd.mm.yyyy)</p></label>
                       <input type="text" class="form-control control_style" name="birth_date" value="{{ old('birth_date')}}">
 
                       <br>
