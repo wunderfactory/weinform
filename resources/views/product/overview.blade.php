@@ -41,19 +41,19 @@
 
         <div class="row">
           <div class="col-md-12">
-                <div class="infobox_image">
-                    <div id="text_left">
-                      <div class="image_infobox_header">
-                        <p class="grey"><strong>Lade deine Freunde ein!</strong></p>
-                      </div>
-                      <div class="infobox_content">
-                        <p class="rose">Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
+                <div class="infobox_large_image">
+                    <div class="header">
+                      <p><strong>Lade deine Freunde ein!</strong></p>
+                    </div>
+                    <div class="content">
+                      <div class="text_left">
+                        <p>Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
                         <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
                       </div>
-                    </div>
-                    <div id="image_right" class="col-md-6">
-                      <div class="image_container" style="background-image: url('{{ asset('images/stock/friends.jpg') }}');"></div>
-                    </div>  
+                      <div class="image_right" class="col-md-6">
+                          <div class="image_container" style="background-image: url('{{ asset('images/stock/friends.jpg') }}');"></div>
+                      </div>
+                    </div> 
                 </div>
 
 
