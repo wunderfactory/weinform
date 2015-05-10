@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder {
 		\DB::table('users')->delete();
         
 		\DB::table('users')->insert(array (
-			0 => 
+			/*0 =>
 			array (
 				'id' => '1',
 				'username' => 'magnuslanganke',
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder {
 				'remember_token' => NULL,
 				'created_at' => '2015-04-10 13:16:08',
 				'updated_at' => '2015-04-10 13:16:08',
-			),
+			),*/
 			1 => 
 			array (
 				'id' => '2',

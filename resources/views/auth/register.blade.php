@@ -118,7 +118,7 @@
                                    <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.phone') }}</p></label>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            {!! Form::select('phonefield_country', App\ExtendedCountries::all()->lists('phone','iso_3166_2'), 'DE', array('class' =>'form-control control_style')) !!}
+                                            {!! Form::select('phonefield_country', Wundership\ExtendedCountries::all()->lists('phone','iso_3166_2'), 'DE', array('class' =>'form-control control_style')) !!}
                                         </div>
                                         <div class="col-md-8">
                                             <input type="text" id="phone_number_input" class="form-control control_style" name="phonefield" value="{{ old('phonefield') }}">

@@ -25,9 +25,6 @@ include("routes/shipments.php");
 
 Route::group(['middleware' => ['csrf']], function(){
 
-    
-
-
     Route::get('/button', function(){
 
         return View::make('test');
@@ -63,8 +60,6 @@ Route::group(['middleware' => ['csrf']], function(){
         return View::make('dashboard.send.index')->with(['user' => $user]);
 
     });
-
-
 
     Route::controllers([
         'auth' => 'Auth\AuthController',

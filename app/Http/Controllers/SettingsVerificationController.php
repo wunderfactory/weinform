@@ -1,5 +1,6 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Wundership\Commands\CreateVerification;
 use Wundership\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

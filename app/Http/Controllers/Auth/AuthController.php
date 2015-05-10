@@ -64,11 +64,11 @@ class AuthController extends Controller {
 		if (Facebook::getSessionFromRedirect()) {
 			if(Facebook::foundFacebookUser()) {
 				if(Facebook::getFacebookUser()->user) {
-                    if(User::where('id', Facebook::getFacebookUser()->user->id)->whereHas('emails', function($q)
+                    if(User::where('id', Facebook::getFacebookUser()->user->id)/*->whereHas('emails', function($q)
                         {
                             $q->where('verified', true);
 
-                        })->count() > 0) {
+                        })*/->count() > 0) {
                         Facebook::getFriends();
                         Auth::login(Facebook::getFacebookUser()->user);
                         return redirect()->action('UsersController@getOverview', Auth::user()->username);
@@ -109,8 +109,10 @@ class AuthController extends Controller {
 			$fb->save();
 			$this->session->forget('facebookUser_id');
 		}
-        flash()->warning('Please verify your E-Mail to login.');
-		return redirect('auth/login');
+        $this->auth->login($user);
+        //flash()->warning('Please verify your E-Mail to login.');
+		//return redirect('auth/login');
+        return redirect('user/'.$user->username);
 	}
 
     public function postLogin(Request $request) {

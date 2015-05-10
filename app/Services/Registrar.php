@@ -53,7 +53,7 @@ class Registrar implements RegistrarContract {
 		]);
         $email = VerifiedEmail::create([
             'email' => $data['email'],
-            'user_id' => $user->id
+            'user_id' => $user->id,
         ]);
         Bus::dispatch(new EmailCreated($email));
         Bus::dispatch(new CreateSettings($user));

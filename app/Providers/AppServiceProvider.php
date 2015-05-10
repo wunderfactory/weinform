@@ -17,11 +17,11 @@ class AppServiceProvider extends ServiceProvider {
         if ($this->app->runningInConsole()) return;
 		Validator::extend('user', function($attribute, $value, $parameters)
         {
-            if(VerifiedEmail::where('email', $value)->where('verified', true)->count() > 0 || User::where('username', $value)->whereHas('emails', function($q)
+            if(VerifiedEmail::where('email', $value)/*->where('verified', true)*/->count() > 0 || User::where('username', $value)/*->whereHas('emails', function($q)
                 {
                     $q->where('verified', true);
 
-                })->count() > 0) {
+                })*/->count() > 0) {
                 return true;
             }
             return false;
