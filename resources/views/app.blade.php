@@ -30,6 +30,7 @@
 	<link href="{{ asset('/css/wundership.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/patstrap.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/dashboard_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/views/product_area.css') }}" rel="stylesheet">
 
     @yield('style')
 
@@ -45,7 +46,7 @@
 <body>
 
 	@include('structure.navbar')
-    <div style="margin-top: 84px; padding: 5px;">
+    <div style="margin-top: 84px;">
         @yield('userbar')
         @foreach ($errors->all('<p class="alert alert-warning">:message</p>') as $error)
             {!! $error !!}

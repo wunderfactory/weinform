@@ -1,0 +1,131 @@
+@import "../wundership.less";
+
+@background: #f0f0f0;
+
+.product_area{
+  width: 100%;
+  height: 100%;
+  background-color:@background;
+
+    #overview{
+      background-color: @background;
+      max-width: 980px;
+    }
+
+    #overview{
+      .top_down{
+      margin-top: 30px;
+      position: relative;
+      }
+
+      /* head area */
+
+      #head_text_wrapper{
+        width: 100%;
+        text-align: center;
+      }
+      #pickup_container{
+        height: 200px;
+        background-color: @base;
+        padding: 20px;
+        margin-top: 30px;
+        i{
+          color: @base_com;
+          font-size: 100px;
+          margin-top: 30px;
+          margin-left: 20px;
+        }
+      }
+      .icon_wrapper{
+        float: left;
+      }
+      .text_wrapper{
+        float: left;
+        p{
+          font-size: 40px;
+          margin-top: 45px;
+          color: @base_com;
+        }
+      }
+      #send_container{
+        height: 200px;
+        background-color: @first;
+        padding: 20px;
+        margin-top: 30px;
+        i{
+          color: @first_com;
+          font-size: 100px;
+          margin-top: 30px;
+          margin-left: 20px;
+        }
+      }
+      @-webkit-keyframes wiggle {
+        0% {-webkit-transform:rotate(4deg);}
+        50% {-webkit-transform:rotate(-4deg);}
+        100% {-webkit-transform:rotate(4deg);}
+      }
+      /* firefox */
+      @-moz-keyframes wiggle {
+        0% {-moz-transform:rotate(4deg);}
+        50% {-moz-transform:rotate(-4deg);}
+        100% {-moz-transform:rotate(4deg);}
+      }
+      /* anyone brave enough to implement the ideal method */
+      @keyframes wiggle {
+        0% {transform:rotate(4deg);}
+        50% {transform:rotate(-4deg);}
+        100% {transform:rotate(4deg);}
+      } 
+      .wiggle {
+        -webkit-animation: wiggle 0.5s infinite;
+        -moz-animation: wiggle 0.5s infinite;
+        animation: wiggle 0.5s infinite;
+      }
+
+
+      /* first image container */
+
+
+      #text_left{
+        float: left;
+        position: relative;
+        width: 460px;
+      }
+      #image_right{
+        float: left;
+        position: relative;
+      }
+      .infobox_image{
+        background-color: white;
+        border: 1px solid #ababab;
+        margin-top: 20px;
+        height: 302px;
+        margin-bottom: 20px;
+      }
+      .image_infobox_header{
+        position: top;
+        height: 60px;
+        padding: 15px;
+        width: 500px;
+        background-color: #e8e8e8;
+        /*border-bottom: 1px solid #ababab;*/
+      }
+      .image_container{
+        width: 473px;
+        background-color: red;
+        height: 300px;
+        background-size: cover;
+      }
+    }
+
+    
+
+
+
+
+
+
+
+}
+
+
