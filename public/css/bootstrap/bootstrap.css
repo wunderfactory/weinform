@@ -879,7 +879,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -2714,7 +2714,7 @@ select[multiple].form-group-lg .form-control {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 300;
+  font-weight: normal;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -4517,51 +4517,6 @@ a.label:focus {
 .label-danger[href]:focus {
   background-color: #c9302c;
 }
-Base class .badge {
-  display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #ffffff;
-  line-height: 1;
-  vertical-align: baseline;
-  white-space: nowrap;
-  text-align: center;
-  background-color: #777777;
-  border-radius: 10px;
-}
-Base class .badge:empty {
-  display: none;
-}
-.btn Base class .badge {
-  position: relative;
-  top: -1px;
-}
-.btn-xs Base class .badge {
-  top: 0;
-  padding: 1px 5px;
-}
-aBase class .badge:hover,
-aBase class .badge:focus {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-}
-.list-group-item.active > Base class .badge,
-.nav-pills > .active > a > Base class .badge {
-  color: #337ab7;
-  background-color: #ffffff;
-}
-.list-group-item > Base class .badge {
-  float: right;
-}
-.list-group-item > Base class .badge + Base class .badge {
-  margin-right: 5px;
-}
-.nav-pills > li > a > Base class .badge {
-  margin-left: 3px;
-}
 .jumbotron {
   padding: 30px 15px;
   margin-bottom: 30px;
@@ -4624,81 +4579,6 @@ a.thumbnail.active {
 .thumbnail .caption {
   padding: 9px;
   color: #333333;
-}
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-.alert h4 {
-  margin-top: 0;
-  color: inherit;
-}
-.alert .alert-link {
-  font-weight: bold;
-}
-.alert > p,
-.alert > ul {
-  margin-bottom: 0;
-}
-.alert > p + p {
-  margin-top: 5px;
-}
-.alert-dismissable,
-.alert-dismissible {
-  padding-right: 35px;
-}
-.alert-dismissable .close,
-.alert-dismissible .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  color: inherit;
-}
-.alert-success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c763d;
-}
-.alert-success hr {
-  border-top-color: #c9e2b3;
-}
-.alert-success .alert-link {
-  color: #2b542c;
-}
-.alert-info {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-  color: #31708f;
-}
-.alert-info hr {
-  border-top-color: #a6e1ec;
-}
-.alert-info .alert-link {
-  color: #245269;
-}
-.alert-warning {
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-  color: #8a6d3b;
-}
-.alert-warning hr {
-  border-top-color: #f7e1b5;
-}
-.alert-warning .alert-link {
-  color: #66512c;
-}
-.alert-danger {
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  color: #a94442;
-}
-.alert-danger hr {
-  border-top-color: #e4b9c0;
-}
-.alert-danger .alert-link {
-  color: #843534;
 }
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -5501,7 +5381,7 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5608,7 +5488,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6226,10 +6106,5 @@ button.close {
     display: none !important;
   }
 }
-body,
-label,
-.checkbox label {
-  font-weight: 300;
-}
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=../bootstrap/bootstrap.css.map */

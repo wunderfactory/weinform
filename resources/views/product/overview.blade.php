@@ -41,30 +41,14 @@
 
         <div class="row">
           <div class="col-md-12">
-                <div class="infobox_large_image">
-                    <div class="header">
-                      <p><strong>Lade deine Freunde ein!</strong></p>
-                    </div>
-                    <div class="content">
-                      <div class="text_left">
-                        <p>Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
-                        <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
-                      </div>
-                      <div class="image_right" class="col-md-6">
-                          <div class="image_container" style="background-image: url('{{ asset('images/stock/friends.jpg') }}');"></div>
-                      </div>
-                    </div> 
-                </div>
-
 
     <!------------------------------- -->
-
 
                 @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
                     <div class="warningbox">
                         <div class="header">
                             <div class="col-md-1"><i class="pe-7s-camera"></i></div>
-                            <div class="col-md-8 box_heading_container"><p><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
+                            <div class="col-md-8"><p><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
 
                         </div>
                         <div class="content">
@@ -73,60 +57,22 @@
                     </div>
                 @endif
 
-
-    <style type="text/css">
-    #text_right{
-      float: left;
-      position: relative;
-      width: 460px;
-    }
-    #image_left{
-      float: left;
-      position: relative;
-      z-index: 1;
-    }
-    .infobox_image{
-      background-color: white;
-      border: 1px solid #ababab;
-      margin-top: 20px;
-      height: 302px;
-      margin-bottom: 20px;
-    }
-    #image_infobox_header_image_left{
-      position: top;
-      height: 60px;
-      padding: 15px;
-      width: 475px;
-      margin-left: -2px;
-      z-index: -1;
-      background-color: #e8e8e8;
-      /*border-bottom: 1px solid #ababab;*/
-    }
-    #image_container_left{
-      width: 473px;
-      background-color: red;
-      height: 300px;
-      background-image: url('{{ asset('images/presentation/shipments/ship1.jpg') }}');
-      background-size: cover;
-    }
-    </style>
-
-                <div class="infobox_image">
-                    <div id="text_right">
-                        <div id="image_container_left"></div>
+                <div class="infobox_large_image">
+                    <div class="left">
+                      <div class="header">
+                        <p><strong>Lade deine Freunde ein!</strong></p>
+                      </div>
+                      <div class="content">
+                          <p>Zusammen ist doch alles viel cooler! Lade ein paar Freunde von dir ein und erhalte Gutscheine für geführenfreie wundership-Sendungen!</p><br>
+                          <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
+                      </div>
                     </div>
-                    <div id="image_left" class="col-md-6">
-                      <div id="image_infobox_header_image_left">
-                          <p class="grey"><strong>Das Wunder des Tages!</strong></p>
+                    <div class="right">
+                        <div class="content">
+                          <div class="image_container" style="background-image: url('{{ asset('images/presentation/shipments/ship1.jpg') }}');"></div>
                       </div>
-                      <div class="infobox_content">
-                          <p class="rose">Armin hat erfolgreich seinen Biolite Hightech-Grill von Hamburg nach Berlin versendet!</p><br>
-                          <a href="#"><button class="btn btn-default">Mehr Wunder sehen!</button></a>
-                      </div>
-                    </div>  
+                    </div> 
                 </div>
-
-
 
     <!------------------------------- -->
 

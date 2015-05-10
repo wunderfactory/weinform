@@ -151,7 +151,7 @@
 .warningbox {
   width: 100%;
   background-color: white;
-  border: 1px solid red;
+  border: 1px solid #ea555c;
   margin-bottom: 20px;
 }
 .warningbox .header {
@@ -236,40 +236,38 @@
   height: 302px;
   margin-bottom: 20px;
 }
-.infobox_large_image .header {
+.infobox_large_image .left {
+  float: left;
+  width: 475px;
+}
+.infobox_large_image .left .header {
   position: top;
   height: 60px;
   padding: 15px;
-  width: 505px;
   background-color: #e8e8e8;
   /*border-bottom: 1px solid #ababab;*/
 }
-.infobox_large_image .header p {
+.infobox_large_image .left .header p {
   color: #828282;
 }
-.infobox_large_image .content {
+.infobox_large_image .left .content {
   padding: 15px;
 }
-.infobox_large_image .content p {
-  color: #ea555c;
-}
-.infobox_large_image .content .info_text {
+.infobox_large_image .left .content .info_text {
   color: #585858;
 }
-.infobox_large_image .content .image_container {
+.infobox_large_image .left .content p {
+  color: #ea555c;
+}
+.infobox_large_image .right {
+  float: left;
+  width: 300px;
+}
+.infobox_large_image .right .content .image_container {
   width: 473px;
   background-color: red;
   height: 300px;
   background-size: cover;
-}
-.infobox_large_image .content .image_right {
-  float: left;
-  position: relative;
-}
-.infobox_large_image .content .text_left {
-  float: left;
-  position: relative;
-  width: 460px;
 }
 
 /*# sourceMappingURL=patstrap.css.map */

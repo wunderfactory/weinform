@@ -8,9 +8,6 @@
     <link href="{{ asset('gsd/bootstrap3/css/bootstrap.min.css') }}" rel="stylesheet" />
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-	<!-- BOX SYSTEM -->
-	<link href="{{ asset('/css/box_system.css') }}" rel="stylesheet">
-	<!-- / -->
 	<!-- BUTTONS -->
 	<link href="{{ asset('/css/buttons.css') }}" rel="stylesheet">
 	<!-- / -->
@@ -31,6 +28,7 @@
 	<link href="{{ asset('/css/patstrap.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/dashboard_area.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/product_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/views/profile_area.css') }}" rel="stylesheet">
 
     @yield('style')
 
@@ -56,9 +54,6 @@
 	@include('structure.footer')
 	<!-- Scripts -->
 
-
-
-
 	<script src="{{ URL::asset('gsd/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
 	<script src="{{ URL::asset('gsd/js/jquery-ui-1.10.4.custom.min.js') }}" type="text/javascript"></script>
 
@@ -80,8 +75,8 @@
 	<!-- GSDK Pro functions -->
 	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
     <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
-	@yield('script')
 
+    @yield('script')
 
 </body>
 </html>
