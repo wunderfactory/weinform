@@ -14,13 +14,13 @@
 
         <div class="col-md-8">
             <div class="infobox">
-                <div class="infobox_header">
+                <div class="header">
                     <p><strong>E-Mail-Einstellungen</strong></p>
                 </div>
-                <div class="infobox_content">
+                <div class="content">
                     <div class="row">
                       <div class="col-md-12">
-                          <p class="box_grey">Wähle aus, zu welchen Ereignissen wir Dir eine E-Mail senden sollen.</p>
+                          <p>Wähle aus, zu welchen Ereignissen wir Dir eine E-Mail senden sollen.</p>
                       </div>
                     </div>
                     <hr>
@@ -29,7 +29,7 @@
                              <i class="pe-7s-rocket large_icon"></i>
                         </div>
                         <div class="col-md-4 right_container">
-                            <p class="box_rose"><strong>Neuigkeiten</strong> über wundership</p>  
+                            <p><strong>Neuigkeiten</strong> über wundership</p>  
                         </div>
                          <div class="col-md-4">
                             <div class="button_wrapper">
@@ -51,7 +51,7 @@
                              <i class="pe-7s-user large_icon"></i>
                         </div>
                         <div class="col-md-4 right_container">
-                            <p class="box_rose">E-Mails zu Deinem <strong>Account</strong></p>    
+                            <p>E-Mails zu Deinem <strong>Account</strong></p>    
                         </div>
                          <div class="col-md-4">
                             <div class="button_wrapper">
@@ -73,7 +73,7 @@
                                <i class="pe-7s-car large_icon"></i>
                           </div>
                           <div class="col-md-4 right_container">
-                              <p class="box_rose">Updates zu Deinen <strong>Fahrten</strong></p>   
+                              <p>Updates zu Deinen <strong>Fahrten</strong></p>   
                           </div>
                            <div class="col-md-4">
                             <div class="button_wrapper">
@@ -95,7 +95,7 @@
                                <i class="pe-7s-box1 large_icon"></i>
                           </div>
                           <div class="col-md-4 right_container">
-                              <p class="box_rose">Updates zu Deinen <strong>Sendungen</strong></p>   
+                              <p>Updates zu Deinen <strong>Sendungen</strong></p>   
                           </div>
                            <div class="col-md-4">
                             <div class="button_wrapper">

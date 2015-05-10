@@ -53,12 +53,12 @@
             <div class="col-md-8">
                 @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
                     <div class="warningbox">
-                        <div class="warningbox_header">
+                        <div class="header">
                             <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
                             <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
 
                         </div>
-                        <div class="warningbox_content">
+                        <div class="content">
                             <p class="box_rose">Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
                         </div>
                     </div>
@@ -67,25 +67,25 @@
                 @if($user->profile->picture || $user->facebookUser)
                 @else
                     <div class="orangebox">
-                        <div class="orangebox_header">
-                            <div class="col-md-1"><i class="pe-7s-camera box_icon_large"></i></div>
-                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Heyho {{ $user->first_name }}! Bitte lade ein Profilbild von Dir hoch.</strong></p></div>
+                        <div class="header">
+                            <div class="col-md-1"><i class="pe-7s-camera"></i></div>
+                            <div class="col-md-10"><p><strong>Heyho {{ $user->first_name }}! Bitte lade ein Profilbild von Dir hoch.</strong></p></div>
                            
                         </div>
-                        <div class="orangebox_content">
-                            <p class="box_grey"><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Jetzt <a href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">Profilbild hochladen</a>.</p>
+                        <div class="content">
+                            <p><strong>Wundership</strong> baut darauf, dass Du jedem anderen Nutzer <strong>vertrauen</strong> kannst und Ihm gern Deine Sendungen mitgibst. Ein Profilbild hilft dabei. Jetzt <a href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">Profilbild hochladen</a>.</p>
                         </div> 
                     </div>
                 @endif
 
                 @if(!$user->verification)
                     <div class="warningbox">
-                        <div class="warningbox_header">
-                            <div class="col-md-1"><i class="pe-7s-id box_icon_large"></i></div>
-                            <div class="col-md-8 box_heading_container"><p class="box_white"><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p></div>
+                        <div class="header">
+                            <div class="col-md-1"><i class="pe-7s-id"></i></div>
+                            <div class="col-md-8"><p><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p></div>
 
                         </div>
-                        <div class="warningbox_content">
+                        <div class="content">
                             <p class="rose">Eine <strong>Verifikation deiner Identität</strong> ist der einfachste und schnellste Weg, in der wundership Community Vertrauen aufzubauen. Wir gleichen dazu Deine Profildaten mit deinem <strong>offiziellen Ausweis</strong> ab. Diese Verfizierung ist besonders vertrauenswürdig und sehr wichtig, wenn Du <strong>Sendungen mitnehmen</strong> möchtest.<br> Der Vorgang dauert nur etwa <strong>eine Minute.</strong></p>
                             <a href="{{ action('SettingsVerificationController@getIndex', [Auth::user()->username]) }}"><button class="btn btn-default"><strong>Verifikation meiner Identität starten</strong></button></a>
                         </div>
@@ -94,12 +94,12 @@
 
                 @if($user->verification && $user->verification->verified)
                     <div class="successbox">
-                        <div class="successbox_header">
-                            <div class="col-md-1"><i class="pe-7s-check box_icon_large"></i></div>
-                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
+                        <div class="header">
+                            <div class="col-md-1"><i class="pe-7s-check"></i></div>
+                            <div class="col-md-10"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
 
                         </div>
-                        <div class="successbox_content">
+                        <div class="content">
                             <p class="grey">Ab jetzt kannst Du Sendungen mitnehmen. Finanziere Deine Fahrten indem Du Sendungen mitnimmst. <strong>Jetzt loslegen.</strong></p>
                         </div>
                     </div>
@@ -107,38 +107,38 @@
 
                 @if($user->verification && !$user->verification->verified)
                     <div class="orangebox">
-                        <div class="orangebox_header">
-                            <div class="col-md-1"><i class="pe-7s-clock box_icon_large"></i></div>
-                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
+                        <div class="header">
+                            <div class="col-md-1"><i class="pe-7s-clock"></i></div>
+                            <div class="col-md-10"><p><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
 
                         </div>
-                        <div class="orangebox_content">
-                            <p class="grey">Bitte hab noch einen Moment Geduld. Wir bearbeiten gerade die <strong>Verifizierung Deiner Identität</strong>.</p>
+                        <div class="content">
+                            <p>Bitte hab noch einen Moment Geduld. Wir bearbeiten gerade die <strong>Verifizierung Deiner Identität</strong>.</p>
                         </div>
                     </div>
                 @endif
 
               <div class="infobox">
-                <div class="infobox_header">
-                    <p class="grey"><strong>Verifizierungen</strong>
+                <div class="header">
+                    <p><strong>Verifizierungen</strong>
                     <button type="button" class="btn btn-default pull-right verification_button" data-toggle="popover" data-placement="left" title="" data-content="Mit einem verifiziertem Profil erscheinst du für andere Nutzer vertrauenswürdiger. So nehmen Fahrer deine Sendungen gern an und das wundership-team wählt dich gern als Fahrer aus." data-html="true" data-original-title="Verifizierungen">Was ist das?</button>
                 </div>
-                <div class="infobox_content">
+                <div class="content">
                   <div class="row">
                       <div class="col-md-4">
-                        <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
+                        <div class="check_container"><i class="pe-7s-check"></i></div>
                         <div class="text_container"><p>E-Mail-Adresse<br>Bestätigt</p></div>
                       </div>
                       @if($user->phoneNumbers->first()->verified)                   
                       <div class="col-md-4">
-                        <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
+                        <div class="check_container"><i class="pe-7s-check"></i></div>
                         <div class="text_container"><p>Handynummer<br>Bestätigt</p></div>
                       </div>
                       @else
                       @endif
                       @if($user->facebookUser)
                       <div class="col-md-4">
-                        <div class="check_container"><i class="pe-7s-check box_icon_large check"></i></div>
+                        <div class="check_container"><i class="pe-7s-check"></i></div>
                         <div class="text_container"><p>Facebook-Freunde<br>{{ $user->facebookUser->friends }} Freunde</p></div>
                       </div>
                       @else

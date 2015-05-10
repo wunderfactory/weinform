@@ -12,13 +12,13 @@
 
         <div class="col-md-8">
             <div class="infobox">
-                <div class="infobox_header">
-                    <p class="box_grey"><strong>Einstellungen</strong></p>
+                <div class="header">
+                    <p><strong>Einstellungen</strong></p>
                 </div>
-                <div class="infobox_content">
-                        <p class="box_rose">Deine E-Mail-Adresse und Handynummer werden niemals öffentlich angezeigt. Wundership Kuriere bekommen deine Handynummer mitgeteilt, wenn sie eine Sendung bei Dir abholen.</p>
+                <div class="content">
+                        <p>Deine E-Mail-Adresse und Handynummer werden niemals öffentlich angezeigt. Wundership Kuriere bekommen deine Handynummer mitgeteilt, wenn sie eine Sendung bei Dir abholen.</p>
                         <hr>
-                        <p class="box_rose">Die ausgewählten Felder sind auf Deinem Profil sichtbar.</p>
+                        <p>Die ausgewählten Felder sind auf Deinem Profil sichtbar.</p>
                         <form action="{{ action('SettingsAccountController@postUpdatePrivacy',[$user->username]) }}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <label for="hometown">Wohnort</label>

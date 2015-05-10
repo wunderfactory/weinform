@@ -14,15 +14,15 @@
 
         <div class="col-md-8">
             <div class="infobox">
-                <div class="infobox_header">
-                    <p class="grey"><strong>Zahlungsdaten</strong></p>
+                <div class="header">
+                    <p><strong>Zahlungsdaten</strong></p>
                 </div>
-                <div class="infobox_content">
-                  <p class="rose">Um Sendungen einstellen zu können, benötigst du einen validierten Zahlungsaccount.</p>
+                <div class="content">
+                  <p>Um Sendungen einstellen zu können, benötigst du einen validierten Zahlungsaccount.</p>
                     <div class="row">
                         <div class="col-md-2">
 
-                            <i class="pe-7s-note2 large_icon note_icon"></i>
+                            <i class="pe-7s-note2 note_icon"></i>
 
                         </div>
                         <div class="col-md-5 middle_container">

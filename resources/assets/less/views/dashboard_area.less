@@ -1,3 +1,5 @@
+@import "../wundership.less";
+
 @background: #f0f0f0;
 
 /* OVERALL CONTAINER */
@@ -53,6 +55,10 @@
       .check_container{
         float: left;
         padding-top: 6px;
+        i{
+          .check;
+          font-size: 23px;
+        }
       }
       .text_container{
         float: left;
@@ -93,7 +99,7 @@
 
     /* ACCOUNT */
 
-    #notifications, #payment, #payout, #security, #privacy, #security{
+    #notifications, #payment, #payout, #security, #privacy, #security, #settings, #start{
       background-color:@background;
       max-width: 980px;
     }
@@ -128,9 +134,18 @@
         font-size: 15px;
         margin-bottom: 21px;
       }
+    }
+
+    #payment{
       .note_icon{
         margin-top: 24px;
         margin-left: 10px;
+      }
+    }
+
+    #payout{
+      .cash_icon{
+        font-size: 40px;
       }
     }
 
@@ -144,6 +159,7 @@
       .lock_icon{
       margin-top: 24px;
       margin-left: 10px;
+      font-size: 80px;
       }
       .security_input_container input{
         margin-top: 2px;
@@ -210,6 +226,9 @@
       .button_container{
         padding-top: 20px;
       }
+      .star_icon_large{
+        font-size: 30px;
+      }
     }
     
     #verifications{
@@ -217,15 +236,55 @@
       margin-left: 16px;
       }
       .not_verified_id_icon{
-        font-size: 60px;
+        font-size: 48px;
         margin-left: 1px;
+      }
+      .fa-check-circle-o{
+        .check;
       }
     }
 
 
 
+    /* VERIFY */
 
+    #start, #thank_you{
+      .rose{
+        color: #ea555c;
+      }
+      #right_navbar_container{
+        padding: 20px;
+      }
+      .nav_text{
+        color: #797979;
+        -o-transition:.5s;
+        -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+        /* ...and now for the proper property */
+        transition:.5s;
+      }
+      /*.nav_text:hover{
+        color: #404040;
+      }*/
+      .active{
+        color: #ea555c !important;
+      }
+      .image{
+          width: 235px;
+      }
+      .profile{
+          max-width: 980px !important;
+      }
 
+      .cropper img{
+          width: 100%;
+      }
+
+      #image_container {
+          display: none;
+      }
+    }
 
 
 

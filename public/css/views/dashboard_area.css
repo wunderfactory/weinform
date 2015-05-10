@@ -1,3 +1,6 @@
+.check {
+  color: #2fd155;
+}
 /* OVERALL CONTAINER */
 .dashboard_area {
   width: 100%;
@@ -7,6 +10,7 @@
   /* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
   /* ACCOUNT */
   /* PROFILE */
+  /* VERIFY */
   /* left side action container */
 }
 .dashboard_area #index,
@@ -53,6 +57,10 @@
   float: left;
   padding-top: 6px;
 }
+.dashboard_area #index .check_container i {
+  color: #2fd155;
+  font-size: 23px;
+}
 .dashboard_area #index .text_container {
   float: left;
   margin-left: 12px;
@@ -84,7 +92,9 @@
 .dashboard_area #payout,
 .dashboard_area #security,
 .dashboard_area #privacy,
-.dashboard_area #security {
+.dashboard_area #security,
+.dashboard_area #settings,
+.dashboard_area #start {
   background-color: #f0f0f0;
   max-width: 980px;
 }
@@ -116,11 +126,12 @@
   font-size: 15px;
   margin-bottom: 21px;
 }
-.dashboard_area #payment .note_icon,
-.dashboard_area #payout .note_icon,
-.dashboard_area #security .note_icon {
+.dashboard_area #payment .note_icon {
   margin-top: 24px;
   margin-left: 10px;
+}
+.dashboard_area #payout .cash_icon {
+  font-size: 40px;
 }
 .dashboard_area #privacy .save_button {
   margin-top: 10px;
@@ -128,6 +139,7 @@
 .dashboard_area #security .lock_icon {
   margin-top: 24px;
   margin-left: 10px;
+  font-size: 80px;
 }
 .dashboard_area #security .security_input_container input {
   margin-top: 2px;
@@ -183,12 +195,58 @@
 .dashboard_area #ratings .button_container {
   padding-top: 20px;
 }
+.dashboard_area #ratings .star_icon_large {
+  font-size: 30px;
+}
 .dashboard_area #verifications .right_container_verifications {
   margin-left: 16px;
 }
 .dashboard_area #verifications .not_verified_id_icon {
-  font-size: 60px;
+  font-size: 48px;
   margin-left: 1px;
+}
+.dashboard_area #verifications .fa-check-circle-o {
+  color: #2fd155;
+}
+.dashboard_area #start,
+.dashboard_area #thank_you {
+  /*.nav_text:hover{
+        color: #404040;
+      }*/
+}
+.dashboard_area #start .rose,
+.dashboard_area #thank_you .rose {
+  color: #ea555c;
+}
+.dashboard_area #start #right_navbar_container,
+.dashboard_area #thank_you #right_navbar_container {
+  padding: 20px;
+}
+.dashboard_area #start .nav_text,
+.dashboard_area #thank_you .nav_text {
+  color: #797979;
+  /* ...and now for the proper property */
+  transition: .5s;
+}
+.dashboard_area #start .active,
+.dashboard_area #thank_you .active {
+  color: #ea555c !important;
+}
+.dashboard_area #start .image,
+.dashboard_area #thank_you .image {
+  width: 235px;
+}
+.dashboard_area #start .profile,
+.dashboard_area #thank_you .profile {
+  max-width: 980px !important;
+}
+.dashboard_area #start .cropper img,
+.dashboard_area #thank_you .cropper img {
+  width: 100%;
+}
+.dashboard_area #start #image_container,
+.dashboard_area #thank_you #image_container {
+  display: none;
 }
 .dashboard_area #action_container {
   max-width: 200px;

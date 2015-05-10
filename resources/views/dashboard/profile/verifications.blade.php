@@ -13,22 +13,22 @@
             <div class="col-md-8">
 
                 <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Vertrauen bei wundership</strong></p>
+                    <div class="header">
+                        <p><strong>Vertrauen bei wundership</strong></p>
                     </div>
-                    <div class="infobox_content">
-                        <p class="box_rose">Verifiziere Dein Profil, um für andere Nutzer und das Team von wundership vertrauenswürdiger zu erscheinen. Wundership basiert darauf, dass Du Deinem wundership Kurier vertraust und auch Dir andere Nutzer vertrauen, wenn Du Ihnen deine Sendung mitgibst.</p>
+                    <div class="content">
+                        <p>Verifiziere Dein Profil, um für andere Nutzer und das Team von wundership vertrauenswürdiger zu erscheinen. Wundership basiert darauf, dass Du Deinem wundership Kurier vertraust und auch Dir andere Nutzer vertrauen, wenn Du Ihnen deine Sendung mitgibst.</p>
                     </div> 
                 </div>
 
                 @if($user->verification && $user->verification->verified)
                     <div class="successbox">
-                        <div class="successbox_header">
+                        <div class="header">
                             <div class="col-md-1"><i class="pe-7s-check box_icon_large"></i></div>
-                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Deine Identität ist verifiziert.</strong></p></div>
+                            <div class="col-md-10 box_heading_container"><p><strong>Deine Identität ist verifiziert.</strong></p></div>
 
                         </div>
-                        <div class="successbox_content">
+                        <div class="content">
                             <p class="grey">Ab jetzt kannst Du Sendungen mitnehmen. Finanziere Deine Fahrten indem Du Sendungen mitnimmst. <strong>Jetzt loslegen.</strong></p>
                         </div>
                     </div>
@@ -36,10 +36,10 @@
 
                 @if(!$user->verification)
                 <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Verifiziere Deine Identität</strong></p>
+                    <div class="header">
+                        <p><strong>Verifiziere Deine Identität</strong></p>
                     </div>
-                    <div class="infobox_content">
+                    <div class="content">
                       <div class="row">
                             <div class="col-md-1">
                                  <i class="pe-7s-id not_verified_id_icon"></i>
@@ -55,9 +55,9 @@
 
                 @if($user->verification && !$user->verification->verified)
                     <div class="orangebox">
-                        <div class="orangebox_header">
+                        <div class="header">
                             <div class="col-md-1"><i class="pe-7s-clock box_icon_large"></i></div>
-                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
+                            <div class="col-md-10 box_heading_container"><p><strong>Wir bearbeiten Deine Verifizierung.</strong></p></div>
 
                         </div>
                         <div class="orangebox_content">
@@ -67,20 +67,20 @@
                 @endif
 
                 <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Deine aktuellen Verifikationen</strong></p>
+                    <div class="header">
+                        <p><strong>Deine aktuellen Verifikationen</strong></p>
                     </div>
-                    <div class="infobox_content">
-                          <p>Email: {{$user->emails->first()->email}} <i class="fa-check-circle-o fa check"></i></p>
+                    <div class="content">
+                          <p>Email: {{$user->emails->first()->email}} <i class="fa-check-circle-o fa"></i></p>
                           @if($user->phoneNumbers->first()->verified)
                           <p>Handynummer:
                             + {{$user->phoneNumbers->first()->country_prefix}} {{$user->phoneNumbers->first()->phone_number}} 
-                                <i class="fa-check-circle-o fa check"></i></p>
+                                <i class="fa-check-circle-o fa"></i></p>
                           @else   
                           @endif
                           @if($user->facebookUser)
                           
-                              <p>Facebook-Freunde: {{ $user->facebookUser->friends }} Freunde <i class="fa-check-circle-o fa check"></i>
+                              <p>Facebook-Freunde: {{ $user->facebookUser->friends }} Freunde <i class="fa-check-circle-o fa"></i>
                                   <a href="{{ action('SettingsVerificationController@getRemoveFacebook', [Auth::user()->username]) }}"><button class="btn btn-info facebook_disconnect_button"><i class="fa fa-facebook"></i> Verbindung trennen</button></a>
                               </p>
                           

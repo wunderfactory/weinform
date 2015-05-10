@@ -12,10 +12,10 @@
 
             <div class="col-md-8">
                 <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Account löschen</strong></p>
+                    <div class="header">
+                        <p><strong>Account löschen</strong></p>
                     </div>
-                    <div class="infobox_content">
+                    <div class="content">
                         <button href="#" class="btn btn-fill btn-danger">Account löschen</button>
                     </div> 
                 </div>

@@ -25,7 +25,7 @@
   border: 1px solid #ffc000;
   margin-bottom: 20px;
 }
-.orangebox .orangebox_header {
+.orangebox .header {
   width: 100%;
   position: top;
   height: 60px;
@@ -35,8 +35,18 @@
   border-bottom: 1px solid #ffc000;
   vertical-align: center;
 }
-.orangebox .orangebox_content {
+.orangebox .header p {
+  color: white;
+  margin-top: 2px;
+}
+.orangebox .header i {
+  font-size: 30px;
+}
+.orangebox .content {
   padding: 15px;
+}
+.orangebox p {
+  color: #585858;
 }
 /* SUCCESS */
 .successbox {
@@ -66,6 +76,9 @@
   padding: 15px;
 }
 .successbox .content .info_text {
+  color: #585858;
+}
+.successbox .content p {
   color: #585858;
 }
 /* INFO */
@@ -137,7 +150,7 @@
   border: 1px solid red;
   margin-bottom: 20px;
 }
-.warningbox .warningbox_header {
+.warningbox .header {
   width: 100%;
   position: top;
   height: 60px;
@@ -147,8 +160,18 @@
   border-bottom: 1px solid #ea555c;
   vertical-align: center;
 }
-.warningbox .warningbox_content {
+.warningbox .header p {
+  color: white;
+  margin-top: 2px;
+}
+.warningbox .header i {
+  font-size: 30px;
+}
+.warningbox .content {
   padding: 15px;
+}
+.warningbox p {
+  color: #585858;
 }
 /* ACTION */
 .actionbox {

@@ -12,14 +12,14 @@
 
             <div class="col-md-8">
                 <div class="infobox">
-                    <div class="infobox_header">
-                        <p class="box_grey"><strong>Passwort ändern</strong></p>
+                    <div class="header">
+                        <p><strong>Passwort ändern</strong></p>
                     </div>
-                    <div class="infobox_content">
+                    <div class="content">
                         <div class="row">
                             <div class="col-md-2">
 
-                                <i class="pe-7s-door-lock very_large_icon lock_icon"></i>
+                                <i class="pe-7s-door-lock lock_icon"></i>
 
                             </div>
                             <div class="col-md-5 middle_container">
