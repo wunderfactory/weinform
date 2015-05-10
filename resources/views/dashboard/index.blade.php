@@ -11,7 +11,7 @@
             <div class="col-md-3">
                 <div id="profile_container">
                     @if(Auth::user()->id == $user->id)
-                    <a class="white" href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">
+                    <a href="{{ action('SettingsProfileController@getProfilePicture', [Auth::user()->username]) }}">
                       <div id="overlay">
                         <p><i class="pe-7s-camera camera_icon"></i><br>
                         Profilbild ändern</p>
@@ -35,13 +35,13 @@
                     <i class="pe-7s-car"></i>
                     <h4>Fahrer werden!</h4>
                     <p>Werde Fahrer und verdiene schnell eingene Euronen! Es ist herrlich, für wundership zu fahren! Du wirst es so genießen!</p><br>
-                    <a href="#"><p class="dark_grey"><strong>Ja, ich will!</strong></p></a>
+                    <a href="#"><p><strong>Ja, ich will!</strong></p></a>
                 </div>
 
                 <div class="actionbox">
                     <i class="pe-7s-help1"></i>
                     <p>Gab es ein Problem, {{ $user->first_name }}?</p>
-                    <a href="#"><p class="dark_grey"><strong>Kontaktiere das wundership team.</strong></p></a>
+                    <a href="#"><p><strong>Kontaktiere das wundership team.</strong></p></a>
                 </div>
 
             </div><!-- /col-md-3 -->

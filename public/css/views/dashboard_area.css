@@ -6,12 +6,20 @@
   width: 100%;
   height: 100%;
   background-color: #f0f0f0;
-  /* INDEX */
-  /* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
+  /* INDEX INBOX */
+  /* Styles only for dashboard.index */
+  /* Styles only for dashboard.inbox */
+  /* Stlyes only for SIDE NAVBAR ACCOUNT and PROFILE */
   /* ACCOUNT */
   /* PROFILE */
   /* VERIFY */
   /* left side action container */
+}
+.dashboard_area #dashboard_area_nav .navbar_container {
+  max-width: 980px !important;
+}
+.dashboard_area #dashboard_area_nav .active_topbar {
+  color: #ea555c !important;
 }
 .dashboard_area #index,
 .dashboard_area #inbox {
@@ -40,15 +48,17 @@
   padding-top: 50px;
   z-index: 10000;
 }
+.dashboard_area #index #overlay p {
+  color: white;
+}
+.dashboard_area #index #overlay i {
+  color: white;
+}
 .dashboard_area #index .camera_icon {
   font-size: 70px;
 }
 .dashboard_area #index #profile_container:hover #overlay {
   display: block;
-}
-.dashboard_area #index .btn-white {
-  color: white;
-  border-color: white;
 }
 .dashboard_area #index .verification_button {
   margin-top: -6px;

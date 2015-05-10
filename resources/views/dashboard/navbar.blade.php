@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav id="dashboard_area_nav" class="navbar navbar-default">
   <div class="container navbar_container">
     <ul class="nav navbar-nav">
         <li><a class="{{ Request::segment(3) == 'dashboard'? 'active_topbar':''}}" href="{{action('UsersController@getDashboard', [Auth::user()->username])}}">Dashboard</a></li>

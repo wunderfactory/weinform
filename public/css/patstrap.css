@@ -1,3 +1,4 @@
+/* _com = complementary color */
 /* BLUE */
 .bluebox {
   width: 100%;
@@ -176,21 +177,27 @@
 /* ACTION */
 .actionbox {
   max-width: 200px;
-  background-color: #ab4848;
+  background-color: #47affb;
   margin-top: 10px;
   padding: 20px;
   position: relative;
   margin-bottom: 20px;
-  border: 1px solid #ab4848;
+  border: 1px solid #ababab;
 }
 .actionbox i {
-  margin-bottom: 10px;
   font-size: 40px;
+  color: #ffffff;
+}
+.actionbox h4 {
+  color: #ffffff;
+}
+.actionbox p {
+  color: #ffffff;
 }
 /* ACTIONBOX TALL */
 .tall_actionbox {
   max-width: 200px;
-  background-color: #ffa200;
+  background-color: #ea555c;
   margin-top: 20px;
   padding: 20px;
   position: relative;
@@ -199,6 +206,13 @@
 }
 .tall_actionbox i {
   font-size: 40px;
+  color: #ffffff;
+}
+.tall_actionbox h4 {
+  color: #ffffff;
+}
+.tall_actionbox p {
+  color: #ffffff;
 }
 /* USER INFOBOX*/
 .user_infobox {

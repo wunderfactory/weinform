@@ -9,12 +9,23 @@
   background-color:@background;
 
 
-    /* INDEX */
+    #dashboard_area_nav{
+      .navbar_container{
+        max-width: 980px !important;
+      } 
+      .active_topbar {
+        color: #ea555c !important;
+      }
+    }
+
+    /* INDEX INBOX */
 
     #index, #inbox{
       background-color:@background;
       max-width: 980px;
     }
+
+    /* Styles only for dashboard.index */
 
     #index{
       #profile_container{
@@ -38,16 +49,18 @@
         opacity: 0.9;
         padding-top: 50px;
         z-index: 10000;
+        p{
+          color: white;
+        }
+        i{
+          color: white;
+        }
       }
       .camera_icon{
         font-size: 70px;
       }
       #profile_container:hover #overlay{
         display: block;
-      }
-      .btn-white{
-        color: white;
-        border-color: white;
       }
       .verification_button{
         margin-top: -6px;
@@ -66,11 +79,14 @@
       }
     }
 
+    /* Styles only for dashboard.inbox */
+
     #inbox{
 
     }
 
-    /* SIDE NAVBAR ACCOUNT and PROFILE EDIT */
+
+    /* Stlyes only for SIDE NAVBAR ACCOUNT and PROFILE */
 
     #account_sidebar, #profile_sidebar{
       .right_navbar_container{

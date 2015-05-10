@@ -1,10 +1,4 @@
-@first: #ea555c;
-
-@bright_grey: #828282;
-@dark_grey: #585858;
-
-@third: #333;
-
+@import "../wundership.less";
 
 .bluebox, .orangebox, .successbox, .infobox, .warningbox{
 
@@ -122,7 +116,7 @@
   .content{
     padding: 15px;
     p{
-      color: @first;
+      color: @base;
     }
     .info_text{
       color: @dark_grey;
@@ -153,7 +147,7 @@
   .content{
     padding: 15px;
     p{
-      color: @first;
+      color: @base;
     }
     .info_text{
       color: @dark_grey;
@@ -204,15 +198,21 @@
 
 .actionbox{
   max-width: 200px;
-  background-color: #ab4848;
+  background-color: @first;
   margin-top: 10px;
   padding: 20px;
   position: relative;
   margin-bottom: 20px;
-  border: 1px solid #ab4848;
+  border: 1px solid #ababab;
   i{
-  margin-bottom: 10px;
   font-size: 40px;
+  color: @first_com;
+  }
+  h4{
+    color: @first_com;
+  }
+  p{
+    color: @first_com;
   }
 }
 
@@ -221,7 +221,7 @@
 
 .tall_actionbox{
   max-width: 200px;
-  background-color: #ffa200;
+  background-color: @base;
   margin-top: 20px;
   padding: 20px;
   position: relative;
@@ -229,6 +229,13 @@
   border: 1px solid #ababab;
   i{
   font-size: 40px;
+  color: @base_com;
+  }
+  h4{
+    color: @base_com;
+  }
+  p{
+    color: @base_com;
   }
 }
 
