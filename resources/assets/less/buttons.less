@@ -1,15 +1,19 @@
-.check {
-  color: #2fd155;
-}
-/* _com = complementary color */
+@import "wundership.less";
+
 /* EMAIL NOTIFICATONS SETTINGS */
+
 .switcher {
   position: absolute;
   width: 150px;
   height: 50px;
   text-align: center;
   background: #4cd964;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-border-radius: 25px;
   border-radius: 25px;
 }
 .switcher span {
@@ -22,9 +26,16 @@
   background: #fff;
   display: block;
   -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 .switcher span:after {
@@ -35,7 +46,12 @@
   height: 12px;
   margin-top: -8px;
   background: #fff;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 input[type=radio] {
@@ -43,9 +59,13 @@ input[type=radio] {
 }
 .switcher label {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0,0,0,0.2);
   width: 60px;
   line-height: 50px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 label[for=first_yes] {
@@ -76,7 +96,9 @@ label[for=first_no] {
 #first_no:checked ~ .switcher label[for=first_no] {
   color: #fff;
 }
+
 /* EMAIL NOTIFICATONS SETTINGS 2 */
+
 label[for=second_yes] {
   position: absolute;
   left: 0px;
@@ -105,7 +127,9 @@ label[for=second_no] {
 #second_no:checked ~ .switcher label[for=second_no] {
   color: #fff;
 }
+
 /* EMAIL NOTIFICATONS SETTINGS 3 */
+
 label[for=third_yes] {
   position: absolute;
   left: 0px;
@@ -134,7 +158,9 @@ label[for=third_no] {
 #third_no:checked ~ .switcher label[for=third_no] {
   color: #fff;
 }
+
 /* EMAIL NOTIFICATONS SETTINGS 4 */
+
 label[for=fourth_yes] {
   position: absolute;
   left: 0px;
@@ -163,42 +189,47 @@ label[for=fourth_no] {
 #fourth_no:checked ~ .switcher label[for=fourth_no] {
   color: #fff;
 }
+
+
+
+
+
+
 /* FACEBOOK BUTTON*/
-.facebook {
+
+.facebook{
   -webkit-font-smoothing: antialiased;
-  background-color: #455ca8;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: inline-block;
-  fill: none;
-  font-family: 'Helvetica Neue', 'Open Sans', Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  height: 50px;
-  line-height: 20px;
-  margin-bottom: 0px;
-  margin-left: 6px;
-  margin-right: 17px;
-  margin-top: 0px;
-  opacity: 1;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
-  stroke: #ffffff;
-  stroke-dasharray: 121px;
-  stroke-dashoffset: 121px;
-  stroke-linecap: round;
-  stroke-width: 4px;
-  text-align: center;
-  text-decoration: none;
+background-color: rgb(69, 92, 168);
+border-bottom-left-radius: 100px;
+border-bottom-right-radius: 100px;
+border-top-left-radius: 100px;
+border-top-right-radius: 100px;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+display: inline-block;
+fill: none;
+font-family: 'Helvetica Neue', 'Open Sans', Arial, sans-serif;
+font-size: 14px;
+font-weight: 300;
+height: 50px;
+line-height: 20px;
+margin-bottom: 0px;
+margin-left: 6px;
+margin-right: 17px;
+margin-top: 0px;
+opacity: 1;
+padding-bottom: 15px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 15px;
+stroke: #ffffff;
+stroke-dasharray: 121px;
+stroke-dashoffset: 121px;
+stroke-linecap: round;
+stroke-width: 4px;
+text-align: center;
+text-decoration: none;
 }
-.facebook:hover {
+.facebook:hover{
   color: white;
 }
-
-/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,72 @@
+@import "../wundership.less";
+
+@background: #f0f0f0;
+
+.auth_area{
+    background-color: @background;
+
+    #login, #register{
+    	padding-top: 30px;
+    	position: relative;
+    	::-webkit-input-placeholder { /* WebKit browsers */
+		    color:    #434343 !important;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #434343 !important;
+		   opacity:  1;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #434343 !important;
+		   opacity:  1;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10+ */
+		   color:    #434343 !important;
+		}
+    }
+
+    #login{ 
+	    .choose_container{
+	    text-align: center;
+		}
+		#password_input{
+		    margin-top: 5px;
+		}
+	}
+
+	#choose_register{
+		padding-top: 30px;
+    	position: relative;
+    	.choose_container{
+    		text-align: center;
+    	}
+	}
+
+
+	#register{ 
+		.input_label{
+		  margin-top: 3px;
+		  margin-left: 3px;
+		}
+		.very_small{
+		  font-size: 15px;
+		  margin: 4px;
+		}
+		.control_style{
+		  margin-top: -12px;
+		  margin-bottom: 7px;
+		}
+		.grey_row{
+		    background-color: #f2f2f2;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		}
+		.white_row{
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		}
+		#phone_number_input{
+		    margin-left: -20px;
+		}
+	}
+}
+

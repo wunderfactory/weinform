@@ -13422,20 +13422,18 @@ td.visible-print {
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
+.check {
+  color: #2fd155;
+}
+/* _com = complementary color */
 /* EMAIL NOTIFICATONS SETTINGS */
-
 .switcher {
   position: absolute;
   width: 150px;
   height: 50px;
   text-align: center;
   background: #4cd964;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  -webkit-border-radius: 25px;
   border-radius: 25px;
 }
 .switcher span {
@@ -13448,16 +13446,9 @@ td.visible-print {
   background: #fff;
   display: block;
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 .switcher span:after {
@@ -13468,12 +13459,7 @@ td.visible-print {
   height: 12px;
   margin-top: -8px;
   background: #fff;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 input[type=radio] {
@@ -13481,13 +13467,9 @@ input[type=radio] {
 }
 .switcher label {
   cursor: pointer;
-  color: rgba(0,0,0,0.2);
+  color: rgba(0, 0, 0, 0.2);
   width: 60px;
   line-height: 50px;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 label[for=first_yes] {
@@ -13518,12 +13500,7 @@ label[for=first_no] {
 #first_no:checked ~ .switcher label[for=first_no] {
   color: #fff;
 }
-
-
 /* EMAIL NOTIFICATONS SETTINGS 2 */
-
-
-
 label[for=second_yes] {
   position: absolute;
   left: 0px;
@@ -13552,12 +13529,7 @@ label[for=second_no] {
 #second_no:checked ~ .switcher label[for=second_no] {
   color: #fff;
 }
-
-
 /* EMAIL NOTIFICATONS SETTINGS 3 */
-
-
-
 label[for=third_yes] {
   position: absolute;
   left: 0px;
@@ -13586,13 +13558,7 @@ label[for=third_no] {
 #third_no:checked ~ .switcher label[for=third_no] {
   color: #fff;
 }
-
-
-
 /* EMAIL NOTIFICATONS SETTINGS 4 */
-
-
-
 label[for=fourth_yes] {
   position: absolute;
   left: 0px;
@@ -13621,50 +13587,45 @@ label[for=fourth_no] {
 #fourth_no:checked ~ .switcher label[for=fourth_no] {
   color: #fff;
 }
-
-
-
-
-
-
 /* FACEBOOK BUTTON*/
-
-.facebook{
+.facebook {
   -webkit-font-smoothing: antialiased;
-background-color: rgb(69, 92, 168);
-border-bottom-left-radius: 100px;
-border-bottom-right-radius: 100px;
-border-top-left-radius: 100px;
-border-top-right-radius: 100px;
-box-sizing: border-box;
-color: rgb(255, 255, 255);
-display: inline-block;
-fill: none;
-font-family: 'Helvetica Neue', 'Open Sans', Arial, sans-serif;
-font-size: 14px;
-font-weight: 300;
-height: 50px;
-line-height: 20px;
-margin-bottom: 0px;
-margin-left: 6px;
-margin-right: 17px;
-margin-top: 0px;
-opacity: 1;
-padding-bottom: 15px;
-padding-left: 15px;
-padding-right: 15px;
-padding-top: 15px;
-stroke: #ffffff;
-stroke-dasharray: 121px;
-stroke-dashoffset: 121px;
-stroke-linecap: round;
-stroke-width: 4px;
-text-align: center;
-text-decoration: none;
+  background-color: #455ca8;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: inline-block;
+  fill: none;
+  font-family: 'Helvetica Neue', 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 20px;
+  margin-bottom: 0px;
+  margin-left: 6px;
+  margin-right: 17px;
+  margin-top: 0px;
+  opacity: 1;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  stroke: #ffffff;
+  stroke-dasharray: 121px;
+  stroke-dashoffset: 121px;
+  stroke-linecap: round;
+  stroke-width: 4px;
+  text-align: center;
+  text-decoration: none;
 }
-.facebook:hover{
+.facebook:hover {
   color: white;
 }
+
+/*# sourceMappingURL=buttons.css.map */
 /*!
  * Cropper v0.9.1
  * https://github.com/fengyuanchen/cropper
@@ -20072,6 +20033,79 @@ button.close {
   color: #2fd155;
 }
 /* _com = complementary color */
+.auth_area {
+  background-color: #f0f0f0;
+}
+.auth_area #login,
+.auth_area #register {
+  padding-top: 30px;
+  position: relative;
+}
+.auth_area #login ::-webkit-input-placeholder,
+.auth_area #register ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #434343 !important;
+}
+.auth_area #login :-moz-placeholder,
+.auth_area #register :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #434343 !important;
+  opacity: 1;
+}
+.auth_area #login ::-moz-placeholder,
+.auth_area #register ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #434343 !important;
+  opacity: 1;
+}
+.auth_area #login :-ms-input-placeholder,
+.auth_area #register :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #434343 !important;
+}
+.auth_area #login .choose_container {
+  text-align: center;
+}
+.auth_area #login #password_input {
+  margin-top: 5px;
+}
+.auth_area #choose_register {
+  padding-top: 30px;
+  position: relative;
+}
+.auth_area #choose_register .choose_container {
+  text-align: center;
+}
+.auth_area #register .input_label {
+  margin-top: 3px;
+  margin-left: 3px;
+}
+.auth_area #register .very_small {
+  font-size: 15px;
+  margin: 4px;
+}
+.auth_area #register .control_style {
+  margin-top: -12px;
+  margin-bottom: 7px;
+}
+.auth_area #register .grey_row {
+  background-color: #f2f2f2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.auth_area #register .white_row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.auth_area #register #phone_number_input {
+  margin-left: -20px;
+}
+
+/*# sourceMappingURL=../views/auth_area.css.map */
+.check {
+  color: #2fd155;
+}
+/* _com = complementary color */
 /* OVERALL CONTAINER */
 .dashboard_area {
   width: 100%;
@@ -20523,6 +20557,10 @@ button.close {
 .profile_area #user_profile .check_container {
   float: left;
   padding-top: 6px;
+}
+.profile_area #user_profile .check_container i {
+  color: #2fd155;
+  font-size: 23px;
 }
 .profile_area #user_profile .text_container {
   float: left;

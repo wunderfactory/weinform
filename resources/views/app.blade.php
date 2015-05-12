@@ -29,6 +29,7 @@
 	<link href="{{ asset('/css/views/dashboard_area.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/product_area.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/profile_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/views/auth_area.css') }}" rel="stylesheet">
 
     @yield('style')
 

@@ -81,6 +81,10 @@
   float: left;
   padding-top: 6px;
 }
+.profile_area #user_profile .check_container i {
+  color: #2fd155;
+  font-size: 23px;
+}
 .profile_area #user_profile .text_container {
   float: left;
   margin-left: 13px;

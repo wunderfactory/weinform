@@ -1,0 +1,73 @@
+.check {
+  color: #2fd155;
+}
+/* _com = complementary color */
+.auth_area {
+  background-color: #f0f0f0;
+}
+.auth_area #login,
+.auth_area #register {
+  padding-top: 30px;
+  position: relative;
+}
+.auth_area #login ::-webkit-input-placeholder,
+.auth_area #register ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #434343 !important;
+}
+.auth_area #login :-moz-placeholder,
+.auth_area #register :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #434343 !important;
+  opacity: 1;
+}
+.auth_area #login ::-moz-placeholder,
+.auth_area #register ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #434343 !important;
+  opacity: 1;
+}
+.auth_area #login :-ms-input-placeholder,
+.auth_area #register :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #434343 !important;
+}
+.auth_area #login .choose_container {
+  text-align: center;
+}
+.auth_area #login #password_input {
+  margin-top: 5px;
+}
+.auth_area #choose_register {
+  padding-top: 30px;
+  position: relative;
+}
+.auth_area #choose_register .choose_container {
+  text-align: center;
+}
+.auth_area #register .input_label {
+  margin-top: 3px;
+  margin-left: 3px;
+}
+.auth_area #register .very_small {
+  font-size: 15px;
+  margin: 4px;
+}
+.auth_area #register .control_style {
+  margin-top: -12px;
+  margin-bottom: 7px;
+}
+.auth_area #register .grey_row {
+  background-color: #f2f2f2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.auth_area #register .white_row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.auth_area #register #phone_number_input {
+  margin-left: -20px;
+}
+
+/*# sourceMappingURL=../views/auth_area.css.map */

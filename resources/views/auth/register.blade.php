@@ -2,57 +2,9 @@
 
 @section('content')
 
-<style type="text/css">
-#background{
-    background-color: #f0f0f0;
-}
-.register{
-    padding-top: 30px;
-    position: relative; 
-}
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #434343 !important;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #434343 !important;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #434343 !important;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #434343 !important;
-}
-.input_label{
-  margin-top: 3px;
-  margin-left: 3px;
-}
-.very_small{
-  font-size: 15px;
-  margin: 4px;
-}
-.control_style{
-  margin-top: -12px;
-  margin-bottom: 7px;
-}
-.grey_row{
-    background-color: #f2f2f2;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.white_row{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#phone_number_input{
-    margin-left: -20px;
-}
-</style>
+<div class="auth_area">
 
-<div id="background">
-
-        <div class="container register">
+        <div id="register" class="container">
         	<div class="row">
         		<div class="col-md-6 col-md-offset-3">
 				@if (count($errors) > 0)
@@ -66,15 +18,15 @@
 					</div>
 				@endif
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="warningbox">
-                        <div class="warningbox_header">
-                            <div class="col-md-1"><i class="pe-7s-gleam box_icon_large"></i></div>
-                            <div class="col-md-10 box_heading_container"><p class="box_white"><strong>Gleich geschafft!</strong></p></div> 
+                        <div class="header">
+                            <div class="col-md-1"><i class="pe-7s-gleam"></i></div>
+                            <div class="col-md-10"><p><strong>Gleich geschafft!</strong></p></div> 
                         </div>
-                        <div class="warningbox_content">
+                        <div class="content">
                             <div class="row white_row">
                                 <div class="col-md-6">
                                     <label class="input_label"><p class="box_rose">{{ Lang::get('auth/register.first_name') }}</p></label>
@@ -154,7 +106,6 @@
 </div>
 
 @endsection
-
 @section('script')
 <script type="text/javascript">
 
