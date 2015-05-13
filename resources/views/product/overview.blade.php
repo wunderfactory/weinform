@@ -7,6 +7,8 @@
     <div id="overview" class="container">
         <div class="row top_down">
 
+          @include('notybox.do_mail_verification')
+
           <div id="head_text_wrapper">
               <h2>Hi {{ $user->first_name }}!</h2>
               <p>Mitnehmen oder Versenden?</p>
@@ -44,18 +46,15 @@
 
     <!------------------------------- -->
 
-                @if(!$user->profile->languages && !$user->profile->hometown && !$user->profile->job && !$user->profile->bio)
-                    <div class="warningbox">
-                        <div class="header">
-                            <div class="col-md-1"><i class="pe-7s-camera"></i></div>
-                            <div class="col-md-8"><p><strong>Hi {{ $user->first_name }}! Bitte vervollständige Dein Profil.</strong></p></div>
+                <br>
 
-                        </div>
-                        <div class="content">
-                            <p>Bitte <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile/') }}">vervollständige dein Profil</a>, damit es für andere Nutzer <strong>vertrauenswürdiger</strong> erscheint. Füge ein <strong>Profilbild</strong> hinzu.</p>
-                        </div>
-                    </div>
-                @endif
+                @include('notybox.do_complete_profile')
+
+                @include('notybox.do_profile_picture')
+
+                @include('notybox.do_id_verification')
+
+                @include('notybox.id_verification_pending')
 
                 <div class="infobox_large_image">
                     <div class="left">

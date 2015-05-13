@@ -144,10 +144,17 @@
                   <hr>
                   @endif
                   <div class="row">
+                      @if(!$user->emails()->first()->verified && !$user->phoneNumbers->first()->verified && !$user->facebookUser)
+                      <div class="col-md-8">
+                        <div class="text_container"><p class="info_text">{{ $user->first_name }} hat noch keine Verifizierungen hinzugefügt.</p></div>
+                      </div>
+                      @endif
+                      @if($user->emails()->first()->verified)
                       <div class="col-md-4">
                         <div class="check_container"><i class="pe-7s-check"></i></div>
                         <div class="text_container"><p>E-Mail-Adresse<br>Bestätigt</p></div>
                       </div>
+                      @endif
                       @if($user->phoneNumbers->first()->verified)                   
                       <div class="col-md-4">
                         <div class="check_container"><i class="pe-7s-check"></i></div>
