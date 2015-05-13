@@ -13745,7 +13745,7 @@ label[for=fourth_no] {
   padding: 15px;
 }
 .infobox .content p {
-  color: #ea555c;
+  color: #00bc23;
 }
 .infobox .content .info_text {
   color: #585858;
@@ -13773,7 +13773,7 @@ label[for=fourth_no] {
   padding: 15px;
 }
 .infobox_image .content p {
-  color: #ea555c;
+  color: #00bc23;
 }
 .infobox_image .content .info_text {
   color: #585858;
@@ -13788,7 +13788,7 @@ label[for=fourth_no] {
 .warningbox {
   width: 100%;
   background-color: white;
-  border: 1px solid #ea555c;
+  border: 1px solid #00bc23;
   margin-bottom: 20px;
 }
 .warningbox .header {
@@ -13797,8 +13797,8 @@ label[for=fourth_no] {
   height: 60px;
   padding: 15px;
   color: white;
-  background-color: #ea555c;
-  border-bottom: 1px solid #ea555c;
+  background-color: #00bc23;
+  border-bottom: 1px solid #00bc23;
   vertical-align: center;
 }
 .warningbox .header p {
@@ -13837,7 +13837,7 @@ label[for=fourth_no] {
 /* ACTIONBOX TALL */
 .tall_actionbox {
   max-width: 200px;
-  background-color: #ea555c;
+  background-color: #00bc23;
   margin-top: 20px;
   padding: 20px;
   position: relative;
@@ -13894,7 +13894,7 @@ label[for=fourth_no] {
   color: #585858;
 }
 .infobox_large_image .left .content p {
-  color: #ea555c;
+  color: #00bc23;
 }
 .infobox_large_image .right {
   float: left;
@@ -20124,7 +20124,7 @@ button.close {
   max-width: 980px !important;
 }
 .dashboard_area #dashboard_area_nav .active_topbar {
-  color: #ea555c !important;
+  color: #00bc23 !important;
 }
 .dashboard_area #index,
 .dashboard_area #inbox {
@@ -20147,7 +20147,7 @@ button.close {
   height: 200px;
   margin-top: 0px;
   position: absolute;
-  background-color: #ea555c;
+  background-color: #00bc23;
   display: none;
   opacity: 0.9;
   padding-top: 50px;
@@ -20196,11 +20196,11 @@ button.close {
 }
 .dashboard_area #account_sidebar .side_navbar_active,
 .dashboard_area #profile_sidebar .side_navbar_active {
-  color: #ea555c !important;
+  color: #00bc23 !important;
 }
 .dashboard_area #account_sidebar .active,
 .dashboard_area #profile_sidebar .active {
-  color: #ea555c !important;
+  color: #00bc23 !important;
 }
 .dashboard_area #notifications,
 .dashboard_area #payment,
@@ -20411,7 +20411,7 @@ button.close {
 }
 .product_area #overview #pickup_container {
   height: 200px;
-  background-color: #ea555c;
+  background-color: #00bc23;
   padding: 20px;
   margin-top: 30px;
 }
@@ -20508,7 +20508,7 @@ button.close {
   height: 200px;
   margin-top: 0px;
   position: absolute;
-  background-color: #ea555c;
+  background-color: #00bc23;
   display: none;
   opacity: 0.9;
   padding-top: 50px;

@@ -108,7 +108,7 @@
   padding: 15px;
 }
 .infobox .content p {
-  color: #ea555c;
+  color: #00bc23;
 }
 .infobox .content .info_text {
   color: #585858;
@@ -136,7 +136,7 @@
   padding: 15px;
 }
 .infobox_image .content p {
-  color: #ea555c;
+  color: #00bc23;
 }
 .infobox_image .content .info_text {
   color: #585858;
@@ -151,7 +151,7 @@
 .warningbox {
   width: 100%;
   background-color: white;
-  border: 1px solid #ea555c;
+  border: 1px solid #00bc23;
   margin-bottom: 20px;
 }
 .warningbox .header {
@@ -160,8 +160,8 @@
   height: 60px;
   padding: 15px;
   color: white;
-  background-color: #ea555c;
-  border-bottom: 1px solid #ea555c;
+  background-color: #00bc23;
+  border-bottom: 1px solid #00bc23;
   vertical-align: center;
 }
 .warningbox .header p {
@@ -200,7 +200,7 @@
 /* ACTIONBOX TALL */
 .tall_actionbox {
   max-width: 200px;
-  background-color: #ea555c;
+  background-color: #00bc23;
   margin-top: 20px;
   padding: 20px;
   position: relative;
@@ -257,7 +257,7 @@
   color: #585858;
 }
 .infobox_large_image .left .content p {
-  color: #ea555c;
+  color: #00bc23;
 }
 .infobox_large_image .right {
   float: left;
