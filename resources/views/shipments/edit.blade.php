@@ -62,6 +62,10 @@
                 @endif
             </section>
             <section>
+                <h3>Zeit</h3>
+                @include('shipments.edit.details', ['shipment' => $shipment])
+            </section>
+            <section>
                 <h3>Größe</h3>
                 @if($shipment->size_id)
                     <p>{{ $shipment->size->name }} <small>{{ $shipment->size->description }}</small></p>
