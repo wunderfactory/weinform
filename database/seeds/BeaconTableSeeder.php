@@ -8,7 +8,7 @@ class BeaconTableSeeder extends Seeder {
 	{
 		Address::create([
 			'title'         => 'Bahnhof Wilhelmshöhe',
-			'address'       => 'Grüner Waldweg 57',
+			'street'        => 'Grüner Waldweg 57',
 			'city'          => 'Kassel',
 			'zip'           => '34121',
 			'user_id'       => 4
@@ -16,7 +16,7 @@ class BeaconTableSeeder extends Seeder {
 
 		Address::create([
 			'title'         => 'OBI Parkplatz',
-			'address'       => 'Elstalgraben',
+			'street'        => 'Elstalgraben',
 			'city'          => 'Göttingen',
 			'zip'           => '37079',
 			'user_id'       => 4
@@ -24,7 +24,7 @@ class BeaconTableSeeder extends Seeder {
 
 		Address::create([
 			'title'         => 'Raststätte',
-			'address'       => 'Asseburgstraße 11',
+			'street'        => 'Asseburgstraße 11',
 			'city'          => 'Hannover',
 			'zip'           => '30451',
 			'user_id'       => 4
@@ -32,7 +32,7 @@ class BeaconTableSeeder extends Seeder {
 
 		Address::create([
 			'title'         => 'Hauptbahnhof Bremen',
-			'address'       => 'Bahnhofsplatz 18',
+			'street'        => 'Bahnhofsplatz 18',
 			'city'          => 'Bremen',
 			'zip'           => '28195',
 			'user_id'       => 4
@@ -40,7 +40,7 @@ class BeaconTableSeeder extends Seeder {
 
 		Address::create([
 			'title'         => 'Jungfernstieg',
-			'address'       => 'Reesendamm 3',
+			'street'        => 'Reesendamm 3',
 			'city'          => 'Hamburg',
 			'zip'           => '20095',
 			'user_id'       => 4
@@ -48,7 +48,7 @@ class BeaconTableSeeder extends Seeder {
 
 		Address::create([
 			'title'         => 'Autobahnraststätte Fürholzen',
-			'address'       => 'Fürholzen',
+			'street'        => 'Fürholzen',
 			'city'          => 'Fürholzen',
 			'zip'           => '85376',
 			'user_id'       => 4
@@ -56,7 +56,7 @@ class BeaconTableSeeder extends Seeder {
 
 		Address::create([
 			'title'         => 'Raststätte Taunusblick Eschborn',
-			'address'       => 'A5',
+			'street'        => 'A5',
 			'city'          => 'Eschborn',
 			'zip'           => '65760',
 			'user_id'       => 4
