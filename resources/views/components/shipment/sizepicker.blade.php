@@ -21,8 +21,8 @@ input{
                         <h4>{{ $size->name }}<h4>
                         <p>{{ $size->description }}</p>
                     </label>
+                    <input value="{{ $size->id }}" data-toggle="radio" type="radio" name="{{ $name }}" {{ $selected == $size ? 'checked' : '' }}>
                 </div>
-                <input value="{{ $size->id }}" data-toggle="radio" type="radio" name="{{ $name }}" {{ $selected == $size ? 'checked' : '' }}>
             </div>
         </div>
         @endforeach
