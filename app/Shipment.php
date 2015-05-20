@@ -1,6 +1,8 @@
 <?php namespace Wundership;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 use Wundership\Traits\Publishes;
 
 class Shipment extends Model {
@@ -76,24 +78,64 @@ class Shipment extends Model {
 		}
 	}
 
-	public function getIsCompleteAttribute()
+	public function validateIsComplete()
 	{
-		if($this->size && $this->origin && $this->destination && $this->typeable_id && $this->typeable_type)
+		if($this->size
+			&& $this->origin
+			&& $this->destination
+			&& $this->typeable_id
+			&& $this->typeable_type
+			&& $this->collect_after != ''
+			&& $this->collect_before != ''
+			&& $this->deliver_after != ''
+			&& $this->deliver_before != '')
 		{
-			if($shipment->typeable_type == '')
+			$rules = [
+				'typeable_id' => 'required',
+				'typeable_type' => 'required'
+			];
+			if($this->typeable_type == 'Wundership\Immediate')
 			{
-				$v = Validator::make($input,
-					[
-						'collect_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::now(),
-						'deliver_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::createFromFormat('d.m.Y H:i', $input['collect_after'])->addHours(3),
-					]
-				);
+				$rules = array_merge($rules, [
+					'collect_after' => 'required|after:' . Carbon::now()->addHours(3),
+					'collect_before' => 'required|after:' . $this->collect_after->addHours(3)->subSecond(),
+					'deliver_after' => 'required|after:' . $this->collect_before->addHours(3),
+					'deliver_before' => 'required|after:' . $this->deliver_after->addHours(3)->subSecond(),
+				]);
 			}
+			else
+			{
+				$rules = array_merge($rules, [
+					'collect_after' => 'required|after:' . Carbon::now()->addHours(3),
+					'collect_before' => 'required|after:' . $this->collect_after->addHours(3),
+					'deliver_after' => 'required|after:' . $this->collect_before->addHours(3),
+					'deliver_before' => 'required|after:' . $this->deliver_after->addHours(3),
+				]);
+			}
+
+			$v = Validator::make([
+				'typeable_id' => $this->typeable_id,
+				'typeable_type' => $this->typeable_type,
+				'collect_after' => $this->collect_after,
+				'collect_before' => $this->collect_before,
+				'deliver_after' => $this->deliver_after,
+				'deliver_before' => $this->deliver_before
+			], $rules);
+
 			if($v->fails())
 			{
-				return redirect()->back()->withErrors($v->errors());
+				return [false, $v->messages()];
+			}
+			else
+			{
+				return [true];
 			}
 		}
-		return false;
+		return [false, 'if ding'];
+	}
+
+	public function getIsCompleteAttribute()
+	{
+		return $this->validateIsComplete()[0];
 	}
 }

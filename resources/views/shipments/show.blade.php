@@ -22,6 +22,8 @@
 
 @section('content')
     <div class="container">
-        <?php print_r($shipment) ?>
+        <pre>
+        <?php print_r($shipment->toArray()) ?>
+        </pre>
     </div>
 @endsection

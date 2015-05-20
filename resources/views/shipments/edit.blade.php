@@ -26,6 +26,11 @@
                 </div>
                 <div class="content">
                     <p>Gib alle Daten an, um sie zu veröffentlichen.</p>
+                    @if(!$shipment->validateIsComplete()[0])
+                    <pre>
+                        <?php print_r($shipment->validateIsComplete()[1]) ?>
+                    </pre>
+                    @endif
                 </div> 
             </div>
         </div>
