@@ -77,7 +77,59 @@
 	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
     <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
 
+    <!-- Datetimepicker -->
+    <script src="{{ asset('datetimepicker/jquery.datetimepicker.js') }}"></script>
+
     @yield('script')
+
+    <script>
+        jQuery('#datetimepicker_collect').datetimepicker({
+            lang:'de',
+            i18n: {
+                de: {
+                    months: [
+                        'Januar','Februar','März','April',
+                        'Mai','Juni','Juli','August',
+                        'September','Oktober','November','Dezember'
+                    ],
+                    dayOfWeek: [
+                        "So.", "Mo", "Di", "Mi",
+                        "Do", "Fr", "Sa."
+                    ]
+                }
+            },
+            timepicker:true,
+            format:'d.m.Y H:i',
+            minTime: '08:00',
+            maxTime: '20:30',
+            inline: true,
+            mask: true,
+            step: 30
+        });
+        jQuery('#datetimepicker_deliver').datetimepicker({
+            lang:'de',
+            i18n: {
+                de: {
+                    months: [
+                        'Januar','Februar','März','April',
+                        'Mai','Juni','Juli','August',
+                        'September','Oktober','November','Dezember'
+                    ],
+                    dayOfWeek: [
+                        "So.", "Mo", "Di", "Mi",
+                        "Do", "Fr", "Sa."
+                    ]
+                }
+            },
+            timepicker:true,
+            format:'d.m.Y H:i',
+            minTime: '08:00',
+            maxTime: '20:30',
+            inline: true,
+            mask: true,
+            step: 30
+        });
+    </script>
 
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
@@ -89,6 +90,7 @@ class ShipmentController extends Controller {
 	 */
 	public function update($shipment)
 	{
+		dd(Input::all());
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
