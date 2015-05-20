@@ -1,8 +1,10 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
@@ -90,8 +92,33 @@ class ShipmentController extends Controller {
 	 */
 	public function update($shipment)
 	{
-		dd(Input::all());
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
+		$input = Input::only(
+			[
+				'collect_after',
+				'deliver_after'
+			]
+		);
+		$v = Validator::make($input,
+			[
+				'collect_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::now(),
+				'deliver_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::createFromFormat('d.m.Y H:i', $input['collect_after'])->addHours(3),
+			]
+		);
+
+		if($v->fails())
+		{
+			return redirect()->back()->withErrors($v->errors());
+		}
+
+		$shipment->collect_after = Carbon::createFromFormat('d.m.Y H:i', $input['collect_after']);
+		$shipment->collect_before = Carbon::createFromFormat('d.m.Y H:i', $input['collect_after'])->addHours(3);
+		$shipment->deliver_after = Carbon::createFromFormat('d.m.Y H:i', $input['deliver_after']);
+		$shipment->deliver_before = Carbon::createFromFormat('d.m.Y H:i', $input['deliver_after'])->addHours(3);
+
+		$shipment->save();
+
+		return redirect(route('shipments.edit', $shipment));
 	}
 
 	/**

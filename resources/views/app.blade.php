@@ -77,12 +77,21 @@
 	<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
     <script src="{{ URL::asset('gsd/js/demo.js') }}"></script>
 
+    <!-- Moment -->
+    <script src="{{ asset('js/moment-with-locales.js') }}"></script>
+
     <!-- Datetimepicker -->
     <script src="{{ asset('datetimepicker/jquery.datetimepicker.js') }}"></script>
 
     @yield('script')
 
     <script>
+        Date.parseDate = function( input, format ){
+            return moment(input,format).toDate();
+        };
+        Date.prototype.dateFormat = function( format ){
+            return moment(this).format(format);
+        };
         jQuery('#datetimepicker_collect').datetimepicker({
             lang:'de',
             i18n: {
@@ -93,18 +102,19 @@
                         'September','Oktober','November','Dezember'
                     ],
                     dayOfWeek: [
-                        "So.", "Mo", "Di", "Mi",
-                        "Do", "Fr", "Sa."
+                        "So", "Mo", "Di", "Mi",
+                        "Do", "Fr", "Sa"
                     ]
                 }
             },
             timepicker:true,
-            format:'d.m.Y H:i',
-            minTime: '08:00',
-            maxTime: '20:30',
-            inline: true,
-            mask: true,
-            step: 30
+            format:'DD.MM.YYYY HH:mm',
+            formatTime:'HH:mm',
+            formatDate:'DD.MM.YYYY',
+            inline: false,
+            minDate: moment(),
+            defaultDate: moment(),
+            defaultTime: moment()
         });
         jQuery('#datetimepicker_deliver').datetimepicker({
             lang:'de',
@@ -116,18 +126,19 @@
                         'September','Oktober','November','Dezember'
                     ],
                     dayOfWeek: [
-                        "So.", "Mo", "Di", "Mi",
-                        "Do", "Fr", "Sa."
+                        "So", "Mo", "Di", "Mi",
+                        "Do", "Fr", "Sa"
                     ]
                 }
             },
             timepicker:true,
-            format:'d.m.Y H:i',
-            minTime: '08:00',
-            maxTime: '20:30',
-            inline: true,
-            mask: true,
-            step: 30
+            format:'DD.MM.YYYY HH:mm',
+            formatTime:'HH:mm',
+            formatDate:'DD.MM.YYYY',
+            inline: false,
+            minDate: moment(),
+            defaultDate: moment(),
+            defaultTime: moment()
         });
     </script>
 

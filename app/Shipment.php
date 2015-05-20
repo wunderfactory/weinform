@@ -14,6 +14,18 @@ class Shipment extends Model {
 		//TODO
 	];
 
+	public function getDates()
+	{
+		return [
+			'created_at',
+			'updated_at',
+			'collect_after',
+			'deliver_after',
+			'collect_before',
+			'deliver_before',
+		];
+	}
+
 	protected $appends = [
 		'is_published',
 		'is_complete'
@@ -68,7 +80,19 @@ class Shipment extends Model {
 	{
 		if($this->size && $this->origin && $this->destination && $this->typeable_id && $this->typeable_type)
 		{
-			return true;
+			if($shipment->typeable_type == '')
+			{
+				$v = Validator::make($input,
+					[
+						'collect_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::now(),
+						'deliver_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::createFromFormat('d.m.Y H:i', $input['collect_after'])->addHours(3),
+					]
+				);
+			}
+			if($v->fails())
+			{
+				return redirect()->back()->withErrors($v->errors());
+			}
 		}
 		return false;
 	}
