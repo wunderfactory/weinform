@@ -37,7 +37,7 @@ class ShipmentController extends Controller {
 	 */
 	public function create()
 	{
-		return view('shipments.create');
+		return $this->store();
 	}
 
 	/**
