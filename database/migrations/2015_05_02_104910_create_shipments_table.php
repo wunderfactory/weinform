@@ -19,6 +19,10 @@ class CreateShipmentsTable extends Migration {
 			$table->integer('size_id');
 			$table->integer('origin_id');
 			$table->integer('destination_id');
+			$table->dateTime('collect_after');
+			$table->dateTime('collect_before');
+			$table->dateTime('deliver_after');
+			$table->dateTime('deliver_before');
 			$table->morphs('typeable');
 			$table->boolean('published_at')->nullable();
 			$table->timestamps();
