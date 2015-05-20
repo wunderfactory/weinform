@@ -179,7 +179,7 @@
                     <p class="grey"><strong>Bewertungen</strong></p>
                 </div>
                 <div class="content">
-                    <p>{{ $user->first_name }} hat noch keine <strong>Bewertungen</strong> erhalten.</p>
+                    <p class="info_text">{{ $user->first_name }} hat noch keine <strong>Bewertungen</strong> erhalten.</p>
                 </div> 
               </div><!-- /infobox -->
 

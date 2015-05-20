@@ -29,20 +29,20 @@
                       <input name="_method" type="hidden" value="PUT">
 
 
-                      <label class="control-label input_label"><p>Hometown</p></label>
+                      <label class="control-label input_label"><p>Wohnort</p></label>
                       <input type="text" class="form-control control_style" name="hometown" value="{{ old('hometown')}}">
 
                       <br>
 
                       <p class="info_text">Die nachfolgenden Angaben sind <strong>optional</strong>. Dein Profil wird aber <strong>vollständiger</strong>, wenn Du auch hier etwas schreibst.</p>
 
-                      <label class="control-label input_label"><p>Job</p></label>
+                      <label class="control-label input_label"><p>Dein Beruf oder deine Tätigkeit</p></label>
                       <input type="text" class="form-control control_style" name="job" value="{{ old('job') }}">
 
-                      <label class="control-label input_label"><p>Languages</p></label>
+                      <label class="control-label input_label"><p>Sprachen, die Du sprichst</p></label>
                       <input type="text" class="form-control control_style" name="languages" value="{{ old('languages') }}">
 
-                      <label class="control-label input_label"><p>Short Description about yourself</p></label>
+                      <label class="control-label input_label"><p>Eine kurze Beschreibung über Dich</p></label>
                       <input type="text" class="form-control control_style" name="bio" value="{{ old('bio') }}">
 
                       <br>

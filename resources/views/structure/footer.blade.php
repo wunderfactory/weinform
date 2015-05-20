@@ -6,22 +6,22 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/') }}">
                                Home
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/howitworks')}}">
                                 {{ Lang::get('footer/footer.how_it_works') }}
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/press')}}">
                                 {{ Lang::get('footer/footer.press') }}
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/about')}}">
                                 {{ Lang::get('footer/footer.about_us') }}
                             </a>
                         </li>
@@ -33,22 +33,22 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/contact')}}">
                                {{ Lang::get('footer/footer.contact_us') }}
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/howitworks')}}">
                                {{ Lang::get('footer/footer.how_it_works') }}
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/faq')}}">
                                 FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/pickup')}}">
                                 {{ Lang::get('footer/footer.pickup') }}
                             </a>
                         </li>
@@ -60,16 +60,15 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#" class="btn btn-social btn-facebook btn-simple">
+                            <a href="www.facebook.com/wundership" class="btn btn-social btn-facebook btn-simple">
                                 <i class="fa fa-facebook-square"></i> Facebook
                             </a>
                         </li>
-                        <li>
-                           <a href="#" class="btn btn-social btn-twitter btn-simple">
+                        {{-- <li>
+                           <a href="www.twitter.com/wundership" class="btn btn-social btn-twitter btn-simple">
                                 <i class="fa fa-twitter"></i> Twitter
                             </a>
-                        </li>
-                       
+                        </li> --}}
                     </ul>
                 </nav>
             </div>
@@ -80,18 +79,11 @@
                     <ul>
                         <li>
                             <a href="#" >
-                               <i class="fa fa-twitter"></i> <b>Wir sind am machen.</b>
+                               <i class="fa fa-twitter"></i> <b>Wir starten in die Beta-Phase! Mehr dazu im wundership-Blog.</b>
                                
-                               <hr class="hr-small">
+                              
                             </a>
                         </li>
-                        {{-- <li>
-                              <a href="#" >
-                               <i class="fa fa-twitter"></i>
-                               Und noch mehr am machen
-                            </a>
-                        </li> --}}
-                      
                     </ul>
                 </nav>
             </div>
@@ -99,7 +91,7 @@
         </div>
         <hr />
         <div class="copyright">
-            wundership, made with love
+            wundership, made with love in Hamburg
         </div>
     </div>
 </footer>  

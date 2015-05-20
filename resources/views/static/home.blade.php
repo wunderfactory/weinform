@@ -11,6 +11,9 @@
     padding-left: 100px;
     padding-right: 100px;
 }
+.parallax{
+    max-height: 300px !important;
+}
 </style>
 
 <div class="wrapper">

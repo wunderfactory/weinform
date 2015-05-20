@@ -60,7 +60,7 @@ class StaticController extends Controller {
 
 
 
-
+	
 
 
 
@@ -71,9 +71,40 @@ class StaticController extends Controller {
 
 	/* STATIC INFORMATION PAGES */
 
+	public function getHowitworks()
+	{
+		return view('static.static_information.how_it_works');
+	}
+
+	public function getAbout()
+	{
+		return view('static.static_information.about');
+	}
+	public function getPress()
+	{
+		return view('static.static_information.press');
+	}
+
 	public function getSecurity()
 	{
 		return view('static.static_information.security_informations');
+	}
+
+
+	/* SUPPORT */
+
+	public function getContact()
+	{
+		return view('static.support.contact');
+	}
+
+	public function getFaq()
+	{
+		return view('static.support.faq');
+	}
+	public function getPickup()
+	{
+		return view('static.static_information.pickup');
 	}
 
 	/* CALL TO ACTION PAGES */

@@ -7,7 +7,7 @@ return [
 		'about_us' => 'About us',
 
 	'help_support' => 'Help and Support',
-		'contact_us' => 'Kontaktiere uns',
+		'contact_us' => 'Contact us',
 		'how_it_works' => 'How it works',
 		'pickup' => 'Pickup parcels',
 	
