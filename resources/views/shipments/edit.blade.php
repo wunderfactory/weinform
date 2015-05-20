@@ -13,8 +13,7 @@
                     <p><strong>Deine Sendung ist komplett.</strong></p>
                 </div>
                 <div class="content">
-                    <p>Überprüfe alle Daten oder veröffentliche sie, um einen Fahrer zu finden.</p>
-                    <a class="btn btn-sm btn-default navbar-right navbar-btn">Jetzt Fahrer finden</a>
+                    <p>Überprüfe alle Daten oder veröffentliche sie, um einen Fahrer zu finden. <a href="{{ route('shipments.publish', $shipment) }}" class="btn btn-sm btn-default navbar-right navbar-btn">Jetzt Fahrer finden</a></p>
                 </div> 
             </div>
         </div>

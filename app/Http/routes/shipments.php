@@ -1,6 +1,8 @@
 <?php
 Route::resource('users.shipments',                      'UserShipmentController');
 Route::resource('shipments',                            'ShipmentController');
+Route::get('shipments/{shipment}/publish',              ['as' => 'shipments.publish', 'uses' => 'ShipmentController@publish']);
+Route::post('shipments/{shipment}/publish',             ['as' => 'shipments.dopublish', 'uses' => 'ShipmentController@doPublish']);
 Route::resource('shipments.origin',                     'ShipmentOriginController');
 Route::post('shipments/{shipment}/origin/select',       ['as' => 'shipments.origin.select', 'uses' => 'ShipmentOriginController@select']);
 Route::resource('shipments.destination',                'ShipmentDestinationController');

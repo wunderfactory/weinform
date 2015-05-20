@@ -131,11 +131,26 @@ class Shipment extends Model {
 				return [true];
 			}
 		}
-		return [false, 'if ding'];
+		return [false, 'es fehlen felder'];
 	}
 
 	public function getIsCompleteAttribute()
 	{
 		return $this->validateIsComplete()[0];
+	}
+
+	public function publish()
+	{
+		$val = $this->validateIsComplete();
+		if($val[0])
+		{
+			$this->published_at = Carbon::now();
+			$this->save();
+			return $val;
+		}
+		else
+		{
+			return $val[0];
+		}
 	}
 }

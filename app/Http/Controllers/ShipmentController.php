@@ -132,4 +132,46 @@ class ShipmentController extends Controller {
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 	}
 
+	public function publish($shipment)
+	{
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
+		if($shipment->is_published)
+		{
+			return redirect()->back();
+		}
+
+		return view('shipments.publish')->with('shipment', $shipment);
+	}
+
+	public function doPublish($shipment)
+	{
+		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
+		if($shipment->is_published)
+		{
+			return redirect()->back();
+		}
+
+		$v = Validator::make(Input::only('agb'),
+			[
+				'agb' => 'accepted'
+			]
+		);
+
+		if($v->fails())
+		{
+			return redirect()->back()->withErrors($v->errors());
+		}
+
+		$ret = $shipment->publish();
+
+		if($ret[0])
+		{
+			return redirect()->route('shipments.show', $shipment);
+		}
+		else
+		{
+			return redirect()->route('shipments.edit', $shipment)->withErrors($ret[1]);
+		}
+	}
+
 }
