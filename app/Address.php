@@ -12,6 +12,8 @@ class Address extends Model {
 		'zip'       => 'required|digits:5'
 	];
 
+	protected $fillable = ['title', 'street', 'city', 'zip'];
+
 	public function user()
 	{
 		return $this->belongsTo('Wundership\User');

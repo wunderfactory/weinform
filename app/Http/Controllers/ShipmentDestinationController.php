@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+use Wundership\Address;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
@@ -37,6 +39,9 @@ class ShipmentDestinationController extends Controller {
 	public function create($shipment)
 	{
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
+
+		return view('shipments.edit.destination.create')
+			->with('shipment', $shipment);
 	}
 
 	/**
@@ -47,6 +52,22 @@ class ShipmentDestinationController extends Controller {
 	public function store($shipment)
 	{
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
+
+		$input = Input::only([
+			'title',
+			'street',
+			'city',
+			'zip'
+		]);
+
+		$v = Validator::make($input, Address::$rules);
+
+		if($v->fails())
+		{
+			return redirect()->back()->withErrors($v->errors());
+		}
+		Auth::user()->addresses()->save(Address::create($input));
+		return redirect()->route('shipments.destination.index', $shipment);
 	}
 
 	/**
