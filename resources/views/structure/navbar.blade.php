@@ -70,6 +70,11 @@
                             <i class="pe-7s-lock"></i> Account
                         </a>
                     <li>
+                    <li>
+                        <a href="{{ route('users.shipments.index', Auth::user()) }}">
+                            <i class="pe-7s-folder"></i> Sendungen
+                        </a>
+                    <li>
                         <a href="{{ url('/auth/logout') }}">
                              <i class="pe-7s-close-circle"></i> Logout
                         </a>
