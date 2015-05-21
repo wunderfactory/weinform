@@ -37,6 +37,12 @@ class ShipmentController extends Controller {
 	 */
 	public function create()
 	{
+		$unpublished = Auth::user()->shipments()->withUnpublished()->whereNull('published_at')->get();
+		if($unpublished->count())
+		{
+			return view('shipments.create')
+				->with('shipments', $unpublished);
+		}
 		return $this->store();
 	}
 
