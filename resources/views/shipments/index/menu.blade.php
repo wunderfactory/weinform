@@ -33,10 +33,10 @@
         <div class="form-group">
             <label for="size-filter-button">Größe</label>
             <div class="btn-group">
-                <button id="size-filter-button" data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="Alle">Alle <span class="caret"></span></button>
+                <button id="size-filter-button" data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="false">Auswählen <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     @foreach($sizes as $size)
-                    <li><input type="checkbox" id="size-filter-{{ $size->id }}"><label for="size-filter-{{ $size->id }}" name="filter[size]" value="{{ $size->id }}">{{ $size->name }}</label></li>
+                    <li><input name="filter[sizes][]" value="{{ $size->id }}" type="checkbox" id="size-filter-{{ $size->id }}" {{ in_array($size->id, $filter['sizes']) ? 'checked' : '' }}><label for="size-filter-{{ $size->id }}">{{ $size->name }}</label></li>
                     @endforeach
                 </ul>
             </div>
@@ -44,10 +44,10 @@
         <div class="form-group">
             <label for="specs-filter-button">Außer Besonderheiten</label>
             <div class="btn-group">
-                <button id="specs-filter-button" data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="Egal">Egal <span class="caret"></span></button>
+                <button id="specs-filter-button" data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="false">Auswählen <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     @foreach($specs as $spec)
-                        <li><input type="checkbox" id="specs-filter-{{ $spec->id }}"><label for="specs-filter-{{ $spec->id }}" name="filter[size]" value="{{ $spec->id }}">{{ $spec->name }}</label></li>
+                        <li><input type="checkbox" name="filter[specs][]" value="{{ $spec->id }}" id="specs-filter-{{ $spec->id }}" {{ in_array($size->id, $filter['specs']) ? 'checked' : '' }}><label for="specs-filter-{{ $spec->id }}">{{ $spec->name }}</label></li>
                     @endforeach
                 </ul>
             </div>
