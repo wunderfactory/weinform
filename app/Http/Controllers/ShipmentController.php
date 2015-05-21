@@ -10,6 +10,8 @@ use Wundership\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Wundership\Shipment;
+use Wundership\Size;
+use Wundership\Spec;
 
 class ShipmentController extends Controller {
 
@@ -26,8 +28,12 @@ class ShipmentController extends Controller {
 	public function index()
 	{
 		$shipments = Shipment::all();
+		$filter = Input::get('filter');
 		return view('shipments.index')
-			->with('shipments', $shipments);
+			->with('shipments', $shipments)
+			->with('filter', $filter)
+			->with('sizes', Size::all())
+			->with('specs', Spec::all());
 	}
 
 	/**

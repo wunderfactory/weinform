@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('bootstrap_dropdowns_enhancement/dist/css/dropdowns-enhancement.min.css') }}">
 
 
 	<!-- Custom style sheets LESS LESS LESS -->
@@ -83,6 +84,9 @@
     <!-- Datetimepicker -->
     <script src="{{ asset('datetimepicker/jquery.datetimepicker.js') }}"></script>
 
+    <!-- Bootstrap Dropdown Enhancement -->
+    <script src="{{ asset('bootstrap_dropdowns_enhancement/dist/js/dropdowns-enhancement.js') }}"></script>
+
     @yield('script')
 
     <script>
@@ -139,6 +143,28 @@
             minDate: moment(),
             defaultDate: moment(),
             defaultTime: moment()
+        });
+        jQuery('#day-filter').datetimepicker({
+            lang: 'de',
+            i18n: {
+                de: {
+                    months: [
+                        'Januar','Februar','März','April',
+                        'Mai','Juni','Juli','August',
+                        'September','Oktober','November','Dezember'
+                    ],
+                    dayOfWeek: [
+                        "So", "Mo", "Di", "Mi",
+                        "Do", "Fr", "Sa"
+                    ]
+                }
+            },
+            timepicker: false,
+            format: 'DD.MM.YYYY',
+            formatDate: 'DD.MM.YYYY',
+            inline: false,
+            minDate: moment(),
+            defaultDate: moment()
         });
     </script>
 

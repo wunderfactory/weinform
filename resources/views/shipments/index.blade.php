@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @include('shipments.index.menu')
+        @include('shipments.index.menu', ['filter' => $filter, 'sizes' => $sizes, 'specs' => $specs])
     </div>
     <div class="container">
         @include('components.shipment.list.list', ['shipments' => $shipments])
