@@ -14,7 +14,7 @@
               <p>Mitnehmen oder Versenden?</p>
           </div>
             <div class="col-md-6">
-              <a href="{!! route('tour.create') !!}">
+              <a href="{{ route('shipments.index') }}">
                 <div id="pickup_container">
                     <div class="icon_wrapper col-md-5">
                         <i id="car_icon" class="fa fa-car"></i>
@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-md-6">
-              <a href="">
+              <a href="{{ route('shipments.create') }}">
                 <div id="send_container">
                     <div class="icon_wrapper col-md-5">
                       <i id="parcel_icon" class="fa fa-archive"></i>
