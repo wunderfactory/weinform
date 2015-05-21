@@ -24,11 +24,14 @@
                     <p><strong>Die Sendung ist noch nicht komplett.</strong></p>
                 </div>
                 <div class="content">
-                    <p>Gib alle Daten an, um sie zu veröffentlichen.</p>
                     @if(!$shipment->validateIsComplete()[0])
-                    <pre>
-                        <?php print_r($shipment->validateIsComplete()[1]) ?>
-                    </pre>
+                        @if(isset($shipment->validateIsComplete()[1]))
+                            @foreach ($shipment->validateIsComplete()[1]->getMessages() as $message)
+                                <p>{{ $message[0] }}</p>
+                            @endforeach
+                        @else
+                            <p>Gib alle Daten an, um sie zu veröffentlichen.</p>
+                        @endif
                     @endif
                 </div> 
             </div>

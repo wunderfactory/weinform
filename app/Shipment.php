@@ -131,7 +131,7 @@ class Shipment extends Model {
 				return [true];
 			}
 		}
-		return [false, 'es fehlen felder'];
+		return [false];
 	}
 
 	public function getIsCompleteAttribute()
