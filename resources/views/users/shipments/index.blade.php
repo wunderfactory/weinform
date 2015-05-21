@@ -12,7 +12,7 @@
         </div>
         <div>
             Shipped
-            @include('components.shipment.list.list', ['shipments' => $shipping])
+            @include('components.shipment.list.list', ['shipments' => $shipped])
         </div>
     </div>
 @endsection

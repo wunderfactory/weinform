@@ -17,8 +17,8 @@ class UserShipmentController extends Controller {
 	{
 		$user = User::findOrFail($user);
 		$shipped = $user->shipments()->where('published_at', 'foobar')->get();
-		$stubs = $user->shipments()->where('published_at', null)->get();
-		$shipping = $user->shipments()->where('published_at', 'NOT', null)->get();
+		$stubs = $user->shipments()->withUnpublished()->whereNull('published_at')->get();
+		$shipping = $user->shipments;
 		return view('users.shipments.index')
 			->with('shipped', $shipped)
 			->with('shipping', $shipping)
