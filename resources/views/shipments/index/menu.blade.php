@@ -56,8 +56,11 @@
             <label for="sort-filter-buttton">nach</label>
             <select id="sort-filter-buttton" name="filter[sort]" class="form-control">
                 <option value="price desc" {{ $filter['sort'] == 'price desc' ? 'selected' : '' }}>Preis absteigend</option>
-                <option value="immediate" {{ $filter['type'] == 'immediate' ? 'selected' : '' }}>Preis aufsteigend</option>
-                <option value="auction" {{ $filter['type'] == 'auction' ? 'selected' : '' }}>Auktion</option>
+                <option value="price asc" {{ $filter['sort'] == 'price asc' ? 'selected' : '' }}>Preis aufsteigend</option>
+                <option value="collect asc" {{ $filter['sort'] == 'collect asc' ? 'selected' : '' }}>Frühere Abholung zuerst</option>
+                <option value="collect desc" {{ $filter['sort'] == 'collect desc' ? 'selected' : '' }}>Spätere Abholung zuerst</option>
+                <option value="size asc" {{ $filter['sort'] == 'size asc' ? 'selected' : '' }}>Größe aufsteigend</option>
+                <option value="size desc" {{ $filter['sort'] == 'size desc' ? 'selected' : '' }}>Größe absteigend</option>
             </select>
         </div>
     </div>

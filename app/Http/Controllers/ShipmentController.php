@@ -45,6 +45,8 @@ class ShipmentController extends Controller {
 			->withoutSpecs('specs', $filter['specs'])
 			->get();
 
+		$shipments = $this->sortShipments($shipments, $filter['sort']);
+
 		return view('shipments.index')
 			->with('shipments', $shipments)
 			->with('filter', $filter)
@@ -200,6 +202,49 @@ class ShipmentController extends Controller {
 		{
 			return redirect()->route('shipments.edit', $shipment)->withErrors($ret[1]);
 		}
+	}
+
+	private function sortShipments($shipments, $sort)
+	{
+		switch($sort)
+		{
+			case 'price asc':
+				$shipments = $shipments->sortBy(function($shipment)
+				{
+					return $shipment->typeable->price;
+				});
+				break;
+			case 'collect asc':
+				$shipments = $shipments->sortBy(function($shipment)
+				{
+					return $shipment->collect_after;
+				});
+				break;
+			case 'collect desc':
+				$shipments = $shipments->sortByDesc(function($shipment)
+				{
+					return $shipment->collect_after;
+				});
+				break;
+			case 'size asc':
+				$shipments = $shipments->sortBy(function($shipment)
+				{
+					return $shipment->size_id;
+				});
+				break;
+			case 'size desc':
+				$shipments = $shipments->sortByDesc(function($shipment)
+				{
+					return $shipment->size_id;
+				});
+				break;
+			default:
+				$shipments = $shipments->sortByDesc(function($shipment)
+				{
+					return $shipment->typeable->price;
+				});
+		}
+		return $shipments;
 	}
 
 }
