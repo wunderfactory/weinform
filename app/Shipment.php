@@ -153,4 +153,82 @@ class Shipment extends Model {
 			return $val[0];
 		}
 	}
+
+	public function scopeOfType($query, $type)
+	{
+		switch($type)
+		{
+			case 'immediate':
+				return $query->where('typeable_type', 'Wundership\Immediate');
+				break;
+			case 'auction':
+				return $query->where('typeable_type', 'Wundership\Auction');
+				break;
+			default:
+				return $query;
+		}
+	}
+
+	public function scopeFromOrigin($query, $city)
+	{
+		if($city == 'any')
+		{
+			return $query;
+		}
+		return $query->whereHas('origin', function($q) use ($city)
+		{
+			$q->where('city', $city);
+		});
+	}
+
+	public function scopeToDestination($query, $city)
+	{
+		if($city == 'any')
+		{
+			return $query;
+		}
+		return $query->whereHas('destination', function($q) use ($city)
+		{
+			$q->where('city', $city);
+		});
+	}
+
+	public function scopeShipsOn($query, $date)
+	{
+		if($date == 'any')
+		{
+			return $query;
+		}
+		$date = new Carbon($date);
+		return $query->where('collect_after', 'like', $date->toDateString() . '%');
+	}
+
+	public function scopeOnlySizes($query, $sizes)
+	{
+		if(!is_array($sizes))
+		{
+			return $query;
+		}
+		$query = $query->where(function($query) use ($sizes)
+		{
+			foreach($sizes as $size)
+			{
+				$query = $query->orWhere('size_id', $size);
+			}
+		});
+		return $query;
+	}
+
+	public function scopeWithoutSpecs($query, $specs)
+	{
+		if(!is_array($specs))
+		{
+			return $query;
+		}
+		$query = $query->whereHas('specs', function($query) use ($specs)
+		{
+			$query->whereNotIn('id', $specs);
+		});
+		return $query;
+	}
 }

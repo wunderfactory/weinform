@@ -27,15 +27,24 @@ class ShipmentController extends Controller {
 	 */
 	public function index()
 	{
-		$shipments = Shipment::all();
 		$filter = array_replace([
 			'type' => 'all',
 			'from' => 'any',
 			'to' => 'any',
 			'day' => 'any',
 			'sizes' => [],
-			'specs' => []
+			'specs' => [],
+			'sort' => 'price desc'
 		], Input::get('filter', []));
+
+		$shipments = Shipment::ofType($filter['type'])
+			->fromOrigin($filter['from'])
+			->toDestination($filter['to'])
+			->shipsOn($filter['day'])
+			->onlySizes($filter['sizes'])
+			->withoutSpecs('specs', $filter['specs'])
+			->get();
+
 		return view('shipments.index')
 			->with('shipments', $shipments)
 			->with('filter', $filter)
