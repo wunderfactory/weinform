@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Wundership\Http\Requests;
@@ -27,19 +28,23 @@ class ShipmentController extends Controller {
 	 */
 	public function index()
 	{
+		DB::connection()->enableQueryLog();
 		$filter = array_replace([
 			'type' => 'all',
-			'from' => 'any',
-			'to' => 'any',
 			'day' => 'any',
 			'sizes' => [],
 			'specs' => [],
+			'via' => [
+				'Kassel',
+				'Hannover',
+				'Bremen',
+				'Hamburg'
+			],
 			'sort' => 'price desc'
 		], Input::get('filter', []));
 
 		$shipments = Shipment::ofType($filter['type'])
-			->fromOrigin($filter['from'])
-			->toDestination($filter['to'])
+			->via($filter['via'])
 			->shipsOn($filter['day'])
 			->onlySizes($filter['sizes'])
 			->withoutSpecs('specs', $filter['specs'])
@@ -51,7 +56,8 @@ class ShipmentController extends Controller {
 			->with('shipments', $shipments)
 			->with('filter', $filter)
 			->with('sizes', Size::all())
-			->with('specs', Spec::all());
+			->with('specs', Spec::all())
+			->with('qlog', DB::getQueryLog());
 	}
 
 	/**
@@ -202,6 +208,11 @@ class ShipmentController extends Controller {
 		{
 			return redirect()->route('shipments.edit', $shipment)->withErrors($ret[1]);
 		}
+	}
+
+	public function booking()
+	{
+
 	}
 
 	private function sortShipments($shipments, $sort)

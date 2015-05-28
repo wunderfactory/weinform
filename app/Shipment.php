@@ -231,4 +231,28 @@ class Shipment extends Model {
 		});
 		return $query;
 	}
+
+	public function scopeVia($query, $via)
+	{
+		if(!is_array($via))
+		{
+			return $query;
+		}
+		$query = $query->where(function($query) use ($via)
+		{
+			for($i = 0; $i < count($via); $i++)
+			{
+				$from = $via[$i];
+				foreach(array_slice($via, $i) as $to)
+				{
+					$query = $query->orWhere(function($query) use ($via, $from, $to)
+					{
+						$query->fromOrigin($from);
+						$query->toDestination($to);
+					});
+				}
+			}
+		});
+		return $query;
+	}
 }
