@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('SizeTableSeeder');
 		$this->call('SpecTableSeeder');
 
+		$this->call('FaqTableSeeder');
+
 	}
 
 }

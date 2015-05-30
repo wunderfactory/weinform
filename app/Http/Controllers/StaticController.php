@@ -1,6 +1,9 @@
 <?php namespace Wundership\Http\Controllers;
 
 use Illuminate\Support\Facades\Session;
+use Request;
+use DB;
+use Wundership\Question;
 
 class StaticController extends Controller {
 
@@ -48,6 +51,31 @@ class StaticController extends Controller {
 	public function getOverview()
 	{
 		return view('product.overview');
+	}
+
+
+
+
+
+
+
+	public function getQuestions()
+	{
+		$query = Request::get('q');
+
+		//$questions = Question::all();
+
+
+
+		$searchValues = preg_split('/\s+/', $query); // split on 1+ whitespace
+
+		$questions = Question::where(function ($q) use ($searchValues) {
+		  foreach ($searchValues as $value) {
+		    $q->orWhere('keywords', 'like', "%{$value}%");
+		  }
+		})->get();
+
+		return view('static.support.faq')->with(['questions' => $questions]);
 	}
 
 
