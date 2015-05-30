@@ -32,7 +32,12 @@
         </div>
         <div class="form-group">
             <label for="day-filter">am</label>
-            <input id="day-filter" value="{{ $filter['day'] }}" name="filter[day]" type="text" class="form-control" placeholder="01.01.1970">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href="#" onClick="document.getElementById('day-filter').value = 'any'" class="btn btn-default" id="basic-addon1">Egal</a>
+                </span>
+                <input id="day-filter" value="{{ $filter['day'] }}" name="filter[day]" type="text" class="form-control" placeholder="01.01.1970">
+            </div>
         </div>
         <button type="submit" class="btn btn-default">Suchen</button>
     </div>
