@@ -113,4 +113,9 @@ class ShipmentImmediateController extends Controller {
 		return redirect(route('shipments.edit', $shipment));
 	}
 
+	public function book($shipment)
+	{
+		$shipment = Shipments::findOrFail($shipment);
+	}
+
 }

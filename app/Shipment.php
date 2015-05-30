@@ -30,7 +30,9 @@ class Shipment extends Model {
 
 	protected $appends = [
 		'is_published',
-		'is_complete'
+		'is_complete',
+		'is_booked',
+		'is_bookable'
 	];
 
 	public function user()
@@ -142,6 +144,16 @@ class Shipment extends Model {
 	public function getIsCompleteAttribute()
 	{
 		return $this->validateIsComplete()[0];
+	}
+
+	public function getIsBookedAttribute()
+	{
+		return $this->driver_id != 0;
+	}
+
+	public function getIsBookableAttribute()
+	{
+		return $this->is_published && !$this->is_booked;
 	}
 
 	public function publish()

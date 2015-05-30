@@ -23,6 +23,8 @@
 @section('content')
     <div class="container">
         <p>Shipment Details</p>
-
+        @if($shipment->is_bookable)
+            {!! link_to_route('shipments.immediate.book', 'Mitnehmen', $shipment, ['class' => 'btn btn-primary btn-block']) !!}
+        @endif
     </div>
 @endsection

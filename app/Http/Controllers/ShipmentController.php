@@ -211,11 +211,6 @@ class ShipmentController extends Controller {
 		}
 	}
 
-	public function booking()
-	{
-
-	}
-
 	private function sortShipments($shipments, $sort)
 	{
 		switch($sort)
