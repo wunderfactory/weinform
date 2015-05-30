@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('userbar')
-    @if($shipment->user->id == Auth::user()->id && !$shipment->is_published)
+    @if($shipment->user->id == Auth::user()->id || !$shipment->is_published)
         <style type="text/css">
             .navbar_container{
                 max-width: 980px !important;
@@ -22,8 +22,7 @@
 
 @section('content')
     <div class="container">
-        <pre>
-        <?php print_r($shipment->toArray()) ?>
-        </pre>
+        <p>Shipment Details</p>
+
     </div>
 @endsection

@@ -38,6 +38,11 @@ class Shipment extends Model {
 		return $this->belongsTo('Wundership\User');
 	}
 
+	public function driver()
+	{
+		return $this->belongsTo('Wundership\User', 'driver_id');
+	}
+
 	public function typeable()
 	{
 		return $this->morphTo();
