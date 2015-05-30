@@ -82,7 +82,7 @@ class ShipmentController extends Controller {
 	 */
 	public function store()
 	{
-		$shipment = Shipment::create([]);
+		$shipment = Shipment::create(['title' => 'Neue Sendung']);
 		$user = Auth::user()->shipments()->save($shipment);
 		return redirect(route('shipments.show', ['shipment' => $shipment]));
 	}
@@ -130,15 +130,16 @@ class ShipmentController extends Controller {
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
 		$input = Input::only(
 			[
+				'title',
 				'collect_after',
 				'deliver_after'
 			]
 		);
 		$v = Validator::make($input,
-			[
+			array_merge(Shipment::$rules, [
 				'collect_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::now(),
 				'deliver_after' => 'required|date_format:d.m.Y H:i|after:'.Carbon::createFromFormat('d.m.Y H:i', $input['collect_after'])->addHours(3),
-			]
+			])
 		);
 
 		if($v->fails())
@@ -146,6 +147,7 @@ class ShipmentController extends Controller {
 			return redirect()->back()->withErrors($v->errors());
 		}
 
+		$shipment->title = $input['title'];
 		$shipment->collect_after = Carbon::createFromFormat('d.m.Y H:i', $input['collect_after']);
 		$shipment->collect_before = Carbon::createFromFormat('d.m.Y H:i', $input['collect_after'])->addHours(3);
 		$shipment->deliver_after = Carbon::createFromFormat('d.m.Y H:i', $input['deliver_after']);

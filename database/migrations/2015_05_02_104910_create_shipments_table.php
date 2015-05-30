@@ -15,6 +15,7 @@ class CreateShipmentsTable extends Migration {
 		Schema::create('shipments', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('title');
 			$table->integer('user_id');
 			$table->integer('driver_id');
 			$table->integer('size_id');

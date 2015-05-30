@@ -74,8 +74,8 @@
                                 {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
                             @endif
                         </section>
-                        <section>
-                            <h3>Zeit</h3>
+                        <section class="shipment-edit">
+                            <h3>Details</h3>
                             @include('shipments.edit.details', ['shipment' => $shipment])
                         </section>
                         <section>

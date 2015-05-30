@@ -9,7 +9,7 @@ class Shipment extends Model {
 	use Publishes;
 
 	static $rules = [
-		'title'     => ''
+		'title'     => 'required|string|between:5,32'
 	];
 
 	static $publishing_rules = [
