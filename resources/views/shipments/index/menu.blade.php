@@ -73,4 +73,3 @@
         </div>
     </div>
 </form>
-<pre><?php print_r($filter) ?></pre>

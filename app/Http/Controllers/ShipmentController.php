@@ -56,8 +56,7 @@ class ShipmentController extends Controller {
 			->with('shipments', $shipments)
 			->with('filter', $filter)
 			->with('sizes', Size::all())
-			->with('specs', Spec::all())
-			->with('qlog', DB::getQueryLog());
+			->with('specs', Spec::all());
 	}
 
 	/**
