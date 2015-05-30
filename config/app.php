@@ -149,6 +149,7 @@ return [
         'Orangehill\Iseed\IseedServiceProvider',
         'LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider',
         'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -219,6 +220,7 @@ return [
         'Twilio'    => 'Twilio\Facades\Twilio',
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
         'Authorizer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizerFacade',
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
     ],
 
