@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Wundership\Http\Requests;
 use Wundership\Immediate;
+use Wundership\Shipment;
 
 class ShipmentImmediateController extends Controller {
 
@@ -115,7 +116,37 @@ class ShipmentImmediateController extends Controller {
 
 	public function book($shipment)
 	{
-		$shipment = Shipments::findOrFail($shipment);
+		$shipment = Shipment::findOrFail($shipment);
+		if(!$shipment->is_bookable)
+		{
+			return redirect(route('shipments.show', $shipment))->with('message', 'Shipment is booked');
+		}
+		return view('shipments.book')
+			->with('shipment', $shipment);
+	}
+
+	public function dobook($shipment)
+	{
+		$shipment = Shipment::findOrFail($shipment);
+		if(!$shipment->is_bookable)
+		{
+			return redirect(route('shipments.show', $shipment))->with('message', 'Shipment is booked');
+		}
+
+		$v = Validator::make(Input::only('agb'),
+			[
+				'agb' => 'accepted'
+			]
+		);
+
+		if($v->fails())
+		{
+			return redirect()->back()->withErrors($v->errors());
+		}
+
+		$shipment->driver_id = Auth::user()->id;
+		$shipment->save();
+		return redirect(route('shipments.show', $shipment));
 	}
 
 }
