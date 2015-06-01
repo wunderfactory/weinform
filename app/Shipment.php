@@ -8,6 +8,10 @@ use Wundership\Traits\Publishes;
 class Shipment extends Model {
 	use Publishes;
 
+	public $fillable = [
+		'title'
+	];
+
 	static $rules = [
 		'title'     => 'required|string|between:5,32'
 	];
