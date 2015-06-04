@@ -14,7 +14,6 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-        if ($this->app->runningInConsole()) return;
 		Validator::extend('user', function($attribute, $value, $parameters)
         {
             if(VerifiedEmail::where('email', $value)/*->where('verified', true)*/->count() > 0 || User::where('username', $value)/*->whereHas('emails', function($q)

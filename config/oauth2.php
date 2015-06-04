@@ -92,7 +92,7 @@ return [
                     'username' => $username,
                     'password' => $password,
                 ];
-                $loginar = new App\Services\Loginar();
+                $loginar = new Wundership\Services\Loginar();
                 if ($loginar->login($credentials)) {
                     $id = Auth::user()->id;
                     Auth::logout();
