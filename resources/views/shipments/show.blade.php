@@ -10,19 +10,39 @@
                 color: #ea555c !important;
             }
         </style>
-
-
         <nav class="navbar navbar-default">
             <div class="container navbar_container">
-                <p class="navbar-text">Das ist deine Sendung. <a href="{{ route('shipments.edit', [$shipment]) }}" class="navbar-link">Du kannst hier Änderungen vornehmen.</a></p>
+                <p class="navbar-text"><strong>Das ist deine Sendung.</strong> <a href="{{ route('shipments.edit', [$shipment]) }}" class="navbar-link">Du kannst hier Änderungen vornehmen.</a></p>
             </div>
-        </nav>
+        </nav> 
     @endif
 @endsection
 
 @section('content')
-    <div class="container">
-        <p>Shipment Details</p>
+    <div id="show_shipment_details" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="infobox">
+                    <div class="header">
+                        <p><strong>Sendungsinfos</strong></p>
+                    </div>
+                    <div class="content">
+                       
+                    </div> 
+                </div><!-- / infobox -->
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6">
+                <div class="infobox">
+                    <div class="header">
+                        <p><strong>Karte</strong></p>
+                    </div>
+                    <div class="content">
+                       
+                    </div> 
+                </div><!-- / infobox -->
+            </div> <!-- /.col-md-6 -->
+        </div><!-- / row -->
+
         @if($shipment->is_bookable)
             {!! link_to_route('shipments.immediate.book', 'Mitnehmen', $shipment, ['class' => 'btn btn-primary btn-block']) !!}
         @endif

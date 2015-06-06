@@ -88,5 +88,10 @@
   -webkit-animation: wiggle 0.5s infinite;
   animation: wiggle 0.5s infinite;
 }
+/* COMPONENTS */
+#shipment_listitem .user_image {
+  height: 123px;
+  margin-left: 10px;
+}
 
 /*# sourceMappingURL=../views/product_area.css.map */

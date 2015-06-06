@@ -1,1 +1,1 @@
-Sofort mitnehmen für {{ $immediate->price }}€
+<p><strong>Sofort mitnehmen für {{ $immediate->price }}€</strong></p>

@@ -6,7 +6,11 @@ class ShipmentTableSeeder extends Seeder {
 
 	public function run()
 	{
-		Shipment::create([
+	\DB::table('shipments')->delete();
+    
+	\DB::table('shipments')->insert(array (
+		0 => 
+		array (
 			'id'			=> '1',
 			'title'         => 'Stuhl',
 			'user_id'       => '2',
@@ -20,8 +24,9 @@ class ShipmentTableSeeder extends Seeder {
 			'typeable_id'=>'1',
 			'typeable_type'=>'Wundership\Immediate',
 			'published_at'=>'127'
-			
-		]);
+		),
+	
+		));
 	}
 
 }
