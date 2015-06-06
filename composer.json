@@ -18,7 +18,7 @@
         "orangehill/iseed": "dev-master",
         "lucadegasperi/oauth2-server-laravel": "4.0.x@dev",
         "nesbot/carbon": "~1.14",
-		"barryvdh/laravel-debugbar": "~2.0"
+		"barryvdh/laravel-debugbar": "~2.0",
 		"barryvdh/laravel-ide-helper": "~2.0"
 	},
 	"require-dev": {
