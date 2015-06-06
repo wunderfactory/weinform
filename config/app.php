@@ -140,7 +140,7 @@ return [
 		/*
 		 * Third Party Providers...
 		 */
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		//'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Torann\GeoIP\GeoIPServiceProvider',
         'Webpatser\Countries\CountriesServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
