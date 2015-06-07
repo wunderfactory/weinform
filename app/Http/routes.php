@@ -26,9 +26,8 @@ Route::group(['middleware' => ['csrf']], function(){
     Route::get('/button', function(){
         return View::make('test');
     });
-    Route::post('/test', function(){
-        $input = Input::all();
-        return $input;
+    Route::get('/test', function(){
+        return \Wundership\Question::find(1)->keywords;
     });
     Route::get('/rate', function(){
         $user = Auth::user();
@@ -50,5 +49,7 @@ Route::group(['middleware' => ['csrf']], function(){
     });
     Route::controller('user/{user}', 'UsersController');
     Route::controller('user/{user}/driver', 'DriverController');
+    Route::resource('faq/category', 'CategoryController');
+    Route::resource('faq', 'FAQController');
     Route::controller('/', 'StaticController');
 });

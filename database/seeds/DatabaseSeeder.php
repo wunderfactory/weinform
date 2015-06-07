@@ -32,7 +32,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('SizeTableSeeder');
 		$this->call('SpecTableSeeder');
 
-		$this->call('FaqTableSeeder');
+		$this->call('QuestionTableSeeder');
+        $this->call('KeywordTableSeeder');
+        $this->call('CategoryTableSeeder');
 
 	}
 

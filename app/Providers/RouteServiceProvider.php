@@ -1,5 +1,6 @@
 <?php namespace Wundership\Providers;
 
+use Wundership\Question;
 use Wundership\User;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -27,7 +28,9 @@ class RouteServiceProvider extends ServiceProvider {
         $router->bind('user', function($value){
             return User::where('username', $value)->first();
         });
-
+        $router->bind('faq', function($value){
+            return Question::where('id', $value)->first();
+        });
 	}
 
 	/**

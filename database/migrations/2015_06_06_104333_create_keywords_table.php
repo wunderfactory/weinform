@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFaqTable extends Migration {
+class CreateKeywordsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,10 @@ class CreateFaqTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('faq', function(Blueprint $table)
+		Schema::create('keywords', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('question');
-            $table->string('answer');
-			$table->string('keywords');
+            $table->string('keyword');
 			$table->timestamps();
 		});
 	}
@@ -29,7 +27,7 @@ class CreateFaqTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('faq');
+		Schema::drop('keywords');
 	}
 
 }
