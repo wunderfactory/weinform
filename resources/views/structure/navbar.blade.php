@@ -52,7 +52,7 @@
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/') }}">
-                            <i class="pe-7s-user"></i> Profile
+                            <i class="pe-7s-user"></i> Profil
                         </a>
                     </li>
                     <li>
@@ -61,19 +61,20 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">
-                            <i class="pe-7s-config"></i> Settings
+                        <a href="{{ route('users.shipments.index', Auth::user()) }}">
+                            <i class="pe-7s-folder"></i> Sendungen
                         </a>
+                    </li>
                     <li>
+                        <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">
+                            <i class="pe-7s-config"></i> Einstellungen
+                        </a>
+                    </li>
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/settings/account') }}">
                             <i class="pe-7s-lock"></i> Account
                         </a>
-                    <li>
-                    <li>
-                        <a href="{{ route('users.shipments.index', Auth::user()) }}">
-                            <i class="pe-7s-folder"></i> Sendungen
-                        </a>
+                    </li>
                     <li>
                         <a href="{{ url('/auth/logout') }}">
                              <i class="pe-7s-close-circle"></i> Logout
