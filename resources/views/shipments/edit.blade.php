@@ -62,17 +62,17 @@
                             <h4>Abholung</h4>
                             @if($shipment->origin_id)
                                 @include('shipments.edit.origin.show', ['origin' => $shipment->origin])
-                                {!! link_to_route('shipments.origin.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
-                            @else
-                                {!! link_to_route('shipments.origin.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
                             @endif
+
+                            <a id="origin-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Deine Adressen" data-content='
+<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
                             <h4>Lieferung</h4>
                             @if($shipment->destination_id)
                                 @include('shipments.edit.destination.show', ['destination' => $shipment->destination])
-                                {!! link_to_route('shipments.destination.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
-                            @else
-                                {!! link_to_route('shipments.destination.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
                             @endif
+
+                            <a id="destination-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Deine Adressen" data-content='
+<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
                         </section>
                         <section class="shipment-edit">
                             <h3>Details</h3>
@@ -121,4 +121,15 @@
             </div> <!-- /.col-md-6 -->
         </div><!-- / row -->
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $('#origin-popover-btn').on('shown.bs.popover', function () {
+            $('#' + $('#origin-popover-btn').attr('aria-describedby') + ' .popover-content').load('http://wundership.app/shipments/{{ $shipment->id }}/origin');
+        });
+        $('#destination-popover-btn').on('shown.bs.popover', function () {
+            $('#' + $('#destination-popover-btn').attr('aria-describedby') + ' .popover-content').load('http://wundership.app/shipments/{{ $shipment->id }}/destination');
+        });
+    </script>
 @endsection
