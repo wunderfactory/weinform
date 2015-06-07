@@ -1,1 +1,1 @@
-<p><strong>Sofort mitnehmen für {{ $immediate->price }}€</strong></p>
+<p><strong>Sofort mitnehmen! Du verdienst {{ $immediate->price }}€</strong></p>

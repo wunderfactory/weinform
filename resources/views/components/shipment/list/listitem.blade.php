@@ -6,11 +6,8 @@
     </div>
     <div class="content">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <img class="img-circle user_image" src="{{ action('UsersController@getPicture', [$shipment->user->username]) }}" alt="Profile Picture">
-            </div>
-            <div class="col-md-2">
-                <h4>{{$shipment->user->username}}</h4>
             </div>
             <div class="col-md-4">
             @if($shipment->size)
@@ -29,7 +26,7 @@
             
             
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 @if($shipment->typeable_id && $shipment->typeable_type)
                 @include('components.shipment.list.type', ['type' => $shipment->typeable])
                 @endif

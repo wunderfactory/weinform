@@ -38,10 +38,6 @@ Route::group(['middleware' => ['csrf']], function(){
         $user = Auth::user();
         return View::make('dashboard.carry.index')->with(['user' => $user]);
     });
-    Route::get('/yourpackages', function(){
-        $user = Auth::user();
-        return View::make('dashboard.send.index')->with(['user' => $user]);
-    });
     Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',

@@ -31,18 +31,9 @@
                     </div>
                 </div>
 
-                <div class="tall_actionbox">
-                    <i class="pe-7s-car"></i>
-                    <h4>Fahrer werden!</h4>
-                    <p>Werde Fahrer und verdiene schnell eingene Euronen! Es ist herrlich, für wundership zu fahren! Du wirst es so genießen!</p><br>
-                    <a href="#"><p><strong>Ja, ich will!</strong></p></a>
-                </div>
+              @include('notybox.sidebar_tall_actionbox_deliverer')
 
-                <div class="actionbox">
-                    <i class="pe-7s-help1"></i>
-                    <p>Gab es ein Problem, {{ $user->first_name }}?</p>
-                    <a href="#"><p><strong>Kontaktiere das wundership team.</strong></p></a>
-                </div>
+              @include('notybox.sidebar_helpbox')
 
             </div><!-- /col-md-3 -->
 
