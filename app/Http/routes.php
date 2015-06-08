@@ -15,7 +15,6 @@ Route::post('oauth/token', function() {
     return Response::json(Authorizer::issueAccessToken());
 });
 
-include("routes/tour.php");
 include("routes/shipments.php");
 
 Route::group(['prefix' => 'api/v1/', 'before' => 'oauth'], function(){
