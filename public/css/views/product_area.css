@@ -31,7 +31,7 @@
   margin-top: 30px;
 }
 .product_area #overview #pickup_container i {
-  color: #ffffff;
+  color: white;
   font-size: 100px;
   margin-top: 30px;
   margin-left: 20px;
@@ -45,7 +45,7 @@
 .product_area #overview .text_wrapper p {
   font-size: 40px;
   margin-top: 45px;
-  color: #ffffff;
+  color: white;
 }
 .product_area #overview #send_container {
   height: 200px;
@@ -54,7 +54,7 @@
   margin-top: 30px;
 }
 .product_area #overview #send_container i {
-  color: #ffffff;
+  color: white;
   font-size: 100px;
   margin-top: 30px;
   margin-left: 20px;
@@ -87,6 +87,9 @@
 .product_area #overview .wiggle {
   -webkit-animation: wiggle 0.5s infinite;
   animation: wiggle 0.5s infinite;
+}
+#show_shipment_details {
+  padding: 20px;
 }
 /* COMPONENTS */
 #shipment_listitem .user_image {

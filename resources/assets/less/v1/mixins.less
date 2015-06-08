@@ -1,0 +1,95 @@
+/*
+Mixins
+-------------------------------
+*/
+
+/* Allgemein */
+.placeholder-farbe(@color) {
+    ::-webkit-input-placeholder {
+       color: @color;
+    }
+    :-moz-placeholder { 
+       color: @color;  
+    }
+    ::-moz-placeholder { 
+       color: @color;  
+    }
+    :-ms-input-placeholder {  
+       color: @color;  
+    }
+}
+.middle {
+    margin: 0px auto;
+}
+.glatten {
+    -moz-transform: scale(.9999);
+}
+
+/*
+-------------------------------
+*/
+
+/* Kreis Nutzerbilder */
+.kreis (@border-width, @width, @height) { 
+    width: @width;
+    height: @height;
+    border: @border-width solid #fff;
+    -moz-border-radius: 56px;
+    -webkit-border-radius: 56px;
+    border-radius: 56px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #fff;
+}
+
+
+/*
+-------------------------------
+*/
+
+/* Verlauf aus Hauptfarbe für Section-Hintergründe */
+.section-bg-verlauf {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDExODAgNjk5IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9ImhhdDAiIGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iNTAlIiB5MT0iMTAwJSIgeDI9IjUwJSIgeTI9Ii0xLjQyMTA4NTQ3MTUyMDJlLTE0JSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxZDVkODMiIHN0b3Atb3BhY2l0eT0iMC43NSIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYjdiYTMiIHN0b3Atb3BhY2l0eT0iMC43NSIvPgogICA8L2xpbmVhckdyYWRpZW50PgoKPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjExODAiIGhlaWdodD0iNjk5IiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
+    background-image: -moz-linear-gradient(bottom, rgba(29,94,132,.75) 0%, rgba(44,124,163,.75) 100%);
+    background-image: -o-linear-gradient(bottom, rgba(29,94,132,.75) 0%, rgba(44,124,163,.75) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgba(29,94,132,.75) 0%, rgba(44,124,163,.75) 100%);
+    background-image: linear-gradient(bottom, rgba(29,94,132,.75) 0%, rgba(44,124,163,.75) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    opacity: 0.9;
+}
+
+/* Fullscreen-Hintergrund */
+.fullscreen {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*
+-------------------------------
+*/
+
+/* Border-Radius */
+.border-radius {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+/*
+-------------------------------
+*/
+
+/* Schriftart */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
+.font-family {
+    font-family: 'Lato', sans-serif;
+}

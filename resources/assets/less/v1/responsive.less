@@ -1,0 +1,59 @@
+@media (max-width: 400px) {
+    header.home-header {
+        .header-title {
+            top:20%;
+        }
+    }
+}
+@media (min-width:400px) and (max-width: 525px) {
+    header.home-header {
+        .header-title {
+            top:25%;
+        }
+    }
+}
+@media (min-width:525px) and (max-width: 768px) {
+    .header-title {
+            padding:0px 20px;
+            top:35%;
+    }
+}
+@media (max-width: 768px) {
+    header.home-header {
+        nav {
+            .navbar-brand {
+                position: relative;
+                top:10px;
+                left:15px;
+            }
+        }
+        .header-facts {
+            height: auto;
+            padding-bottom: 13px;
+            ul li {
+                float:left;
+                margin-bottom: 10px;
+                &:last-child, &:nth-child(3) {
+                    margin-right: 10px;
+                }
+                &:last-child {
+                    float: left;
+                }
+            }
+        }
+    }
+    section.paket-versenden {
+        .vorteile {
+            height: auto;
+            padding-bottom: 15px;
+        }
+    }
+    div.collapse.navbar-collapse {
+        .bt {
+            border: 0px;
+            color:#fff!;
+        }
+    }
+}
+@media (min-width:768px) {}
+@media (min-width: 1200px) {}

@@ -1,0 +1,40 @@
+.bt {
+    .border-radius;
+    transition-duration: @sekunden;
+    font-weight: @regular;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.bt-weiss-transparent, .bt-second-fill {
+    color:#fff;
+}
+.bt-weiss-transparent {
+    border:@border-width @border-style #fff;
+    &:hover {
+        background-color: #fff;
+        color: @second;
+    }
+}
+.bt-second-fill {
+    background-color: @second;
+    border:@border-width @border-style @second;
+    &:hover {
+        background-color: transparent;
+        color:#fff;
+    }
+}
+.bt-second-transparent {
+    color: @second;
+    border:@border-width @border-style @second;
+    padding:10px 25px 11px 25px;
+    &:hover {
+        background-color: @second;
+        color: #fff;
+    }
+}
+
+    
+
+    
+
