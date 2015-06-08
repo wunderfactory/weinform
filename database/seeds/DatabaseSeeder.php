@@ -28,9 +28,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('BeaconTableSeeder');
 		$this->call('AuctionTableSeeder');
 		$this->call('ImmediateTableSeeder');
-		$this->call('ShipmentTableSeeder');
 		$this->call('SizeTableSeeder');
 		$this->call('SpecTableSeeder');
+		$this->call('ShipmentTableSeeder');
 
 		$this->call('QuestionTableSeeder');
         $this->call('KeywordTableSeeder');
