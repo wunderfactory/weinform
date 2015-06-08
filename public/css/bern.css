@@ -21,7 +21,6 @@ Mixins
 /* Allgemein */
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
 @import "wundership-icon-font.css";
-@import "animate.css";
 .middle {
   margin: 0px auto;
 }
@@ -579,7 +578,7 @@ section.paket-versenden .animation-mitnehmen .paket-aufgeben:hover {
           animation: none;
 }
 section.preisberechnung {
-  background: url(../img/preis-bg.jpg);
+  background: url(../images/landing/preis-bg.jpg);
   background-attachment: fixed;
   background-size: cover;
   height: 350px;
@@ -751,7 +750,7 @@ section.preisberechnung form .step-3:before {
   -moz-transform: scale(0.9999);
 }
 section.sicherheit {
-  background-image: url(../img/sicherheit-bg.jpg);
+  background-image: url(../images/landing/sicherheit-bg.jpg);
   background-attachment: fixed;
   background-size: cover;
 }

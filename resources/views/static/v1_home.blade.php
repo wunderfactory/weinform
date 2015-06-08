@@ -151,7 +151,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="img/nutzer/david.png" alt="wundership Kunde">
+                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
                             <div class="nutzerbewertung">
                                 <span>David</span>
                                 <ul>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="img/nutzer/david.png" alt="wundership Kunde">
+                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
                             <div class="nutzerbewertung">
                                 <span>David</span>
                                 <ul>
@@ -181,7 +181,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="img/nutzer/david.png" alt="wundership Kunde">
+                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
                             <div class="nutzerbewertung">
                                 <span>David</span>
                                 <ul>
@@ -198,7 +198,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="img/nutzer/david.png" alt="wundership Kunde">
+                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
                             <div class="nutzerbewertung">
                                 <span>David</span>
                                 <ul>
@@ -213,7 +213,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="img/nutzer/david.png" alt="wundership Kunde">
+                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
                             <div class="nutzerbewertung">
                                 <span>David</span>
                                 <ul>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="img/nutzer/david.png" alt="wundership Kunde">
+                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
                             <div class="nutzerbewertung">
                                 <span>David</span>
                                 <ul>
@@ -267,7 +267,7 @@
 </section>
 <section class="strecke wow fadeIn" data-wow-delay="0.6s">
     <div class="container">
-        <img src="img/strecke.jpg" alt="wundership zwischen Berlin und Hamburg" />
+        <img src="{{ asset('/images/landing/strecke.jpg') }}" alt="wundership zwischen Berlin und Hamburg" />
         <h3>Nutze wundership zwischen Hamburg und Berlin</h3>
         <h4>Subtext für Benachrichtiungsanmeldung neue Städte</h4>
         <form action="#">
