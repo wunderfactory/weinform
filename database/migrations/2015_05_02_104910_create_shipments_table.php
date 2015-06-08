@@ -26,7 +26,7 @@ class CreateShipmentsTable extends Migration {
 			$table->dateTime('deliver_after')->nullable();
 			$table->dateTime('deliver_before')->nullable();
 			$table->morphs('typeable');
-			$table->boolean('published_at')->nullable();
+			$table->dateTime('published_at')->nullable();
 			$table->timestamps();
 		});
 	}
