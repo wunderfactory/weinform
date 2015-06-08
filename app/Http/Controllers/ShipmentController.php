@@ -35,10 +35,10 @@ class ShipmentController extends Controller {
 			'sizes' => [],
 			'specs' => [],
 			'via' => [
-				'Kassel',
-				'Hannover',
-				'Bremen',
-				'Hamburg'
+				'Hamburg',
+				'',
+				'',
+				'Berlin'
 			],
 			'sort' => 'price desc'
 		], Input::get('filter', []));
