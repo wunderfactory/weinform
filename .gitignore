@@ -4,3 +4,4 @@
 _ide_helper.php
 .idea
 /database/maxmind
+composer.lock
