@@ -57,7 +57,7 @@
 	<script src="{{ URL::asset('gsd/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
 	<script src="{{ URL::asset('gsd/js/jquery-ui-1.10.4.custom.min.js') }}" type="text/javascript"></script>
 
-	<script src="{{URL::asset('js/bootstrap.3.0.0.js')}}" type="text/javascript"></script>
+	<script src="{{URL::asset('js/bootstrap.js')}}" type="text/javascript"></script>
 
 	<script src="{{ asset('creative_tim/login_register/login-register.js') }}" type="text/javascript"></script>
 
