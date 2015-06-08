@@ -17,7 +17,6 @@ class CreateShipmentsTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->integer('user_id');
-			$table->integer('driver_id');
 			$table->integer('size_id');
 			$table->integer('origin_id');
 			$table->integer('destination_id')->nullable();
