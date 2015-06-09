@@ -34,7 +34,7 @@ class StaticController extends Controller {
 	 */
 	public function getIndex()
 	{
-		return view('static.home');
+		return view('static.v1_home');
 	}
 
 	public function getLang($language)

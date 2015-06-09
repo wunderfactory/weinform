@@ -28834,7 +28834,7 @@ label[for=fourth_no] {
   padding: 15px;
 }
 .infobox .content p {
-  color: #00bc23;
+  color: #1d5e84;
 }
 .infobox .content .info_text {
   color: #585858;
@@ -28862,7 +28862,7 @@ label[for=fourth_no] {
   padding: 15px;
 }
 .infobox_image .content p {
-  color: #00bc23;
+  color: #1d5e84;
 }
 .infobox_image .content .info_text {
   color: #585858;
@@ -28877,7 +28877,7 @@ label[for=fourth_no] {
 .warningbox {
   width: 100%;
   background-color: white;
-  border: 1px solid #00bc23;
+  border: 1px solid #1d5e84;
   margin-bottom: 20px;
 }
 .warningbox .header {
@@ -28886,8 +28886,8 @@ label[for=fourth_no] {
   height: 60px;
   padding: 15px;
   color: white;
-  background-color: #00bc23;
-  border-bottom: 1px solid #00bc23;
+  background-color: #1d5e84;
+  border-bottom: 1px solid #1d5e84;
   vertical-align: center;
 }
 .warningbox .header p {
@@ -28906,7 +28906,7 @@ label[for=fourth_no] {
 /* ACTION */
 .actionbox {
   max-width: 200px;
-  background-color: #47affb;
+  background-color: #90bf34;
   margin-top: 10px;
   padding: 20px;
   position: relative;
@@ -28926,7 +28926,7 @@ label[for=fourth_no] {
 /* ACTIONBOX TALL */
 .tall_actionbox {
   max-width: 200px;
-  background-color: #00bc23;
+  background-color: #1d5e84;
   margin-top: 20px;
   padding: 20px;
   position: relative;
@@ -28983,7 +28983,7 @@ label[for=fourth_no] {
   color: #585858;
 }
 .infobox_large_image .left .content p {
-  color: #00bc23;
+  color: #1d5e84;
 }
 .infobox_large_image .right {
   float: left;

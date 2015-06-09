@@ -18,8 +18,8 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="bt bt-weiss-transparent">Anmelden</a></li>
-                    <li><a href="#" class="bt bt-second-fill">Registrieren</a></li>
+                    <li><a href="{{url('auth/login')}}" class="bt bt-weiss-transparent">Anmelden</a></li>
+                    <li><a href="{{url('auth/choose')}}" class="bt bt-second-fill">Registrieren</a></li>
                 </ul>
             </div>
         </div>
@@ -27,7 +27,7 @@
     <div class="header-title wow zoomInUp">
         <h1>Deine Mitfahrzentrale für Pakete</h1>
         <h2>Pakete bequem versenden, Reisekosten decken</h2>
-        <a class="bt bt-second-fill">Paket versenden oder mitnehmen</a>
+        <a href="{{url('auth/choose')}}" class="bt bt-second-fill">Paket versenden oder mitnehmen</a>
     </div>
     <div class="header-facts wow fadeIn" data-wow-delay="1.1s">
         <div class="container">
@@ -114,7 +114,7 @@
             <div class="col-md-6">
                 <h3>Paket mitnehmen</h3>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-                <a class="bt bt-second-transparent">Paket versenden</a>
+                <a href="{{url('auth/choose')}}" class="bt bt-second-transparent">Paket versenden</a>
             </div>
             <div class="col-md-6">
                 

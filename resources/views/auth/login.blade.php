@@ -22,7 +22,7 @@
                     <div class="warningbox">
                         <div class="header">
                             <div class="col-md-1"><i class="pe-7s-gleam"></i></div>
-                            <div class="col-md-10"><p><strong>Hi!</strong></p></div> 
+                            <div class="col-md-10"><p><strong>Hi!</strong>Schön, Dich wiederzusehen.</p></div> 
                         </div>
                         <div class="content choose_container">
                             <div class="row">
