@@ -20,7 +20,7 @@
   max-width: 980px !important;
 }
 .dashboard_area #dashboard_area_nav .active_topbar {
-  color: #00bc23 !important;
+  color: #1d5e84 !important;
 }
 .dashboard_area #index,
 .dashboard_area #inbox {
@@ -43,7 +43,7 @@
   height: 200px;
   margin-top: 0px;
   position: absolute;
-  background-color: #00bc23;
+  background-color: #1d5e84;
   display: none;
   opacity: 0.9;
   padding-top: 50px;
@@ -92,11 +92,11 @@
 }
 .dashboard_area #account_sidebar .side_navbar_active,
 .dashboard_area #profile_sidebar .side_navbar_active {
-  color: #00bc23 !important;
+  color: #1d5e84 !important;
 }
 .dashboard_area #account_sidebar .active,
 .dashboard_area #profile_sidebar .active {
-  color: #00bc23 !important;
+  color: #1d5e84 !important;
 }
 .dashboard_area #notifications,
 .dashboard_area #payment,
