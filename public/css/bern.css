@@ -573,8 +573,7 @@ section.preisberechnung .hamburg-berlin {
   margin-top: 30px;
   border-radius: 3px;
   background-clip: padding-box;
-  border-right: 0px!important;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   position: relative;
   z-index: 999;
   padding: 20px;
@@ -588,6 +587,9 @@ section.preisberechnung h1,
 section.preisberechnung h2 {
   color: #fff;
   text-align: center;
+}
+section.preisberechnung h2 {
+  margin-bottom: 30px;
 }
 section.preisberechnung form {
   text-align: center;

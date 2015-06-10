@@ -26,7 +26,7 @@
     </nav>
     <div class="header-title wow zoomInUp">
         <h1>Deine Mitfahrzentrale für Pakete</h1>
-        <h2>Pakete bequem versenden, Reisekosten decken</h2>
+        <h2>Dinge bequem versenden, Reisekosten decken</h2>
         <a href="{{url('auth/choose')}}" class="bt bt-second-fill">Paket versenden oder mitnehmen</a>
     </div>
     <div class="header-facts wow fadeIn" data-wow-delay="1.1s">
@@ -46,20 +46,20 @@
             <div class="col-md-6">
                 <h3>Paket versenden</h3>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-                <a class="bt bt-second-transparent">Paket versenden</a>
+                <a class="bt bt-second-transparent">Etwas versenden</a>
             </div>
             <div class="col-md-6 animation-mitnehmen">
                 <div class="paket-aufgeben">
                     <span class="icon-formular"></span>
-                    <p>Paket aufgeben</p>
+                    <p>Sendung aufgeben</p>
                 </div>
                 <div class="paket-aufgeben-popup"><span class="icon-mobile"></span> Bequem von unterwegs <span class="icon-time"></span> Erledigt in 2 Minuten</div>
                 <div class="mitnehmen-strecke"></div>
                 <div class="paket-wirdabgeholt">
                     <span class="icon-ubergabe"></span>
-                    <p>Paket wird abgeholt</p>
+                    <p>Sendung wird abgeholt</p>
                 </div>
-                <div class="paket-abholen-popup"><span class="icon-mobile"></span> Bequem von unterwegs <span class="icon-time"></span> Erledigt in 2 Minuten</div>
+                <div class="paket-abholen-popup"><span class="icon-mobile"></span> Schnelle Abstimmung mit Kurier <span class="icon-time"></span> TEST</div>
                 <div class="abholen-strecke"></div>
                 <div class="paket-wirdgeliefert">
                     <span class="icon-lieferung"></span>
@@ -88,7 +88,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Den Preis bestimmst du</h1>
-                <h2>Lorem ipsum dolor sit amet, consetetur sadipscing</h2>
+                <h2>Entscheide selbst, wie viel Deine Sendung kosten soll.</h2>
             </div>
         </div>
         <div class="row">
@@ -108,7 +108,7 @@
                 </form>
             </div>-->
             <div class="hamburg-berlin">
-                <h3>Hamburg - Berlin: 10-15€</h3>
+                <h3>Hamburg - Berlin: Ab 9,99€</h3>
             </div>
         </div>
     </div>
