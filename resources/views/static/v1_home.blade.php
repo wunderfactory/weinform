@@ -53,17 +53,19 @@
                     <span class="icon-formular"></span>
                     <p>Paket aufgeben</p>
                 </div>
-                <div class="paket-aufgeben-popup">Bequem von unterwegs, erledigt in 2 Minuten</div>
+                <div class="paket-aufgeben-popup"><span class="icon-mobile"></span> Bequem von unterwegs <span class="icon-time"></span> Erledigt in 2 Minuten</div>
                 <div class="mitnehmen-strecke"></div>
                 <div class="paket-wirdabgeholt">
                     <span class="icon-ubergabe"></span>
                     <p>Paket wird abgeholt</p>
                 </div>
+                <div class="paket-abholen-popup"><span class="icon-mobile"></span> Bequem von unterwegs <span class="icon-time"></span> Erledigt in 2 Minuten</div>
                 <div class="abholen-strecke"></div>
                 <div class="paket-wirdgeliefert">
                     <span class="icon-lieferung"></span>
                     <p>Paket wird zugestellt</p>
                 </div>
+                <div class="liefer-popup"><span class="icon-mobile"></span> Bequem von unterwegs <span class="icon-time"></span> Erledigt in 2 Minuten</div>
             </div>
         </div>
     </div>
@@ -90,7 +92,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <!--<div class="col-md-12">
                 <form action="#">
                     <div class="step-1">
                         <span class="icon-marker"></span>
@@ -104,20 +106,51 @@
                         12-16&euro;
                     </div>
                 </form>
+            </div>-->
+            <div class="hamburg-berlin">
+                <h3>Hamburg - Berlin: 10-15€</h3>
             </div>
         </div>
-    </div>+
+    </div>
 </section>
-<section class="paket-versenden wow fadeIn" data-wow-delay="0.6s">
+<section class="paket-versenden paket-mitnehmen wow fadeIn" data-wow-delay="0.6s">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h3>Paket mitnehmen</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-                <a class="bt bt-second-transparent">Paket versenden</a>
+            <div class="col-md-12">
+                <h4>Paket mitnehmen</h4>
+                <h3>Womit reist Du?</h3>
             </div>
-            <div class="col-md-6">
-                
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="reisemittel">
+                    <span class="icon-bus"></span>
+                    <div>
+                        <h5>Nie wieder für Bustickets bezahlen!</h5>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        <a class="bt bt-second-transparent">Sendung finden</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="reisemittel">
+                    <span class="icon-zug"></span>
+                    <div>
+                        <h5>Nie wieder für Bustickets bezahlen!</h5>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        <a class="bt bt-second-transparent">Sendung finden</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="reisemittel">
+                    <span class="icon-auto"></span>
+                    <div>
+                        <h5>Nie wieder für Bustickets bezahlen!</h5>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        <a class="bt bt-second-transparent">Sendung finden</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -248,7 +281,13 @@
 </section>
 <section class="abfahrt wow fadeIn" data-wow-delay="0.6s">
     <div class="container">
-        <a class="bt bt-second-transparent">Kostenlos <strong>registrieren</strong></a>
+        <div class="col-md-9">
+            <h3>Mit wundership einfach alles versenden</h3>
+            <h4>Von Aktenbergen bis Haustürschlüssel</h4>
+        </div>
+        <div class="col-md-3">
+            <a class="bt bt-second-transparent">Kostenlos <strong>registrieren</strong></a>
+        </div>
     </div>
 </section>
 <section class="social wow fadeIn">

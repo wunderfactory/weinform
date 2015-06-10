@@ -436,49 +436,13 @@ section.paket-versenden .animation-mitnehmen {
   left: 30px;
   top: 40px;
 }
-@keyframes mitnehmen-strecke {
-  from {
-    width: 0px;
-    opacity: 0;
-  }
-  to {
-    width: 100px;
-    opacity: 1;
-  }
-}
-@-webkit-keyframes mitnehmen-strecke {
-  from {
-    width: 0px;
-    opacity: 0;
-  }
-  to {
-    width: 100px;
-    opacity: 1;
-  }
-}
-@keyframes paket-wirdabgeholt {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes paket-wirdabgeholt {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 section.paket-versenden .animation-mitnehmen .paket-aufgeben,
 section.paket-versenden .animation-mitnehmen .paket-wirdabgeholt,
 section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert {
   width: 60px;
   height: 60px;
   border: 1px solid #ffffff;
-  border-radius: 56px;
+  border-radius: 60px;
   background-clip: padding-box;
   background-color: #fff;
   border-color: #90bf34;
@@ -508,6 +472,7 @@ section.paket-versenden .animation-mitnehmen .paket-wirdabgeholt:hover,
 section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert:hover {
   background-color: #90bf34;
   cursor: pointer;
+  color: #fff;
 }
 section.paket-versenden .animation-mitnehmen .mitnehmen-strecke,
 section.paket-versenden .animation-mitnehmen .abholen-strecke {
@@ -547,13 +512,14 @@ section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert {
   -moz-animation: paket-wirdabgeholt 1s 4s 1 linear forwards;
   -o-animation: paket-wirdabgeholt 1s 4s 1 linear forwards;
 }
-section.paket-versenden .animation-mitnehmen .paket-aufgeben-popup {
+section.paket-versenden .animation-mitnehmen .paket-aufgeben-popup,
+section.paket-versenden .animation-mitnehmen .paket-abholen-popup,
+section.paket-versenden .animation-mitnehmen .liefer-popup {
   padding: 10px;
   color: #7d868e;
-  border: 1px solid #e5e8eb;
   visibility: hidden;
   position: absolute;
-  bottom: 20px;
+  bottom: -155px;
   z-index: 999;
   border-radius: 3px;
   background-clip: padding-box;
@@ -561,9 +527,28 @@ section.paket-versenden .animation-mitnehmen .paket-aufgeben-popup {
   transition: opacity;
   transition: opacity 0.5s;
   width: 316px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  width: 100%;
 }
-section.paket-versenden .animation-mitnehmen .paket-aufgeben:hover + .paket-aufgeben-popup {
+section.paket-versenden .animation-mitnehmen .paket-aufgeben-popup span,
+section.paket-versenden .animation-mitnehmen .paket-abholen-popup span,
+section.paket-versenden .animation-mitnehmen .liefer-popup span {
+  color: #90bf34;
+  font-size: 24px;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+section.paket-versenden .animation-mitnehmen .paket-aufgeben-popup span:nth-child(2),
+section.paket-versenden .animation-mitnehmen .paket-abholen-popup span:nth-child(2),
+section.paket-versenden .animation-mitnehmen .liefer-popup span:nth-child(2) {
+  margin-left: 10px;
+}
+section.paket-versenden .animation-mitnehmen .paket-aufgeben:hover + .paket-aufgeben-popup,
+section.paket-versenden .animation-mitnehmen .paket-wirdabgeholt:hover + .paket-abholen-popup,
+section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert:hover + .liefer-popup {
   visibility: visible;
   opacity: 1;
 }
@@ -582,6 +567,21 @@ section.preisberechnung {
   background-attachment: fixed;
   background-size: cover;
   height: 350px;
+}
+section.preisberechnung .hamburg-berlin {
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  border-right: 0px;
+  border: 2px solid #fff;
+  opacity: 1;
+  padding: 20px;
+  margin: 0px auto;
+  width: 460px;
+}
+section.preisberechnung .hamburg-berlin h3 {
+  color: #fff;
 }
 section.preisberechnung h1,
 section.preisberechnung h2 {
@@ -788,7 +788,7 @@ section.sicherheit .col-md-6:nth-child(2) .nutzerbild {
   width: 111px;
   height: 111px;
   border: 5px solid #ffffff;
-  border-radius: 56px;
+  border-radius: 111px;
   background-clip: padding-box;
   background-color: #fff;
   position: relative;
@@ -802,7 +802,7 @@ section.sicherheit .col-md-6:nth-child(2) .nutzerbild .nutzerbewertung {
   width: 101px;
   height: 101px;
   border: 0px solid #ffffff;
-  border-radius: 56px;
+  border-radius: 101px;
   background-clip: padding-box;
   background-color: #fff;
   text-align: center;
@@ -828,6 +828,80 @@ section.sicherheit .col-md-6:nth-child(2) .nutzerbild ul li:first-child {
 }
 section.sicherheit .col-md-6:nth-child(2) .nutzerbild ul li .icon-stern-filled {
   color: #efd000;
+}
+section.paket-mitnehmen {
+  text-align: center;
+  position: relative;
+}
+section.paket-mitnehmen h4 {
+  color: #90bf34;
+}
+section.paket-mitnehmen .row:nth-child(2) {
+  margin-top: 30px;
+}
+section.paket-mitnehmen .reisemittel {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ffffff;
+  border-radius: 200px;
+  background-clip: padding-box;
+  background-color: #fff;
+  border-color: #90bf34;
+  margin: 0px auto;
+  transition-duration: 0.5s;
+  line-height: 235px;
+  vertical-align: middle;
+}
+section.paket-mitnehmen .reisemittel span {
+  font-size: 70px;
+  color: #1d5e84;
+}
+section.paket-mitnehmen .reisemittel span.icon-auto {
+  position: relative;
+  top: -10px;
+}
+section.paket-mitnehmen .reisemittel div {
+  visibility: hidden;
+  opacity: 0;
+}
+section.paket-mitnehmen .reisemittel:hover {
+  cursor: pointer;
+  border-radius: 3px;
+  background-clip: padding-box;
+  padding: 15px;
+  border-color: #90bf34;
+  height: auto!important;
+}
+section.paket-mitnehmen .reisemittel:hover div {
+  visibility: visible;
+  opacity: 1;
+  color: #7d868e;
+  vertical-align: top;
+  transition: opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0.6s;
+  line-height: 21px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+section.paket-mitnehmen .reisemittel:hover div p {
+  margin-bottom: 20px;
+}
+section.paket-mitnehmen .reisemittel:hover div h5 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1d5e84;
+  margin-bottom: 10px;
+}
+section.paket-mitnehmen .reisemittel:hover span {
+  display: none;
+}
+section.abfahrt h4 {
+  color: #90bf34;
+}
+section.abfahrt .bt {
+  position: relative;
+  top: 35px;
 }
 section.social .col-md-6 {
   height: 65px;
@@ -985,6 +1059,44 @@ footer .col-md-2 span {
     color: #fff!;
   }
 }
+/* Paket versenden */
+@keyframes mitnehmen-strecke {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 100px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes mitnehmen-strecke {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 100px;
+    opacity: 1;
+  }
+}
+@keyframes paket-wirdabgeholt {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes paket-wirdabgeholt {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Paket mitnehmen */
 /* frameworks */
 /*      light colors         */
 .vertical-align {
