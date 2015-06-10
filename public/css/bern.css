@@ -573,9 +573,10 @@ section.preisberechnung .hamburg-berlin {
   margin-top: 30px;
   border-radius: 3px;
   background-clip: padding-box;
-  border-right: 0px;
+  border-right: 0px!important;
   border: 2px solid #fff;
-  opacity: 1;
+  position: relative;
+  z-index: 999;
   padding: 20px;
   margin: 0px auto;
   width: 460px;
