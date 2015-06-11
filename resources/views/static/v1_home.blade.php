@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row vorteilbar">
         <div class="col-md-12 vorteile">
             <div class="container">
                 <ul>
@@ -108,7 +108,7 @@
                 </form>
             </div>-->
             <div class="hamburg-berlin">
-                <h3>Hamburg - Berlin: Ab 9,99€</h3>
+                <p>Hamburg - Berlin: Ab 9,99€</p>
             </div>
         </div>
     </div>
@@ -154,7 +154,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row vorteilbar">
         <div class="col-md-12 vorteile">
             <div class="container">
                 <ul>
@@ -175,103 +175,99 @@
                 <h3>Deine Sendung ist sicher</h3>
                 <h4>Wundership baut auf eine besondere Gemeinschaft aus Versendern und Kurieren</h4>
                 <ul>
-                    <li><span class="icon-fingerabdruck"></span> Fahrerverifikation durch Prüfung der Personalien</li>
-                    <li><span class="icon-facebook"></span> Echtheitsprüfung durch Verbindung mit Facebook</li>
-                    <li><span class="icon-stern"></span> Nutzerbewertungen für jede Fahrt</li>
+                    <li><span class="icon-fingerabdruck"></span> <p>Fahrerverifikation durch Prüfung der Personalien</p></li>
+                    <li><span class="icon-facebook"></span> <p>Echtheitsprüfung durch Verbindung mit Facebook</p></li>
+                    <li><span class="icon-stern"></span> <p>Nutzerbewertungen für jede Fahrt</p></li>
                 </ul>
             </div>
             <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="nutzerbild">
-                            <img class="img-circle" src="https://graph.facebook.com/Jana.Monin/picture?width=100&height=100" alt="wundership Kunde">
-                            <div class="nutzerbewertung">
-                                <span>Jana</span>
-                                <ul>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="nutzerbild">
-                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
-                            <div class="nutzerbewertung">
-                                <span>David</span>
-                                <ul>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="nutzerbild">
-                            <img class="img-circle" src="https://graph.facebook.com/hauke.moritz.3/picture?width=100&height=100" alt="wundership Kunde">
-                            <div class="nutzerbewertung">
-                                <span>Hauke</span>
-                                <ul>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                </ul>
-                            </div>
+                <div class="col-md-4">
+                    <div class="nutzerbild">
+                        <img class="img-circle" src="https://graph.facebook.com/Jana.Monin/picture?width=100&height=100" alt="wundership Kunde">
+                        <div class="nutzerbewertung">
+                            <span>Jana</span>
+                            <ul>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="nutzerbild">
-                            <img class="img-circle" src="https://graph.facebook.com/reto.gericke/picture?width=100&height=100" alt="wundership Kunde">
-                            <div class="nutzerbewertung">
-                                <span>Reto</span>
-                                <ul>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                </ul>
-                            </div>
+                <div class="col-md-4">
+                    <div class="nutzerbild">
+                        <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
+                        <div class="nutzerbewertung">
+                            <span>David</span>
+                            <ul>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="nutzerbild">
-                            <img class="img-circle" src="https://graph.facebook.com/koehler.chris/picture?width=100&height=100" alt="wundership Kunde">
-                            <div class="nutzerbewertung">
-                                <span>Chris</span>
-                                <ul>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                </ul>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="nutzerbild">
+                        <img class="img-circle" src="https://graph.facebook.com/hauke.moritz.3/picture?width=100&height=100" alt="wundership Kunde">
+                        <div class="nutzerbewertung">
+                            <span>Hauke</span>
+                            <ul>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="nutzerbild">
-                            <img class="img-circle" src="https://graph.facebook.com/michael.hade.5/picture?width=100&height=100" alt="wundership Kunde">
-                            <div class="nutzerbewertung">
-                                <span>Michael</span>
-                                <ul>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                    <li><span class="icon-stern-filled"></span></li>
-                                </ul>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="nutzerbild">
+                        <img class="img-circle" src="https://graph.facebook.com/reto.gericke/picture?width=100&height=100" alt="wundership Kunde">
+                        <div class="nutzerbewertung">
+                            <span>Reto</span>
+                            <ul>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="nutzerbild">
+                        <img class="img-circle" src="https://graph.facebook.com/koehler.chris/picture?width=100&height=100" alt="wundership Kunde">
+                        <div class="nutzerbewertung">
+                            <span>Chris</span>
+                            <ul>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="nutzerbild">
+                        <img class="img-circle" src="https://graph.facebook.com/michael.hade.5/picture?width=100&height=100" alt="wundership Kunde">
+                        <div class="nutzerbewertung">
+                            <span>Michael</span>
+                            <ul>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                                <li><span class="icon-stern-filled"></span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -318,13 +314,16 @@
 <footer class="wow fadeIn" data-wow-delay="0.6s">
     <div class="container">
         <div class="row">
+            <div class="col-md-2 visible-mobile">
+                <span class="icon-logo"></span>
+            </div>
             <div class="col-md-5">
                 <ul>
                     <li><a href="#">Datenschutz</a></li>
                     <li><a href="#">Allgemeine Geschäftsbedingungen</a></li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 visible-desktop">
                 <span class="icon-logo"></span>
             </div>
             <div class="col-md-5">

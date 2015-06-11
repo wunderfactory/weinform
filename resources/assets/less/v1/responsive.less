@@ -1,25 +1,42 @@
-@media (max-width: 400px) {
-    header.home-header {
-        .header-title {
-            top:20%;
-        }
+/* Allgemeines */
+@media (max-width: 768px) {
+    .visible-desktop {
+        display: none!important;
+    }
+    .visible-mobile {
+        display: block;
+    }
+    .vorteilbar, .animation-mitnehmen {
+        display: none;
     }
 }
-@media (min-width:400px) and (max-width: 525px) {
-    header.home-header {
-        .header-title {
+@media (min-width:768px) {
+   .visible-desktop {
+        display: block;
+    }
+    .visible-mobile {
+        display: none!important;
+    } 
+}
+/* Startseite */
+header.home-header {
+    .header-title {
+        @media (max-width: 400px) {
             top:25%;
         }
-    }
-}
-@media (min-width:525px) and (max-width: 768px) {
-    .header-title {
+        @media (min-width:400px) and (max-width: 525px) {
+            top:30%;
+        }
+        @media (min-width:525px) and (max-width: 615px) {
+            top: 30%;
+        }
+        @media (min-width:625px) and (max-width: 768px) {
             padding:0px 20px;
             top:35%;
+        }
     }
-}
-@media (max-width: 768px) {
-    header.home-header {
+    @media (max-width: 768px) {
+        height: 500px;
         nav {
             .navbar-brand {
                 position: relative;
@@ -28,32 +45,149 @@
             }
         }
         .header-facts {
-            height: auto;
-            padding-bottom: 13px;
-            ul li {
-                float:left;
-                margin-bottom: 10px;
-                &:last-child, &:nth-child(3) {
-                    margin-right: 10px;
-                }
-                &:last-child {
-                    float: left;
-                }
+            display: none;
+        }
+        .header-title {
+            h1, h2 {
+                padding-left: 35px;
+                padding-right: 35px;
             }
         }
     }
-    section.paket-versenden {
+}
+section.paket-versenden {
+    @media (max-width: 768px) {
+        .col-md-4 {
+            margin-bottom: 30px;
+        }
+    }
+}
+section.preisberechnung {
+    @media (max-width: 768px) {
+        height: auto;
+        overflow: hidden;
+        padding-left: 30px;
+        padding-right: 30px;
+        .section-bg-verlauf {
+            left: 0px;
+        }
+        .hamburg-berlin {
+            text-align: center;
+            margin-top: 30px;
+            .border-radius;
+            border: 1px solid #fff;
+            position: relative;
+            z-index: 999;
+            padding: 20px;
+            margin: 0px auto;
+            width: 80%;
+            display: block;
+            p {
+                color: #fff;
+                line-height: 26px;
+                font-size: 22px!important;
+            }
+        }
+    }
+}
+section.sicherheit {
+    @media (max-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+        .section-bg-verlauf {
+            left: 0px;
+        }
+        .col-md-6:nth-child(1) {
+            span {
+                padding-bottom: 20px;
+                display: inline-block;
+            }
+            p {
+                color: #fff;
+                display: inline;
+            }
+        }
+    }
+    .col-md-6:nth-child(2) {
+        @media (max-width: 768px) {
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+        .col-md-4 {
+            @media (max-width: 768px) {
+                float:left;
+                display: inline;
+                width: 32%;
+                margin-bottom: 15px;
+            }
+            @media (max-width: 450px) {
+                width: 49%;
+            }
+        }
+    }
+}
+section.abfahrt {
+    @media (max-width: 768px) {
+        .col-md-9, .col-md-3 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    padding-bottom: 30px;
+}
+section.social {
+    @media (max-width: 768px) {
+        .col-md-6 {
+            text-align: center!important;
+            a {
+                padding: 0px!important;
+            }
+        }
+    }
+}
+section.strecke {
+    @media (max-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @media (max-width: 350px) {
+        input {
+            width: 100px;
+        }
+    }
+}
+section.paket-versenden {
+    @media (max-width: 768px) {
         .vorteile {
             height: auto;
             padding-bottom: 15px;
         }
     }
-    div.collapse.navbar-collapse {
+}
+div.collapse.navbar-collapse {
+    @media (max-width: 768px) {
         .bt {
             border: 0px;
             color:#fff!;
         }
     }
 }
-@media (min-width:768px) {}
+footer {
+    @media (max-width: 768px) {
+        .col-md-2, .col-md-5 {
+            display: block;
+            width: 100%;
+            text-align: center;
+            li {
+                margin: 0px;
+                margin-right: 5px;
+                padding: 0px;
+            }
+        }
+        .col-md-5{
+            margin-top: 10px!important;
+        }
+    }
+}
+
 @media (min-width: 1200px) {}

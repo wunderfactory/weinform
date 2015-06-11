@@ -580,8 +580,9 @@ section.preisberechnung .hamburg-berlin {
   margin: 0px auto;
   width: 460px;
 }
-section.preisberechnung .hamburg-berlin h3 {
+section.preisberechnung .hamburg-berlin p {
   color: #fff;
+  font-size: 30px;
 }
 section.preisberechnung h1,
 section.preisberechnung h2 {
@@ -1016,50 +1017,193 @@ footer .col-md-2 span {
   font-size: 35px;
   color: #7d868e;
 }
-@media (max-width: 400px) {
-  header.home-header .header-title {
-    top: 20%;
+/* Allgemeines */
+@media (max-width: 768px) {
+  .visible-desktop {
+    display: none!important;
+  }
+  .visible-mobile {
+    display: block;
+  }
+  .vorteilbar,
+  .animation-mitnehmen {
+    display: none;
   }
 }
-@media (min-width: 400px) and (max-width: 525px) {
+@media (min-width: 768px) {
+  .visible-desktop {
+    display: block;
+  }
+  .visible-mobile {
+    display: none!important;
+  }
+}
+/* Startseite */
+@media (max-width: 400px) {
   header.home-header .header-title {
     top: 25%;
   }
 }
-@media (min-width: 525px) and (max-width: 768px) {
-  .header-title {
+@media (min-width: 400px) and (max-width: 525px) {
+  header.home-header .header-title {
+    top: 30%;
+  }
+}
+@media (min-width: 525px) and (max-width: 615px) {
+  header.home-header .header-title {
+    top: 30%;
+  }
+}
+@media (min-width: 625px) and (max-width: 768px) {
+  header.home-header .header-title {
     padding: 0px 20px;
     top: 35%;
   }
 }
 @media (max-width: 768px) {
+  header.home-header {
+    height: 500px;
+  }
   header.home-header nav .navbar-brand {
     position: relative;
     top: 10px;
     left: 15px;
   }
   header.home-header .header-facts {
+    display: none;
+  }
+  header.home-header .header-title h1,
+  header.home-header .header-title h2 {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+@media (max-width: 768px) {
+  section.paket-versenden .col-md-4 {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
+  section.preisberechnung {
     height: auto;
-    padding-bottom: 13px;
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  header.home-header .header-facts ul li {
+  section.preisberechnung .section-bg-verlauf {
+    left: 0px;
+  }
+  section.preisberechnung .hamburg-berlin {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 3px;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+    position: relative;
+    z-index: 999;
+    padding: 20px;
+    margin: 0px auto;
+    width: 80%;
+    display: block;
+  }
+  section.preisberechnung .hamburg-berlin p {
+    color: #fff;
+    line-height: 26px;
+    font-size: 22px!important;
+  }
+}
+@media (max-width: 768px) {
+  section.sicherheit {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  section.sicherheit .section-bg-verlauf {
+    left: 0px;
+  }
+  section.sicherheit .col-md-6:nth-child(1) span {
+    padding-bottom: 20px;
+    display: inline-block;
+  }
+  section.sicherheit .col-md-6:nth-child(1) p {
+    color: #fff;
+    display: inline;
+  }
+}
+@media (max-width: 768px) {
+  section.sicherheit .col-md-6:nth-child(2) {
+    padding-left: 20px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  section.sicherheit .col-md-6:nth-child(2) .col-md-4 {
     float: left;
-    margin-bottom: 10px;
+    display: inline;
+    width: 32%;
+    margin-bottom: 15px;
   }
-  header.home-header .header-facts ul li:last-child,
-  header.home-header .header-facts ul li:nth-child(3) {
-    margin-right: 10px;
+}
+@media (max-width: 450px) {
+  section.sicherheit .col-md-6:nth-child(2) .col-md-4 {
+    width: 49%;
   }
-  header.home-header .header-facts ul li:last-child {
-    float: left;
+}
+section.abfahrt {
+  padding-bottom: 30px;
+}
+@media (max-width: 768px) {
+  section.abfahrt .col-md-9,
+  section.abfahrt .col-md-3 {
+    width: 100%;
+    text-align: center;
   }
+}
+@media (max-width: 768px) {
+  section.social .col-md-6 {
+    text-align: center!important;
+  }
+  section.social .col-md-6 a {
+    padding: 0px!important;
+  }
+}
+@media (max-width: 768px) {
+  section.strecke {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 350px) {
+  section.strecke input {
+    width: 100px;
+  }
+}
+@media (max-width: 768px) {
   section.paket-versenden .vorteile {
     height: auto;
     padding-bottom: 15px;
   }
+}
+@media (max-width: 768px) {
   div.collapse.navbar-collapse .bt {
     border: 0px;
     color: #fff!;
+  }
+}
+@media (max-width: 768px) {
+  footer .col-md-2,
+  footer .col-md-5 {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  footer .col-md-2 li,
+  footer .col-md-5 li {
+    margin: 0px;
+    margin-right: 5px;
+    padding: 0px;
+  }
+  footer .col-md-5 {
+    margin-top: 10px!important;
   }
 }
 /* Paket versenden */
