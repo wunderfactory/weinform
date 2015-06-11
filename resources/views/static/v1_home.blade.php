@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>Paket versenden</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                <p>Egal ob groß oder klein: Mit wundership versendest Du Dinge einfach, schnell und sicher und schonst damit sogar die Umwelt. </p>
                 <a class="bt bt-second-transparent">Etwas versenden</a>
             </div>
             <div class="col-md-6 animation-mitnehmen">
@@ -59,13 +59,13 @@
                     <span class="icon-ubergabe"></span>
                     <p>Sendung wird abgeholt</p>
                 </div>
-                <div class="paket-abholen-popup"><span class="icon-mobile"></span> Schnelle Abstimmung mit Kurier <span class="icon-time"></span> TEST</div>
+                <div class="paket-abholen-popup"><span class="icon-mobile"></span> Persönlicher Kurier <span class="icon-time"></span> Sendung live verfolgen</div>
                 <div class="abholen-strecke"></div>
                 <div class="paket-wirdgeliefert">
                     <span class="icon-lieferung"></span>
                     <p>Paket wird zugestellt</p>
                 </div>
-                <div class="liefer-popup"><span class="icon-mobile"></span> Bequem von unterwegs <span class="icon-time"></span> Erledigt in 2 Minuten</div>
+                <div class="liefer-popup"><span class="icon-mobile"></span> Keine Wartezeiten <span class="icon-time"></span> Einfach und sicher</div>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Den Preis bestimmst du</h1>
-                <h2>Entscheide selbst, wie viel Deine Sendung kosten soll.</h2>
+                <h2>Entscheide selbst, wie viel Deine Sendung kosten darf.</h2>
             </div>
         </div>
         <div class="row">
@@ -126,8 +126,8 @@
                 <div class="reisemittel">
                     <span class="icon-bus"></span>
                     <div>
-                        <h5>Nie wieder für Bustickets bezahlen!</h5>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        <h5>Finanzier Dir Dein Busticket!</h5>
+                        <p>Noch ein bisschen Platz im Koffer? Nimm doch einfach noch etwas mit! </p>
                         <a class="bt bt-second-transparent">Sendung finden</a>
                     </div>
                 </div>
@@ -136,8 +136,8 @@
                 <div class="reisemittel">
                     <span class="icon-zug"></span>
                     <div>
-                        <h5>Nie wieder für Bustickets bezahlen!</h5>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        <h5>Finanzier Dir Dein Bahnticket!</h5>
+                        <p>Warum nicht noch etwas mitnehmen, wenn Du sowieso schon unterwegs bist? </p>
                         <a class="bt bt-second-transparent">Sendung finden</a>
                     </div>
                 </div>
@@ -146,8 +146,8 @@
                 <div class="reisemittel">
                     <span class="icon-auto"></span>
                     <div>
-                        <h5>Nie wieder für Bustickets bezahlen!</h5>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        <h5>Lass Pakete mitfahren!</h5>
+                        <p>Autofahren ist schön, aber auch teuer. Finanzier Dir deine Fahrt mit deinem Kofferraum. </p>
                         <a class="bt bt-second-transparent">Sendung finden</a>
                     </div>
                 </div>
@@ -158,9 +158,9 @@
         <div class="col-md-12 vorteile">
             <div class="container">
                 <ul>
-                    <li><span class="icon-sofa"></span> Bequeme Abholung</li>
-                    <li><span class="icon-time"></span> Zustellung am selben Tag möglich</li>
-                    <li><span class="icon-paket"></span> Keine Verpackung nötig</li>
+                    <li><span class="icon-sofa"></span> Flexible Abholung</li>
+                    <li><span class="icon-time"></span> Schnell Sendung finden</li>
+                    <li><span class="icon-paket"></span> Einfach Reisekosten decken</li>
                     <li><span class="icon-blatt"></span> Schont die Umwelt</li>
                 </ul>
             </div>      
@@ -173,7 +173,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>Deine Sendung ist sicher</h3>
-                <h4>Lorem ipsum dolore magna sed diam</h4>
+                <h4>Wundership baut auf eine besondere Gemeinschaft aus Versendern und Kurieren</h4>
                 <ul>
                     <li><span class="icon-fingerabdruck"></span> Fahrerverifikation durch Prüfung der Personalien</li>
                     <li><span class="icon-facebook"></span> Echtheitsprüfung durch Verbindung mit Facebook</li>
@@ -184,9 +184,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
+                            <img class="img-circle" src="https://graph.facebook.com/Jana.Monin/picture?width=100&height=100" alt="wundership Kunde">
                             <div class="nutzerbewertung">
-                                <span>David</span>
+                                <span>Jana</span>
                                 <ul>
                                     <li><span class="icon-stern-filled"></span></li>
                                     <li><span class="icon-stern-filled"></span></li>
@@ -214,9 +214,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
+                            <img class="img-circle" src="https://graph.facebook.com/hauke.moritz.3/picture?width=100&height=100" alt="wundership Kunde">
                             <div class="nutzerbewertung">
-                                <span>David</span>
+                                <span>Hauke</span>
                                 <ul>
                                     <li><span class="icon-stern-filled"></span></li>
                                     <li><span class="icon-stern-filled"></span></li>
@@ -231,9 +231,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
+                            <img class="img-circle" src="https://graph.facebook.com/reto.gericke/picture?width=100&height=100" alt="wundership Kunde">
                             <div class="nutzerbewertung">
-                                <span>David</span>
+                                <span>Reto</span>
                                 <ul>
                                     <li><span class="icon-stern-filled"></span></li>
                                     <li><span class="icon-stern-filled"></span></li>
@@ -246,9 +246,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
+                            <img class="img-circle" src="https://graph.facebook.com/koehler.chris/picture?width=100&height=100" alt="wundership Kunde">
                             <div class="nutzerbewertung">
-                                <span>David</span>
+                                <span>Chris</span>
                                 <ul>
                                     <li><span class="icon-stern-filled"></span></li>
                                     <li><span class="icon-stern-filled"></span></li>
@@ -261,9 +261,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="nutzerbild">
-                            <img src="{{ asset('/images/landing/nutzer/david.png') }}" alt="wundership Kunde">
+                            <img class="img-circle" src="https://graph.facebook.com/michael.hade.5/picture?width=100&height=100" alt="wundership Kunde">
                             <div class="nutzerbewertung">
-                                <span>David</span>
+                                <span>Michael</span>
                                 <ul>
                                     <li><span class="icon-stern-filled"></span></li>
                                     <li><span class="icon-stern-filled"></span></li>
@@ -282,7 +282,7 @@
 <section class="abfahrt wow fadeIn" data-wow-delay="0.6s">
     <div class="container">
         <div class="col-md-9">
-            <h3>Mit wundership einfach alles versenden</h3>
+            <h3>Mit wundership einfach alles schnell versenden</h3>
             <h4>Von Aktenbergen bis Haustürschlüssel</h4>
         </div>
         <div class="col-md-3">
@@ -308,7 +308,7 @@
     <div class="container">
         <img src="{{ asset('/images/landing/strecke.jpg') }}" alt="wundership zwischen Berlin und Hamburg" />
         <h3>Nutze wundership zwischen Hamburg und Berlin</h3>
-        <h4>Subtext für Benachrichtiungsanmeldung neue Städte</h4>
+        <h4>Wir benachrichtigen Dich per E-Mail, wenn wir auch zwischen anderen Städten verfügbar sind.</h4>
         <form action="#">
             <input type="text" placeholder="Deine E-Mail-Adresse für die Benachrichtigung">
             <a href="#" onclick="$(this).closest('form').submit()"><span class="icon-papierflieger"> </span> Senden</a>
