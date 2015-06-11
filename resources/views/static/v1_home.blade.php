@@ -108,7 +108,7 @@
                 </form>
             </div>-->
             <div class="hamburg-berlin">
-                <p>Hamburg - Berlin: Ab 9,99€</p>
+                <p>Hamburg - Berlin: <strong>Ab 9,99€</strong></p>
             </div>
         </div>
     </div>

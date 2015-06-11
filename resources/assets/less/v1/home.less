@@ -161,7 +161,7 @@ section.paket-versenden {
                 width: 100px;
                 left:-20px;
             }
-            &:hover {
+            &:hover, &:focus {
                 background-color: @second;
                 cursor: pointer;
                 color: #fff;
@@ -443,12 +443,19 @@ section.sicherheit {
                 top:6px;
                 margin-right: 10px;
             }
+            p {
+                display: inline;;
+                color: #fff;
+            }
         }
     }
     .col-md-6:nth-child(2) {
         padding-left: 40px;
         .row {
             margin-bottom: 30px;
+        }
+        .col-md-4 {
+            margin-top: 20px;
         }
         .nutzerbild {
             .kreis(@border-width:5px; @width: 111px; @height:111px);

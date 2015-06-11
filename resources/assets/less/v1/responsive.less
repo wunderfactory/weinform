@@ -1,22 +1,24 @@
 /* Allgemeines */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .visible-desktop {
         display: none!important;
     }
     .visible-mobile {
         display: block;
     }
-    .vorteilbar, .animation-mitnehmen {
-        display: none;
-    }
 }
-@media (min-width:768px) {
+@media (min-width: 992px) {
    .visible-desktop {
         display: block;
     }
     .visible-mobile {
         display: none!important;
     } 
+}
+@media (max-width: 992px) {
+    .vorteilbar, .animation-mitnehmen {
+        display: none;
+    }
 }
 /* Startseite */
 header.home-header {
@@ -36,6 +38,7 @@ header.home-header {
         }
     }
     @media (max-width: 768px) {
+        background-image: url(../images/landing/header-image-mobile.jpg);
         height: 500px;
         nav {
             .navbar-brand {
@@ -54,6 +57,11 @@ header.home-header {
             }
         }
     }
+    @media (min-width:768px) and (max-width: 992px) {
+        .header-facts {
+            display: none;
+        }
+    }
 }
 section.paket-versenden {
     @media (max-width: 768px) {
@@ -61,9 +69,17 @@ section.paket-versenden {
             margin-bottom: 30px;
         }
     }
+    @media (min-width:768px) and (max-width: 992px) {
+        .col-md-4 {
+            width: 33%;
+            display: inline;
+            float: left;;
+        }
+    }
 }
 section.preisberechnung {
     @media (max-width: 768px) {
+        background-image: url(../images/landing/preis-bg-mobile.jpg);
         height: auto;
         overflow: hidden;
         padding-left: 30px;
@@ -92,6 +108,7 @@ section.preisberechnung {
 }
 section.sicherheit {
     @media (max-width: 768px) {
+        background-image: url(../images/landing/sicherheit-bg-mobile.jpg);
         padding-left: 30px;
         padding-right: 30px;
         .section-bg-verlauf {
@@ -108,12 +125,27 @@ section.sicherheit {
             }
         }
     }
+     @media (min-width:768px) and (max-width: 992px) {
+        .col-md-6:nth-child(1) ul {
+            position: relative;
+            left: 150px;
+        }
+    }
     .col-md-6:nth-child(2) {
         @media (max-width: 768px) {
             padding-left: 20px;
             margin-top: 30px;
         }
+        @media (min-width:768px) and (max-width: 992px) {
+            margin-top: 30px;
+        }
         .col-md-4 {
+            @media (min-width:768px) and (max-width: 992px) {
+                float:left;
+                display: inline;
+                width: 16%;
+                margin-bottom: 15px;
+            }
             @media (max-width: 768px) {
                 float:left;
                 display: inline;
@@ -127,7 +159,7 @@ section.sicherheit {
     }
 }
 section.abfahrt {
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .col-md-9, .col-md-3 {
             width: 100%;
             text-align: center;
@@ -136,7 +168,7 @@ section.abfahrt {
     padding-bottom: 30px;
 }
 section.social {
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .col-md-6 {
             text-align: center!important;
             a {
@@ -173,7 +205,7 @@ div.collapse.navbar-collapse {
     }
 }
 footer {
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .col-md-2, .col-md-5 {
             display: block;
             width: 100%;

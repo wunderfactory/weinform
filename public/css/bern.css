@@ -292,6 +292,9 @@ p {
   line-height: 21px;
   font-weight: 300;
 }
+strong {
+  font-weight: bold;
+}
 /* Allgemeines */
 header > div,
 section > div {
@@ -469,7 +472,10 @@ section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert p {
 }
 section.paket-versenden .animation-mitnehmen .paket-aufgeben:hover,
 section.paket-versenden .animation-mitnehmen .paket-wirdabgeholt:hover,
-section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert:hover {
+section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert:hover,
+section.paket-versenden .animation-mitnehmen .paket-aufgeben:focus,
+section.paket-versenden .animation-mitnehmen .paket-wirdabgeholt:focus,
+section.paket-versenden .animation-mitnehmen .paket-wirdgeliefert:focus {
   background-color: #90bf34;
   cursor: pointer;
   color: #fff;
@@ -782,11 +788,18 @@ section.sicherheit .col-md-6:nth-child(1) ul li span {
   top: 6px;
   margin-right: 10px;
 }
+section.sicherheit .col-md-6:nth-child(1) ul li p {
+  display: inline;
+  color: #fff;
+}
 section.sicherheit .col-md-6:nth-child(2) {
   padding-left: 40px;
 }
 section.sicherheit .col-md-6:nth-child(2) .row {
   margin-bottom: 30px;
+}
+section.sicherheit .col-md-6:nth-child(2) .col-md-4 {
+  margin-top: 20px;
 }
 section.sicherheit .col-md-6:nth-child(2) .nutzerbild {
   width: 111px;
@@ -1018,24 +1031,26 @@ footer .col-md-2 span {
   color: #7d868e;
 }
 /* Allgemeines */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .visible-desktop {
     display: none!important;
   }
   .visible-mobile {
     display: block;
   }
+}
+@media (min-width: 992px) {
+  .visible-desktop {
+    display: block;
+  }
+  .visible-mobile {
+    display: none!important;
+  }
+}
+@media (max-width: 992px) {
   .vorteilbar,
   .animation-mitnehmen {
     display: none;
-  }
-}
-@media (min-width: 768px) {
-  .visible-desktop {
-    display: block;
-  }
-  .visible-mobile {
-    display: none!important;
   }
 }
 /* Startseite */
@@ -1062,6 +1077,7 @@ footer .col-md-2 span {
 }
 @media (max-width: 768px) {
   header.home-header {
+    background-image: url(../images/landing/header-image-mobile.jpg);
     height: 500px;
   }
   header.home-header nav .navbar-brand {
@@ -1078,13 +1094,26 @@ footer .col-md-2 span {
     padding-right: 35px;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  header.home-header .header-facts {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   section.paket-versenden .col-md-4 {
     margin-bottom: 30px;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  section.paket-versenden .col-md-4 {
+    width: 33%;
+    display: inline;
+    float: left;
+  }
+}
 @media (max-width: 768px) {
   section.preisberechnung {
+    background-image: url(../images/landing/preis-bg-mobile.jpg);
     height: auto;
     overflow: hidden;
     padding-left: 30px;
@@ -1114,6 +1143,7 @@ footer .col-md-2 span {
 }
 @media (max-width: 768px) {
   section.sicherheit {
+    background-image: url(../images/landing/sicherheit-bg-mobile.jpg);
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -1129,10 +1159,29 @@ footer .col-md-2 span {
     display: inline;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  section.sicherheit .col-md-6:nth-child(1) ul {
+    position: relative;
+    left: 150px;
+  }
+}
 @media (max-width: 768px) {
   section.sicherheit .col-md-6:nth-child(2) {
     padding-left: 20px;
     margin-top: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  section.sicherheit .col-md-6:nth-child(2) {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  section.sicherheit .col-md-6:nth-child(2) .col-md-4 {
+    float: left;
+    display: inline;
+    width: 16%;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 768px) {
@@ -1151,14 +1200,14 @@ footer .col-md-2 span {
 section.abfahrt {
   padding-bottom: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   section.abfahrt .col-md-9,
   section.abfahrt .col-md-3 {
     width: 100%;
     text-align: center;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   section.social .col-md-6 {
     text-align: center!important;
   }
@@ -1189,7 +1238,7 @@ section.abfahrt {
     color: #fff!;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   footer .col-md-2,
   footer .col-md-5 {
     display: block;
