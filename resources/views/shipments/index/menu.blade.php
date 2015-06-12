@@ -18,13 +18,15 @@
             <label for="exampleInputEmail2">Von</label>
             <input name="filter[via][]" value="{{ $filter['via'][0] }}" type="text" class="form-control" id="exampleInputEmail2" placeholder="">
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail2">über</label>
-            <input name="filter[via][]" value="{{ $filter['via'][1] }}" type="text" class="form-control" id="exampleInputEmail2" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail2">über</label>
-            <input name="filter[via][]" value="{{ $filter['via'][2] }}" type="text" class="form-control" id="exampleInputEmail2" placeholder="">
+        <div style="display: none">
+            <div class="form-group">
+                <label for="exampleInputEmail2">über</label>
+                <input name="filter[via][]" value="{{ $filter['via'][1] }}" type="text" class="form-control" id="exampleInputEmail2" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">über</label>
+                <input name="filter[via][]" value="{{ $filter['via'][2] }}" type="text" class="form-control" id="exampleInputEmail2" placeholder="">
+            </div>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail2">nach</label>
