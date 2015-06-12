@@ -60,23 +60,37 @@
 }
 </style>
 
-        <div class="col-md-8">
-
-                <div>
-                    <h4>Aktive Sendungen</h4>
-                    @include('components.shipment.list.list', ['shipments' => $shipping])
-                </div>
-                <div>
-                    <hr>
-                    <h4>Vorlagen von Sendungen</h4>
-                    <p>Du hast hier noch nicht alle Daten angegeben, um die Sendung zu veröffentlichen.</p>
-                    @include('components.shipment.list.list', ['shipments' => $stubs])
-                </div>
-                <div>
-                    <hr>
-                    <h4>Abgeschlossene Sendungen</h4>
-                    @include('components.shipment.list.list', ['shipments' => $shipped])
-                </div>
+    <div class="col-md-8">
+        <div>
+            <h4>Noch nicht bewertet</h4>
+            <p>Angekommen aber nicht bewertet</p>
+            @include('components.shipment.list.list', ['shipments' => $shipped])
+        </div>
+        <div>
+            <h4>Aktive Sendungen</h4>
+            <p>Warten auf Fahrer</p>
+            @include('components.shipment.list.list', ['shipments' => $shipping])
+        </div>
+        <div>
+            <h4>Aktive Sendungen</h4>
+            <p>Fahrer gefunden</p>
+            @include('components.shipment.list.list', ['shipments' => $shipping])
+        </div>
+        <div>
+            <h4>Aktive Sendungen</h4>
+            <p>Fahrer gefunden & Sendung unterwegs</p>
+            @include('components.shipment.list.list', ['shipments' => $shipping])
+        </div>
+        <div>
+            <h4>Abgeschlossene Sendungen</h4>
+            <p>Angekommen und bewertet</p>
+            @include('components.shipment.list.list', ['shipments' => $shipped])
+        </div>
+        <div>
+            <h4>Vorlagen von Sendungen</h4>
+            <p>Unvollständige oder unveröffentlichte Sendungen</p>
+            @include('components.shipment.list.list', ['shipments' => $stubs])
+        </div>
 
       </div><!-- /col-md-8 -->
   </div><!-- /row -->
