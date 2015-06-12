@@ -13,7 +13,7 @@
                     <p><strong>Deine Sendung ist komplett.</strong></p>
                 </div>
                 <div class="content">
-                    <p>Überprüfe alle Daten oder veröffentliche sie, um einen Fahrer zu finden. <a href="{{ route('shipments.publish', $shipment) }}" class="btn btn-sm btn-default navbar-right navbar-btn">Jetzt Fahrer finden</a></p>
+                    <p>Überprüfe alle Daten oder veröffentliche sie, um einen Fahrer zu finden. <a href="{{ route('shipments.publish', $shipment) }}" class="btn btn-sm btn-behance navbar-right navbar-btn">Jetzt Fahrer finden</a></p>
                 </div> 
             </div>
         </div>
@@ -57,34 +57,39 @@
                     </div>
                     <div class="content">
                         <section class="shipment-edit">
-                        <section>
-                            <h3>Strecke</h3>
-                            <h4>Abholung</h4>
-                            @if($shipment->origin_id)
-                                @include('shipments.edit.origin.show', ['origin' => $shipment->origin])
-                            @endif
-
-                            <a id="origin-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Deine Adressen" data-content='
+                            <div class="form-group">
+                                @if($shipment->origin_id)
+                                    @include('shipments.edit.origin.show', ['origin' => $shipment->origin])
+                                @else
+                                    <a id="origin-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Deine Adressen" data-content='
 <p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
-                            <h4>Lieferung</h4>
+                                @endif
+                            </div>
+
                             @if($shipment->destination_id)
                                 @include('shipments.edit.destination.show', ['destination' => $shipment->destination])
+                            @else
+                                <a id="destination-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Deine Adressen" data-content='<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
                             @endif
-
-                            <a id="destination-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Deine Adressen" data-content='
-<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
                         </section>
                         <section class="shipment-edit">
-                            <h3>Details</h3>
                             @include('shipments.edit.details', ['shipment' => $shipment])
                         </section>
                         <section>
-                            <h3>Größe</h3>
                             @if($shipment->size_id)
-                                <p>{{ $shipment->size->name }} <small>{{ $shipment->size->description }}</small></p>
-                                {!! link_to_route('shipments.size.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
+                                <div class="form-group">
+                                    <label for="size-fake-input">Größe</label>
+                                    <div class="input-group">
+                                        <input id="size-fake-input" value="{{ $shipment->size->name }}" class="form-control" type="text" placeholder="{{ $shipment->size->name }}" data-trigger="hover" data-html="true" data-toggle="popover" title="{{ $shipment->size->name }}" data-placement="bottom" data-content="{{ $shipment->size->description }}" readonly>
+                                        <span class="input-group-btn">
+                                            <a id="size-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-behance" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Sendungsgröße wählen" data-content='
+<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'><i class="fa fa-pencil"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
                             @else
-                                {!! link_to_route('shipments.size.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
+                                <a id="size-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-behance" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Sendungsgröße wählen" data-content='
+<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
                             @endif
                         </section>
                         <section>
@@ -94,10 +99,9 @@
                                     <span class="label label-info"><strong>{{ $spec->name }}</strong> {{ $spec->description }}</span>
                                 @endforeach
                                 {!! link_to_route('shipments.specs.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
-                            @else
-                                {!! link_to_route('shipments.specs.index', 'Select', ['shipment' => $shipment], ['class' => 'btn-block btn btn-primary']) !!}
                             @endif
-                        </section>
+                            <a id="specs-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Sonderattribute auswählen" data-content='
+<p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
                         </section>
                         <section class="shipment-edit">
                         <h2>Typ</h2>
@@ -130,6 +134,12 @@
         });
         $('#destination-popover-btn').on('shown.bs.popover', function () {
             $('#' + $('#destination-popover-btn').attr('aria-describedby') + ' .popover-content').load('http://wundership.app/shipments/{{ $shipment->id }}/destination');
+        });
+        $('#size-popover-btn').on('shown.bs.popover', function () {
+            $('#' + $('#size-popover-btn').attr('aria-describedby') + ' .popover-content').load('{{ route('shipments.size.index', $shipment)}}');
+        });
+        $('#specs-popover-btn').on('shown.bs.popover', function () {
+            $('#' + $('#specs-popover-btn').attr('aria-describedby') + ' .popover-content').load('{{ route('shipments.specs.index', $shipment)}}');
         });
     </script>
 @endsection
