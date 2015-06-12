@@ -80,7 +80,10 @@
                                 <div class="form-group">
                                     <label for="size-fake-input">Größe</label>
                                     <div class="input-group">
-                                        <input id="size-fake-input" value="{{ $shipment->size->name }}" class="form-control" type="text" placeholder="{{ $shipment->size->name }}" data-trigger="hover" data-html="true" data-toggle="popover" title="{{ $shipment->size->name }}" data-placement="bottom" data-content="{{ $shipment->size->description }}" readonly>
+                                        <input id="size-fake-input" value="{{ $shipment->size->name }}" class="form-control" type="text" placeholder="{{ $shipment->size->name }}" readonly>
+                                        <span class="input-group-btn">
+                                            <a id="origin-popover-btn" href="#" type="button" class="btn btn-behance" data-html="true" data-toggle="popover" title="{{ $shipment->size->name }}" data-placement="bottom" data-content="<p>{{ $shipment->size->description }}</p>"><i class="fa fa-info"></i></a>
+                                        </span>
                                         <span class="input-group-btn">
                                             <a id="size-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-behance" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Sendungsgröße wählen" data-content='
 <p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'><i class="fa fa-pencil"></i></a>
@@ -93,32 +96,40 @@
                             @endif
                         </section>
                         <section>
-                        <h3>Specs</h3>
                             @if(count($shipment->specs))
+                            <div class="form-group">
+                                <label for="size-fake-input">Spezifikationen</label>
                                 @foreach($shipment->specs as $spec)
-                                    <span class="label label-info"><strong>{{ $spec->name }}</strong> {{ $spec->description }}</span>
+                                    <div class="input-group" style="margin-bottom: 3px;">
+                                        <input id="size-fake-input" value="{{ $spec->name }}" class="form-control" type="text" placeholder="{{ $spec->name }}" readonly>
+                                        <span class="input-group-btn">
+                                            <a id="origin-popover-btn" href="#" type="button" class="btn btn-behance" data-html="true" data-toggle="popover" title="{{ $spec->name }}" data-placement="bottom" data-content="<p>{{ $spec->description }}</p>"><i class="fa fa-info"></i></a>
+                                        </span>
+                                    </div>
                                 @endforeach
-                                {!! link_to_route('shipments.specs.index', 'Edit', ['shipment' => $shipment], ['class' => 'btn-block btn btn-warning']) !!}
+                            </div>
                             @endif
-                            <a id="specs-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Sonderattribute auswählen" data-content='
+                            <div class="form-group">
+                                <a id="specs-popover-btn" data-placement="bottom" data-html="true" type="button" class="btn btn-block btn-danger" data-template='<div class="popover" style="width: 300px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="max-height: 350px; overflow: scroll;"></div></div>' data-toggle="popover" title="Sonderattribute auswählen" data-content='
 <p class="text-center"><i class="fa fa-refresh fa-spin"></i></p>'>Bearbeiten</a>
+                            </div>
                         </section>
-                        <section class="shipment-edit">
-                        <h2>Typ</h2>
                         <section>
-                            @if($shipment->typeable_id && $shipment->typeable_type)
-                                @if($shipment->typeable instanceof Wundership\Auction)
-                                    @include('shipments.edit.type.auction.show', ['shipment' => $shipment, 'auction' => $shipment->typeable])
-                                @elseif($shipment->typeable instanceof Wundership\Immediate)
-                                    @include('shipments.edit.type.immediate.show', ['shipment' => $shipment, 'immediate' => $shipment->typeable])
+                            <div class="form-group">
+                                <label for="size-fake-input">Typ</label>
+                                @if($shipment->typeable_id && $shipment->typeable_type)
+                                    @if($shipment->typeable instanceof Wundership\Auction)
+                                        @include('shipments.edit.type.auction.show', ['shipment' => $shipment, 'auction' => $shipment->typeable])
+                                    @elseif($shipment->typeable instanceof Wundership\Immediate)
+                                        @include('shipments.edit.type.immediate.show', ['shipment' => $shipment, 'immediate' => $shipment->typeable])
+                                    @endif
+                                @else
+                                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                        {!! link_to_route('shipments.auction.create', 'Auction', ['shipment' => $shipment], ['class' => 'btn btn-primary']) !!}
+                                        {!! link_to_route('shipments.immediate.create', 'Immediate', ['shipment' => $shipment], ['class' => 'btn btn-primary']) !!}
+                                    </div>
                                 @endif
-                            @else
-                                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                                    {!! link_to_route('shipments.auction.create', 'Auction', ['shipment' => $shipment], ['class' => 'btn btn-primary']) !!}
-                                    {!! link_to_route('shipments.immediate.create', 'Immediate', ['shipment' => $shipment], ['class' => 'btn btn-primary']) !!}
-                                </div>
-                            @endif
-                        </section>
+                            </div>
                         </section>
                     </div> 
                 </div><!-- / infobox -->
