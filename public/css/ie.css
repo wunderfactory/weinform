@@ -1,2 +1,8 @@
 
 /*# sourceMappingURL=ie.css.map */
+
+.paket-aufgeben, .paket-wirdabgeholt, .paket-wirdgeliefert  {
+	opacity: 1!important;
+	display: block;
+	visibility: visible;
+}
