@@ -1,6 +1,5 @@
 .comingsoonbody {
 	background-color: @first;
-	background-image: none !important;
 }
 section.commingsoon {
 	@media (max-width: 768px) {
@@ -27,7 +26,18 @@ section.commingsoon {
 		display: block;
 		margin-bottom: 20px;
 	}
-	a {
+	a.bt {
 		padding: 13px 25px;
+	}
+	a:not(.bt) {
+		color: white;
+	}
+	.impressum{
+		margin-top: 30px;
+		color: white !important;
+	}
+	p{
+		color: white;
+		margin-bottom: 20px;
 	}
 }

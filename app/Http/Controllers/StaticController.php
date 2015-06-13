@@ -117,7 +117,10 @@ class StaticController extends Controller {
 	{
 		return view('static.static_information.security_informations');
 	}
-
+	public function getImpressum()
+	{
+		return view('static.static_information.impressum');
+	}
 
 	/* SUPPORT */
 

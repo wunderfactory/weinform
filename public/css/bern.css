@@ -1295,7 +1295,6 @@ section.abfahrt {
 /* Paket mitnehmen */
 .comingsoonbody {
   background-color: #1d5e84;
-  background-image: none !important;
 }
 section.commingsoon {
   background: transparent;
@@ -1328,8 +1327,19 @@ section.commingsoon span {
   display: block;
   margin-bottom: 20px;
 }
-section.commingsoon a {
+section.commingsoon a.bt {
   padding: 13px 25px;
+}
+section.commingsoon a:not(.bt) {
+  color: white;
+}
+section.commingsoon .impressum {
+  margin-top: 30px;
+  color: white !important;
+}
+section.commingsoon p {
+  color: white;
+  margin-bottom: 20px;
 }
 /* frameworks */
 /*      light colors         */

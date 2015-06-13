@@ -6,10 +6,12 @@
 
 	<section class="commingsoon">
 		<span class="icon-logo"></span>
-		<h1>Comming soon</h1>
-		<h2>wundership startet bald...</h2>
+		<h1>Impressum</h1>
+		<p>wunderfactory<br>
+		ideacubator UG (haftungsbeschränkt)<br>
+		Gorch-Fock-Straße 6, 20357 Hamburg<br>
+		+49 (0) 40 210 914<br><br><br> </p>
 		<a href="{{url('/')}}" class="bt bt-second-fill">Zurück zur Startseite</a>
-		<a href="{{url('/impressum')}}"><p class="impressum">Impressum</p></a>
 	</section>
 
 </body>
