@@ -1293,6 +1293,44 @@ section.abfahrt {
   }
 }
 /* Paket mitnehmen */
+.comingsoonbody {
+  background-color: #1d5e84;
+  background-image: none !important;
+}
+section.commingsoon {
+  background: transparent;
+  padding-top: 20%;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  section.commingsoon {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+section.commingsoon span,
+section.commingsoon h1,
+section.commingsoon h2,
+section.commingsoon a {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  top: -20px;
+}
+section.commingsoon h2 {
+  margin-bottom: 30px;
+}
+section.commingsoon span {
+  font-size: 78px;
+  display: block;
+  margin-bottom: 20px;
+}
+section.commingsoon a {
+  padding: 13px 25px;
+}
 /* frameworks */
 /*      light colors         */
 .vertical-align {

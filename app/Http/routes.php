@@ -21,8 +21,8 @@ Route::group(['prefix' => 'api/v1/', 'before' => 'oauth'], function(){
     Route::resource('users', 'api\v1\UsersController');
 });
 
-Route::get('/bern', function(){
-        return View::make('static.v1_home');
+Route::get('/commingsoon', function(){
+        return View::make('static.commingsoon');
     });
 
 

@@ -11,10 +11,7 @@
             <link rel="stylesheet" type="text/css" href="{{ asset('/css/ie.css') }}" />
         <![endif]-->
     </head>
-    <body>
-        
-        @yield('content')
 
-        <script src="{{ asset('/js/landing.js') }}" type="text/javascript"></script>
-    </body>
+        @yield('content')
+    
 </html>

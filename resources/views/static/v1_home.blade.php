@@ -2,32 +2,17 @@
 
 @section('content')
 
+<body>
+
 <header class="home-header" data-stellar-background-ratio="0.2">
     <div class="section-bg-verlauf"></div>
-    <nav class="navbar navbar-ct-azure navbar-transparent navbar-fixed-top"role="navigation">
-        <div class="nav-bg"></div>
-        <div class="container wow fadeIn" data-wow-delay="1.1s">
-            <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle">
-                <span class="sr-only">Navigation aufklappen</span>
-                <span class="icon-bar bar1"></span>
-                <span class="icon-bar bar2"></span>
-                <span class="icon-bar bar3"></span>
-                </button>
-                <a class="navbar-brand" href="/"><span class="icon-logo"></span> <span>wundership</span></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{url('auth/login')}}" class="bt bt-weiss-transparent">Anmelden</a></li>
-                    <li><a href="{{url('auth/choose')}}" class="bt bt-second-fill">Registrieren</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
+    @include('structure.v1_navbar')
+
     <div class="header-title wow zoomInUp">
         <h1>Deine Mitfahrzentrale für Pakete</h1>
         <h2>Dinge bequem versenden, Reisekosten decken</h2>
-        <a href="{{url('auth/choose')}}" class="bt bt-second-fill">Paket versenden oder mitnehmen</a>
+        <a href="{{url('/comingsoon')}}" class="bt bt-second-fill">Paket versenden oder mitnehmen</a>
     </div>
     <div class="header-facts wow fadeIn" data-wow-delay="1.1s">
         <div class="container">
@@ -335,5 +320,9 @@
         </div>
     </div>
 </footer>
+
+<script src="{{ asset('/js/landing.js') }}" type="text/javascript"></script>
+
+</body>
 
 @stop
