@@ -14,7 +14,7 @@
         <h2>Dinge bequem versenden, Reisekosten decken</h2>
         <a href="{{url('/comingsoon')}}" class="bt bt-second-fill">Paket versenden oder mitnehmen</a>
     </div>
-    <div class="header-facts wow fadeIn" data-wow-delay="1.1s">
+    {{-- <div class="header-facts wow fadeIn" data-wow-delay="1.1s">
         <div class="container">
             <ul>
                 <li><span>2.701</span> Pakete versendet</li>
@@ -23,7 +23,7 @@
                 <li><span>0</span> Beschädigte oder verlorene Pakete</li>
             </ul>
         </div>
-    </div>
+    </div> --}}
 </header>
 <section class="paket-versenden wow fadeIn" data-wow-delay="0.6s">
     <div class="container">
