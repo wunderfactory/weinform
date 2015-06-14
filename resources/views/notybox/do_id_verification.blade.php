@@ -1,8 +1,9 @@
 @if(!$user->verification)
         <div class="warningbox">
             <div class="header">
-                <div class="col-md-1"><i class="pe-7s-id"></i></div>
-                <div class="col-md-8"><p><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p></div>
+                <div class="col-md-8">
+                    <p><i class="pe-7s-id header-icons"></i><strong>Hi {{ $user->first_name }}! Bitte verifiziere Deine Identität.</strong></p>
+                </div>
 
             </div>
             <div class="content">

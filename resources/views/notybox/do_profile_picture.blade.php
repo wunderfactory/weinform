@@ -3,8 +3,9 @@
     @else
     <div class="orangebox">
         <div class="header">
-            <div class="col-md-1"><i class="pe-7s-camera"></i></div>
-            <div class="col-md-10"><p><strong>Heyho {{ $user->first_name }}! Bitte lade ein Profilbild von Dir hoch.</strong></p></div>
+            <div class="col-md-10">
+                <p><i class="pe-7s-camera header-icons"></i><strong>Heyho {{ $user->first_name }}! Bitte lade ein Profilbild von Dir hoch.</strong></p>
+            </div>
            
         </div>
         <div class="content">

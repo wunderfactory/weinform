@@ -15,13 +15,10 @@
 }
 .bluebox .header {
   width: 100%;
-  position: top;
-  height: 60px;
   padding: 15px;
   color: white;
   background-color: #00B3FF;
   border-bottom: 1px solid #00B3FF;
-  vertical-align: center;
 }
 .bluebox .content {
   padding: 15px;
@@ -35,13 +32,10 @@
 }
 .orangebox .header {
   width: 100%;
-  position: top;
-  height: 60px;
   padding: 15px;
   color: white;
   background-color: #ffc000;
   border-bottom: 1px solid #ffc000;
-  vertical-align: center;
 }
 .orangebox .header p {
   color: white;
@@ -65,13 +59,10 @@
 }
 .successbox .header {
   width: 100%;
-  position: top;
-  height: 60px;
   padding: 15px;
   color: white;
   background-color: #52b856;
   border-bottom: 1px solid #52b856;
-  vertical-align: center;
 }
 .successbox .header p {
   color: white;
@@ -98,12 +89,9 @@
 }
 .infobox .header {
   width: 100%;
-  position: top;
-  height: 60px;
   padding: 15px;
   background-color: #e8e8e8;
   border-bottom: 1px solid #ababab;
-  vertical-align: center;
 }
 .infobox .header p {
   color: #828282;
@@ -126,7 +114,6 @@
   margin-bottom: 20px;
 }
 .infobox_image .header {
-  position: top;
   height: 60px;
   padding: 15px;
   width: 325px;
@@ -160,13 +147,10 @@
 }
 .warningbox .header {
   width: 100%;
-  position: top;
-  height: 60px;
   padding: 15px;
   color: white;
   background-color: #1d5e84;
   border-bottom: 1px solid #1d5e84;
-  vertical-align: center;
 }
 .warningbox .header p {
   color: white;
@@ -236,7 +220,6 @@
 .infobox_large_image {
   background-color: white;
   border: 1px solid #ababab;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 .infobox_large_image .left .header {
@@ -258,11 +241,9 @@
 .infobox_large_image .left .content p {
   color: #1d5e84;
 }
-.infobox_large_image .right .content .image_container {
-  width: 473px;
-  background-color: red;
-  height: 300px;
-  background-size: cover;
+.header-icons {
+  vertical-align: sub;
+  margin-right: 20px;
 }
 @media (max-width: 767px) {
   .row {
