@@ -21,11 +21,6 @@ Route::group(['prefix' => 'api/v1/', 'before' => 'oauth'], function(){
     Route::resource('users', 'api\v1\UsersController');
 });
 
-Route::get('/commingsoon', function(){
-        return View::make('static.commingsoon');
-    });
-
-
 Route::group(['middleware' => ['csrf']], function(){
     Route::get('/button', function(){
         return View::make('test');

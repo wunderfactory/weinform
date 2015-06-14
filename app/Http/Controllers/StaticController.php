@@ -53,8 +53,9 @@ class StaticController extends Controller {
 		return view('product.overview');
 	}
 
-
-
+	public function getComingsoon(){
+        return view('static.commingsoon');
+    }
 
 
 
