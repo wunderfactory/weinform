@@ -42,22 +42,30 @@
 
 
         <div class="row">
-          <div class="col-md-12">
-
+        </div>
     <!------------------------------- -->
 
                 <br>
 
                 @include('notybox.do_complete_profile')
 
+            <div class="row">
+              <div class="col-md-12">
                 @include('notybox.do_profile_picture')
-
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-12">
                 @include('notybox.do_id_verification')
+              </div>
+            </div>
 
                 @include('notybox.id_verification_pending')
-
-                <div class="infobox_large_image">
-                    <div class="left">
+            
+            <div class="row">
+                <div class="infobox_large_image col-md-12">
+                    <div class="left col-md-6">
                       <div class="header">
                         <p><strong>Lade deine Freunde ein!</strong></p>
                       </div>
@@ -66,16 +74,18 @@
                           <a href="{{ url('friends') }}"><button class="btn btn-default">Jetzt Freunde einladen!</button></a>
                       </div>
                     </div>
-                    <div class="right">
+                    <div class="right col-md-6">
                         <div class="content">
-                          <div class="image_container" style="background-image: url('{{ asset('images/presentation/shipments/ship1.jpg') }}');"></div>
+                          <img class="img-responsive" src="{{ asset('images/stock/friends.jpg') }}">
                       </div>
                     </div> 
                 </div>
+            </div>
 
     <!------------------------------- -->
 
-                <div class="infobox">
+            <div class="row">
+                <div class="infobox col-md-12">
                     <div class="header">
                         <p>Wir suchen <strong>Praktikanten</strong></p>
                     </div>
@@ -83,6 +93,7 @@
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                     </div> 
                 </div>
+            </div>
 
     <!------------------------------- -->
 
@@ -98,8 +109,6 @@
               </div> --}}
 
 
-              </div><!-- /col-md-12 -->
-          </div><!-- /row -->
     </div><!-- /container -->
 
 @section('script')

@@ -2,6 +2,10 @@
   color: #2fd155;
 }
 /* _com = complementary color */
+.col-md-6,
+.col-md-12 {
+  padding: 0px;
+}
 /* BLUE */
 .bluebox {
   width: 100%;
@@ -233,12 +237,7 @@
   background-color: white;
   border: 1px solid #ababab;
   margin-top: 20px;
-  height: 302px;
   margin-bottom: 20px;
-}
-.infobox_large_image .left {
-  float: left;
-  width: 475px;
 }
 .infobox_large_image .left .header {
   position: top;
@@ -259,15 +258,17 @@
 .infobox_large_image .left .content p {
   color: #1d5e84;
 }
-.infobox_large_image .right {
-  float: left;
-  width: 300px;
-}
 .infobox_large_image .right .content .image_container {
   width: 473px;
   background-color: red;
   height: 300px;
   background-size: cover;
+}
+@media (max-width: 767px) {
+  .row {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
 /*# sourceMappingURL=patstrap.css.map */
