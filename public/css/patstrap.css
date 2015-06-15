@@ -245,6 +245,11 @@
   vertical-align: sub;
   margin-right: 20px;
 }
+@media (min-width: 992px) {
+  .header {
+    height: 60px;
+  }
+}
 @media (max-width: 767px) {
   .row {
     margin-left: 5px;

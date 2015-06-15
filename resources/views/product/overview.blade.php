@@ -64,7 +64,8 @@
                 @include('notybox.id_verification_pending')
             
             <div class="row">
-                <div class="infobox_large_image col-md-12">
+              <div class="col-md-12">
+                <div class="infobox_large_image">
                     <div class="left col-md-6">
                       <div class="header">
                         <p><strong>Lade deine Freunde ein!</strong></p>
@@ -80,6 +81,7 @@
                       </div>
                     </div> 
                 </div>
+              </div>
             </div>
 
     <!------------------------------- -->
