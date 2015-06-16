@@ -302,7 +302,7 @@
             <div class="col-md-2 visible-mobile">
                 <span class="icon-logo"></span>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 footerleft">
                 <ul>
                     <li><a href="{{url('/impressum')}}">Impressum</a></li>
                     <li><a href="{{url('/comingsoon')}}">Allgemeine Geschäftsbedingungen</a></li>

@@ -1005,13 +1005,13 @@ footer ul li a {
 footer ul li a:hover {
   color: #1d5e84;
 }
-footer .col-md-5:nth-child(1) {
+footer .col-md-5.footerleft {
   text-align: right;
 }
-footer .col-md-5:nth-child(1) li {
+footer .col-md-5.footerleft li {
   margin-right: 10px;
 }
-footer .col-md-5:nth-child(1) li:last-child {
+footer .col-md-5.footerleft li:last-child {
   margin-right: 0px;
 }
 footer .col-md-5 {

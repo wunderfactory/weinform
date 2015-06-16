@@ -14050,3 +14050,7 @@ $(window).bind('scroll', function(){
 });
 /* Animationen bei Scrollen */
 new WOW().init();
+
+if ("ontouchstart" in document.documentElement) {
+    document.body.setAttribute("ontouchstart");
+}
