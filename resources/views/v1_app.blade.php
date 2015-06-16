@@ -7,6 +7,7 @@
         <link href="{{ asset('/css/bern.css') }}" rel="stylesheet"/>
         <link href="{{ asset('/css/bernimate.css') }}" rel="stylesheet"/>
         <link href="{{ asset('/css/wundership-icon-font.css') }}" rel="stylesheet"/>
+        <link rel="stylesheet" href="{{ asset('/fonts/fontawesome/css/font-awesome.min.css') }}">
         <!--[if gt IE 7]>
             <link rel="stylesheet" type="text/css" href="{{ asset('/css/ie.css') }}" />
         <![endif]-->

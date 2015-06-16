@@ -1144,6 +1144,8 @@ footer .col-md-2 span {
 @media (max-width: 768px) {
   section.sicherheit {
     background-image: url(../images/landing/sicherheit-bg-mobile.jpg);
+    background-size: contain;
+    background-repeat: repeat;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -1253,6 +1255,9 @@ section.abfahrt {
   }
   footer .col-md-5 {
     margin-top: 10px!important;
+  }
+  footer .col-md-5.footerleft {
+    text-align: left;
   }
 }
 /* Paket versenden */

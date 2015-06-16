@@ -109,6 +109,8 @@ section.preisberechnung {
 section.sicherheit {
     @media (max-width: 768px) {
         background-image: url(../images/landing/sicherheit-bg-mobile.jpg);
+        background-size: contain;
+        background-repeat: repeat;
         padding-left: 30px;
         padding-right: 30px;
         .section-bg-verlauf {
@@ -216,8 +218,11 @@ footer {
                 padding: 0px;
             }
         }
-        .col-md-5{
+        .col-md-5 {
             margin-top: 10px!important;
+        }
+        .col-md-5.footerleft {
+            text-align: left;
         }
     }
 }
