@@ -168,7 +168,7 @@
             <div class="col-md-6">
                 <div class="col-md-4">
                     <div class="nutzerbild">
-                        <img class="img-circle" src="https://graph.facebook.com/Jana.Monin/picture?width=100&height=100" alt="wundership Kunde">
+                        <img class="img-circle" src="{{ asset('/images/landing/nutzer/jana.png') }}" alt="wundership Kunde">
                         <div class="nutzerbewertung">
                             <span>Jana</span>
                             <ul>
@@ -198,7 +198,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="nutzerbild">
-                        <img class="img-circle" src="https://graph.facebook.com/hauke.moritz.3/picture?width=100&height=100" alt="wundership Kunde">
+                        <img class="img-circle" src="{{ asset('/images/landing/nutzer/hauke.png') }}" alt="wundership Kunde">
                         <div class="nutzerbewertung">
                             <span>Hauke</span>
                             <ul>
@@ -213,7 +213,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="nutzerbild">
-                        <img class="img-circle" src="https://graph.facebook.com/reto.gericke/picture?width=100&height=100" alt="wundership Kunde">
+                        <img class="img-circle" src="{{ asset('/images/landing/nutzer/reto.png') }}" alt="wundership Kunde">
                         <div class="nutzerbewertung">
                             <span>Reto</span>
                             <ul>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="nutzerbild">
-                        <img class="img-circle" src="https://graph.facebook.com/koehler.chris/picture?width=100&height=100" alt="wundership Kunde">
+                        <img class="img-circle" src="{{ asset('/images/landing/nutzer/chris.png') }}" alt="wundership Kunde">
                         <div class="nutzerbewertung">
                             <span>Chris</span>
                             <ul>
@@ -243,7 +243,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="nutzerbild">
-                        <img class="img-circle" src="https://graph.facebook.com/michael.hade.5/picture?width=100&height=100" alt="wundership Kunde">
+                        <img class="img-circle" src="{{ asset('/images/landing/nutzer/michael.png') }}" alt="wundership Kunde">
                         <div class="nutzerbewertung">
                             <span>Michael</span>
                             <ul>
