@@ -112,8 +112,8 @@
                     <span class="icon-bus"></span>
                     <div>
                         <h5>Finanzier Dir Dein Busticket!</h5>
-                        <p>Noch ein bisschen Platz im Koffer? Nimm doch einfach noch etwas mit! </p>
-                        <a class="bt bt-second-transparent">Sendung finden</a>
+                        <p>Noch ein bisschen Platz im Koffer? Nimm doch einfach etwas mit! </p>
+                        <a href="{{url('/comingsoon')}}" class="bt bt-second-transparent">Sendung finden</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     <div>
                         <h5>Finanzier Dir Dein Bahnticket!</h5>
                         <p>Warum nicht noch etwas mitnehmen, wenn Du sowieso schon unterwegs bist? </p>
-                        <a class="bt bt-second-transparent">Sendung finden</a>
+                        <a href="{{url('/comingsoon')}}" class="bt bt-second-transparent">Sendung finden</a>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
                     <div>
                         <h5>Lass Pakete mitfahren!</h5>
                         <p>Autofahren ist schön, aber auch teuer. Finanzier Dir deine Fahrt mit deinem Kofferraum. </p>
-                        <a class="bt bt-second-transparent">Sendung finden</a>
+                        <a href="{{url('/comingsoon')}}" class="bt bt-second-transparent">Sendung finden</a>
                     </div>
                 </div>
             </div>
