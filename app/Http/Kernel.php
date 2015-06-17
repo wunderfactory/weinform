@@ -35,6 +35,10 @@ class Kernel extends HttpKernel {
         'driver' => 'Wundership\Http\Middleware\Driver',
         'notDriver' => 'Wundership\Http\Middleware\NotDriver',
         'user' => 'Wundership\Http\Middleware\User',
+		'driver.verified' => 'Wundership\Http\Middleware\VerifiedDelivererMiddleware',
+		'driver.unverified' => 'Wundership\Http\Middleware\UnverifiedDelivererMiddleware',
+		'driver.badRating' => 'Wundership\Http\Middleware\BadRatedDelivererMiddleware',
+		'driver.goodRating' => 'Wundership\Http\Middleware\GoodRatedDelivererMiddleware',
 	];
 
 }
