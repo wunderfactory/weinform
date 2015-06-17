@@ -13,8 +13,15 @@ class VerifiedDelivererMiddleware {
 	 */
 	public function handle($request, Closure $next)
 	{
-		//TODO handling
-		return $next($request);
+		$user = $request->user();
+		if($user->verification && $user->verification->verified)
+		{
+			return $next($request);
+		}
+		else
+		{
+			return redirect('/'); //TODO route ändern
+		}
 	}
 
 }
