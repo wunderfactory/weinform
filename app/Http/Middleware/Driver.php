@@ -14,10 +14,12 @@ class Driver {
 	 */
 	public function handle($request, Closure $next)
 	{
-        if(Auth::user() && Auth::user()->driver){
+        if(Auth::user() && Auth::user()->driver)
+        {
             return $next($request);
         }
-        if(Auth::user()) {
+        if(Auth::user())
+        {
             return redirect('user/'.Auth::user()->username.'/driver/create');
         }
 		return redirect('auth/login');
