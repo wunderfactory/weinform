@@ -1,4 +1,4 @@
-<footer class="footer footer-big footer-transparent">
+<footer class="footer footer-big">
     <div class="container">
         <div class="row">
             <div class="col-md-2">
