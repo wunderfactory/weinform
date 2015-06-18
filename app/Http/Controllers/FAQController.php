@@ -1,5 +1,6 @@
 <?php namespace Wundership\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Wundership\Http\Requests;
 use Wundership\Http\Controllers\Controller;
 
@@ -16,7 +17,12 @@ class FAQController extends Controller {
 	 */
 	public function index()
 	{
-		return Question::all();
+        if (Input::has('search')) {
+            $questions = Question::search(Input::get('search'))->get();
+        } else {
+            $questions = Question::all();
+        }
+		return view('faq.index')->withQuestions($questions);
 	}
 
 	/**
@@ -103,4 +109,13 @@ class FAQController extends Controller {
         return redirect('faq');
 	}
 
+    /**
+     * Searches for question
+     *
+     * @param String $search
+     */
+    public function search($search)
+    {
+
+    }
 }
