@@ -18,7 +18,10 @@ class FAQController extends Controller {
 	public function index()
 	{
         if (Input::has('search')) {
-            $questions = Question::search(Input::get('search'))->get();
+            $questions = Question::search(Input::get('search'))->get()->sortByDesc(function($model){
+                return $model->searchScore;
+            });
+            return $questions;
         } else {
             $questions = Question::all();
         }
@@ -116,6 +119,6 @@ class FAQController extends Controller {
      */
     public function search($search)
     {
-
+        return Question::search($search)->get();
     }
 }

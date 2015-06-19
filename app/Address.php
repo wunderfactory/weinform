@@ -12,10 +12,15 @@ class Address extends Model {
 		'zip'       => 'required|digits:5'
 	];
 
-	protected $fillable = ['title', 'street', 'city', 'zip'];
+	protected $fillable = ['title', 'street', 'city', 'zip', 'latitude', 'longitude'];
 
 	public function user()
 	{
 		return $this->belongsTo('Wundership\User');
 	}
+
+    public function coordinates()
+    {
+        return ['latitude' => $this->latitude, 'longitude' => $this->longitude];
+    }
 }

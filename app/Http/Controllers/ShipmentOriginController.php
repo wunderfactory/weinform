@@ -58,7 +58,9 @@ class ShipmentOriginController extends Controller {
 			'title',
 			'street',
 			'city',
-			'zip'
+			'zip',
+            'latitude',
+            'longitude'
 		]);
 
 		$v = Validator::make($input, Address::$rules);

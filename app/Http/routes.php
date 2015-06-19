@@ -48,6 +48,7 @@ Route::group(['middleware' => ['csrf']], function(){
     });
     Route::controller('user/{user}', 'UsersController');
     Route::controller('user/{user}/driver', 'DriverController');
+    Route::post('faq/search/{search}', 'FAQController@search');
     Route::resource('faq', 'FAQController');
     Route::controller('/', 'StaticController');
 });

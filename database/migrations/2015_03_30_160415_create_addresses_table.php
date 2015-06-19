@@ -19,6 +19,8 @@ class CreateAddressesTable extends Migration {
 			$table->string('street');
 			$table->string('city');
 			$table->string('zip');
+            $table->float('latitude', 10, 8);
+            $table->float('longitude', 10, 8);
 			$table->unsignedInteger('user_id');
 			$table->timestamps();
 		});

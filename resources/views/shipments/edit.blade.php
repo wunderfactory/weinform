@@ -50,6 +50,9 @@
     </style>
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <div id="map-canvas"></div>
+            </div>
             <div class="col-md-6">
                 <div class="infobox">
                     <div class="header">
@@ -139,6 +142,7 @@
 @endsection
 
 @section('script')
+    <script type="text/javascript" src="{{url('js/wundershipgooglemaps.js')}}"></script>
     <script>
         $('#origin-popover-btn').on('shown.bs.popover', function () {
             $('#' + $('#origin-popover-btn').attr('aria-describedby') + ' .popover-content').load('http://wundership.app/shipments/{{ $shipment->id }}/origin');
@@ -153,4 +157,51 @@
             $('#' + $('#specs-popover-btn').attr('aria-describedby') + ' .popover-content').load('{{ route('shipments.specs.index', $shipment)}}');
         });
     </script>
+    <script>
+        function initialize() {
+            var mapOptions = {
+                zoom: 8,
+                center: new google.maps.LatLng(-34.397, 150.644)
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+            var bounds = new google.maps.LatLngBounds();
+            @if($shipment->origin)
+                var originMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng({{ $shipment->origin->latitude }},{{ $shipment->origin->longitude }}),
+                    map: map,
+                    icon: icons["origin"]
+                });
+                bounds.extend(originMarker.position);
+            @endif
+            @if($shipment->destination)
+                var destinationMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng({{ $shipment->destination->latitude }},{{ $shipment->destination->longitude }}),
+                    map: map,
+                    icon: icons["destination"]
+                });
+                bounds.extend(destinationMarker.position);
+            @endif
+
+        map.fitBounds(bounds);
+        }
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAgVPwymp7ooqSA3dt-vKQmhFuQjyN99_Y' +
+            '&callback=initialize';
+            document.body.appendChild(script);
+        }
+        window.onload = loadScript;
+    </script>
+@endsection
+
+@section('header')
+    <style type="text/css">
+        #map-canvas {
+            height: 300px;
+        }
+    </style>
 @endsection

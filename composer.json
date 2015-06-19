@@ -31,7 +31,10 @@
 		],
 		"psr-4": {
 			"Wundership\\": "app/"
-		}
+		},
+        "files": [
+          "app/Wunderfactory/helpers.php"
+        ]
 	},
 	"autoload-dev": {
 		"classmap": [

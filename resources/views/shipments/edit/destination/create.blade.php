@@ -1,11 +1,13 @@
 @extends('app')
 
 @section('content')
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
     <div class="container">
         <h1>Adresse anlegen</h1>
         <a class="btn btn-default" href="{{ route('shipments.destination.index', $shipment) }}">Zurück</a>
         {!! Form::open(['route' => ['shipments.destination.store', $shipment], 'method' => 'post']) !!}
+        <div class="form-group col-sm-12" id="map-canvas">
+
+        </div>
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="titleInput">Bezeichnung</label>
@@ -16,6 +18,7 @@
                 <input onFocus="geolocate()" type="text" class="form-control" id="addressSuggestInput" placeholder="Adresse">
             </div>
         </div>
+        <!--
         <div class="col-sm-6">
             <div class="form-group col-sm-12">
                 <label for="addressInput">Adresse</label>
@@ -29,16 +32,25 @@
                 <label for="zipInput">Postleitzahl</label>
                 <input type="text" class="form-control" id="zipInput" name="zip" placeholder="Postleitzahl" readonly>
             </div>
-        </div>
-
+        </div>-->
+        <input type="hidden" class="form-control" id="addressInput" name="street" placeholder="Straße Nr." readonly>
+        <input type="hidden" class="form-control" id="cityInput" name="city" placeholder="Ort" readonly>
+        <input type="hidden" class="form-control" id="zipInput" name="zip" placeholder="Postleitzahl" readonly>
+        <input type="hidden" id="lat" name="latitude">
+        <input type="hidden" id="lng" name="longitude">
         {!! Form::submit('Adresse anlegen', ['class' => 'btn btn-primary btn-block']) !!}
         {!! Form::close() !!}
     </div>
+
+@endsection
+
+@section('script')
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
     <script>
         // This example displays an address form, using the autocomplete feature
         // of the Google Places API to help users fill in the information.
 
-        var placeSearch, autocomplete;
+        var placeSearch, autocomplete, map, marker;
         var componentForm = {
             route: 'long_name',
             street_number: 'long_name',
@@ -51,6 +63,10 @@
             locality: 'cityInput',
             postal_code: 'zipInput'
         };
+        var mapOptions = {
+            zoom: 8,
+            center: new google.maps.LatLng(-34.397, 150.644)
+        };
 
         function initialize() {
             console.log('Mo was here.');
@@ -59,6 +75,9 @@
             autocomplete = new google.maps.places.Autocomplete(
                     /** @type {HTMLInputElement} */(document.getElementById('addressSuggestInput')),
                     { types: ['geocode'] });
+            //Create a new GoogleMaps Map
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
             // When the user selects an address from the dropdown,
             // populate the address fields in the form.
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
@@ -70,7 +89,7 @@
         function fillInAddress() {
             // Get the place details from the autocomplete object.
             var place = autocomplete.getPlace();
-
+            if (marker != null) marker.setMap(null);
             for (var component in componentForm) {
                 console.log("Component: " + component);
                 console.log("Mapped id: " + componentMap[component]);
@@ -79,6 +98,20 @@
                 inputElement.disabled = false;
             }
 
+            //Set a marker for the new Postion
+            marker = new google.maps.Marker({
+                map: map
+            });
+            marker.setPosition(place.geometry.location);
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);  // Why 17? Because it looks good.
+            }
+            console.log(place.geometry.location);
+            document.getElementById("lat").value = place.geometry.location.A;
+            document.getElementById("lng").value = place.geometry.location.F;
             // Get each component of the address from the place details
             // and fill the corresponding field on the form.
             for (var i = 0; i < place.address_components.length; i++) {
@@ -113,9 +146,15 @@
             }
         }
         // [END region_geolocation]
+        window.onload = initialize;
+    </script>
+@endsection
 
-    </script>
-    <script>
-        initialize();
-    </script>
+@section("header")
+
+    <style type="text/css">
+        #map-canvas {
+            height: 300px;
+        }
+    </style>
 @endsection
