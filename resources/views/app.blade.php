@@ -26,6 +26,7 @@
 	<link href="{{ asset('/css/views/product_area.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/profile_area.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/views/auth_area.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/views/static_area.css') }}" rel="stylesheet">
 
     <!-- BUTTONS -->
     <link href="{{ asset('/css/buttons.css') }}" rel="stylesheet">
