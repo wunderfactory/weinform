@@ -88,6 +88,22 @@
   -webkit-animation: wiggle 0.5s infinite;
   animation: wiggle 0.5s infinite;
 }
+.product_area #shipment_create {
+  background-color: #f0f0f0;
+  max-width: 980px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  min-height: 700px !important;
+}
+.product_area #shipments {
+  background-color: #f0f0f0;
+  max-width: 980px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.product_area #shipments .list_container {
+  padding-top: 40px;
+}
 #show_shipment_details {
   padding: 20px;
 }
