@@ -8,12 +8,6 @@
         <link href="{{ asset('/css/bernimate.css') }}" rel="stylesheet"/>
         <link href="{{ asset('/css/wundership-icon-font.css') }}" rel="stylesheet"/>
         <link rel="stylesheet" href="{{ asset('/fonts/fontawesome/css/font-awesome.min.css') }}">
-
-        <link href="{{ asset('/css/wundership.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/patstrap.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/views/auth_area.css') }}" rel="stylesheet">
-        <!-- BUTTONS -->
-        <link href="{{ asset('/css/buttons.css') }}" rel="stylesheet">
         <!--[if gt IE 7]>
             <link rel="stylesheet" type="text/css" href="{{ asset('/css/ie.css') }}" />
         <![endif]-->
