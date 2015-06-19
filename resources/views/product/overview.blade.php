@@ -47,7 +47,11 @@
 
                 <br>
 
+            <div class="row">
+              <div class="col-md-12">
                 @include('notybox.do_complete_profile')
+              </div>
+            </div>
 
             <div class="row">
               <div class="col-md-12">
@@ -60,12 +64,15 @@
                 @include('notybox.do_id_verification')
               </div>
             </div>
-
+            <div class="row">
+              <div class="col-md-12">
                 @include('notybox.id_verification_pending')
-            
+              </div>
+            </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="infobox_large_image">
+                  <div class="row">
                     <div class="left col-md-6">
                       <div class="header">
                         <p><strong>Lade deine Freunde ein!</strong></p>
@@ -80,6 +87,7 @@
                           <img class="img-responsive" src="{{ asset('images/stock/friends.jpg') }}">
                       </div>
                     </div> 
+                  </div>
                 </div>
               </div>
             </div>
