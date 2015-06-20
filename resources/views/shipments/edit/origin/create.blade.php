@@ -2,48 +2,42 @@
 
 @section('content')
 
-<div class="dashboard_area">
+<div class="product_area">
 
-@include('dashboard.navbar')
-
-    <div id="index" class="container">
+    <div id="shipments_origin_create" class="container">
         <div class="row">
-        <div class="col-md-3">
-            <h1>Adresse anlegen</h1>
-            <a class="btn btn-default" href="{{ route('shipments.origin.index', $shipment) }}">Zurück</a>
-            {!! Form::open(['route' => ['shipments.origin.store', $shipment], 'method' => 'post']) !!}
-            <div class="form-group col-sm-12" id="map-canvas">
+            <div class="col-md-8">
+                <h4>Adresse anlegen</h4>
+                <hr>
+                {!! Form::open(['route' => ['shipments.origin.store', $shipment], 'method' => 'post']) !!}
+                <div class="form-group col-sm-12" id="map-canvas">
 
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="titleInput">Bezeichnung</label>
-                    <input type="text" class="form-control" id="titleInput" name="title" placeholder="Bezeichnung">
                 </div>
-                <div class="form-group">
-                    <label for="addressSuggestInput">Adresse</label>
-                    <input onFocus="geolocate()" type="text" class="form-control" id="addressSuggestInput" placeholder="Adresse">
-                </div>
-            </div>
-
-
-        </div><!-- /col-md-3 -->
+            </div><!-- /col-md-4 -->
 
 
     <!-------------------------------------------- -->
 
 
-        <div class="col-md-8">
-
-                    <input type="hidden" class="form-control" id="addressInput" name="street" placeholder="Straße Nr." readonly>
-                    <input type="hidden" class="form-control" id="cityInput" name="city" placeholder="Ort" readonly>
-                    <input type="hidden" class="form-control" id="zipInput" name="zip" placeholder="Postleitzahl" readonly>
-                    <input type="hidden" id="lat" name="latitude">
-                    <input type="hidden" id="lng" name="longitude">
-                    {!! Form::submit('Adresse anlegen', ['class' => 'btn btn-primary btn-block']) !!}
-                    {!! Form::close() !!}
-
-        </div><!-- /col-md-8 -->
+        <div class="col-md-4 input_container">
+            <div class="form-group">
+                <label for="titleInput">Bezeichnung</label>
+                <input type="text" class="form-control" id="titleInput" name="title" placeholder="Bezeichnung">
+            </div>
+            <div class="form-group">
+                <label for="addressSuggestInput">Adresse</label>
+                <input onFocus="geolocate()" type="text" class="form-control" id="addressSuggestInput" placeholder="Adresse">
+            </div>
+            <input type="hidden" class="form-control" id="addressInput" name="street" placeholder="Straße Nr." readonly>
+            <input type="hidden" class="form-control" id="cityInput" name="city" placeholder="Ort" readonly>
+            <input type="hidden" class="form-control" id="zipInput" name="zip" placeholder="Postleitzahl" readonly>
+            <input type="hidden" id="lat" name="latitude">
+            <input type="hidden" id="lng" name="longitude">
+            {!! Form::submit('Speichern und weiter', ['class' => 'btn btn-primary btn-block']) !!}
+            {!! Form::close() !!}
+            <br>
+            <a class="btn btn-default" href="{{ route('shipments.origin.index', $shipment) }}">Zurück</a>
+        </div><!-- /col-md-4 -->
       </div><!-- /row -->
     </div><!-- /container -->
 
@@ -53,10 +47,9 @@
 @endsection
 
 @section("header")
-
     <style type="text/css">
         #map-canvas {
-            height: 300px;
+            height: 400px;
         }
     </style>
 @endsection

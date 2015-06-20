@@ -9,7 +9,7 @@
         <span class="icon-bar bar3"></span>
       </button>
       @if (Auth::guest())
-      <a class="navbar-brand" href="{{ url('/') }}">wundership</a>
+      <a class="navbar-brand" href="{{url('/')}}"><span class="icon-logo"></span> <span>wundership</span></a>
       @else
       <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username]) }}">wundership</a>
       @endif

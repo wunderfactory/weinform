@@ -7,7 +7,7 @@
   height: 100%;
   background-color:@background;
 
-    #overview{
+    #overview, #shipment_create, #shipments, #shipments_origin_create, #shipments_destination_create{
       background-color: @background;
       max-width: 980px;
     }
@@ -84,20 +84,32 @@
     }
 
     #shipment_create{
-      background-color:@background;
-      max-width: 980px;
       padding-top: 30px;
       padding-bottom: 30px;
       min-height: 700px !important;
     }
 
     #shipments{
-      background-color:@background;
-      max-width: 980px;
       padding-top: 30px;
       padding-bottom: 30px;
       .list_container{
         padding-top: 40px;
+      }
+    }
+
+    #shipments_origin_create{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .input_container{
+        padding-top: 60px;
+      }
+    }
+
+    #shipments_destination_create{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .input_container{
+        padding-top: 60px;
       }
     }
 
