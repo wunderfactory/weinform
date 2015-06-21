@@ -35,7 +35,20 @@
 
 			@endforeach
     	</div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 paginate-container">
+                {!! $questions->render() !!}
+            </div>
+        </div>
 	</div>
 
 </div>
+@endsection
+
+@section('header')
+    <style type="text/css">
+        .paginate-container {
+            text-align: center;
+        }
+    </style>
 @endsection

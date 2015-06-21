@@ -158,33 +158,54 @@
         });
     </script>
     <script>
+        var directionsDisplay;
+        var directionsService;
         function initialize() {
             var mapOptions = {
                 zoom: 8,
                 center: new google.maps.LatLng(-34.397, 150.644)
             };
-
+            directionsService = new google.maps.DirectionsService();
             var map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
+            directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers : true});
+            directionsDisplay.setMap(map);
+
             var bounds = new google.maps.LatLngBounds();
+
             @if($shipment->origin)
                 var originMarker = new google.maps.Marker({
-                    position: new google.maps.LatLng({{ $shipment->origin->latitude }},{{ $shipment->origin->longitude }}),
+                    position: new google.maps.LatLng(originLat, originLon),
                     map: map,
                     icon: icons["origin"]
                 });
                 bounds.extend(originMarker.position);
             @endif
+
             @if($shipment->destination)
                 var destinationMarker = new google.maps.Marker({
-                    position: new google.maps.LatLng({{ $shipment->destination->latitude }},{{ $shipment->destination->longitude }}),
+                    position: new google.maps.LatLng(destinationLat, destinationLon),
                     map: map,
                     icon: icons["destination"]
                 });
                 bounds.extend(destinationMarker.position);
             @endif
 
-        map.fitBounds(bounds);
+            @if($shipment->destination && $shipment->origin)
+                var start = new google.maps.LatLng(originLat, originLon);
+                var end = new google.maps.LatLng(destinationLat, destinationLon);
+                var request = {
+                    origin:start,
+                    destination:end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            @endif
+            map.fitBounds(bounds);
         }
 
         function loadScript() {

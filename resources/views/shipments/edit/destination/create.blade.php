@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <h4>Adresse anlegen</h4>
                 <hr>
-                {!! Form::open(['route' => ['shipments.origin.store', $shipment], 'method' => 'post']) !!}
+                {!! Form::open(['route' => ['shipments.destination.store', $shipment], 'method' => 'post']) !!}
                 <div class="form-group col-sm-12" id="map-canvas">
 
                 </div>
@@ -36,7 +36,7 @@
             {!! Form::submit('Speichern und weiter', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
             <br>
-            <a class="btn btn-default" href="{{ route('shipments.origin.index', $shipment) }}">Zurück</a>
+            <a class="btn btn-default" href="{{ route('shipments.destination.index', $shipment) }}">Zurück</a>
         </div><!-- /col-md-4 -->
       </div><!-- /row -->
     </div><!-- /container -->

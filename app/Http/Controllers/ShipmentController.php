@@ -1,18 +1,15 @@
 <?php namespace Wundership\Http\Controllers;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Wundership\Http\Requests;
-use Wundership\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
 use Wundership\Shipment;
 use Wundership\Size;
 use Wundership\Spec;
+use JavaScript;
 
 class ShipmentController extends Controller {
 
@@ -115,6 +112,12 @@ class ShipmentController extends Controller {
 	public function edit($shipment)
 	{
 		$shipment = Auth::user()->shipments()->withUnpublished()->findOrFail($shipment);
+        JavaScript::put([
+            "originLat" => $shipment->origin->latitude,
+            "originLon" => $shipment->origin->longitude,
+            "destinationLat" => $shipment->destination->latitude,
+            "destinationLon" => $shipment->destination->longitude
+        ]);
 		return view('shipments.edit')
 			->with('shipment', $shipment);
 	}

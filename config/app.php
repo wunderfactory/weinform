@@ -150,6 +150,7 @@ return [
         'LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider',
         'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
+        'Laracasts\Utilities\JavaScript\JavascriptServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -221,7 +222,6 @@ return [
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
         'Authorizer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizerFacade',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
-
     ],
 
 ];

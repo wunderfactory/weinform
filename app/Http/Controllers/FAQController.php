@@ -10,6 +10,7 @@ use Wundership\Question;
 
 class FAQController extends Controller {
 
+    protected $questionPerPage = 2;
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -18,12 +19,9 @@ class FAQController extends Controller {
 	public function index()
 	{
         if (Input::has('search')) {
-            $questions = Question::search(Input::get('search'))->get()->sortByDesc(function($model){
-                return $model->searchScore;
-            });
-            return $questions;
+            $questions = Question::search(Input::get('search'))->paginate($this->questionPerPage);
         } else {
-            $questions = Question::all();
+            $questions = Question::paginate($this->questionPerPage);
         }
 		return view('faq.index')->withQuestions($questions);
 	}
