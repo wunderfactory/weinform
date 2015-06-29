@@ -10,7 +10,8 @@
 .product_area #overview,
 .product_area #shipment_create,
 .product_area #shipments,
-.product_area #shipments_origin_create {
+.product_area #shipments_origin_create,
+.product_area #shipments_destination_create {
   background-color: #f0f0f0;
   max-width: 980px;
 }
@@ -108,7 +109,14 @@
   padding-bottom: 30px;
 }
 .product_area #shipments_origin_create .input_container {
-  padding-top: 50px;
+  padding-top: 60px;
+}
+.product_area #shipments_destination_create {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.product_area #shipments_destination_create .input_container {
+  padding-top: 60px;
 }
 #show_shipment_details {
   padding: 20px;
@@ -119,4 +127,4 @@
   margin-left: 10px;
 }
 
-/*# sourceMappingURL=../views/product_area.css.map */
+/*# sourceMappingURL=product_area.css.map */

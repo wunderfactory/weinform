@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>wundership</title>
-
     
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<!-- / -->
@@ -15,19 +14,21 @@
     <!-- LOGIN REGISTER CREATIVE TIM -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ asset('bootstrap_dropdowns_enhancement/dist/css/dropdowns-enhancement.min.css') }}">
 
 
 	<!-- Custom style sheets LESS LESS LESS -->
 	<link href="{{ asset('/css/wundership.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/patstrap.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/views/dashboard_area.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/views/product_area.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/views/profile_area.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/views/auth_area.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/views/static_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/dashboard_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/product_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/profile_area.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/auth_area.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/static_area.css') }}" rel="stylesheet">
 
+
+    <link href="{{ asset('/css/wundership-icon-font.css') }}" rel="stylesheet"/>
     <!-- BUTTONS -->
     <link href="{{ asset('/css/buttons.css') }}" rel="stylesheet">
 
@@ -42,7 +43,7 @@
     @yield('header')
 
 </head>
-<body>
+<body class="body">
 
 	@include('structure.navbar')
     <div style="margin-top: 84px;">

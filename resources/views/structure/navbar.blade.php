@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top navbar-default navbar-icons" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-default navbar-icons topbar_nav" role="navigation">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -9,9 +9,15 @@
         <span class="icon-bar bar3"></span>
       </button>
       @if (Auth::guest())
-      <a class="navbar-brand" href="{{url('/')}}"><span class="icon-logo"></span> <span>wundership</span></a>
+      <a class="navbar-brand" href="{{url('/')}}">
+          <span class="icon-logo topbar_logo"></span> 
+          <span class="topbar_wundership">wundership</span>
+      </a>
       @else
-      <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username]) }}">wundership</a>
+      <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username]) }}">
+          <span class="icon-logo topbar_logo"></span> 
+          <span class="topbar_wundership"></span>
+      </a>
       @endif
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->

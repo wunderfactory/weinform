@@ -1,0 +1,59 @@
+.check {
+  color: #2fd155;
+}
+/* _com = complementary color */
+.static_area {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+.static_area #faq {
+  background-color: #f0f0f0;
+  max-width: 980px;
+  padding-top: 30px;
+}
+.static_area #faq h3 {
+  color: #1d5e84;
+  font-family: 'Lato', sans-serif;
+}
+.static_area #faq .question_container {
+  height: 120px;
+  margin-bottom: 50px;
+}
+.static_area #faq .questions_list {
+  margin-top: 30px;
+}
+nav .topbar_wundership {
+  color: #1d5e84;
+  margin-bottom: 20px !important;
+}
+nav .topbar_logo {
+  font-size: 33px;
+  color: #1d5e84;
+}
+nav .topbar_logo:hover {
+  color: grey !important;
+}
+nav .topbar_logo:hover .topbar_wundership {
+  color: grey;
+}
+nav a,
+nav p,
+nav i {
+  font-family: 'Lato', sans-serif;
+  color: #1d5e84;
+}
+nav a:hover {
+  color: grey;
+}
+nav a:hover i {
+  color: grey;
+}
+nav p:hover {
+  color: grey;
+}
+nav span:hover {
+  color: grey;
+}
+
+/*# sourceMappingURL=static_area.css.map */

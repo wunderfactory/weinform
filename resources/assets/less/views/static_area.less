@@ -1,4 +1,3 @@
-
 @import "../wundership.less";
 
 @background: #f0f0f0;
@@ -9,20 +8,55 @@
   background-color:@background;
 
     #faq{
+      h3{
+        color: @base;
+        font-family: @font;
+      }
       background-color: @background;
       max-width: 980px;
       padding-top: 30px;
       .question_container{
 			height: 120px;
 			margin-bottom: 50px;
-		}
-		.questions_list{
+		  }
+		  .questions_list{
 			margin-top: 30px; 
-		}
+		  }
     }
-    
-
 
 }
 
+nav{
 
+  .topbar_wundership{
+    color: @base;
+    margin-bottom: 20px !important;
+  }
+  .topbar_logo{
+    font-size: 33px;
+    color: @base;
+  }
+  .topbar_logo:hover{
+    color: grey !important;
+    .topbar_wundership{
+    color: grey;
+    }
+  }
+  a, p, i{
+    font-family: @font;
+    color: @base;
+  }
+  a:hover{
+    color: grey;
+    i{
+      color: grey;
+    }
+  }
+  p:hover{
+    color: grey;
+  }
+  span:hover{
+    color: grey;
+  }
+
+}

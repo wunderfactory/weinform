@@ -23,7 +23,7 @@
             @if($shipment->origin && $shipment->destination)
                 <p>Strecke: {{ $shipment->origin->city }} - {{ $shipment->destination->city }}</p>
             @endif
-            
+            <p>Versender: <a href="{{ url('user/'.$shipment->user->username) }}">{{$shipment->user->first_name}} {{$shipment->user->last_name}}</a></p>
             
             </div>
             <div class="col-md-3">
