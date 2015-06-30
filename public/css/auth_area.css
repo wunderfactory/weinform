@@ -33,11 +33,17 @@
   /* Internet Explorer 10+ */
   color: #434343 !important;
 }
+.auth_area #login .row {
+  padding: 5px;
+}
 .auth_area #login .choose_container {
   text-align: center;
 }
 .auth_area #login #password_input {
   margin-top: 5px;
+}
+.auth_area #login .logo_login {
+  font-size: 30px;
 }
 .auth_area #choose_register {
   padding-top: 30px;
@@ -45,6 +51,12 @@
 }
 .auth_area #choose_register .choose_container {
   text-align: center;
+}
+.auth_area #choose_register .logo_choose {
+  font-size: 30px;
+}
+.auth_area #register .register_box .row {
+  padding: 5px;
 }
 .auth_area #register .input_label {
   margin-top: 3px;
@@ -69,6 +81,9 @@
 }
 .auth_area #register #phone_number_input {
   margin-left: -20px;
+}
+.auth_area #register .logo_register {
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=auth_area.css.map */

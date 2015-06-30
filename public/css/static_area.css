@@ -23,37 +23,51 @@
 .static_area #faq .questions_list {
   margin-top: 30px;
 }
-nav .topbar_wundership {
-  color: #1d5e84;
-  margin-bottom: 20px !important;
+.static_area #faq .not_found_container {
+  min-height: 200px;
+  text-align: center;
 }
-nav .topbar_logo {
+.topbar_nav .topbar_wundership {
+  color: #1d5e84;
+  float: left;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+.topbar_nav .topbar_logo {
   font-size: 33px;
   color: #1d5e84;
+  float: left;
+  margin-top: -5px !important;
 }
-nav .topbar_logo:hover {
-  color: grey !important;
-}
-nav .topbar_logo:hover .topbar_wundership {
-  color: grey;
-}
-nav a,
-nav p,
-nav i {
+.topbar_nav a,
+.topbar_nav p {
   font-family: 'Lato', sans-serif;
   color: #1d5e84;
 }
-nav a:hover {
+.topbar_nav .icon_color {
+  color: #1d5e84;
+}
+.topbar_nav ul a:hover {
   color: grey;
 }
-nav a:hover i {
+.topbar_nav ul p:hover {
   color: grey;
 }
-nav p:hover {
+.topbar_nav ul span:hover {
   color: grey;
 }
-nav span:hover {
-  color: grey;
+.footer_nav .footer_logo {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.footer_nav a,
+.footer_nav h5 {
+  font-family: 'Lato', sans-serif;
+  color: #1d5e84;
+}
+.footer_nav .cool {
+  font-family: 'Lato', sans-serif;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=static_area.css.map */

@@ -8,8 +8,8 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="warningbox">
                     <div class="header">
-                        <div class="col-md-1"><i class="pe-7s-gleam"></i></div>
-                        <div class="col-md-10"><p><strong>Hi! Schön, dass Du Dich registrieren möchtest!</strong></p></div> 
+                        <div class="col-md-1"><span class="icon-logo logo_choose"></span></div>
+                        <div class="col-md-10"><p><strong>Schön, dass Du Dich registrieren möchtest!</strong></p></div> 
                     </div>
                     <div class="content choose_container">
                         <div class="row">

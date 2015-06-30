@@ -1,5 +1,5 @@
-<nav class="navbar navbar-fixed-top navbar-default navbar-icons topbar_nav" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-fixed-top navbar-default navbar-icons" role="navigation">
+    <div class="container topbar_nav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button id="menu-toggle" type="button" class="navbar-toggle">
@@ -10,13 +10,13 @@
       </button>
       @if (Auth::guest())
       <a class="navbar-brand" href="{{url('/')}}">
-          <span class="icon-logo topbar_logo"></span> 
-          <span class="topbar_wundership">wundership</span>
+        <span class="icon-logo topbar_logo"></span> 
+        <p class="topbar_wundership">wundership</p> 
       </a>
       @else
       <a class="navbar-brand" href="{{ action('UsersController@getOverview', [Auth::user()->username]) }}">
           <span class="icon-logo topbar_logo"></span> 
-          <span class="topbar_wundership"></span>
+          <p class="topbar_wundership">wundership</p>
       </a>
       @endif
     </div>
@@ -26,64 +26,64 @@
             @if (Auth::guest())
             <li>
                 <a href="{{url('auth/login')}}">
-                  <i class="pe-7s-user"></i>
+                  <i class="pe-7s-user icon_color"></i>
                   <p>{{ Lang::get('navbar/navbar.login') }}</p>
                 </a>
             </li>
             <li>
                 <a href="{{url('auth/choose')}}">
-                  <i class="pe-7s-news-paper"></i>
+                  <i class="pe-7s-news-paper icon_color"></i>
                   <p>{{ Lang::get('navbar/navbar.register') }}</p>
                 </a>
             </li>
             @else
             <li>
                 <a href="{{ route('shipments.index') }}">
-                    <i class="pe-7s-car"></i>
+                    <i class="pe-7s-car icon_color"></i>
                     <p>Mitnehmen</p>
                 </a>
             </li>
             <li>
                 <a href="{{ route('shipments.create') }}">
-                    <i class="pe-7s-box1"></i>
+                    <i class="pe-7s-box1 icon_color"></i>
                     <p>Versenden</p>
                 </a>
             </li>
             <li class="dropdown">
                 <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <i class="pe-7s-menu"></i>
+                    <i class="pe-7s-menu icon_color"></i>
                     <p></p>Hi {{ Auth::user()->first_name }}!<span class="caret"></span>
                 </a>
                   </a>
                 <ul class="dropdown-menu dropdown-with-icons">
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/') }}">
-                            <i class="pe-7s-user"></i> Profil
+                            <i class="pe-7s-user icon_color"></i> Profil
                         </a>
                     </li>
                     <li>
                         <a href="{{ action('UsersController@getDashboard', [Auth::user()->username]) }}">
-                            <i class="pe-7s-home"></i> Dashboard
+                            <i class="pe-7s-home icon_color"></i> Dashboard
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('users.shipments.index', Auth::user()) }}">
-                            <i class="pe-7s-folder"></i> Sendungen
+                            <i class="pe-7s-folder icon_color"></i> Sendungen
                         </a>
                     </li>
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/settings/profile') }}">
-                            <i class="pe-7s-config"></i> Einstellungen
+                            <i class="pe-7s-config icon_color"></i> Einstellungen
                         </a>
                     </li>
                     <li>
                         <a href="{{ url('/user/'.Auth::user()->username.'/settings/account') }}">
-                            <i class="pe-7s-lock"></i> Account
+                            <i class="pe-7s-lock icon_color"></i> Account
                         </a>
                     </li>
                     <li>
                         <a href="{{ url('/auth/logout') }}">
-                             <i class="pe-7s-close-circle"></i> Logout
+                             <i class="pe-7s-close-circle icon_color"></i> Logout
                         </a>
                     </li>
                   </ul>

@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-5 footerleft">
                 <ul>
-                    <li><a href="{{url('/impressum')}}">Impressum</a></li>
+                    <li><a target="blank" href="{{url('/impressum')}}">Impressum</a></li>
                     <li><a href="{{url('/agb')}}">Allgemeine Geschäftsbedingungen</a></li>
                 </ul>
             </div>

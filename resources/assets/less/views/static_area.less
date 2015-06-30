@@ -22,41 +22,63 @@
 		  .questions_list{
 			margin-top: 30px; 
 		  }
+      .not_found_container{
+        min-height: 200px;
+        text-align: center;
+      }
     }
 
 }
 
-nav{
+.topbar_nav{
 
   .topbar_wundership{
     color: @base;
-    margin-bottom: 20px !important;
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
   }
   .topbar_logo{
     font-size: 33px;
     color: @base;
+    float: left;
+    margin-top: -5px !important;
   }
-  .topbar_logo:hover{
-    color: grey !important;
-    .topbar_wundership{
-    color: grey;
-    }
-  }
-  a, p, i{
+  a, p{
     font-family: @font;
     color: @base;
   }
-  a:hover{
-    color: grey;
-    i{
+  .icon_color{
+    color: @base;
+  }
+  ul{
+    a:hover{
+      color: grey;
+    }
+    p:hover{
+      color: grey;
+    }
+    span:hover{
       color: grey;
     }
   }
-  p:hover{
-    color: grey;
-  }
-  span:hover{
-    color: grey;
-  }
 
+}
+
+
+
+
+.footer_nav{
+  .footer_logo{
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  a, h5{
+    font-family: @font;
+    color: @base;
+  }
+  .cool{
+    font-family: @font;
+    margin-top: 10px;
+  }
 }

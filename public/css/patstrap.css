@@ -95,6 +95,11 @@
 }
 .infobox .header p {
   color: #828282;
+  margin-top: 3px;
+}
+.infobox .header .wundership_logo {
+  color: #1d5e84;
+  font-size: 30px !important;
 }
 .infobox .content {
   padding: 15px;
@@ -147,7 +152,7 @@
 }
 .warningbox .header {
   width: 100%;
-  padding: 15px;
+  padding: 13px;
   color: white;
   background-color: #1d5e84;
   border-bottom: 1px solid #1d5e84;

@@ -21,7 +21,7 @@
 					@endif
                     <div class="warningbox">
                         <div class="header">
-                            <div class="col-md-1"><i class="pe-7s-gleam"></i></div>
+                            <div class="col-md-1"><span class="icon-logo logo_login"></span></div>
                             <div class="col-md-10"><p><strong>Hi!</strong> Schön, Dich wiederzusehen.</p></div> 
                         </div>
                         <div class="content choose_container">
@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="col-md-12">
 			                        <div class="line l"></div>
-			                            <span><strong>{{ Lang::get('auth/login.or') }}</strong></span>
+			                            <span><strong>oder</strong></span>
 			                            <br><br>
 			                        <div class="line r"></div>
 			                    </div>
@@ -46,15 +46,15 @@
 			                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 			                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-			                        <input id="email" class="form-control" type="text" placeholder="{{ Lang::get('auth/login.email') }}" name="username">
-			                        <input id="password_input" class="form-control" type="password" placeholder="{{ Lang::get('auth/login.password') }}" name="password">
+			                        <input id="email" class="form-control" type="text" placeholder="E-Mail-Adresse" name="username">
+			                        <input id="password_input" class="form-control" type="password" placeholder="Passwort" name="password">
 			                        <br>
 			                        <input class="btn btn-default btn-login" type="submit" value="Login">
 			                        </form>
 			                    </div>
 			                    <div class="col-md-6">
-			                        <p>{{ Lang::get('auth/login.looking_to') }} <a href="{{url('auth/choose')}}">{{ Lang::get('auth/login.create_account') }}</a></p>
-									<a class="btn btn-default btn-login" href="{{ url('/password/email') }}">{{ Lang::get('auth/login.forgot_password') }}</a>
+			                        <p>Möchtest Du <a href="{{url('auth/choose')}}">einen neuen Account erstellen?</a></p>
+									<a class="btn btn-default btn-login" href="{{ url('/password/email') }}">Passwort vergessen?</a>
 								</div>
                             </div>
                         </div> 

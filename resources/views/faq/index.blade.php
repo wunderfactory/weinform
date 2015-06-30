@@ -7,21 +7,20 @@
 	<div id="faq" class="container">
 
 		<div class="question_container">
-			<h3>Hallo! Wie können wir Dir helfen? Gib Deine Frage einfach unten ein und klick auf suchen...</h3>
+			<h3>Hallo! Wie können wir Dir helfen? Gib Deine <strong>Frage</strong> oder ein <strong>Stichwort</strong> einfach unten ein...</h3>
 			<div clas="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<form method="GET" action="{{ url("faq") }}">
 			        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 			        <input class="form-control" name="search">
 			        </form>
 		    	</div>
-		    	<div class="col-md-6">
-		    		<button class="form-control btn btn-primary" type="submit">Suchen</button>
-		    		
-		    	</div>
 	    	</div>
 	    </div>
     	<div class="row questions_list">
+    		@if($questions->count() == 0)
+    			<div class="not_found_container"><h5>Zu dieser Eingabe konnten wir nichts finden. Probier noch einmal etwas anderes oder <a href="{{url('contact')}}">kontaktiere</a> uns.</h5></div>
+    		@endif
 			@foreach($questions as $question)
 
 				<div class="warningbox">

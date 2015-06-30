@@ -7,8 +7,6 @@
     <div id="overview" class="container">
         <div class="row top_down">
 
-          @include('notybox.do_mail_verification')
-
           <div id="head_text_wrapper">
               <h2>Hi {{ $user->first_name }}!</h2>
               <p>Mitnehmen oder Versenden?</p>
@@ -49,6 +47,18 @@
 
             <div class="row">
               <div class="col-md-12">
+                @include('notybox.howitworks')
+              </div>
+            </div>
+                
+            <div class="row">
+              <div class="col-md-12">
+                @include('notybox.do_mail_verification')
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
                 @include('notybox.do_complete_profile')
               </div>
             </div>
@@ -69,6 +79,7 @@
                 @include('notybox.id_verification_pending')
               </div>
             </div>
+
             {{-- <div class="row">
               <div class="col-md-12">
                 <div class="infobox_large_image">
@@ -94,16 +105,7 @@
 
     <!------------------------------- -->
 
-            <div class="row">
-                <div class="infobox col-md-12">
-                    <div class="header">
-                        <p>Wir suchen <strong>Praktikanten</strong></p>
-                    </div>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                    </div> 
-                </div>
-            </div>
+          
 
     <!------------------------------- -->
 

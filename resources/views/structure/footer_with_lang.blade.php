@@ -1,8 +1,8 @@
 <footer class="footer footer-big">
-    <div class="container footer_nav">
+    <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <h5 class="title">wundership</h5>
+                <h5 class="title">{{ Lang::get('footer/footer.company') }}</h5>
                 <nav>
                     <ul>
                         <li>
@@ -12,39 +12,34 @@
                         </li>
                         <li>
                             <a href="{{ url('/howitworks')}}">
-                                So funktioniert's!
+                                {{ Lang::get('footer/footer.how_it_works') }}
                             </a>
                         </li>
-{{--                         <li>
+                        <li>
                             <a href="{{ url('/press')}}">
-                                Presse
+                                {{ Lang::get('footer/footer.press') }}
                             </a>
-                        </li> --}}
+                        </li>
                         <li>
                             <a href="{{ url('/about')}}">
-                                Über uns
-                            </a>
-                        </li>
-                        <li>
-                            <a target="blank" href="{{ url('/impressum')}}">
-                                Impressum
+                                {{ Lang::get('footer/footer.about_us') }}
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="col-md-3 col-md-offset-1">
-                <h5 class="title">Hilfe und Kontakt</h5>
+                <h5 class="title">{{ Lang::get('footer/footer.help_support') }}</h5>
                 <nav>
                     <ul>
                         <li>
                             <a href="{{ url('/contact')}}">
-                               Kontaktiere uns
+                               {{ Lang::get('footer/footer.contact_us') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/howitworks')}}">
-                               So funktioniert's!
+                               {{ Lang::get('footer/footer.how_it_works') }}
                             </a>
                         </li>
                         <li>
@@ -52,20 +47,20 @@
                                 FAQ
                             </a>
                         </li>
-{{--                         <li>
+                        <li>
                             <a href="{{ url('/pickup')}}">
                                 {{ Lang::get('footer/footer.pickup') }}
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div class="col-md-3">
-                <h5 class="title">Wir sind auch auf</h5>
+                <h5 class="title">{{ Lang::get('footer/footer.follow_us') }}</h5>
                 <nav>
                     <ul>
                         <li>
-                            <a target="blank" href="http://www.facebook.com/wundership" class="btn btn-social btn-facebook btn-simple">
+                            <a href="www.facebook.com/wundership" class="btn btn-social btn-facebook btn-simple">
                                 <i class="fa fa-facebook-square"></i> Facebook
                             </a>
                         </li>
@@ -79,12 +74,12 @@
             </div>
 
              <div class="col-md-3">
-                <h5 class="title">Neuigkeiten</h5>
+                <h5 class="title">{{ Lang::get('footer/footer.latest_news') }}</h5>
                 <nav>
                     <ul>
                         <li>
                             <a href="#" >
-                               <i class="fa fa-twitter"></i> <b>Wir starten mit der Beta-Phase in Hamburg!</b>
+                               <i class="fa fa-twitter"></i> <b>Wir starten in die Beta-Phase! Mehr dazu im wundership-Blog.</b>
                                
                               
                             </a>
@@ -96,7 +91,7 @@
         </div>
         <hr />
         <div class="copyright">
-            <span class="icon-logo footer_logo"></span> <p class="cool">wundership, made with love in Hamburg</p>
+            wundership, made with love in Hamburg
         </div>
     </div>
 </footer>  
