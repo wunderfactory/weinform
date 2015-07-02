@@ -37,12 +37,12 @@
                 </a>
             </li>
             @else
-            <li>
+{{--             <li>
                 <a href="{{ route('shipments.index') }}">
                     <i class="pe-7s-car icon_color"></i>
                     <p>Mitnehmen</p>
                 </a>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{ route('shipments.create') }}">
                     <i class="pe-7s-box1 icon_color"></i>

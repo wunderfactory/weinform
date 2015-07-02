@@ -8,21 +8,9 @@
         <div class="row top_down">
 
           <div id="head_text_wrapper">
-              <h2>Hi {{ $user->first_name }}!</h2>
-              <p>Mitnehmen oder Versenden?</p>
+              <h2>Hallo {{ $user->first_name }}!</h2>
+              <p>Jetzt über wundership versenden.</p>
           </div>
-            <div class="col-md-6">
-              <a href="{{ route('shipments.index') }}">
-                <div id="pickup_container">
-                    <div class="icon_wrapper col-md-5">
-                        <i id="car_icon" class="fa fa-car"></i>
-                    </div>
-                    <div class="text_wrapper col-md-5">
-                      <p>Mitnehmen!</p>
-                    </div>
-                </div>
-              </a>
-            </div>
 
             <div class="col-md-6">
               <a href="{{ route('shipments.create') }}">
@@ -36,6 +24,22 @@
                 </div>
               </a>
             </div>
+
+
+            <div class="col-md-6">
+              <a href="{{ url('faq') }}">
+                <div id="pickup_container">
+                    <div class="icon_wrapper col-md-5">
+                        <i id="car_icon" class="fa fa-question"></i>
+                    </div>
+                    <div class="text_wrapper col-md-5">
+                      <p>FAQ</p>
+                    </div>
+                </div>
+              </a>
+            </div>
+
+
         </div><!-- /row -->
 
 
@@ -57,19 +61,19 @@
               </div>
             </div>
 
-            <div class="row">
+{{--             <div class="row">
               <div class="col-md-12">
                 @include('notybox.do_complete_profile')
               </div>
-            </div>
+            </div> --}}
 
-            <div class="row">
+{{--             <div class="row">
               <div class="col-md-12">
                 @include('notybox.do_profile_picture')
               </div>
-            </div>
+            </div> --}}
             
-            <div class="row">
+{{--             <div class="row">
               <div class="col-md-12">
                 @include('notybox.do_id_verification')
               </div>
@@ -78,7 +82,7 @@
               <div class="col-md-12">
                 @include('notybox.id_verification_pending')
               </div>
-            </div>
+            </div> --}}
 
             {{-- <div class="row">
               <div class="col-md-12">

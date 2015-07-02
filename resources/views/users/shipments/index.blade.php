@@ -46,8 +46,6 @@
     <div class="row">
         <div class="col-md-3">
 
-            @include('notybox.sidebar_tall_actionbox_deliverer')
-
             @include('notybox.sidebar_helpbox')
 
         </div><!-- /.col-md-3->

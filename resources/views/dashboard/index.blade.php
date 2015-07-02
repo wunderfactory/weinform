@@ -31,8 +31,6 @@
                     </div>
                 </div>
 
-              @include('notybox.sidebar_tall_actionbox_deliverer')
-
               @include('notybox.sidebar_helpbox')
 
             </div><!-- /col-md-3 -->
@@ -44,10 +42,6 @@
             <div class="col-md-8">
 
                 @include('notybox.do_mail_verification')
-
-                @include('notybox.do_complete_profile')
-
-                @include('notybox.do_profile_picture')
 
                 @include('notybox.do_id_verification')
 

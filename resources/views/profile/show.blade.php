@@ -32,20 +32,20 @@
                     </div>
                 </div>
                 
-                <div class="tall_actionbox">
+{{--                 <div class="tall_actionbox">
                     <i class="pe-7s-car"></i>
                     <h4>{{ $user->first_name}} ist Fahrer!</h4>
                     <p>Mit einem verfizierten Profil und ein paar Klicks finanziert {{ $user->first_name }} jetzt mit <strong>wundership</strong> seine Autofahrten oder Zugreisen!<br> Hört sich gut an?</p>
                     <a href=""><p class="dark_grey"><strong>Fahrer werden!</strong></p></a>
-                </div>
+                </div> --}}
 
                 <hr>
 
-                <div class="actionbox">
+{{--                 <div class="actionbox">
                     <i class="pe-7s-attention"></i>
                     <p>Gab es ein Problem mit {{ $user->first_name }}?</p>
                     <a href=""><p class="dark_grey"><strong>{{ $user->first_name }} melden.</strong></p></a>
-                </div>
+                </div> --}}
 
             </div>
 
@@ -174,14 +174,14 @@
               </div><!-- /infobox -->
 
 
-              <div class="infobox">
+{{--               <div class="infobox">
                 <div class="header">
                     <p class="grey"><strong>Bewertungen</strong></p>
                 </div>
                 <div class="content">
                     <p class="info_text">{{ $user->first_name }} hat noch keine <strong>Bewertungen</strong> erhalten.</p>
                 </div> 
-              </div><!-- /infobox -->
+              </div><!-- /infobox --> --}}
 
           </div><!-- /col-md-8 -->
       </div><!-- /row -->
